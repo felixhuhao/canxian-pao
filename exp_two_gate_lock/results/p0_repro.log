@@ -1,0 +1,1168 @@
+1D Rule-Swap Hysteresis  Seeds:[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]  P1:80  P2:120  P3:60
+  ⚡ Quick mode
+
+──────────────────────────────────────────────────
+  PAO-light
+
+── PAO seed=0 ──
+  [PAO-P1] ep=   0 R=+0.980 H=1.385 sk=0
+  [PAO-P1] ep=   1 R=-0.880 H=1.383 sk=0
+  [PAO-P1] ep=   2 R=+1.200 H=0.677 sk=0
+  [PAO-P1] ep=   3 R=-0.880 H=1.364 sk=0
+  [PAO-P1] ep=   4 R=+1.300 H=0.681 sk=0
+  ▶ Skill crystallised at ep 16. Run _validate_skill() with eval_env to confirm.
+    Success trajectories in P1: 10
+  [PAO-P1] ep=  49 R=+1.520 H=0.382 sk=0 sk@[16]
+  [PAO-P1] ep=  79 R=+1.520 H=0.244 sk=0 sk@[16]
+  ── RULE SWAP: B→A (ε=0.1) ──
+  [PAO-P2] ep=   0 R=-0.880 H=0.735 sk=0 sk@[16]
+  [PAO-P2] ep=   1 R=-0.880 H=0.778 sk=0 sk@[16]
+  [PAO-P2] ep=   2 R=-0.880 H=0.704 sk=0 sk@[16]
+  [PAO-P2] ep=   3 R=-0.880 H=0.687 sk=0 sk@[16]
+  [PAO-P2] ep=   4 R=-0.880 H=0.654 sk=0 sk@[16]
+  [PAO-P2] ep=  49 R=-0.880 H=1.084 sk=0 sk@[16]
+  [PAO-P2] ep=  99 R=-0.360 H=1.106 sk=0 sk@[16]
+  [PAO-P2] ep= 119 R=-0.360 H=0.974 sk=0 sk@[16]
+  ── RULE RESTORE: A→B ──
+  [PAO-P3] ep=   0 R=-0.880 H=0.246 sk=0 sk@[16]
+  [PAO-P3] ep=   1 R=-0.880 H=0.255 sk=0 sk@[16]
+  [PAO-P3] ep=   2 R=-0.880 H=0.219 sk=0 sk@[16]
+  [PAO-P3] ep=   3 R=-0.880 H=0.198 sk=0 sk@[16]
+  [PAO-P3] ep=   4 R=-0.880 H=0.185 sk=0 sk@[16]
+  [PAO-P3] ep=  49 R=-0.880 H=0.159 sk=0 sk@[16]
+  [PAO-P3] ep=  59 R=-0.880 H=0.161 sk=0 sk@[16]
+
+── PAO seed=1 ──
+  [PAO-P1] ep=   0 R=+1.380 H=0.691 sk=0
+  [PAO-P1] ep=   1 R=+1.500 H=0.687 sk=0
+  [PAO-P1] ep=   2 R=-0.880 H=1.381 sk=0
+  [PAO-P1] ep=   3 R=+1.480 H=0.680 sk=0
+  [PAO-P1] ep=   4 R=+0.660 H=1.360 sk=0
+  ▶ Skill crystallised at ep 13. Run _validate_skill() with eval_env to confirm.
+    Success trajectories in P1: 11
+  [PAO-P1] ep=  49 R=+1.520 H=0.219 sk=0 sk@[13]
+  [PAO-P1] ep=  79 R=+1.480 H=0.148 sk=0 sk@[13]
+  ── RULE SWAP: B→A (ε=0.1) ──
+  [PAO-P2] ep=   0 R=-0.880 H=0.518 sk=0 sk@[13]
+  [PAO-P2] ep=   1 R=-0.880 H=0.508 sk=0 sk@[13]
+  [PAO-P2] ep=   2 R=-0.880 H=0.458 sk=0 sk@[13]
+  [PAO-P2] ep=   3 R=-0.880 H=0.422 sk=0 sk@[13]
+  [PAO-P2] ep=   4 R=-0.880 H=0.392 sk=0 sk@[13]
+  [PAO-P2] ep=  49 R=-0.880 H=0.150 sk=0 sk@[13]
+  [PAO-P2] ep=  99 R=-0.880 H=0.081 sk=0 sk@[13]
+  [PAO-P2] ep= 119 R=-0.880 H=0.052 sk=0 sk@[13]
+  ── RULE RESTORE: A→B ──
+  [PAO-P3] ep=   0 R=+1.500 H=0.052 sk=0 sk@[13]
+  [PAO-P3] ep=   1 R=+1.500 H=0.051 sk=0 sk@[13]
+  [PAO-P3] ep=   2 R=+1.520 H=0.044 sk=0 sk@[13]
+  [PAO-P3] ep=   3 R=+1.520 H=0.043 sk=0 sk@[13]
+  [PAO-P3] ep=   4 R=+1.520 H=0.043 sk=0 sk@[13]
+  [PAO-P3] ep=  49 R=+1.520 H=0.025 sk=0 sk@[13]
+  [PAO-P3] ep=  59 R=+1.520 H=0.026 sk=0 sk@[13]
+
+── PAO seed=2 ──
+  [PAO-P1] ep=   0 R=-0.880 H=1.366 sk=0
+  [PAO-P1] ep=   1 R=-0.360 H=1.333 sk=0
+  [PAO-P1] ep=   2 R=-0.880 H=1.365 sk=0
+  [PAO-P1] ep=   3 R=-0.880 H=1.382 sk=0
+  [PAO-P1] ep=   4 R=+0.660 H=1.377 sk=0
+  [PAO-P1] ep=  49 R=-0.880 H=0.728 sk=0
+  ▶ Skill crystallised at ep 74. Run _validate_skill() with eval_env to confirm.
+    Success trajectories in P1: 11
+  [PAO-P1] ep=  79 R=+1.280 H=0.463 sk=0 sk@[74]
+  ── RULE SWAP: B→A (ε=0.1) ──
+  [PAO-P2] ep=   0 R=-0.880 H=0.992 sk=0 sk@[74]
+  [PAO-P2] ep=   1 R=-0.880 H=0.972 sk=0 sk@[74]
+  [PAO-P2] ep=   2 R=-0.880 H=0.975 sk=0 sk@[74]
+  [PAO-P2] ep=   3 R=-0.880 H=0.967 sk=0 sk@[74]
+  [PAO-P2] ep=   4 R=-0.880 H=0.973 sk=0 sk@[74]
+  [PAO-P2] ep=  49 R=-0.880 H=0.827 sk=0 sk@[74]
+  [PAO-P2] ep=  99 R=+1.320 H=0.398 sk=0 sk@[74]
+  [PAO-P2] ep= 119 R=+1.360 H=0.342 sk=0 sk@[74]
+  ── RULE RESTORE: A→B ──
+  [PAO-P3] ep=   0 R=-0.880 H=0.136 sk=0 sk@[74]
+  [PAO-P3] ep=   1 R=-0.880 H=0.130 sk=0 sk@[74]
+  [PAO-P3] ep=   2 R=-0.880 H=0.114 sk=0 sk@[74]
+  [PAO-P3] ep=   3 R=-0.880 H=0.110 sk=0 sk@[74]
+  [PAO-P3] ep=   4 R=-0.880 H=0.108 sk=0 sk@[74]
+  [PAO-P3] ep=  49 R=-0.880 H=0.225 sk=0 sk@[74]
+  [PAO-P3] ep=  59 R=-0.880 H=0.239 sk=0 sk@[74]
+
+── PAO seed=3 ──
+  [PAO-P1] ep=   0 R=+1.040 H=0.693 sk=0
+  [PAO-P1] ep=   1 R=+1.520 H=0.690 sk=0
+  [PAO-P1] ep=   2 R=-0.880 H=1.382 sk=0
+  [PAO-P1] ep=   3 R=-0.880 H=1.378 sk=0
+  [PAO-P1] ep=   4 R=+1.400 H=0.683 sk=0
+  ▶ Skill crystallised at ep 28. Run _validate_skill() with eval_env to confirm.
+    Success trajectories in P1: 15
+  [PAO-P1] ep=  49 R=+1.400 H=0.591 sk=0 sk@[28]
+  [PAO-P1] ep=  79 R=+1.520 H=0.159 sk=0 sk@[28]
+  ── RULE SWAP: B→A (ε=0.1) ──
+  [PAO-P2] ep=   0 R=-0.880 H=0.774 sk=0 sk@[28]
+  [PAO-P2] ep=   1 R=-0.880 H=0.736 sk=0 sk@[28]
+  [PAO-P2] ep=   2 R=-0.880 H=0.787 sk=0 sk@[28]
+  [PAO-P2] ep=   3 R=-0.880 H=0.857 sk=0 sk@[28]
+  [PAO-P2] ep=   4 R=-0.880 H=0.860 sk=0 sk@[28]
+  [PAO-P2] ep=  49 R=-0.880 H=0.600 sk=0 sk@[28]
+  [PAO-P2] ep=  99 R=-0.360 H=0.477 sk=0 sk@[28]
+  [PAO-P2] ep= 119 R=-0.360 H=0.517 sk=0 sk@[28]
+  ── RULE RESTORE: A→B ──
+  [PAO-P3] ep=   0 R=-0.880 H=0.099 sk=0 sk@[28]
+  [PAO-P3] ep=   1 R=-0.880 H=0.084 sk=0 sk@[28]
+  [PAO-P3] ep=   2 R=-0.880 H=0.088 sk=0 sk@[28]
+  [PAO-P3] ep=   3 R=-0.880 H=0.079 sk=0 sk@[28]
+  [PAO-P3] ep=   4 R=-0.880 H=0.073 sk=0 sk@[28]
+  [PAO-P3] ep=  49 R=-0.880 H=0.102 sk=0 sk@[28]
+  [PAO-P3] ep=  59 R=-0.880 H=0.114 sk=0 sk@[28]
+
+── PAO seed=4 ──
+  [PAO-P1] ep=   0 R=-0.360 H=1.385 sk=0
+  [PAO-P1] ep=   1 R=-0.880 H=1.345 sk=0
+  [PAO-P1] ep=   2 R=+1.420 H=0.674 sk=0
+  [PAO-P1] ep=   3 R=+1.480 H=0.664 sk=0
+  [PAO-P1] ep=   4 R=+1.360 H=0.663 sk=0
+  ▶ Skill crystallised at ep 10. Run _validate_skill() with eval_env to confirm.
+    Success trajectories in P1: 8
+  [PAO-P1] ep=  49 R=+1.520 H=0.246 sk=0 sk@[10]
+  [PAO-P1] ep=  79 R=+1.520 H=0.083 sk=0 sk@[10]
+  ── RULE SWAP: B→A (ε=0.1) ──
+  [PAO-P2] ep=   0 R=-0.880 H=0.142 sk=0 sk@[10]
+  [PAO-P2] ep=   1 R=-0.880 H=0.154 sk=0 sk@[10]
+  [PAO-P2] ep=   2 R=-0.880 H=0.166 sk=0 sk@[10]
+  [PAO-P2] ep=   3 R=-0.880 H=0.160 sk=0 sk@[10]
+  [PAO-P2] ep=   4 R=-0.880 H=0.144 sk=0 sk@[10]
+  [PAO-P2] ep=  49 R=-0.880 H=0.379 sk=0 sk@[10]
+  [PAO-P2] ep=  99 R=-0.880 H=0.074 sk=0 sk@[10]
+  [PAO-P2] ep= 119 R=+1.400 H=0.049 sk=0 sk@[10]
+  ── RULE RESTORE: A→B ──
+  [PAO-P3] ep=   0 R=+1.520 H=0.046 sk=0 sk@[10]
+  [PAO-P3] ep=   1 R=+1.520 H=0.046 sk=0 sk@[10]
+  [PAO-P3] ep=   2 R=+1.520 H=0.047 sk=0 sk@[10]
+  [PAO-P3] ep=   3 R=+1.520 H=0.047 sk=0 sk@[10]
+  [PAO-P3] ep=   4 R=+1.520 H=0.048 sk=0 sk@[10]
+  [PAO-P3] ep=  49 R=+1.520 H=0.027 sk=0 sk@[10]
+  [PAO-P3] ep=  59 R=+1.520 H=0.017 sk=0 sk@[10]
+
+── PAO seed=5 ──
+  [PAO-P1] ep=   0 R=-0.880 H=1.377 sk=0
+  [PAO-P1] ep=   1 R=-0.880 H=1.385 sk=0
+  [PAO-P1] ep=   2 R=+1.280 H=0.688 sk=0
+  [PAO-P1] ep=   3 R=-0.880 H=1.386 sk=0
+  [PAO-P1] ep=   4 R=-0.880 H=1.385 sk=0
+  ▶ Skill crystallised at ep 20. Run _validate_skill() with eval_env to confirm.
+    Success trajectories in P1: 10
+  [PAO-P1] ep=  49 R=+1.440 H=0.455 sk=0 sk@[20]
+  [PAO-P1] ep=  79 R=+1.520 H=0.209 sk=0 sk@[20]
+  ── RULE SWAP: B→A (ε=0.1) ──
+  [PAO-P2] ep=   0 R=-0.880 H=0.879 sk=0 sk@[20]
+  [PAO-P2] ep=   1 R=-0.880 H=0.939 sk=0 sk@[20]
+  [PAO-P2] ep=   2 R=-0.880 H=0.965 sk=0 sk@[20]
+  [PAO-P2] ep=   3 R=-0.880 H=0.950 sk=0 sk@[20]
+  [PAO-P2] ep=   4 R=-0.880 H=1.032 sk=0 sk@[20]
+  [PAO-P2] ep=  49 R=-0.880 H=1.083 sk=0 sk@[20]
+  [PAO-P2] ep=  99 R=-0.880 H=0.883 sk=0 sk@[20]
+  [PAO-P2] ep= 119 R=-0.880 H=0.777 sk=0 sk@[20]
+  ── RULE RESTORE: A→B ──
+  [PAO-P3] ep=   0 R=+1.480 H=0.303 sk=0 sk@[20]
+  [PAO-P3] ep=   1 R=+1.400 H=0.442 sk=0 sk@[20]
+  [PAO-P3] ep=   2 R=+1.480 H=0.421 sk=0 sk@[20]
+  [PAO-P3] ep=   3 R=+1.520 H=0.379 sk=0 sk@[20]
+  [PAO-P3] ep=   4 R=+1.440 H=0.415 sk=0 sk@[20]
+  [PAO-P3] ep=  49 R=+1.520 H=0.083 sk=0 sk@[20]
+  [PAO-P3] ep=  59 R=+1.520 H=0.067 sk=0 sk@[20]
+
+── PAO seed=6 ──
+  [PAO-P1] ep=   0 R=+1.440 H=0.692 sk=0
+  [PAO-P1] ep=   1 R=-0.360 H=1.385 sk=0
+  [PAO-P1] ep=   2 R=-0.880 H=1.344 sk=0
+  [PAO-P1] ep=   3 R=-0.880 H=1.372 sk=0
+  [PAO-P1] ep=   4 R=-0.360 H=1.378 sk=0
+  ▶ Skill crystallised at ep 17. Run _validate_skill() with eval_env to confirm.
+    Success trajectories in P1: 13
+  [PAO-P1] ep=  49 R=+1.480 H=0.128 sk=0 sk@[17]
+  [PAO-P1] ep=  79 R=+1.520 H=0.041 sk=0 sk@[17]
+  ── RULE SWAP: B→A (ε=0.1) ──
+  [PAO-P2] ep=   0 R=-0.880 H=0.400 sk=0 sk@[17]
+  [PAO-P2] ep=   1 R=-0.880 H=0.469 sk=0 sk@[17]
+  [PAO-P2] ep=   2 R=-0.880 H=0.547 sk=0 sk@[17]
+  [PAO-P2] ep=   3 R=-0.880 H=0.607 sk=0 sk@[17]
+  [PAO-P2] ep=   4 R=-0.880 H=0.675 sk=0 sk@[17]
+  [PAO-P2] ep=  49 R=-0.880 H=0.411 sk=0 sk@[17]
+  [PAO-P2] ep=  99 R=-0.360 H=0.331 sk=0 sk@[17]
+  [PAO-P2] ep= 119 R=-0.360 H=0.571 sk=0 sk@[17]
+  ── RULE RESTORE: A→B ──
+  [PAO-P3] ep=   0 R=-0.880 H=0.158 sk=0 sk@[17]
+  [PAO-P3] ep=   1 R=-0.880 H=0.153 sk=0 sk@[17]
+  [PAO-P3] ep=   2 R=-0.880 H=0.144 sk=0 sk@[17]
+  [PAO-P3] ep=   3 R=-0.880 H=0.163 sk=0 sk@[17]
+  [PAO-P3] ep=   4 R=-0.880 H=0.145 sk=0 sk@[17]
+  [PAO-P3] ep=  49 R=-0.880 H=0.151 sk=0 sk@[17]
+  [PAO-P3] ep=  59 R=-0.880 H=0.248 sk=0 sk@[17]
+
+── PAO seed=7 ──
+  [PAO-P1] ep=   0 R=+1.140 H=0.691 sk=0
+  [PAO-P1] ep=   1 R=+1.380 H=0.686 sk=0
+  [PAO-P1] ep=   2 R=+1.120 H=0.681 sk=0
+  [PAO-P1] ep=   3 R=-0.880 H=1.343 sk=0
+  [PAO-P1] ep=   4 R=+1.200 H=0.652 sk=0
+  ▶ Skill crystallised at ep 9. Run _validate_skill() with eval_env to confirm.
+    Success trajectories in P1: 7
+  [PAO-P1] ep=  49 R=+1.440 H=0.301 sk=0 sk@[9]
+  [PAO-P1] ep=  79 R=+1.520 H=0.107 sk=0 sk@[9]
+  ── RULE SWAP: B→A (ε=0.1) ──
+  [PAO-P2] ep=   0 R=-0.880 H=0.465 sk=0 sk@[9]
+  [PAO-P2] ep=   1 R=-0.880 H=0.587 sk=0 sk@[9]
+  [PAO-P2] ep=   2 R=-0.880 H=0.566 sk=0 sk@[9]
+  [PAO-P2] ep=   3 R=-0.880 H=0.538 sk=0 sk@[9]
+  [PAO-P2] ep=   4 R=-0.880 H=0.619 sk=0 sk@[9]
+  [PAO-P2] ep=  49 R=-0.880 H=0.681 sk=0 sk@[9]
+  [PAO-P2] ep=  99 R=+1.400 H=0.389 sk=0 sk@[9]
+  [PAO-P2] ep= 119 R=+1.000 H=0.975 sk=0 sk@[9]
+  ── RULE RESTORE: A→B ──
+  [PAO-P3] ep=   0 R=-0.880 H=0.205 sk=0 sk@[9]
+  [PAO-P3] ep=   1 R=-0.880 H=0.216 sk=0 sk@[9]
+  [PAO-P3] ep=   2 R=-0.880 H=0.187 sk=0 sk@[9]
+  [PAO-P3] ep=   3 R=-0.880 H=0.190 sk=0 sk@[9]
+  [PAO-P3] ep=   4 R=-0.880 H=0.158 sk=0 sk@[9]
+  [PAO-P3] ep=  49 R=-0.880 H=0.190 sk=0 sk@[9]
+  [PAO-P3] ep=  59 R=-0.880 H=0.217 sk=0 sk@[9]
+
+── PAO seed=8 ──
+  [PAO-P1] ep=   0 R=+1.500 H=0.683 sk=0
+  [PAO-P1] ep=   1 R=+1.360 H=0.683 sk=0
+  [PAO-P1] ep=   2 R=+1.400 H=0.678 sk=0
+  [PAO-P1] ep=   3 R=+1.160 H=0.670 sk=0
+  [PAO-P1] ep=   4 R=+1.360 H=0.665 sk=0
+  ▶ Skill crystallised at ep 13. Run _validate_skill() with eval_env to confirm.
+    Success trajectories in P1: 11
+  [PAO-P1] ep=  49 R=+1.480 H=0.435 sk=0 sk@[13]
+  [PAO-P1] ep=  79 R=+1.520 H=0.173 sk=0 sk@[13]
+  ── RULE SWAP: B→A (ε=0.1) ──
+  [PAO-P2] ep=   0 R=-0.880 H=0.202 sk=0 sk@[13]
+  [PAO-P2] ep=   1 R=-0.880 H=0.226 sk=0 sk@[13]
+  [PAO-P2] ep=   2 R=-0.880 H=0.254 sk=0 sk@[13]
+  [PAO-P2] ep=   3 R=-0.880 H=0.249 sk=0 sk@[13]
+  [PAO-P2] ep=   4 R=-0.880 H=0.223 sk=0 sk@[13]
+  [PAO-P2] ep=  49 R=-0.880 H=0.285 sk=0 sk@[13]
+  [PAO-P2] ep=  99 R=-0.880 H=0.064 sk=0 sk@[13]
+  [PAO-P2] ep= 119 R=-0.880 H=0.046 sk=0 sk@[13]
+  ── RULE RESTORE: A→B ──
+  [PAO-P3] ep=   0 R=+1.500 H=0.076 sk=0 sk@[13]
+  [PAO-P3] ep=   1 R=+1.520 H=0.076 sk=0 sk@[13]
+  [PAO-P3] ep=   2 R=+1.520 H=0.074 sk=0 sk@[13]
+  [PAO-P3] ep=   3 R=+1.520 H=0.073 sk=0 sk@[13]
+  [PAO-P3] ep=   4 R=+1.520 H=0.072 sk=0 sk@[13]
+  [PAO-P3] ep=  49 R=+1.520 H=0.048 sk=0 sk@[13]
+  [PAO-P3] ep=  59 R=+1.520 H=0.031 sk=0 sk@[13]
+
+── PAO seed=9 ──
+  [PAO-P1] ep=   0 R=+1.440 H=0.686 sk=0
+  [PAO-P1] ep=   1 R=-0.880 H=1.361 sk=0
+  [PAO-P1] ep=   2 R=-0.360 H=1.366 sk=0
+  [PAO-P1] ep=   3 R=+1.320 H=0.670 sk=0
+  [PAO-P1] ep=   4 R=+1.460 H=0.666 sk=0
+  ▶ Skill crystallised at ep 13. Run _validate_skill() with eval_env to confirm.
+    Success trajectories in P1: 7
+  [PAO-P1] ep=  49 R=+1.400 H=0.339 sk=0 sk@[13]
+  [PAO-P1] ep=  79 R=+1.520 H=0.133 sk=0 sk@[13]
+  ── RULE SWAP: B→A (ε=0.1) ──
+  [PAO-P2] ep=   0 R=-0.880 H=0.317 sk=0 sk@[13]
+  [PAO-P2] ep=   1 R=-0.880 H=0.316 sk=0 sk@[13]
+  [PAO-P2] ep=   2 R=-0.880 H=0.342 sk=0 sk@[13]
+  [PAO-P2] ep=   3 R=-0.880 H=0.340 sk=0 sk@[13]
+  [PAO-P2] ep=   4 R=-0.880 H=0.303 sk=0 sk@[13]
+  [PAO-P2] ep=  49 R=-0.880 H=0.617 sk=0 sk@[13]
+  [PAO-P2] ep=  99 R=-0.880 H=1.011 sk=0 sk@[13]
+  [PAO-P2] ep= 119 R=-0.880 H=1.121 sk=0 sk@[13]
+  ── RULE RESTORE: A→B ──
+  [PAO-P3] ep=   0 R=-0.880 H=1.108 sk=0 sk@[13]
+  [PAO-P3] ep=   1 R=-0.880 H=1.014 sk=0 sk@[13]
+  [PAO-P3] ep=   2 R=+1.420 H=0.486 sk=0 sk@[13]
+  [PAO-P3] ep=   3 R=+1.520 H=0.456 sk=0 sk@[13]
+  [PAO-P3] ep=   4 R=+1.480 H=0.453 sk=0 sk@[13]
+  [PAO-P3] ep=  49 R=+1.480 H=0.255 sk=0 sk@[13]
+  [PAO-P3] ep=  59 R=+1.520 H=0.150 sk=0 sk@[13]
+
+──────────────────────────────────────────────────
+  Flat PPO
+
+── Flat seed=0 ──
+  [Flat-P1] ep=   0 R=-0.880 H=1.381 sk=0
+  [Flat-P1] ep=   1 R=-0.880 H=1.378 sk=0
+  [Flat-P1] ep=   2 R=+1.300 H=0.689 sk=0
+  [Flat-P1] ep=   3 R=-0.880 H=1.360 sk=0
+  [Flat-P1] ep=   4 R=-0.880 H=1.352 sk=0
+  [Flat-P1] ep=  49 R=+1.400 H=0.465 sk=0
+  [Flat-P1] ep=  79 R=+1.520 H=0.164 sk=0
+  ── RULE SWAP: B→A (ε=0.1) ──
+  [Flat-P2] ep=   0 R=-0.880 H=0.547 sk=0
+  [Flat-P2] ep=   1 R=-0.880 H=0.570 sk=0
+  [Flat-P2] ep=   2 R=-0.880 H=0.672 sk=0
+  [Flat-P2] ep=   3 R=-0.880 H=0.751 sk=0
+  [Flat-P2] ep=   4 R=-0.880 H=0.795 sk=0
+  [Flat-P2] ep=  49 R=-0.880 H=0.655 sk=0
+  [Flat-P2] ep=  99 R=-0.880 H=0.801 sk=0
+  [Flat-P2] ep= 119 R=-0.880 H=0.751 sk=0
+  ── RULE RESTORE: A→B ──
+  [Flat-P3] ep=   0 R=+1.520 H=0.088 sk=0
+  [Flat-P3] ep=   1 R=+1.520 H=0.087 sk=0
+  [Flat-P3] ep=   2 R=+1.520 H=0.087 sk=0
+  [Flat-P3] ep=   3 R=+1.520 H=0.089 sk=0
+  [Flat-P3] ep=   4 R=+1.520 H=0.090 sk=0
+  [Flat-P3] ep=  49 R=+1.480 H=0.118 sk=0
+  [Flat-P3] ep=  59 R=+1.520 H=0.076 sk=0
+
+── Flat seed=1 ──
+  [Flat-P1] ep=   0 R=+0.700 H=1.377 sk=0
+  [Flat-P1] ep=   1 R=-0.880 H=1.308 sk=0
+  [Flat-P1] ep=   2 R=-0.880 H=1.277 sk=0
+  [Flat-P1] ep=   3 R=+1.280 H=0.678 sk=0
+  [Flat-P1] ep=   4 R=+1.300 H=0.678 sk=0
+  [Flat-P1] ep=  49 R=+1.480 H=0.319 sk=0
+  [Flat-P1] ep=  79 R=+1.520 H=0.098 sk=0
+  ── RULE SWAP: B→A (ε=0.1) ──
+  [Flat-P2] ep=   0 R=-0.880 H=0.106 sk=0
+  [Flat-P2] ep=   1 R=-0.880 H=0.110 sk=0
+  [Flat-P2] ep=   2 R=-0.880 H=0.117 sk=0
+  [Flat-P2] ep=   3 R=-0.880 H=0.120 sk=0
+  [Flat-P2] ep=   4 R=-0.880 H=0.120 sk=0
+  [Flat-P2] ep=  49 R=-0.880 H=0.130 sk=0
+  [Flat-P2] ep=  99 R=-0.880 H=0.282 sk=0
+  [Flat-P2] ep= 119 R=-0.880 H=0.214 sk=0
+  ── RULE RESTORE: A→B ──
+  [Flat-P3] ep=   0 R=+1.480 H=0.112 sk=0
+  [Flat-P3] ep=   1 R=+1.520 H=0.121 sk=0
+  [Flat-P3] ep=   2 R=+1.520 H=0.123 sk=0
+  [Flat-P3] ep=   3 R=+1.520 H=0.126 sk=0
+  [Flat-P3] ep=   4 R=+1.480 H=0.123 sk=0
+  [Flat-P3] ep=  49 R=+1.520 H=0.067 sk=0
+  [Flat-P3] ep=  59 R=+1.520 H=0.064 sk=0
+
+── Flat seed=2 ──
+  [Flat-P1] ep=   0 R=+1.360 H=0.684 sk=0
+  [Flat-P1] ep=   1 R=+1.440 H=0.676 sk=0
+  [Flat-P1] ep=   2 R=-0.880 H=1.367 sk=0
+  [Flat-P1] ep=   3 R=+1.200 H=0.652 sk=0
+  [Flat-P1] ep=   4 R=+1.340 H=0.644 sk=0
+  [Flat-P1] ep=  49 R=+1.520 H=0.232 sk=0
+  [Flat-P1] ep=  79 R=+1.520 H=0.061 sk=0
+  ── RULE SWAP: B→A (ε=0.1) ──
+  [Flat-P2] ep=   0 R=-0.880 H=0.229 sk=0
+  [Flat-P2] ep=   1 R=-0.880 H=0.247 sk=0
+  [Flat-P2] ep=   2 R=-0.880 H=0.228 sk=0
+  [Flat-P2] ep=   3 R=-0.880 H=0.308 sk=0
+  [Flat-P2] ep=   4 R=-0.880 H=0.363 sk=0
+  [Flat-P2] ep=  49 R=-0.880 H=0.395 sk=0
+  [Flat-P2] ep=  99 R=-0.880 H=0.272 sk=0
+  [Flat-P2] ep= 119 R=-0.880 H=0.126 sk=0
+  ── RULE RESTORE: A→B ──
+  [Flat-P3] ep=   0 R=+1.520 H=0.094 sk=0
+  [Flat-P3] ep=   1 R=+1.520 H=0.094 sk=0
+  [Flat-P3] ep=   2 R=+1.520 H=0.093 sk=0
+  [Flat-P3] ep=   3 R=+1.520 H=0.093 sk=0
+  [Flat-P3] ep=   4 R=+1.520 H=0.092 sk=0
+  [Flat-P3] ep=  49 R=+1.520 H=0.057 sk=0
+  [Flat-P3] ep=  59 R=+1.520 H=0.061 sk=0
+
+── Flat seed=3 ──
+  [Flat-P1] ep=   0 R=-0.880 H=1.374 sk=0
+  [Flat-P1] ep=   1 R=+1.480 H=0.691 sk=0
+  [Flat-P1] ep=   2 R=-0.880 H=1.334 sk=0
+  [Flat-P1] ep=   3 R=+1.460 H=0.684 sk=0
+  [Flat-P1] ep=   4 R=+1.360 H=0.675 sk=0
+  [Flat-P1] ep=  49 R=+1.520 H=0.458 sk=0
+  [Flat-P1] ep=  79 R=+1.520 H=0.156 sk=0
+  ── RULE SWAP: B→A (ε=0.1) ──
+  [Flat-P2] ep=   0 R=-0.880 H=0.231 sk=0
+  [Flat-P2] ep=   1 R=-0.880 H=0.244 sk=0
+  [Flat-P2] ep=   2 R=-0.880 H=0.259 sk=0
+  [Flat-P2] ep=   3 R=-0.880 H=0.294 sk=0
+  [Flat-P2] ep=   4 R=-0.880 H=0.330 sk=0
+  [Flat-P2] ep=  49 R=-0.880 H=0.379 sk=0
+  [Flat-P2] ep=  99 R=-0.880 H=0.212 sk=0
+  [Flat-P2] ep= 119 R=+1.380 H=0.075 sk=0
+  ── RULE RESTORE: A→B ──
+  [Flat-P3] ep=   0 R=+1.520 H=0.072 sk=0
+  [Flat-P3] ep=   1 R=+1.520 H=0.074 sk=0
+  [Flat-P3] ep=   2 R=+1.520 H=0.075 sk=0
+  [Flat-P3] ep=   3 R=+1.520 H=0.077 sk=0
+  [Flat-P3] ep=   4 R=+1.520 H=0.079 sk=0
+  [Flat-P3] ep=  49 R=+1.520 H=0.084 sk=0
+  [Flat-P3] ep=  59 R=+1.520 H=0.061 sk=0
+
+── Flat seed=4 ──
+  [Flat-P1] ep=   0 R=+0.680 H=1.383 sk=0
+  [Flat-P1] ep=   1 R=-0.880 H=1.377 sk=0
+  [Flat-P1] ep=   2 R=-0.880 H=1.368 sk=0
+  [Flat-P1] ep=   3 R=+1.300 H=0.673 sk=0
+  [Flat-P1] ep=   4 R=+1.500 H=0.667 sk=0
+  [Flat-P1] ep=  49 R=+1.480 H=0.404 sk=0
+  [Flat-P1] ep=  79 R=+1.520 H=0.120 sk=0
+  ── RULE SWAP: B→A (ε=0.1) ──
+  [Flat-P2] ep=   0 R=-0.880 H=0.169 sk=0
+  [Flat-P2] ep=   1 R=-0.880 H=0.191 sk=0
+  [Flat-P2] ep=   2 R=-0.880 H=0.215 sk=0
+  [Flat-P2] ep=   3 R=-0.880 H=0.239 sk=0
+  [Flat-P2] ep=   4 R=-0.880 H=0.228 sk=0
+  [Flat-P2] ep=  49 R=-0.880 H=0.284 sk=0
+  [Flat-P2] ep=  99 R=-0.880 H=0.077 sk=0
+  [Flat-P2] ep= 119 R=-0.880 H=0.044 sk=0
+  ── RULE RESTORE: A→B ──
+  [Flat-P3] ep=   0 R=+1.520 H=0.055 sk=0
+  [Flat-P3] ep=   1 R=+1.520 H=0.055 sk=0
+  [Flat-P3] ep=   2 R=+1.520 H=0.056 sk=0
+  [Flat-P3] ep=   3 R=+1.520 H=0.057 sk=0
+  [Flat-P3] ep=   4 R=+1.520 H=0.058 sk=0
+  [Flat-P3] ep=  49 R=+1.520 H=0.056 sk=0
+  [Flat-P3] ep=  59 R=+1.520 H=0.060 sk=0
+
+── Flat seed=5 ──
+  [Flat-P1] ep=   0 R=-0.880 H=1.380 sk=0
+  [Flat-P1] ep=   1 R=+1.400 H=0.693 sk=0
+  [Flat-P1] ep=   2 R=-0.880 H=1.365 sk=0
+  [Flat-P1] ep=   3 R=-0.880 H=1.307 sk=0
+  [Flat-P1] ep=   4 R=-0.880 H=1.278 sk=0
+  [Flat-P1] ep=  49 R=+1.440 H=0.442 sk=0
+  [Flat-P1] ep=  79 R=+1.360 H=0.551 sk=0
+  ── RULE SWAP: B→A (ε=0.1) ──
+  [Flat-P2] ep=   0 R=-0.880 H=1.008 sk=0
+  [Flat-P2] ep=   1 R=-0.880 H=1.024 sk=0
+  [Flat-P2] ep=   2 R=-0.880 H=1.123 sk=0
+  [Flat-P2] ep=   3 R=-0.880 H=1.195 sk=0
+  [Flat-P2] ep=   4 R=-0.880 H=1.258 sk=0
+  [Flat-P2] ep=  49 R=-0.880 H=1.117 sk=0
+  [Flat-P2] ep=  99 R=-0.880 H=1.107 sk=0
+  [Flat-P2] ep= 119 R=-0.880 H=0.881 sk=0
+  ── RULE RESTORE: A→B ──
+  [Flat-P3] ep=   0 R=-0.880 H=0.898 sk=0
+  [Flat-P3] ep=   1 R=+1.440 H=0.547 sk=0
+  [Flat-P3] ep=   2 R=+1.160 H=0.609 sk=0
+  [Flat-P3] ep=   3 R=+1.440 H=0.540 sk=0
+  [Flat-P3] ep=   4 R=+1.480 H=0.483 sk=0
+  [Flat-P3] ep=  49 R=+1.520 H=0.163 sk=0
+  [Flat-P3] ep=  59 R=+1.520 H=0.129 sk=0
+
+── Flat seed=6 ──
+  [Flat-P1] ep=   0 R=-0.880 H=1.380 sk=0
+  [Flat-P1] ep=   1 R=-0.360 H=1.383 sk=0
+  [Flat-P1] ep=   2 R=-0.880 H=1.382 sk=0
+  [Flat-P1] ep=   3 R=-0.880 H=1.385 sk=0
+  [Flat-P1] ep=   4 R=-0.880 H=1.382 sk=0
+  [Flat-P1] ep=  49 R=+1.140 H=0.624 sk=0
+  [Flat-P1] ep=  79 R=+1.520 H=0.297 sk=0
+  ── RULE SWAP: B→A (ε=0.1) ──
+  [Flat-P2] ep=   0 R=-0.880 H=0.754 sk=0
+  [Flat-P2] ep=   1 R=-0.880 H=0.711 sk=0
+  [Flat-P2] ep=   2 R=-0.880 H=0.716 sk=0
+  [Flat-P2] ep=   3 R=-0.880 H=0.648 sk=0
+  [Flat-P2] ep=   4 R=-0.880 H=0.675 sk=0
+  [Flat-P2] ep=  49 R=+0.660 H=1.273 sk=0
+  [Flat-P2] ep=  99 R=+1.340 H=0.335 sk=0
+  [Flat-P2] ep= 119 R=+1.400 H=0.377 sk=0
+  ── RULE RESTORE: A→B ──
+  [Flat-P3] ep=   0 R=-0.880 H=0.171 sk=0
+  [Flat-P3] ep=   1 R=-0.880 H=0.154 sk=0
+  [Flat-P3] ep=   2 R=-0.880 H=0.144 sk=0
+  [Flat-P3] ep=   3 R=-0.880 H=0.146 sk=0
+  [Flat-P3] ep=   4 R=-0.880 H=0.135 sk=0
+  [Flat-P3] ep=  49 R=-0.880 H=0.281 sk=0
+  [Flat-P3] ep=  59 R=-0.880 H=0.128 sk=0
+
+── Flat seed=7 ──
+  [Flat-P1] ep=   0 R=-0.880 H=1.320 sk=0
+  [Flat-P1] ep=   1 R=-0.880 H=1.301 sk=0
+  [Flat-P1] ep=   2 R=+1.380 H=0.691 sk=0
+  [Flat-P1] ep=   3 R=-0.880 H=1.245 sk=0
+  [Flat-P1] ep=   4 R=-0.880 H=1.237 sk=0
+  [Flat-P1] ep=  49 R=+1.480 H=0.523 sk=0
+  [Flat-P1] ep=  79 R=+1.520 H=0.150 sk=0
+  ── RULE SWAP: B→A (ε=0.1) ──
+  [Flat-P2] ep=   0 R=-0.880 H=0.435 sk=0
+  [Flat-P2] ep=   1 R=-0.880 H=0.499 sk=0
+  [Flat-P2] ep=   2 R=-0.880 H=0.461 sk=0
+  [Flat-P2] ep=   3 R=-0.880 H=0.468 sk=0
+  [Flat-P2] ep=   4 R=-0.880 H=0.546 sk=0
+  [Flat-P2] ep=  49 R=-0.880 H=0.495 sk=0
+  [Flat-P2] ep=  99 R=-0.880 H=0.528 sk=0
+  [Flat-P2] ep= 119 R=-0.880 H=0.402 sk=0
+  ── RULE RESTORE: A→B ──
+  [Flat-P3] ep=   0 R=+1.520 H=0.090 sk=0
+  [Flat-P3] ep=   1 R=+1.520 H=0.090 sk=0
+  [Flat-P3] ep=   2 R=+1.440 H=0.136 sk=0
+  [Flat-P3] ep=   3 R=+1.520 H=0.092 sk=0
+  [Flat-P3] ep=   4 R=+1.520 H=0.093 sk=0
+  [Flat-P3] ep=  49 R=+1.520 H=0.037 sk=0
+  [Flat-P3] ep=  59 R=+1.520 H=0.028 sk=0
+
+── Flat seed=8 ──
+  [Flat-P1] ep=   0 R=-0.360 H=1.364 sk=0
+  [Flat-P1] ep=   1 R=-0.360 H=1.384 sk=0
+  [Flat-P1] ep=   2 R=-0.880 H=1.335 sk=0
+  [Flat-P1] ep=   3 R=-0.880 H=1.339 sk=0
+  [Flat-P1] ep=   4 R=+1.040 H=0.693 sk=0
+  [Flat-P1] ep=  49 R=+1.360 H=0.522 sk=0
+  [Flat-P1] ep=  79 R=+1.520 H=0.182 sk=0
+  ── RULE SWAP: B→A (ε=0.1) ──
+  [Flat-P2] ep=   0 R=-0.880 H=0.327 sk=0
+  [Flat-P2] ep=   1 R=-0.880 H=0.331 sk=0
+  [Flat-P2] ep=   2 R=-0.880 H=0.328 sk=0
+  [Flat-P2] ep=   3 R=-0.880 H=0.312 sk=0
+  [Flat-P2] ep=   4 R=-0.880 H=0.299 sk=0
+  [Flat-P2] ep=  49 R=-0.880 H=1.038 sk=0
+  [Flat-P2] ep=  99 R=-0.880 H=0.707 sk=0
+  [Flat-P2] ep= 119 R=-0.880 H=0.496 sk=0
+  ── RULE RESTORE: A→B ──
+  [Flat-P3] ep=   0 R=+1.520 H=0.111 sk=0
+  [Flat-P3] ep=   1 R=+1.520 H=0.110 sk=0
+  [Flat-P3] ep=   2 R=+1.520 H=0.110 sk=0
+  [Flat-P3] ep=   3 R=+1.520 H=0.112 sk=0
+  [Flat-P3] ep=   4 R=+1.520 H=0.114 sk=0
+  [Flat-P3] ep=  49 R=+1.480 H=0.084 sk=0
+  [Flat-P3] ep=  59 R=+1.520 H=0.069 sk=0
+
+── Flat seed=9 ──
+  [Flat-P1] ep=   0 R=-0.880 H=1.345 sk=0
+  [Flat-P1] ep=   1 R=-0.880 H=1.332 sk=0
+  [Flat-P1] ep=   2 R=-0.880 H=1.360 sk=0
+  [Flat-P1] ep=   3 R=-0.880 H=1.376 sk=0
+  [Flat-P1] ep=   4 R=-0.880 H=1.383 sk=0
+  [Flat-P1] ep=  49 R=+1.520 H=0.449 sk=0
+  [Flat-P1] ep=  79 R=+1.520 H=0.087 sk=0
+  ── RULE SWAP: B→A (ε=0.1) ──
+  [Flat-P2] ep=   0 R=-0.880 H=0.560 sk=0
+  [Flat-P2] ep=   1 R=-0.880 H=0.534 sk=0
+  [Flat-P2] ep=   2 R=-0.880 H=0.654 sk=0
+  [Flat-P2] ep=   3 R=-0.880 H=0.678 sk=0
+  [Flat-P2] ep=   4 R=-0.880 H=0.683 sk=0
+  [Flat-P2] ep=  49 R=-0.360 H=0.950 sk=0
+  [Flat-P2] ep=  99 R=+0.860 H=1.234 sk=0
+  [Flat-P2] ep= 119 R=+1.360 H=0.386 sk=0
+  ── RULE RESTORE: A→B ──
+  [Flat-P3] ep=   0 R=-0.880 H=0.279 sk=0
+  [Flat-P3] ep=   1 R=+1.520 H=0.449 sk=0
+  [Flat-P3] ep=   2 R=+1.440 H=0.446 sk=0
+  [Flat-P3] ep=   3 R=+1.440 H=0.492 sk=0
+  [Flat-P3] ep=   4 R=-0.880 H=0.312 sk=0
+  [Flat-P3] ep=  49 R=+1.520 H=0.068 sk=0
+  [Flat-P3] ep=  59 R=+1.520 H=0.048 sk=0
+
+==============================================================================
+  HYSTERESIS STATISTICS (N=10 seeds)
+==============================================================================
+  Metric                                              PAO               Flat
+  ────────────────────────────────────────────────────────────────────────
+  Phase 2 (late 20)                          -0.337±0.207       -0.486±0.251
+  Phase 3 (early 20)                          0.238±0.376        1.059±0.268
+  Phase 3 (late 20)                            0.328±0.395        1.274±0.240
+  ────────────────────────────────────────────────────────────────────────
+  Wilcoxon (P2 inertia, PAO<Flat): W=24.0 p=0.8086
+  Wilcoxon (P3 reuse, PAO>Flat):   W=15.0 p=0.8125
+  Hedges' g (P2): 0.20  |  Hedges' g (P3): -0.76
+  ────────────────────────────────────────────────────────────────────────
+  Phase 2: PAO=-0.337±0.207 (locked); Flat=-0.486±0.251 (fails to consolidate B→A)
+  Phase 3: PAO=0.238±0.376 (instant); Flat=1.059±0.268 (unstable partial, variance large)
+
+  Plot: /home/hao/workspace/pao/exp_two_gate_lock/results/1d_rule_swap_hysteresis.png
+  Plot: /home/hao/workspace/pao/exp_two_gate_lock/results/1d_rule_swap_hysteresis.pdf
+
+══════════════════════════════════════════════════
+  ABLATION: PAO-no-dormancy (lr_factor=1.0)
+
+── NoDorm seed=0 ──
+  [NoDorm-P1] ep=   0 R=-0.880 H=1.384 sk=0
+  [NoDorm-P1] ep=   1 R=-0.880 H=1.384 sk=0
+  [NoDorm-P1] ep=   2 R=-0.880 H=1.380 sk=0
+  [NoDorm-P1] ep=   3 R=-0.880 H=1.360 sk=0
+  [NoDorm-P1] ep=   4 R=-0.880 H=1.324 sk=0
+  [NoDorm-P1] ep=  49 R=-0.880 H=0.440 sk=0
+  ▶ Skill crystallised at ep 63. Run _validate_skill() with eval_env to confirm.
+    Success trajectories in P1: 8
+  [NoDorm-P1] ep=  79 R=+1.480 H=0.260 sk=0 sk@[63]
+  ── RULE SWAP: B→A (ε=0.1) ──
+  [NoDorm-P2] ep=   0 R=-0.880 H=0.650 sk=0 sk@[63]
+  [NoDorm-P2] ep=   1 R=-0.880 H=0.618 sk=0 sk@[63]
+  [NoDorm-P2] ep=   2 R=-0.880 H=0.600 sk=0 sk@[63]
+  [NoDorm-P2] ep=   3 R=-0.880 H=0.611 sk=0 sk@[63]
+  [NoDorm-P2] ep=   4 R=-0.880 H=0.583 sk=0 sk@[63]
+  [NoDorm-P2] ep=  49 R=-0.880 H=0.394 sk=0 sk@[63]
+  [NoDorm-P2] ep=  99 R=+1.380 H=0.337 sk=0 sk@[63]
+  [NoDorm-P2] ep= 119 R=+1.280 H=0.311 sk=0 sk@[63]
+  ── RULE RESTORE: A→B ──
+  [NoDorm-P3] ep=   0 R=-0.880 H=0.097 sk=0 sk@[63]
+  [NoDorm-P3] ep=   1 R=-0.880 H=0.092 sk=0 sk@[63]
+  [NoDorm-P3] ep=   2 R=-0.880 H=0.087 sk=0 sk@[63]
+  [NoDorm-P3] ep=   3 R=-0.880 H=0.088 sk=0 sk@[63]
+  [NoDorm-P3] ep=   4 R=-0.880 H=0.083 sk=0 sk@[63]
+  [NoDorm-P3] ep=  49 R=-0.880 H=0.268 sk=0 sk@[63]
+  [NoDorm-P3] ep=  59 R=-0.880 H=0.104 sk=0 sk@[63]
+
+── NoDorm seed=1 ──
+  [NoDorm-P1] ep=   0 R=+0.880 H=1.380 sk=0
+  [NoDorm-P1] ep=   1 R=+1.280 H=0.686 sk=0
+  [NoDorm-P1] ep=   2 R=+1.380 H=0.687 sk=0
+  [NoDorm-P1] ep=   3 R=-0.880 H=1.337 sk=0
+  [NoDorm-P1] ep=   4 R=-0.880 H=1.349 sk=0
+  ▶ Skill crystallised at ep 16. Run _validate_skill() with eval_env to confirm.
+    Success trajectories in P1: 12
+  [NoDorm-P1] ep=  49 R=+1.520 H=0.295 sk=0 sk@[16]
+  [NoDorm-P1] ep=  79 R=+1.520 H=0.091 sk=0 sk@[16]
+  ── RULE SWAP: B→A (ε=0.1) ──
+  [NoDorm-P2] ep=   0 R=-0.880 H=0.137 sk=0 sk@[16]
+  [NoDorm-P2] ep=   1 R=-0.880 H=0.143 sk=0 sk@[16]
+  [NoDorm-P2] ep=   2 R=-0.880 H=0.161 sk=0 sk@[16]
+  [NoDorm-P2] ep=   3 R=-0.880 H=0.171 sk=0 sk@[16]
+  [NoDorm-P2] ep=   4 R=-0.880 H=0.161 sk=0 sk@[16]
+  [NoDorm-P2] ep=  49 R=-0.880 H=0.102 sk=0 sk@[16]
+  [NoDorm-P2] ep=  99 R=-0.880 H=0.024 sk=0 sk@[16]
+  [NoDorm-P2] ep= 119 R=-0.880 H=0.016 sk=0 sk@[16]
+  ── RULE RESTORE: A→B ──
+  [NoDorm-P3] ep=   0 R=+1.520 H=0.018 sk=0 sk@[16]
+  [NoDorm-P3] ep=   1 R=+1.520 H=0.018 sk=0 sk@[16]
+  [NoDorm-P3] ep=   2 R=+1.520 H=0.018 sk=0 sk@[16]
+  [NoDorm-P3] ep=   3 R=+1.520 H=0.019 sk=0 sk@[16]
+  [NoDorm-P3] ep=   4 R=+1.520 H=0.019 sk=0 sk@[16]
+  [NoDorm-P3] ep=  49 R=+1.520 H=0.027 sk=0 sk@[16]
+  [NoDorm-P3] ep=  59 R=+1.520 H=0.028 sk=0 sk@[16]
+
+── NoDorm seed=2 ──
+  [NoDorm-P1] ep=   0 R=-0.880 H=1.385 sk=0
+  [NoDorm-P1] ep=   1 R=+1.360 H=0.689 sk=0
+  [NoDorm-P1] ep=   2 R=-0.880 H=1.363 sk=0
+  [NoDorm-P1] ep=   3 R=+1.280 H=0.677 sk=0
+  [NoDorm-P1] ep=   4 R=+1.260 H=0.686 sk=0
+  ▶ Skill crystallised at ep 13. Run _validate_skill() with eval_env to confirm.
+    Success trajectories in P1: 9
+  [NoDorm-P1] ep=  49 R=+1.440 H=0.269 sk=0 sk@[13]
+  [NoDorm-P1] ep=  79 R=+1.520 H=0.073 sk=0 sk@[13]
+  ── RULE SWAP: B→A (ε=0.1) ──
+  [NoDorm-P2] ep=   0 R=-0.880 H=0.164 sk=0 sk@[13]
+  [NoDorm-P2] ep=   1 R=-0.880 H=0.189 sk=0 sk@[13]
+  [NoDorm-P2] ep=   2 R=-0.880 H=0.218 sk=0 sk@[13]
+  [NoDorm-P2] ep=   3 R=-0.880 H=0.267 sk=0 sk@[13]
+  [NoDorm-P2] ep=   4 R=-0.880 H=0.283 sk=0 sk@[13]
+  [NoDorm-P2] ep=  49 R=-0.880 H=0.460 sk=0 sk@[13]
+  [NoDorm-P2] ep=  99 R=-0.880 H=0.712 sk=0 sk@[13]
+  [NoDorm-P2] ep= 119 R=-0.880 H=1.139 sk=0 sk@[13]
+  ── RULE RESTORE: A→B ──
+  [NoDorm-P3] ep=   0 R=+1.480 H=0.394 sk=0 sk@[13]
+  [NoDorm-P3] ep=   1 R=+1.520 H=0.408 sk=0 sk@[13]
+  [NoDorm-P3] ep=   2 R=+1.520 H=0.413 sk=0 sk@[13]
+  [NoDorm-P3] ep=   3 R=+1.460 H=0.423 sk=0 sk@[13]
+  [NoDorm-P3] ep=   4 R=+1.480 H=0.435 sk=0 sk@[13]
+  [NoDorm-P3] ep=  49 R=+1.520 H=0.173 sk=0 sk@[13]
+  [NoDorm-P3] ep=  59 R=+1.520 H=0.135 sk=0 sk@[13]
+
+── NoDorm seed=3 ──
+  [NoDorm-P1] ep=   0 R=-0.880 H=1.376 sk=0
+  [NoDorm-P1] ep=   1 R=+1.260 H=0.690 sk=0
+  [NoDorm-P1] ep=   2 R=-0.880 H=1.376 sk=0
+  [NoDorm-P1] ep=   3 R=-0.880 H=1.363 sk=0
+  [NoDorm-P1] ep=   4 R=+1.360 H=0.692 sk=0
+  ▶ Skill crystallised at ep 33. Run _validate_skill() with eval_env to confirm.
+    Success trajectories in P1: 14
+  [NoDorm-P1] ep=  49 R=+1.520 H=0.423 sk=0 sk@[33]
+  [NoDorm-P1] ep=  79 R=+1.520 H=0.248 sk=0 sk@[33]
+  ── RULE SWAP: B→A (ε=0.1) ──
+  [NoDorm-P2] ep=   0 R=-0.880 H=0.437 sk=0 sk@[33]
+  [NoDorm-P2] ep=   1 R=-0.880 H=0.468 sk=0 sk@[33]
+  [NoDorm-P2] ep=   2 R=-0.880 H=0.504 sk=0 sk@[33]
+  [NoDorm-P2] ep=   3 R=-0.880 H=0.537 sk=0 sk@[33]
+  [NoDorm-P2] ep=   4 R=-0.880 H=0.613 sk=0 sk@[33]
+  [NoDorm-P2] ep=  49 R=-0.880 H=1.307 sk=0 sk@[33]
+  [NoDorm-P2] ep=  99 R=+1.240 H=0.591 sk=0 sk@[33]
+  [NoDorm-P2] ep= 119 R=+1.340 H=0.486 sk=0 sk@[33]
+  ── RULE RESTORE: A→B ──
+  [NoDorm-P3] ep=   0 R=-0.880 H=0.439 sk=0 sk@[33]
+  [NoDorm-P3] ep=   1 R=-0.880 H=0.448 sk=0 sk@[33]
+  [NoDorm-P3] ep=   2 R=-0.880 H=0.433 sk=0 sk@[33]
+  [NoDorm-P3] ep=   3 R=+1.500 H=0.471 sk=0 sk@[33]
+  [NoDorm-P3] ep=   4 R=-0.880 H=0.455 sk=0 sk@[33]
+  [NoDorm-P3] ep=  49 R=-0.880 H=0.316 sk=0 sk@[33]
+  [NoDorm-P3] ep=  59 R=+1.480 H=0.437 sk=0 sk@[33]
+
+── NoDorm seed=4 ──
+  [NoDorm-P1] ep=   0 R=-0.880 H=1.385 sk=0
+  [NoDorm-P1] ep=   1 R=-0.880 H=1.385 sk=0
+  [NoDorm-P1] ep=   2 R=+0.860 H=1.361 sk=0
+  [NoDorm-P1] ep=   3 R=+1.400 H=0.679 sk=0
+  [NoDorm-P1] ep=   4 R=+1.120 H=0.665 sk=0
+  ▶ Skill crystallised at ep 21. Run _validate_skill() with eval_env to confirm.
+    Success trajectories in P1: 14
+  [NoDorm-P1] ep=  49 R=+1.320 H=0.589 sk=0 sk@[21]
+  [NoDorm-P1] ep=  79 R=+1.480 H=0.165 sk=0 sk@[21]
+  ── RULE SWAP: B→A (ε=0.1) ──
+  [NoDorm-P2] ep=   0 R=-0.880 H=0.274 sk=0 sk@[21]
+  [NoDorm-P2] ep=   1 R=-0.880 H=0.274 sk=0 sk@[21]
+  [NoDorm-P2] ep=   2 R=-0.880 H=0.281 sk=0 sk@[21]
+  [NoDorm-P2] ep=   3 R=-0.880 H=0.313 sk=0 sk@[21]
+  [NoDorm-P2] ep=   4 R=-0.880 H=0.328 sk=0 sk@[21]
+  [NoDorm-P2] ep=  49 R=-0.880 H=0.205 sk=0 sk@[21]
+  [NoDorm-P2] ep=  99 R=-0.880 H=0.068 sk=0 sk@[21]
+  [NoDorm-P2] ep= 119 R=-0.880 H=0.047 sk=0 sk@[21]
+  ── RULE RESTORE: A→B ──
+  [NoDorm-P3] ep=   0 R=+1.520 H=0.072 sk=0 sk@[21]
+  [NoDorm-P3] ep=   1 R=+1.520 H=0.072 sk=0 sk@[21]
+  [NoDorm-P3] ep=   2 R=+1.520 H=0.073 sk=0 sk@[21]
+  [NoDorm-P3] ep=   3 R=+1.520 H=0.074 sk=0 sk@[21]
+  [NoDorm-P3] ep=   4 R=+1.520 H=0.076 sk=0 sk@[21]
+  [NoDorm-P3] ep=  49 R=+1.520 H=0.088 sk=0 sk@[21]
+  [NoDorm-P3] ep=  59 R=+1.520 H=0.068 sk=0 sk@[21]
+
+── NoDorm seed=5 ──
+  [NoDorm-P1] ep=   0 R=-0.880 H=1.351 sk=0
+  [NoDorm-P1] ep=   1 R=-0.880 H=1.267 sk=0
+  [NoDorm-P1] ep=   2 R=-0.880 H=1.219 sk=0
+  [NoDorm-P1] ep=   3 R=+1.380 H=0.687 sk=0
+  [NoDorm-P1] ep=   4 R=-0.880 H=1.172 sk=0
+  [NoDorm-P1] ep=  49 R=+1.520 H=0.605 sk=0
+  ▶ Skill crystallised at ep 55. Run _validate_skill() with eval_env to confirm.
+    Success trajectories in P1: 15
+  [NoDorm-P1] ep=  79 R=+1.480 H=0.407 sk=0 sk@[55]
+  ── RULE SWAP: B→A (ε=0.1) ──
+  [NoDorm-P2] ep=   0 R=-0.880 H=1.083 sk=0 sk@[55]
+  [NoDorm-P2] ep=   1 R=-0.880 H=1.090 sk=0 sk@[55]
+  [NoDorm-P2] ep=   2 R=-0.880 H=1.070 sk=0 sk@[55]
+  [NoDorm-P2] ep=   3 R=-0.880 H=1.070 sk=0 sk@[55]
+  [NoDorm-P2] ep=   4 R=-0.880 H=1.060 sk=0 sk@[55]
+  [NoDorm-P2] ep=  49 R=-0.880 H=0.807 sk=0 sk@[55]
+  [NoDorm-P2] ep=  99 R=+1.140 H=0.509 sk=0 sk@[55]
+  [NoDorm-P2] ep= 119 R=+1.400 H=0.261 sk=0 sk@[55]
+  ── RULE RESTORE: A→B ──
+  [NoDorm-P3] ep=   0 R=-0.880 H=0.123 sk=0 sk@[55]
+  [NoDorm-P3] ep=   1 R=-0.880 H=0.112 sk=0 sk@[55]
+  [NoDorm-P3] ep=   2 R=-0.880 H=0.103 sk=0 sk@[55]
+  [NoDorm-P3] ep=   3 R=-0.880 H=0.090 sk=0 sk@[55]
+  [NoDorm-P3] ep=   4 R=-0.880 H=0.085 sk=0 sk@[55]
+  [NoDorm-P3] ep=  49 R=-0.880 H=0.076 sk=0 sk@[55]
+  [NoDorm-P3] ep=  59 R=-0.880 H=0.092 sk=0 sk@[55]
+
+── NoDorm seed=6 ──
+  [NoDorm-P1] ep=   0 R=-0.880 H=1.357 sk=0
+  [NoDorm-P1] ep=   1 R=-0.880 H=1.305 sk=0
+  [NoDorm-P1] ep=   2 R=-0.880 H=1.361 sk=0
+  [NoDorm-P1] ep=   3 R=-0.880 H=1.360 sk=0
+  [NoDorm-P1] ep=   4 R=+1.460 H=0.692 sk=0
+  ▶ Skill crystallised at ep 22. Run _validate_skill() with eval_env to confirm.
+    Success trajectories in P1: 12
+  [NoDorm-P1] ep=  49 R=+1.520 H=0.531 sk=0 sk@[22]
+  [NoDorm-P1] ep=  79 R=+1.520 H=0.220 sk=0 sk@[22]
+  ── RULE SWAP: B→A (ε=0.1) ──
+  [NoDorm-P2] ep=   0 R=-0.880 H=0.285 sk=0 sk@[22]
+  [NoDorm-P2] ep=   1 R=-0.880 H=0.318 sk=0 sk@[22]
+  [NoDorm-P2] ep=   2 R=-0.880 H=0.360 sk=0 sk@[22]
+  [NoDorm-P2] ep=   3 R=-0.880 H=0.396 sk=0 sk@[22]
+  [NoDorm-P2] ep=   4 R=-0.880 H=0.420 sk=0 sk@[22]
+  [NoDorm-P2] ep=  49 R=-0.880 H=0.775 sk=0 sk@[22]
+  [NoDorm-P2] ep=  99 R=-0.880 H=0.791 sk=0 sk@[22]
+  [NoDorm-P2] ep= 119 R=-0.880 H=0.640 sk=0 sk@[22]
+  ── RULE RESTORE: A→B ──
+  [NoDorm-P3] ep=   0 R=+1.520 H=0.291 sk=0 sk@[22]
+  [NoDorm-P3] ep=   1 R=+1.360 H=0.371 sk=0 sk@[22]
+  [NoDorm-P3] ep=   2 R=+1.480 H=0.259 sk=0 sk@[22]
+  [NoDorm-P3] ep=   3 R=+1.480 H=0.240 sk=0 sk@[22]
+  [NoDorm-P3] ep=   4 R=+1.480 H=0.305 sk=0 sk@[22]
+  [NoDorm-P3] ep=  49 R=+1.480 H=0.143 sk=0 sk@[22]
+  [NoDorm-P3] ep=  59 R=+1.520 H=0.124 sk=0 sk@[22]
+
+── NoDorm seed=7 ──
+  [NoDorm-P1] ep=   0 R=+0.800 H=1.364 sk=0
+  [NoDorm-P1] ep=   1 R=+1.140 H=0.684 sk=0
+  [NoDorm-P1] ep=   2 R=+1.460 H=0.665 sk=0
+  [NoDorm-P1] ep=   3 R=+1.480 H=0.665 sk=0
+  [NoDorm-P1] ep=   4 R=+1.380 H=0.644 sk=0
+  ▶ Skill crystallised at ep 13. Run _validate_skill() with eval_env to confirm.
+    Success trajectories in P1: 10
+  [NoDorm-P1] ep=  49 R=+1.520 H=0.156 sk=0 sk@[13]
+  [NoDorm-P1] ep=  79 R=+1.480 H=0.090 sk=0 sk@[13]
+  ── RULE SWAP: B→A (ε=0.1) ──
+  [NoDorm-P2] ep=   0 R=-0.880 H=0.297 sk=0 sk@[13]
+  [NoDorm-P2] ep=   1 R=-0.880 H=0.321 sk=0 sk@[13]
+  [NoDorm-P2] ep=   2 R=-0.880 H=0.277 sk=0 sk@[13]
+  [NoDorm-P2] ep=   3 R=-0.880 H=0.273 sk=0 sk@[13]
+  [NoDorm-P2] ep=   4 R=-0.880 H=0.260 sk=0 sk@[13]
+  [NoDorm-P2] ep=  49 R=-0.880 H=0.062 sk=0 sk@[13]
+  [NoDorm-P2] ep=  99 R=-0.880 H=0.021 sk=0 sk@[13]
+  [NoDorm-P2] ep= 119 R=-0.880 H=0.025 sk=0 sk@[13]
+  ── RULE RESTORE: A→B ──
+  [NoDorm-P3] ep=   0 R=+1.520 H=0.029 sk=0 sk@[13]
+  [NoDorm-P3] ep=   1 R=+1.520 H=0.029 sk=0 sk@[13]
+  [NoDorm-P3] ep=   2 R=+1.520 H=0.029 sk=0 sk@[13]
+  [NoDorm-P3] ep=   3 R=+1.520 H=0.028 sk=0 sk@[13]
+  [NoDorm-P3] ep=   4 R=+1.520 H=0.028 sk=0 sk@[13]
+  [NoDorm-P3] ep=  49 R=+1.520 H=0.013 sk=0 sk@[13]
+  [NoDorm-P3] ep=  59 R=+1.520 H=0.014 sk=0 sk@[13]
+
+── NoDorm seed=8 ──
+  [NoDorm-P1] ep=   0 R=+1.080 H=0.693 sk=0
+  [NoDorm-P1] ep=   1 R=-0.880 H=1.366 sk=0
+  [NoDorm-P1] ep=   2 R=+0.880 H=1.379 sk=0
+  [NoDorm-P1] ep=   3 R=+1.060 H=0.690 sk=0
+  [NoDorm-P1] ep=   4 R=-0.880 H=1.280 sk=0
+  ▶ Skill crystallised at ep 18. Run _validate_skill() with eval_env to confirm.
+    Success trajectories in P1: 14
+  [NoDorm-P1] ep=  49 R=+1.520 H=0.268 sk=0 sk@[18]
+  [NoDorm-P1] ep=  79 R=+1.520 H=0.113 sk=0 sk@[18]
+  ── RULE SWAP: B→A (ε=0.1) ──
+  [NoDorm-P2] ep=   0 R=-0.880 H=0.123 sk=0 sk@[18]
+  [NoDorm-P2] ep=   1 R=-0.880 H=0.142 sk=0 sk@[18]
+  [NoDorm-P2] ep=   2 R=-0.880 H=0.172 sk=0 sk@[18]
+  [NoDorm-P2] ep=   3 R=-0.880 H=0.185 sk=0 sk@[18]
+  [NoDorm-P2] ep=   4 R=-0.880 H=0.185 sk=0 sk@[18]
+  [NoDorm-P2] ep=  49 R=-0.880 H=0.347 sk=0 sk@[18]
+  [NoDorm-P2] ep=  99 R=-0.880 H=0.076 sk=0 sk@[18]
+  [NoDorm-P2] ep= 119 R=-0.880 H=0.068 sk=0 sk@[18]
+  ── RULE RESTORE: A→B ──
+  [NoDorm-P3] ep=   0 R=+1.520 H=0.089 sk=0 sk@[18]
+  [NoDorm-P3] ep=   1 R=+1.520 H=0.090 sk=0 sk@[18]
+  [NoDorm-P3] ep=   2 R=+1.520 H=0.092 sk=0 sk@[18]
+  [NoDorm-P3] ep=   3 R=+1.480 H=0.078 sk=0 sk@[18]
+  [NoDorm-P3] ep=   4 R=+1.520 H=0.098 sk=0 sk@[18]
+  [NoDorm-P3] ep=  49 R=+1.520 H=0.065 sk=0 sk@[18]
+  [NoDorm-P3] ep=  59 R=+1.480 H=0.070 sk=0 sk@[18]
+
+── NoDorm seed=9 ──
+  [NoDorm-P1] ep=   0 R=+1.400 H=0.662 sk=0
+  [NoDorm-P1] ep=   1 R=+1.440 H=0.659 sk=0
+  [NoDorm-P1] ep=   2 R=+1.460 H=0.661 sk=0
+  [NoDorm-P1] ep=   3 R=-0.880 H=1.278 sk=0
+  [NoDorm-P1] ep=   4 R=+1.240 H=0.664 sk=0
+  ▶ Skill crystallised at ep 10. Run _validate_skill() with eval_env to confirm.
+    Success trajectories in P1: 9
+  [NoDorm-P1] ep=  49 R=+1.520 H=0.159 sk=0 sk@[10]
+  [NoDorm-P1] ep=  79 R=+1.520 H=0.089 sk=0 sk@[10]
+  ── RULE SWAP: B→A (ε=0.1) ──
+  [NoDorm-P2] ep=   0 R=-0.880 H=0.191 sk=0 sk@[10]
+  [NoDorm-P2] ep=   1 R=-0.880 H=0.212 sk=0 sk@[10]
+  [NoDorm-P2] ep=   2 R=-0.880 H=0.260 sk=0 sk@[10]
+  [NoDorm-P2] ep=   3 R=-0.880 H=0.267 sk=0 sk@[10]
+  [NoDorm-P2] ep=   4 R=-0.880 H=0.293 sk=0 sk@[10]
+  [NoDorm-P2] ep=  49 R=-0.880 H=0.263 sk=0 sk@[10]
+  [NoDorm-P2] ep=  99 R=-0.880 H=0.104 sk=0 sk@[10]
+  [NoDorm-P2] ep= 119 R=-0.880 H=0.059 sk=0 sk@[10]
+  ── RULE RESTORE: A→B ──
+  [NoDorm-P3] ep=   0 R=+1.520 H=0.060 sk=0 sk@[10]
+  [NoDorm-P3] ep=   1 R=+1.520 H=0.060 sk=0 sk@[10]
+  [NoDorm-P3] ep=   2 R=+1.520 H=0.060 sk=0 sk@[10]
+  [NoDorm-P3] ep=   3 R=+1.520 H=0.062 sk=0 sk@[10]
+  [NoDorm-P3] ep=   4 R=+1.520 H=0.064 sk=0 sk@[10]
+  [NoDorm-P3] ep=  49 R=+1.520 H=0.057 sk=0 sk@[10]
+  [NoDorm-P3] ep=  59 R=+1.520 H=0.025 sk=0 sk@[10]
+
+==============================================================================
+  HYSTERESIS STATISTICS NoDorm vs Flat (N=10 seeds)
+==============================================================================
+  Metric                                              PAO               Flat
+  ────────────────────────────────────────────────────────────────────────
+  Phase 2 (late 20)                          -0.315±0.282       -0.486±0.251
+  Phase 3 (early 20)                          0.776±0.354        1.059±0.268
+  Phase 3 (late 20)                            0.819±0.347        1.274±0.240
+  ────────────────────────────────────────────────────────────────────────
+  Wilcoxon (P2 inertia, PAO<Flat): W=8.0 p=0.5938
+  Wilcoxon (P3 reuse, PAO>Flat):   W=24.0 p=0.6523
+  Hedges' g (P2): 0.19  |  Hedges' g (P3): -0.27
+  ────────────────────────────────────────────────────────────────────────
+  Phase 2: PAO=-0.315±0.282 (locked); Flat=-0.486±0.251 (fails to consolidate B→A)
+  Phase 3: PAO=0.776±0.354 (instant); Flat=1.059±0.268 (unstable partial, variance large)
+
+
+══════════════════════════════════════════════════
+  ABLATION: PAO-no-skill (bias_strength=0)
+
+── NoSkill seed=0 ──
+  [NoSkill-P1] ep=   0 R=-0.880 H=1.382 sk=0
+  [NoSkill-P1] ep=   1 R=-0.880 H=1.385 sk=0
+  [NoSkill-P1] ep=   2 R=-0.880 H=1.381 sk=0
+  [NoSkill-P1] ep=   3 R=+1.320 H=0.692 sk=0
+  [NoSkill-P1] ep=   4 R=-0.880 H=1.356 sk=0
+  ▶ Skill crystallised at ep 25. Run _validate_skill() with eval_env to confirm.
+    Success trajectories in P1: 11
+  [NoSkill-P1] ep=  49 R=-0.880 H=0.812 sk=0 sk@[25]
+  [NoSkill-P1] ep=  79 R=+1.440 H=0.592 sk=0 sk@[25]
+  ── RULE SWAP: B→A (ε=0.1) ──
+  [NoSkill-P2] ep=   0 R=-0.880 H=0.852 sk=0 sk@[25]
+  [NoSkill-P2] ep=   1 R=-0.880 H=0.746 sk=0 sk@[25]
+  [NoSkill-P2] ep=   2 R=-0.880 H=1.010 sk=0 sk@[25]
+  [NoSkill-P2] ep=   3 R=-0.880 H=1.258 sk=0 sk@[25]
+  [NoSkill-P2] ep=   4 R=-0.880 H=1.342 sk=0 sk@[25]
+  [NoSkill-P2] ep=  49 R=+1.240 H=0.255 sk=0 sk@[25]
+  [NoSkill-P2] ep=  99 R=-0.880 H=0.050 sk=0 sk@[25]
+  [NoSkill-P2] ep= 119 R=-0.880 H=0.024 sk=0 sk@[25]
+  ── RULE RESTORE: A→B ──
+  [NoSkill-P3] ep=   0 R=+1.520 H=0.043 sk=0 sk@[25]
+  [NoSkill-P3] ep=   1 R=+1.520 H=0.042 sk=0 sk@[25]
+  [NoSkill-P3] ep=   2 R=+1.520 H=0.042 sk=0 sk@[25]
+  [NoSkill-P3] ep=   3 R=+1.520 H=0.042 sk=0 sk@[25]
+  [NoSkill-P3] ep=   4 R=+1.480 H=0.053 sk=0 sk@[25]
+  [NoSkill-P3] ep=  49 R=+1.520 H=0.046 sk=0 sk@[25]
+  [NoSkill-P3] ep=  59 R=+1.520 H=0.046 sk=0 sk@[25]
+
+── NoSkill seed=1 ──
+  [NoSkill-P1] ep=   0 R=+1.280 H=0.690 sk=0
+  [NoSkill-P1] ep=   1 R=-0.880 H=1.377 sk=0
+  [NoSkill-P1] ep=   2 R=-0.880 H=1.382 sk=0
+  [NoSkill-P1] ep=   3 R=+1.100 H=0.692 sk=0
+  [NoSkill-P1] ep=   4 R=-0.880 H=1.384 sk=0
+  ▶ Skill crystallised at ep 35. Run _validate_skill() with eval_env to confirm.
+    Success trajectories in P1: 18
+  [NoSkill-P1] ep=  49 R=+1.520 H=0.556 sk=0 sk@[35]
+  [NoSkill-P1] ep=  79 R=+1.200 H=0.446 sk=0 sk@[35]
+  ── RULE SWAP: B→A (ε=0.1) ──
+  [NoSkill-P2] ep=   0 R=-0.880 H=0.940 sk=0 sk@[35]
+  [NoSkill-P2] ep=   1 R=-0.880 H=0.940 sk=0 sk@[35]
+  [NoSkill-P2] ep=   2 R=-0.880 H=0.940 sk=0 sk@[35]
+  [NoSkill-P2] ep=   3 R=-0.880 H=0.963 sk=0 sk@[35]
+  [NoSkill-P2] ep=   4 R=-0.880 H=0.979 sk=0 sk@[35]
+  [NoSkill-P2] ep=  49 R=-0.880 H=0.943 sk=0 sk@[35]
+  [NoSkill-P2] ep=  99 R=-0.880 H=1.058 sk=0 sk@[35]
+  [NoSkill-P2] ep= 119 R=-0.880 H=0.821 sk=0 sk@[35]
+  ── RULE RESTORE: A→B ──
+  [NoSkill-P3] ep=   0 R=+1.480 H=0.260 sk=0 sk@[35]
+  [NoSkill-P3] ep=   1 R=+1.520 H=0.239 sk=0 sk@[35]
+  [NoSkill-P3] ep=   2 R=+1.480 H=0.268 sk=0 sk@[35]
+  [NoSkill-P3] ep=   3 R=+1.520 H=0.237 sk=0 sk@[35]
+  [NoSkill-P3] ep=   4 R=+1.520 H=0.241 sk=0 sk@[35]
+  [NoSkill-P3] ep=  49 R=+1.480 H=0.171 sk=0 sk@[35]
+  [NoSkill-P3] ep=  59 R=+1.500 H=0.132 sk=0 sk@[35]
+
+── NoSkill seed=2 ──
+  [NoSkill-P1] ep=   0 R=+1.480 H=0.693 sk=0
+  [NoSkill-P1] ep=   1 R=-0.880 H=1.380 sk=0
+  [NoSkill-P1] ep=   2 R=-0.880 H=1.356 sk=0
+  [NoSkill-P1] ep=   3 R=+1.460 H=0.687 sk=0
+  [NoSkill-P1] ep=   4 R=+1.240 H=0.686 sk=0
+  ▶ Skill crystallised at ep 11. Run _validate_skill() with eval_env to confirm.
+    Success trajectories in P1: 7
+  [NoSkill-P1] ep=  49 R=+1.520 H=0.295 sk=0 sk@[11]
+  [NoSkill-P1] ep=  79 R=+1.520 H=0.090 sk=0 sk@[11]
+  ── RULE SWAP: B→A (ε=0.1) ──
+  [NoSkill-P2] ep=   0 R=-0.880 H=0.070 sk=0 sk@[11]
+  [NoSkill-P2] ep=   1 R=-0.880 H=0.073 sk=0 sk@[11]
+  [NoSkill-P2] ep=   2 R=-0.880 H=0.091 sk=0 sk@[11]
+  [NoSkill-P2] ep=   3 R=-0.880 H=0.085 sk=0 sk@[11]
+  [NoSkill-P2] ep=   4 R=-0.880 H=0.104 sk=0 sk@[11]
+  [NoSkill-P2] ep=  49 R=-0.880 H=0.113 sk=0 sk@[11]
+  [NoSkill-P2] ep=  99 R=-0.880 H=0.055 sk=0 sk@[11]
+  [NoSkill-P2] ep= 119 R=-0.880 H=0.057 sk=0 sk@[11]
+  ── RULE RESTORE: A→B ──
+  [NoSkill-P3] ep=   0 R=+1.480 H=0.099 sk=0 sk@[11]
+  [NoSkill-P3] ep=   1 R=+1.520 H=0.091 sk=0 sk@[11]
+  [NoSkill-P3] ep=   2 R=+1.520 H=0.093 sk=0 sk@[11]
+  [NoSkill-P3] ep=   3 R=+1.480 H=0.107 sk=0 sk@[11]
+  [NoSkill-P3] ep=   4 R=+1.520 H=0.095 sk=0 sk@[11]
+  [NoSkill-P3] ep=  49 R=+1.520 H=0.074 sk=0 sk@[11]
+  [NoSkill-P3] ep=  59 R=+1.480 H=0.084 sk=0 sk@[11]
+
+── NoSkill seed=3 ──
+  [NoSkill-P1] ep=   0 R=+1.460 H=0.693 sk=0
+  [NoSkill-P1] ep=   1 R=-0.880 H=1.377 sk=0
+  [NoSkill-P1] ep=   2 R=+1.200 H=0.693 sk=0
+  [NoSkill-P1] ep=   3 R=+1.280 H=0.693 sk=0
+  [NoSkill-P1] ep=   4 R=-0.880 H=1.362 sk=0
+  ▶ Skill crystallised at ep 20. Run _validate_skill() with eval_env to confirm.
+    Success trajectories in P1: 12
+  [NoSkill-P1] ep=  49 R=+1.440 H=0.639 sk=0 sk@[20]
+  [NoSkill-P1] ep=  79 R=+1.480 H=0.330 sk=0 sk@[20]
+  ── RULE SWAP: B→A (ε=0.1) ──
+  [NoSkill-P2] ep=   0 R=-0.880 H=0.962 sk=0 sk@[20]
+  [NoSkill-P2] ep=   1 R=-0.880 H=0.772 sk=0 sk@[20]
+  [NoSkill-P2] ep=   2 R=-0.880 H=0.886 sk=0 sk@[20]
+  [NoSkill-P2] ep=   3 R=-0.880 H=0.970 sk=0 sk@[20]
+  [NoSkill-P2] ep=   4 R=-0.880 H=1.031 sk=0 sk@[20]
+  [NoSkill-P2] ep=  49 R=-0.880 H=0.644 sk=0 sk@[20]
+  [NoSkill-P2] ep=  99 R=-0.880 H=0.318 sk=0 sk@[20]
+  [NoSkill-P2] ep= 119 R=+1.340 H=0.441 sk=0 sk@[20]
+  ── RULE RESTORE: A→B ──
+  [NoSkill-P3] ep=   0 R=-0.880 H=0.212 sk=0 sk@[20]
+  [NoSkill-P3] ep=   1 R=-0.880 H=0.198 sk=0 sk@[20]
+  [NoSkill-P3] ep=   2 R=-0.880 H=0.198 sk=0 sk@[20]
+  [NoSkill-P3] ep=   3 R=-0.880 H=0.168 sk=0 sk@[20]
+  [NoSkill-P3] ep=   4 R=-0.880 H=0.156 sk=0 sk@[20]
+  [NoSkill-P3] ep=  49 R=+1.520 H=0.101 sk=0 sk@[20]
+  [NoSkill-P3] ep=  59 R=+1.520 H=0.064 sk=0 sk@[20]
+
+── NoSkill seed=4 ──
+  [NoSkill-P1] ep=   0 R=+1.320 H=0.692 sk=0
+  [NoSkill-P1] ep=   1 R=-0.360 H=1.385 sk=0
+  [NoSkill-P1] ep=   2 R=-0.880 H=1.349 sk=0
+  [NoSkill-P1] ep=   3 R=-0.880 H=1.276 sk=0
+  [NoSkill-P1] ep=   4 R=-0.880 H=1.238 sk=0
+  ▶ Skill crystallised at ep 10. Run _validate_skill() with eval_env to confirm.
+    Success trajectories in P1: 4
+  [NoSkill-P1] ep=  49 R=+1.400 H=0.329 sk=0 sk@[10]
+  [NoSkill-P1] ep=  79 R=+1.520 H=0.138 sk=0 sk@[10]
+  ── RULE SWAP: B→A (ε=0.1) ──
+  [NoSkill-P2] ep=   0 R=-0.880 H=0.171 sk=0 sk@[10]
+  [NoSkill-P2] ep=   1 R=-0.880 H=0.176 sk=0 sk@[10]
+  [NoSkill-P2] ep=   2 R=-0.880 H=0.189 sk=0 sk@[10]
+  [NoSkill-P2] ep=   3 R=-0.880 H=0.196 sk=0 sk@[10]
+  [NoSkill-P2] ep=   4 R=-0.880 H=0.209 sk=0 sk@[10]
+  [NoSkill-P2] ep=  49 R=-0.880 H=0.374 sk=0 sk@[10]
+  [NoSkill-P2] ep=  99 R=-0.880 H=0.607 sk=0 sk@[10]
+  [NoSkill-P2] ep= 119 R=-0.880 H=1.171 sk=0 sk@[10]
+  ── RULE RESTORE: A→B ──
+  [NoSkill-P3] ep=   0 R=+1.520 H=0.402 sk=0 sk@[10]
+  [NoSkill-P3] ep=   1 R=+1.440 H=0.459 sk=0 sk@[10]
+  [NoSkill-P3] ep=   2 R=+1.520 H=0.386 sk=0 sk@[10]
+  [NoSkill-P3] ep=   3 R=+1.480 H=0.412 sk=0 sk@[10]
+  [NoSkill-P3] ep=   4 R=+1.520 H=0.374 sk=0 sk@[10]
+  [NoSkill-P3] ep=  49 R=+1.440 H=0.257 sk=0 sk@[10]
+  [NoSkill-P3] ep=  59 R=+1.520 H=0.140 sk=0 sk@[10]
+
+── NoSkill seed=5 ──
+  [NoSkill-P1] ep=   0 R=-0.880 H=1.382 sk=0
+  [NoSkill-P1] ep=   1 R=+1.140 H=0.685 sk=0
+  [NoSkill-P1] ep=   2 R=-0.880 H=1.352 sk=0
+  [NoSkill-P1] ep=   3 R=-0.880 H=1.316 sk=0
+  [NoSkill-P1] ep=   4 R=-0.880 H=1.235 sk=0
+  ▶ Skill crystallised at ep 31. Run _validate_skill() with eval_env to confirm.
+    Success trajectories in P1: 7
+  [NoSkill-P1] ep=  49 R=+1.480 H=0.518 sk=0 sk@[31]
+  [NoSkill-P1] ep=  79 R=+1.480 H=0.163 sk=0 sk@[31]
+  ── RULE SWAP: B→A (ε=0.1) ──
+  [NoSkill-P2] ep=   0 R=-0.880 H=0.749 sk=0 sk@[31]
+  [NoSkill-P2] ep=   1 R=-0.880 H=0.717 sk=0 sk@[31]
+  [NoSkill-P2] ep=   2 R=-0.880 H=0.732 sk=0 sk@[31]
+  [NoSkill-P2] ep=   3 R=-0.880 H=0.745 sk=0 sk@[31]
+  [NoSkill-P2] ep=   4 R=-0.880 H=0.768 sk=0 sk@[31]
+  [NoSkill-P2] ep=  49 R=-0.880 H=0.706 sk=0 sk@[31]
+  [NoSkill-P2] ep=  99 R=+1.080 H=0.632 sk=0 sk@[31]
+  [NoSkill-P2] ep= 119 R=+1.260 H=0.539 sk=0 sk@[31]
+  ── RULE RESTORE: A→B ──
+  [NoSkill-P3] ep=   0 R=-0.880 H=0.425 sk=0 sk@[31]
+  [NoSkill-P3] ep=   1 R=-0.880 H=0.409 sk=0 sk@[31]
+  [NoSkill-P3] ep=   2 R=+1.240 H=0.482 sk=0 sk@[31]
+  [NoSkill-P3] ep=   3 R=-0.880 H=0.485 sk=0 sk@[31]
+  [NoSkill-P3] ep=   4 R=+1.500 H=0.435 sk=0 sk@[31]
+  [NoSkill-P3] ep=  49 R=+1.520 H=0.082 sk=0 sk@[31]
+  [NoSkill-P3] ep=  59 R=+1.520 H=0.060 sk=0 sk@[31]
+
+── NoSkill seed=6 ──
+  [NoSkill-P1] ep=   0 R=-0.880 H=1.375 sk=0
+  [NoSkill-P1] ep=   1 R=-0.880 H=1.367 sk=0
+  [NoSkill-P1] ep=   2 R=+1.180 H=0.674 sk=0
+  [NoSkill-P1] ep=   3 R=-0.880 H=1.353 sk=0
+  [NoSkill-P1] ep=   4 R=-0.880 H=1.325 sk=0
+  ▶ Skill crystallised at ep 10. Run _validate_skill() with eval_env to confirm.
+    Success trajectories in P1: 6
+  [NoSkill-P1] ep=  49 R=+1.480 H=0.371 sk=0 sk@[10]
+  [NoSkill-P1] ep=  79 R=+1.500 H=0.111 sk=0 sk@[10]
+  ── RULE SWAP: B→A (ε=0.1) ──
+  [NoSkill-P2] ep=   0 R=-0.880 H=0.321 sk=0 sk@[10]
+  [NoSkill-P2] ep=   1 R=-0.880 H=0.376 sk=0 sk@[10]
+  [NoSkill-P2] ep=   2 R=-0.880 H=0.421 sk=0 sk@[10]
+  [NoSkill-P2] ep=   3 R=-0.880 H=0.395 sk=0 sk@[10]
+  [NoSkill-P2] ep=   4 R=-0.880 H=0.351 sk=0 sk@[10]
+  [NoSkill-P2] ep=  49 R=-0.880 H=0.935 sk=0 sk@[10]
+  [NoSkill-P2] ep=  99 R=-0.880 H=0.795 sk=0 sk@[10]
+  [NoSkill-P2] ep= 119 R=-0.880 H=0.683 sk=0 sk@[10]
+  ── RULE RESTORE: A→B ──
+  [NoSkill-P3] ep=   0 R=+1.520 H=0.059 sk=0 sk@[10]
+  [NoSkill-P3] ep=   1 R=+1.520 H=0.059 sk=0 sk@[10]
+  [NoSkill-P3] ep=   2 R=+1.520 H=0.060 sk=0 sk@[10]
+  [NoSkill-P3] ep=   3 R=+1.520 H=0.062 sk=0 sk@[10]
+  [NoSkill-P3] ep=   4 R=+1.520 H=0.064 sk=0 sk@[10]
+  [NoSkill-P3] ep=  49 R=+1.520 H=0.054 sk=0 sk@[10]
+  [NoSkill-P3] ep=  59 R=+1.520 H=0.038 sk=0 sk@[10]
+
+── NoSkill seed=7 ──
+  [NoSkill-P1] ep=   0 R=-0.880 H=1.371 sk=0
+  [NoSkill-P1] ep=   1 R=-0.880 H=1.368 sk=0
+  [NoSkill-P1] ep=   2 R=+1.280 H=0.691 sk=0
+  [NoSkill-P1] ep=   3 R=-0.880 H=1.368 sk=0
+  [NoSkill-P1] ep=   4 R=+1.400 H=0.690 sk=0
+  ▶ Skill crystallised at ep 19. Run _validate_skill() with eval_env to confirm.
+    Success trajectories in P1: 9
+  [NoSkill-P1] ep=  49 R=+1.240 H=0.581 sk=0 sk@[19]
+  [NoSkill-P1] ep=  79 R=+1.520 H=0.155 sk=0 sk@[19]
+  ── RULE SWAP: B→A (ε=0.1) ──
+  [NoSkill-P2] ep=   0 R=-0.880 H=0.782 sk=0 sk@[19]
+  [NoSkill-P2] ep=   1 R=-0.880 H=0.813 sk=0 sk@[19]
+  [NoSkill-P2] ep=   2 R=-0.880 H=0.811 sk=0 sk@[19]
+  [NoSkill-P2] ep=   3 R=-0.880 H=0.868 sk=0 sk@[19]
+  [NoSkill-P2] ep=   4 R=-0.880 H=0.863 sk=0 sk@[19]
+  [NoSkill-P2] ep=  49 R=-0.880 H=0.907 sk=0 sk@[19]
+  [NoSkill-P2] ep=  99 R=-0.880 H=0.521 sk=0 sk@[19]
+  [NoSkill-P2] ep= 119 R=-0.880 H=0.511 sk=0 sk@[19]
+  ── RULE RESTORE: A→B ──
+  [NoSkill-P3] ep=   0 R=+1.520 H=0.034 sk=0 sk@[19]
+  [NoSkill-P3] ep=   1 R=+1.520 H=0.034 sk=0 sk@[19]
+  [NoSkill-P3] ep=   2 R=+1.520 H=0.035 sk=0 sk@[19]
+  [NoSkill-P3] ep=   3 R=+1.520 H=0.036 sk=0 sk@[19]
+  [NoSkill-P3] ep=   4 R=+1.520 H=0.037 sk=0 sk@[19]
+  [NoSkill-P3] ep=  49 R=+1.520 H=0.029 sk=0 sk@[19]
+  [NoSkill-P3] ep=  59 R=+1.520 H=0.028 sk=0 sk@[19]
+
+── NoSkill seed=8 ──
+  [NoSkill-P1] ep=   0 R=-0.880 H=1.368 sk=0
+  [NoSkill-P1] ep=   1 R=-0.880 H=1.293 sk=0
+  [NoSkill-P1] ep=   2 R=-0.880 H=1.185 sk=0
+  [NoSkill-P1] ep=   3 R=-0.880 H=1.286 sk=0
+  [NoSkill-P1] ep=   4 R=+0.820 H=1.369 sk=0
+  ▶ Skill crystallised at ep 16. Run _validate_skill() with eval_env to confirm.
+    Success trajectories in P1: 6
+  [NoSkill-P1] ep=  49 R=+0.720 H=1.324 sk=0 sk@[16]
+  [NoSkill-P1] ep=  79 R=+1.480 H=0.257 sk=0 sk@[16]
+  ── RULE SWAP: B→A (ε=0.1) ──
+  [NoSkill-P2] ep=   0 R=-0.880 H=0.344 sk=0 sk@[16]
+  [NoSkill-P2] ep=   1 R=-0.880 H=0.328 sk=0 sk@[16]
+  [NoSkill-P2] ep=   2 R=-0.880 H=0.323 sk=0 sk@[16]
+  [NoSkill-P2] ep=   3 R=-0.880 H=0.312 sk=0 sk@[16]
+  [NoSkill-P2] ep=   4 R=-0.880 H=0.304 sk=0 sk@[16]
+  [NoSkill-P2] ep=  49 R=-0.880 H=0.905 sk=0 sk@[16]
+  [NoSkill-P2] ep=  99 R=-0.360 H=1.017 sk=0 sk@[16]
+  [NoSkill-P2] ep= 119 R=-0.360 H=1.031 sk=0 sk@[16]
+  ── RULE RESTORE: A→B ──
+  [NoSkill-P3] ep=   0 R=-0.880 H=0.312 sk=0 sk@[16]
+  [NoSkill-P3] ep=   1 R=-0.880 H=0.287 sk=0 sk@[16]
+  [NoSkill-P3] ep=   2 R=-0.880 H=0.320 sk=0 sk@[16]
+  [NoSkill-P3] ep=   3 R=-0.880 H=0.344 sk=0 sk@[16]
+  [NoSkill-P3] ep=   4 R=-0.880 H=0.363 sk=0 sk@[16]
+  [NoSkill-P3] ep=  49 R=+1.520 H=0.167 sk=0 sk@[16]
+  [NoSkill-P3] ep=  59 R=+1.520 H=0.068 sk=0 sk@[16]
+
+── NoSkill seed=9 ──
+  [NoSkill-P1] ep=   0 R=+1.480 H=0.674 sk=0
+  [NoSkill-P1] ep=   1 R=+1.380 H=0.676 sk=0
+  [NoSkill-P1] ep=   2 R=-0.880 H=1.367 sk=0
+  [NoSkill-P1] ep=   3 R=-0.880 H=1.345 sk=0
+  [NoSkill-P1] ep=   4 R=-0.880 H=1.313 sk=0
+  ▶ Skill crystallised at ep 9. Run _validate_skill() with eval_env to confirm.
+    Success trajectories in P1: 5
+  [NoSkill-P1] ep=  49 R=+1.520 H=0.175 sk=0 sk@[9]
+  [NoSkill-P1] ep=  79 R=+1.520 H=0.070 sk=0 sk@[9]
+  ── RULE SWAP: B→A (ε=0.1) ──
+  [NoSkill-P2] ep=   0 R=-0.880 H=0.128 sk=0 sk@[9]
+  [NoSkill-P2] ep=   1 R=-0.880 H=0.140 sk=0 sk@[9]
+  [NoSkill-P2] ep=   2 R=-0.880 H=0.172 sk=0 sk@[9]
+  [NoSkill-P2] ep=   3 R=-0.880 H=0.188 sk=0 sk@[9]
+  [NoSkill-P2] ep=   4 R=-0.880 H=0.179 sk=0 sk@[9]
+  [NoSkill-P2] ep=  49 R=-0.880 H=0.123 sk=0 sk@[9]
+  [NoSkill-P2] ep=  99 R=-0.880 H=0.738 sk=0 sk@[9]
+  [NoSkill-P2] ep= 119 R=-0.360 H=0.631 sk=0 sk@[9]
+  ── RULE RESTORE: A→B ──
+  [NoSkill-P3] ep=   0 R=-0.880 H=0.263 sk=0 sk@[9]
+  [NoSkill-P3] ep=   1 R=-0.880 H=0.296 sk=0 sk@[9]
+  [NoSkill-P3] ep=   2 R=-0.880 H=0.269 sk=0 sk@[9]
+  [NoSkill-P3] ep=   3 R=-0.880 H=0.230 sk=0 sk@[9]
+  [NoSkill-P3] ep=   4 R=-0.880 H=0.232 sk=0 sk@[9]
+  [NoSkill-P3] ep=  49 R=-0.880 H=0.229 sk=0 sk@[9]
+  [NoSkill-P3] ep=  59 R=-0.880 H=0.220 sk=0 sk@[9]
+
+==============================================================================
+  HYSTERESIS STATISTICS NoSkill vs Flat (N=10 seeds)
+==============================================================================
+  Metric                                              PAO               Flat
+  ────────────────────────────────────────────────────────────────────────
+  Phase 2 (late 20)                          -0.500±0.202       -0.486±0.251
+  Phase 3 (early 20)                          0.689±0.344        1.059±0.268
+  Phase 3 (late 20)                            1.228±0.236        1.274±0.240
+  ────────────────────────────────────────────────────────────────────────
+  Wilcoxon (P2 inertia, PAO<Flat): W=7.0 p=0.5000
+  Wilcoxon (P3 reuse, PAO>Flat):   W=14.0 p=0.8496
+  Hedges' g (P2): -0.02  |  Hedges' g (P3): -0.36
+  ────────────────────────────────────────────────────────────────────────
+  Phase 2: PAO=-0.500±0.202 (locked); Flat=-0.486±0.251 (fails to consolidate B→A)
+  Phase 3: PAO=0.689±0.344 (instant); Flat=1.059±0.268 (unstable partial, variance large)
+
+  Data: /home/hao/workspace/pao/exp_two_gate_lock/results/rule_swap_1d.pkl

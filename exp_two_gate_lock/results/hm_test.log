@@ -1,0 +1,266 @@
+  ▶ Skill crystallised at ep 3. Run _validate_skill() with eval_env to confirm.
+    Success trajectories in P1: 0
+  ep=  3 seed=0  Q/d_int/V/H_M = 0.13/1.6/1.48/4.04
+  ▶ Skill crystallised at ep 3. Run _validate_skill() with eval_env to confirm.
+    Success trajectories in P1: 1
+  ep=  3 seed=1  Q/d_int/V/H_M = 0.63/1.4/1.49/4.35
+  ▶ Skill crystallised at ep 3. Run _validate_skill() with eval_env to confirm.
+    Success trajectories in P1: 1
+  ep=  3 seed=2  Q/d_int/V/H_M = 0.03/1.3/1.74/5.10
+  ▶ Skill crystallised at ep 3. Run _validate_skill() with eval_env to confirm.
+    Success trajectories in P1: 2
+  ep=  3 seed=3  Q/d_int/V/H_M = 0.47/1.5/1.86/4.69
+  ▶ Skill crystallised at ep 3. Run _validate_skill() with eval_env to confirm.
+    Success trajectories in P1: 0
+  ep=  3 seed=4  Q/d_int/V/H_M = 0.27/1.5/1.70/4.47
+  ▶ Skill crystallised at ep 3. Run _validate_skill() with eval_env to confirm.
+    Success trajectories in P1: 2
+  ep=  3 seed=5  Q/d_int/V/H_M = 0.50/1.3/1.85/5.34
+  ▶ Skill crystallised at ep 3. Run _validate_skill() with eval_env to confirm.
+    Success trajectories in P1: 0
+  ep=  3 seed=6  Q/d_int/V/H_M = 0.40/1.5/2.04/5.12
+  ▶ Skill crystallised at ep 3. Run _validate_skill() with eval_env to confirm.
+    Success trajectories in P1: 2
+  ep=  3 seed=7  Q/d_int/V/H_M = 0.60/1.2/2.10/5.89
+  ▶ Skill crystallised at ep 3. Run _validate_skill() with eval_env to confirm.
+    Success trajectories in P1: 0
+  ep=  3 seed=8  Q/d_int/V/H_M = 0.13/1.7/1.22/3.39
+  ▶ Skill crystallised at ep 3. Run _validate_skill() with eval_env to confirm.
+    Success trajectories in P1: 0
+  ep=  3 seed=9  Q/d_int/V/H_M = 0.60/1.5/1.22/3.63
+  ▶ Skill crystallised at ep 6. Run _validate_skill() with eval_env to confirm.
+    Success trajectories in P1: 1
+  ep=  6 seed=0  Q/d_int/V/H_M = 0.40/1.8/1.46/3.70
+  ▶ Skill crystallised at ep 6. Run _validate_skill() with eval_env to confirm.
+    Success trajectories in P1: 3
+  ep=  6 seed=1  Q/d_int/V/H_M = 0.67/1.4/1.81/4.81
+  ▶ Skill crystallised at ep 6. Run _validate_skill() with eval_env to confirm.
+    Success trajectories in P1: 2
+  ep=  6 seed=2  Q/d_int/V/H_M = 0.03/1.1/1.47/4.97
+  ▶ Skill crystallised at ep 6. Run _validate_skill() with eval_env to confirm.
+    Success trajectories in P1: 4
+  ep=  6 seed=3  Q/d_int/V/H_M = 0.60/1.4/1.96/5.27
+  ▶ Skill crystallised at ep 6. Run _validate_skill() with eval_env to confirm.
+    Success trajectories in P1: 0
+  ep=  6 seed=4  Q/d_int/V/H_M = 0.30/1.4/1.62/4.51
+  ▶ Skill crystallised at ep 6. Run _validate_skill() with eval_env to confirm.
+    Success trajectories in P1: 2
+  ep=  6 seed=5  Q/d_int/V/H_M = 0.60/1.5/2.35/5.52
+  ▶ Skill crystallised at ep 6. Run _validate_skill() with eval_env to confirm.
+    Success trajectories in P1: 2
+  ep=  6 seed=6  Q/d_int/V/H_M = 0.30/1.6/2.12/5.06
+  ▶ Skill crystallised at ep 6. Run _validate_skill() with eval_env to confirm.
+    Success trajectories in P1: 5
+  ep=  6 seed=7  Q/d_int/V/H_M = 0.60/1.4/2.14/5.45
+  ▶ Skill crystallised at ep 6. Run _validate_skill() with eval_env to confirm.
+    Success trajectories in P1: 0
+  ep=  6 seed=8  Q/d_int/V/H_M = 0.07/1.4/1.30/4.05
+  ▶ Skill crystallised at ep 6. Run _validate_skill() with eval_env to confirm.
+    Success trajectories in P1: 2
+  ep=  6 seed=9  Q/d_int/V/H_M = 0.50/1.5/1.42/3.98
+  ▶ Skill crystallised at ep 10. Run _validate_skill() with eval_env to confirm.
+    Success trajectories in P1: 2
+  ep= 10 seed=0  Q/d_int/V/H_M = 0.43/1.7/1.57/3.99
+  ▶ Skill crystallised at ep 10. Run _validate_skill() with eval_env to confirm.
+    Success trajectories in P1: 6
+  ep= 10 seed=1  Q/d_int/V/H_M = 0.77/1.6/1.84/4.48
+  ▶ Skill crystallised at ep 10. Run _validate_skill() with eval_env to confirm.
+    Success trajectories in P1: 2
+  ep= 10 seed=2  Q/d_int/V/H_M = 0.03/1.1/1.67/5.39
+  ▶ Skill crystallised at ep 10. Run _validate_skill() with eval_env to confirm.
+    Success trajectories in P1: 6
+  ep= 10 seed=3  Q/d_int/V/H_M = 0.60/1.5/2.09/5.11
+  ▶ Skill crystallised at ep 10. Run _validate_skill() with eval_env to confirm.
+    Success trajectories in P1: 1
+  ep= 10 seed=4  Q/d_int/V/H_M = 0.33/1.4/1.64/4.64
+  ▶ Skill crystallised at ep 10. Run _validate_skill() with eval_env to confirm.
+    Success trajectories in P1: 5
+  ep= 10 seed=5  Q/d_int/V/H_M = 0.73/1.7/2.28/5.00
+  ▶ Skill crystallised at ep 10. Run _validate_skill() with eval_env to confirm.
+    Success trajectories in P1: 4
+  ep= 10 seed=6  Q/d_int/V/H_M = 0.40/1.6/2.09/4.97
+  ▶ Skill crystallised at ep 10. Run _validate_skill() with eval_env to confirm.
+    Success trajectories in P1: 9
+  ep= 10 seed=7  Q/d_int/V/H_M = 0.73/1.2/2.44/6.36
+  ▶ Skill crystallised at ep 10. Run _validate_skill() with eval_env to confirm.
+    Success trajectories in P1: 0
+  ep= 10 seed=8  Q/d_int/V/H_M = 0.03/1.3/1.71/5.10
+  ▶ Skill crystallised at ep 10. Run _validate_skill() with eval_env to confirm.
+    Success trajectories in P1: 3
+  ep= 10 seed=9  Q/d_int/V/H_M = 0.67/1.4/1.55/4.42
+  ▶ Skill crystallised at ep 15. Run _validate_skill() with eval_env to confirm.
+    Success trajectories in P1: 4
+  ep= 15 seed=0  Q/d_int/V/H_M = 0.73/1.9/1.50/3.57
+  ▶ Skill crystallised at ep 15. Run _validate_skill() with eval_env to confirm.
+    Success trajectories in P1: 10
+  ep= 15 seed=1  Q/d_int/V/H_M = 0.87/1.8/1.71/4.01
+  ▶ Skill crystallised at ep 15. Run _validate_skill() with eval_env to confirm.
+    Success trajectories in P1: 3
+  ep= 15 seed=2  Q/d_int/V/H_M = 0.00/1.2/1.82/5.35
+  ▶ Skill crystallised at ep 15. Run _validate_skill() with eval_env to confirm.
+    Success trajectories in P1: 10
+  ep= 15 seed=3  Q/d_int/V/H_M = 0.87/1.5/2.12/5.14
+  ▶ Skill crystallised at ep 15. Run _validate_skill() with eval_env to confirm.
+    Success trajectories in P1: 2
+  ep= 15 seed=4  Q/d_int/V/H_M = 0.57/1.4/1.54/4.41
+  ▶ Skill crystallised at ep 15. Run _validate_skill() with eval_env to confirm.
+    Success trajectories in P1: 9
+  ep= 15 seed=5  Q/d_int/V/H_M = 0.73/1.7/2.32/5.01
+  ▶ Skill crystallised at ep 15. Run _validate_skill() with eval_env to confirm.
+    Success trajectories in P1: 5
+  ep= 15 seed=6  Q/d_int/V/H_M = 0.50/1.8/2.43/4.97
+  ▶ Skill crystallised at ep 15. Run _validate_skill() with eval_env to confirm.
+    Success trajectories in P1: 14
+  ep= 15 seed=7  Q/d_int/V/H_M = 0.77/1.6/1.91/4.75
+  ▶ Skill crystallised at ep 15. Run _validate_skill() with eval_env to confirm.
+    Success trajectories in P1: 0
+  ep= 15 seed=8  Q/d_int/V/H_M = 0.03/1.1/1.95/5.93
+  ▶ Skill crystallised at ep 15. Run _validate_skill() with eval_env to confirm.
+    Success trajectories in P1: 5
+  ep= 15 seed=9  Q/d_int/V/H_M = 0.93/1.7/1.59/3.98
+  ▶ Skill crystallised at ep 22. Run _validate_skill() with eval_env to confirm.
+    Success trajectories in P1: 11
+  ep= 22 seed=0  Q/d_int/V/H_M = 0.73/2.0/1.50/3.45
+  ▶ Skill crystallised at ep 22. Run _validate_skill() with eval_env to confirm.
+    Success trajectories in P1: 17
+  ep= 22 seed=1  Q/d_int/V/H_M = 0.83/2.2/1.39/3.11
+  ▶ Skill crystallised at ep 22. Run _validate_skill() with eval_env to confirm.
+    Success trajectories in P1: 6
+  ep= 22 seed=2  Q/d_int/V/H_M = 0.53/1.3/2.37/6.16
+  ▶ Skill crystallised at ep 22. Run _validate_skill() with eval_env to confirm.
+    Success trajectories in P1: 15
+  ep= 22 seed=3  Q/d_int/V/H_M = 0.90/1.6/2.39/5.38
+  ▶ Skill crystallised at ep 22. Run _validate_skill() with eval_env to confirm.
+    Success trajectories in P1: 5
+  ep= 22 seed=4  Q/d_int/V/H_M = 0.63/1.4/1.68/4.61
+  ▶ Skill crystallised at ep 22. Run _validate_skill() with eval_env to confirm.
+    Success trajectories in P1: 15
+  ep= 22 seed=5  Q/d_int/V/H_M = 1.00/1.7/0.95/2.77
+  ▶ Skill crystallised at ep 22. Run _validate_skill() with eval_env to confirm.
+    Success trajectories in P1: 9
+  ep= 22 seed=6  Q/d_int/V/H_M = 0.70/2.5/1.90/3.54
+  ▶ Skill crystallised at ep 22. Run _validate_skill() with eval_env to confirm.
+    Success trajectories in P1: 20
+  ep= 22 seed=7  Q/d_int/V/H_M = 0.97/1.3/2.71/6.49
+  ▶ Skill crystallised at ep 22. Run _validate_skill() with eval_env to confirm.
+    Success trajectories in P1: 0
+  ep= 22 seed=8  Q/d_int/V/H_M = 0.07/1.2/2.08/6.09
+  ▶ Skill crystallised at ep 22. Run _validate_skill() with eval_env to confirm.
+    Success trajectories in P1: 12
+  ep= 22 seed=9  Q/d_int/V/H_M = 0.97/1.7/0.86/2.62
+  ▶ Skill crystallised at ep 32. Run _validate_skill() with eval_env to confirm.
+    Success trajectories in P1: 20
+  ep= 32 seed=0  Q/d_int/V/H_M = 0.87/2.1/1.45/3.29
+  ▶ Skill crystallised at ep 32. Run _validate_skill() with eval_env to confirm.
+    Success trajectories in P1: 26
+  ep= 32 seed=1  Q/d_int/V/H_M = 0.90/1.7/0.76/2.38
+  ▶ Skill crystallised at ep 32. Run _validate_skill() with eval_env to confirm.
+    Success trajectories in P1: 11
+  ep= 32 seed=2  Q/d_int/V/H_M = 0.73/1.3/2.78/6.67
+  ▶ Skill crystallised at ep 32. Run _validate_skill() with eval_env to confirm.
+    Success trajectories in P1: 24
+  ep= 32 seed=3  Q/d_int/V/H_M = 0.97/1.8/2.19/4.68
+  ▶ Skill crystallised at ep 32. Run _validate_skill() with eval_env to confirm.
+    Success trajectories in P1: 13
+  ep= 32 seed=4  Q/d_int/V/H_M = 0.70/1.4/1.83/5.05
+  ▶ Skill crystallised at ep 32. Run _validate_skill() with eval_env to confirm.
+    Success trajectories in P1: 25
+  ep= 32 seed=5  Q/d_int/V/H_M = 1.00/1.9/2.12/4.52
+  ▶ Skill crystallised at ep 32. Run _validate_skill() with eval_env to confirm.
+    Success trajectories in P1: 17
+  ep= 32 seed=6  Q/d_int/V/H_M = 0.90/2.2/2.24/4.16
+  ▶ Skill crystallised at ep 32. Run _validate_skill() with eval_env to confirm.
+    Success trajectories in P1: 30
+  ep= 32 seed=7  Q/d_int/V/H_M = 0.97/2.0/0.58/1.77
+  ▶ Skill crystallised at ep 32. Run _validate_skill() with eval_env to confirm.
+    Success trajectories in P1: 3
+  ep= 32 seed=8  Q/d_int/V/H_M = 0.73/1.4/2.54/5.94
+  ▶ Skill crystallised at ep 32. Run _validate_skill() with eval_env to confirm.
+    Success trajectories in P1: 22
+  ep= 32 seed=9  Q/d_int/V/H_M = 0.97/1.7/0.91/2.70
+  ▶ Skill crystallised at ep 45. Run _validate_skill() with eval_env to confirm.
+    Success trajectories in P1: 32
+  ep= 45 seed=0  Q/d_int/V/H_M = 1.00/1.5/0.81/2.67
+  ▶ Skill crystallised at ep 45. Run _validate_skill() with eval_env to confirm.
+    Success trajectories in P1: 39
+  ep= 45 seed=1  Q/d_int/V/H_M = 1.00/1.4/2.40/5.72
+  ▶ Skill crystallised at ep 45. Run _validate_skill() with eval_env to confirm.
+    Success trajectories in P1: 23
+  ep= 45 seed=2  Q/d_int/V/H_M = 0.87/1.7/0.74/2.30
+  ▶ Skill crystallised at ep 45. Run _validate_skill() with eval_env to confirm.
+    Success trajectories in P1: 37
+  ep= 45 seed=3  Q/d_int/V/H_M = 1.00/1.7/0.90/2.70
+  ▶ Skill crystallised at ep 45. Run _validate_skill() with eval_env to confirm.
+    Success trajectories in P1: 24
+  ep= 45 seed=4  Q/d_int/V/H_M = 0.97/1.3/2.88/6.67
+  ▶ Skill crystallised at ep 45. Run _validate_skill() with eval_env to confirm.
+    Success trajectories in P1: 38
+  ep= 45 seed=5  Q/d_int/V/H_M = 1.00/1.4/1.24/3.94
+  ▶ Skill crystallised at ep 45. Run _validate_skill() with eval_env to confirm.
+    Success trajectories in P1: 29
+  ep= 45 seed=6  Q/d_int/V/H_M = 0.97/2.3/2.45/4.39
+  ▶ Skill crystallised at ep 45. Run _validate_skill() with eval_env to confirm.
+    Success trajectories in P1: 43
+  ep= 45 seed=7  Q/d_int/V/H_M = 1.00/1.8/0.57/1.85
+  ▶ Skill crystallised at ep 45. Run _validate_skill() with eval_env to confirm.
+    Success trajectories in P1: 14
+  ep= 45 seed=8  Q/d_int/V/H_M = 0.77/1.3/3.42/7.57
+  ▶ Skill crystallised at ep 45. Run _validate_skill() with eval_env to confirm.
+    Success trajectories in P1: 35
+  ep= 45 seed=9  Q/d_int/V/H_M = 0.97/2.0/1.37/3.27
+  ▶ Skill crystallised at ep 65. Run _validate_skill() with eval_env to confirm.
+    Success trajectories in P1: 52
+  ep= 65 seed=0  Q/d_int/V/H_M = 1.00/1.6/0.63/2.14
+  ▶ Skill crystallised at ep 65. Run _validate_skill() with eval_env to confirm.
+    Success trajectories in P1: 59
+  ep= 65 seed=1  Q/d_int/V/H_M = 1.00/1.7/0.59/1.96
+  ▶ Skill crystallised at ep 65. Run _validate_skill() with eval_env to confirm.
+    Success trajectories in P1: 42
+  ep= 65 seed=2  Q/d_int/V/H_M = 0.90/1.3/1.10/3.79
+  ▶ Skill crystallised at ep 65. Run _validate_skill() with eval_env to confirm.
+    Success trajectories in P1: 57
+  ep= 65 seed=3  Q/d_int/V/H_M = 1.00/1.6/0.77/2.50
+  ▶ Skill crystallised at ep 65. Run _validate_skill() with eval_env to confirm.
+    Success trajectories in P1: 44
+  ep= 65 seed=4  Q/d_int/V/H_M = 1.00/1.6/0.71/2.35
+  ▶ Skill crystallised at ep 65. Run _validate_skill() with eval_env to confirm.
+    Success trajectories in P1: 58
+  ep= 65 seed=5  Q/d_int/V/H_M = 1.00/1.5/1.10/3.43
+  ▶ Skill crystallised at ep 65. Run _validate_skill() with eval_env to confirm.
+    Success trajectories in P1: 49
+  ep= 65 seed=6  Q/d_int/V/H_M = 1.00/1.8/0.90/2.62
+  ▶ Skill crystallised at ep 65. Run _validate_skill() with eval_env to confirm.
+    Success trajectories in P1: 63
+  ep= 65 seed=7  Q/d_int/V/H_M = 1.00/1.8/0.57/1.81
+  ▶ Skill crystallised at ep 65. Run _validate_skill() with eval_env to confirm.
+    Success trajectories in P1: 32
+  ep= 65 seed=8  Q/d_int/V/H_M = 1.00/1.4/0.70/2.50
+  ▶ Skill crystallised at ep 65. Run _validate_skill() with eval_env to confirm.
+    Success trajectories in P1: 55
+  ep= 65 seed=9  Q/d_int/V/H_M = 0.93/2.0/1.33/3.20
+
+==========================================================================
+  H_M DISCRIMINATION (N=80 skills)
+==========================================================================
+  raw  Spearman(H_M     , Q) = -0.516  p=0.0000
+  raw  Spearman(d_int   , Q) = +0.472  p=0.0000
+  raw  Spearman(V_info  , Q) = -0.325  p=0.0032
+  raw  Spearman(episode , Q) = +0.814  p=0.0000
+  ──────────────────────────────────────────────────────────────────────
+  DECISIVE  partial Spearman(H_M, Q | episode) = -0.319  p=0.0042
+
+  Within-episode H_M↔Q (training-amount held fixed):
+    ep=  3: Q range [0.03,0.63]  rho(H_M,Q)=+0.19
+    ep=  6: Q range [0.03,0.67]  rho(H_M,Q)=+0.38
+    ep= 10: Q range [0.03,0.77]  rho(H_M,Q)=-0.16
+    ep= 15: Q range [0.00,0.93]  rho(H_M,Q)=-0.57
+    ep= 22: Q range [0.07,1.00]  rho(H_M,Q)=-0.46
+    ep= 32: Q range [0.70,1.00]  rho(H_M,Q)=-0.55
+    ep= 45: Q range [0.77,1.00]  rho(H_M,Q)=-0.37
+    ep= 65: Q range [0.90,1.00]  rho(H_M,Q)=-0.62
+    mean within-episode rho(H_M,Q) = -0.272
+
+  ──────────────────────────────────────────────────────────────────────
+  PRE-REGISTERED VERDICT: H_M is AMBIGUOUS
+  ──────────────────────────────────────────────────────────────────────
+  Saved results/hm_test.pkl

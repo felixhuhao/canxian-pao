@@ -1,0 +1,394 @@
+
+── Trigger ──
+  ▶ Skill crystallised at ep 18. Run _validate_skill() with eval_env to confirm.
+    Success trajectories in P1: 7
+  seed= 0  cryst_ep=  18 cryst_R=+1.50  Qz=0.77  P3=+1.519  P2=-0.880
+  ▶ Skill crystallised at ep 10. Run _validate_skill() with eval_env to confirm.
+    Success trajectories in P1: 6
+  seed= 1  cryst_ep=  10 cryst_R=+1.42  Qz=0.83  P3=+1.520  P2=-0.880
+  ▶ Skill crystallised at ep 29. Run _validate_skill() with eval_env to confirm.
+    Success trajectories in P1: 10
+  seed= 2  cryst_ep=  29 cryst_R=+1.52  Qz=0.63  P3=+1.518  P2=-0.880
+  ▶ Skill crystallised at ep 13. Run _validate_skill() with eval_env to confirm.
+    Success trajectories in P1: 8
+  seed= 3  cryst_ep=  13 cryst_R=+1.44  Qz=0.73  P3=+1.512  P2=-0.880
+  ▶ Skill crystallised at ep 28. Run _validate_skill() with eval_env to confirm.
+    Success trajectories in P1: 10
+  seed= 4  cryst_ep=  28 cryst_R=+1.52  Qz=0.73  P3=+1.506  P2=-0.880
+  ▶ Skill crystallised at ep 11. Run _validate_skill() with eval_env to confirm.
+    Success trajectories in P1: 6
+  seed= 5  cryst_ep=  11 cryst_R=+1.38  Qz=0.90  P3=+1.518  P2=-0.880
+  ▶ Skill crystallised at ep 21. Run _validate_skill() with eval_env to confirm.
+    Success trajectories in P1: 8
+  seed= 6  cryst_ep=  21 cryst_R=+1.44  Qz=0.80  P3=+1.518  P2=-0.880
+  ▶ Skill crystallised at ep 10. Run _validate_skill() with eval_env to confirm.
+    Success trajectories in P1: 9
+  seed= 7  cryst_ep=  10 cryst_R=+1.30  Qz=0.70  P3=+1.517  P2=-0.880
+  ▶ Skill crystallised at ep 35. Run _validate_skill() with eval_env to confirm.
+    Success trajectories in P1: 5
+  seed= 8  cryst_ep=  35 cryst_R=+1.52  Qz=0.57  P3=+1.514  P2=-0.880
+  ▶ Skill crystallised at ep 16. Run _validate_skill() with eval_env to confirm.
+    Success trajectories in P1: 6
+  seed= 9  cryst_ep=  16 cryst_R=+1.52  Qz=1.00  P3=+1.520  P2=-0.880
+  ▶ Skill crystallised at ep 30. Run _validate_skill() with eval_env to confirm.
+    Success trajectories in P1: 13
+  seed=10  cryst_ep=  30 cryst_R=+1.48  Qz=0.87  P3=+1.514  P2=-0.880
+  ▶ Skill crystallised at ep 43. Run _validate_skill() with eval_env to confirm.
+    Success trajectories in P1: 10
+  seed=11  cryst_ep=  43 cryst_R=+1.42  Qz=0.73  P3=-0.402  P2=+1.193
+  ▶ Skill crystallised at ep 9. Run _validate_skill() with eval_env to confirm.
+    Success trajectories in P1: 8
+  seed=12  cryst_ep=   9 cryst_R=+1.48  Qz=0.83  P3=+1.518  P2=-0.880
+  ▶ Skill crystallised at ep 11. Run _validate_skill() with eval_env to confirm.
+    Success trajectories in P1: 6
+  seed=13  cryst_ep=  11 cryst_R=+1.34  Qz=0.77  P3=+1.518  P2=-0.880
+  ▶ Skill crystallised at ep 28. Run _validate_skill() with eval_env to confirm.
+    Success trajectories in P1: 17
+  seed=14  cryst_ep=  28 cryst_R=+1.46  Qz=0.73  P3=+1.520  P2=-0.880
+  ▶ Skill crystallised at ep 26. Run _validate_skill() with eval_env to confirm.
+    Success trajectories in P1: 15
+  seed=15  cryst_ep=  26 cryst_R=+1.40  Qz=0.87  P3=+1.520  P2=-0.880
+  ▶ Skill crystallised at ep 19. Run _validate_skill() with eval_env to confirm.
+    Success trajectories in P1: 12
+  seed=16  cryst_ep=  19 cryst_R=+1.50  Qz=0.77  P3=+1.520  P2=-0.880
+  ▶ Skill crystallised at ep 11. Run _validate_skill() with eval_env to confirm.
+    Success trajectories in P1: 5
+  seed=17  cryst_ep=  11 cryst_R=+1.40  Qz=0.73  P3=+1.506  P2=-0.880
+  ▶ Skill crystallised at ep 18. Run _validate_skill() with eval_env to confirm.
+    Success trajectories in P1: 12
+  seed=18  cryst_ep=  18 cryst_R=+1.38  Qz=0.63  P3=+1.518  P2=-0.880
+  ▶ Skill crystallised at ep 10. Run _validate_skill() with eval_env to confirm.
+    Success trajectories in P1: 7
+  seed=19  cryst_ep=  10 cryst_R=+1.44  Qz=0.70  P3=+1.518  P2=-0.880
+  ▶ Skill crystallised at ep 12. Run _validate_skill() with eval_env to confirm.
+    Success trajectories in P1: 6
+  seed=20  cryst_ep=  12 cryst_R=+1.36  Qz=0.67  P3=+1.520  P2=-0.880
+  ▶ Skill crystallised at ep 32. Run _validate_skill() with eval_env to confirm.
+    Success trajectories in P1: 14
+  seed=21  cryst_ep=  32 cryst_R=+1.40  Qz=0.87  P3=+0.192  P2=+0.953
+  ▶ Skill crystallised at ep 14. Run _validate_skill() with eval_env to confirm.
+    Success trajectories in P1: 7
+  seed=22  cryst_ep=  14 cryst_R=+1.10  Qz=0.90  P3=+1.520  P2=-0.880
+  ▶ Skill crystallised at ep 18. Run _validate_skill() with eval_env to confirm.
+    Success trajectories in P1: 7
+  seed=23  cryst_ep=  18 cryst_R=+1.52  Qz=0.83  P3=+1.454  P2=-0.662
+  ▶ Skill crystallised at ep 19. Run _validate_skill() with eval_env to confirm.
+    Success trajectories in P1: 7
+  seed=24  cryst_ep=  19 cryst_R=+1.44  Qz=0.77  P3=+1.520  P2=-0.880
+  ▶ Skill crystallised at ep 51. Run _validate_skill() with eval_env to confirm.
+    Success trajectories in P1: 9
+  seed=25  cryst_ep=  51 cryst_R=+1.52  Qz=0.57  P3=+1.520  P2=-0.880
+  ▶ Skill crystallised at ep 20. Run _validate_skill() with eval_env to confirm.
+    Success trajectories in P1: 11
+  seed=26  cryst_ep=  20 cryst_R=+1.48  Qz=0.77  P3=+1.518  P2=-0.880
+  ▶ Skill crystallised at ep 18. Run _validate_skill() with eval_env to confirm.
+    Success trajectories in P1: 9
+  seed=27  cryst_ep=  18 cryst_R=+1.40  Qz=0.87  P3=+1.382  P2=-0.464
+  ▶ Skill crystallised at ep 27. Run _validate_skill() with eval_env to confirm.
+    Success trajectories in P1: 15
+  seed=28  cryst_ep=  27 cryst_R=+1.40  Qz=0.73  P3=+1.520  P2=-0.880
+  ▶ Skill crystallised at ep 28. Run _validate_skill() with eval_env to confirm.
+    Success trajectories in P1: 13
+  seed=29  cryst_ep=  28 cryst_R=+1.14  Qz=0.90  P3=+1.520  P2=-0.880
+
+── RandomLate ──
+  ▶ Skill crystallised at ep 41. Run _validate_skill() with eval_env to confirm.
+    Success trajectories in P1: 28
+  seed= 0  cryst_ep=  41 cryst_R=+1.32  Qz=1.00  P3=+1.519  P2=-0.880
+  ▶ Skill crystallised at ep 48. Run _validate_skill() with eval_env to confirm.
+    Success trajectories in P1: 42
+  seed= 1  cryst_ep=  48 cryst_R=+1.52  Qz=1.00  P3=+1.519  P2=-0.880
+  ▶ Skill crystallised at ep 49. Run _validate_skill() with eval_env to confirm.
+    Success trajectories in P1: 26
+  seed= 2  cryst_ep=  49 cryst_R=-0.88  Qz=0.97  P3=+1.518  P2=-0.880
+  ▶ Skill crystallised at ep 62. Run _validate_skill() with eval_env to confirm.
+    Success trajectories in P1: 54
+  seed= 3  cryst_ep=  62 cryst_R=+1.48  Qz=1.00  P3=+1.519  P2=-0.880
+  ▶ Skill crystallised at ep 67. Run _validate_skill() with eval_env to confirm.
+    Success trajectories in P1: 46
+  seed= 4  cryst_ep=  67 cryst_R=+1.52  Qz=1.00  P3=+1.518  P2=-0.880
+  ▶ Skill crystallised at ep 61. Run _validate_skill() with eval_env to confirm.
+    Success trajectories in P1: 54
+  seed= 5  cryst_ep=  61 cryst_R=+1.52  Qz=1.00  P3=+1.519  P2=-0.880
+  ▶ Skill crystallised at ep 79. Run _validate_skill() with eval_env to confirm.
+    Success trajectories in P1: 63
+  seed= 6  cryst_ep=  79 cryst_R=+1.52  Qz=1.00  P3=+1.520  P2=-0.880
+  ▶ Skill crystallised at ep 59. Run _validate_skill() with eval_env to confirm.
+    Success trajectories in P1: 57
+  seed= 7  cryst_ep=  59 cryst_R=+1.48  Qz=1.00  P3=+1.519  P2=-0.880
+  ▶ Skill crystallised at ep 58. Run _validate_skill() with eval_env to confirm.
+    Success trajectories in P1: 25
+  seed= 8  cryst_ep=  58 cryst_R=+1.52  Qz=1.00  P3=+1.518  P2=-0.880
+  ▶ Skill crystallised at ep 63. Run _validate_skill() with eval_env to confirm.
+    Success trajectories in P1: 53
+  seed= 9  cryst_ep=  63 cryst_R=+1.52  Qz=0.97  P3=+1.518  P2=-0.880
+  ▶ Skill crystallised at ep 72. Run _validate_skill() with eval_env to confirm.
+    Success trajectories in P1: 52
+  seed=10  cryst_ep=  72 cryst_R=+1.48  Qz=1.00  P3=+1.520  P2=-0.880
+  ▶ Skill crystallised at ep 49. Run _validate_skill() with eval_env to confirm.
+    Success trajectories in P1: 15
+  seed=11  cryst_ep=  49 cryst_R=+1.46  Qz=0.87  P3=+1.388  P2=-0.562
+  ▶ Skill crystallised at ep 47. Run _validate_skill() with eval_env to confirm.
+    Success trajectories in P1: 43
+  seed=12  cryst_ep=  47 cryst_R=+1.52  Qz=1.00  P3=+1.518  P2=-0.880
+  ▶ Skill crystallised at ep 48. Run _validate_skill() with eval_env to confirm.
+    Success trajectories in P1: 41
+  seed=13  cryst_ep=  48 cryst_R=+1.52  Qz=1.00  P3=+1.519  P2=-0.880
+  ▶ Skill crystallised at ep 48. Run _validate_skill() with eval_env to confirm.
+    Success trajectories in P1: 36
+  seed=14  cryst_ep=  48 cryst_R=+1.44  Qz=0.97  P3=+1.520  P2=-0.880
+  ▶ Skill crystallised at ep 45. Run _validate_skill() with eval_env to confirm.
+    Success trajectories in P1: 31
+  seed=15  cryst_ep=  45 cryst_R=+1.40  Qz=0.93  P3=+1.515  P2=-0.880
+  ▶ Skill crystallised at ep 67. Run _validate_skill() with eval_env to confirm.
+    Success trajectories in P1: 57
+  seed=16  cryst_ep=  67 cryst_R=+1.52  Qz=1.00  P3=+1.518  P2=-0.880
+  ▶ Skill crystallised at ep 62. Run _validate_skill() with eval_env to confirm.
+    Success trajectories in P1: 55
+  seed=17  cryst_ep=  62 cryst_R=+1.48  Qz=1.00  P3=+0.670  P2=+0.976
+  ▶ Skill crystallised at ep 58. Run _validate_skill() with eval_env to confirm.
+    Success trajectories in P1: 47
+  seed=18  cryst_ep=  58 cryst_R=+1.52  Qz=1.00  P3=+1.518  P2=-0.880
+  ▶ Skill crystallised at ep 78. Run _validate_skill() with eval_env to confirm.
+    Success trajectories in P1: 73
+  seed=19  cryst_ep=  78 cryst_R=+1.52  Qz=1.00  P3=+1.520  P2=-0.880
+  ▶ Skill crystallised at ep 66. Run _validate_skill() with eval_env to confirm.
+    Success trajectories in P1: 57
+  seed=20  cryst_ep=  66 cryst_R=+1.48  Qz=1.00  P3=-0.760  P2=+1.353
+  ▶ Skill crystallised at ep 72. Run _validate_skill() with eval_env to confirm.
+    Success trajectories in P1: 50
+  seed=21  cryst_ep=  72 cryst_R=+1.44  Qz=1.00  P3=+1.512  P2=-0.880
+  ▶ Skill crystallised at ep 40. Run _validate_skill() with eval_env to confirm.
+    Success trajectories in P1: 33
+  seed=22  cryst_ep=  40 cryst_R=+1.52  Qz=1.00  P3=+1.520  P2=-0.880
+  ▶ Skill crystallised at ep 52. Run _validate_skill() with eval_env to confirm.
+    Success trajectories in P1: 39
+  seed=23  cryst_ep=  52 cryst_R=+1.52  Qz=1.00  P3=+1.520  P2=-0.880
+  ▶ Skill crystallised at ep 74. Run _validate_skill() with eval_env to confirm.
+    Success trajectories in P1: 60
+  seed=24  cryst_ep=  74 cryst_R=+1.52  Qz=1.00  P3=+1.520  P2=-0.880
+  ▶ Skill crystallised at ep 65. Run _validate_skill() with eval_env to confirm.
+    Success trajectories in P1: 20
+  seed=25  cryst_ep=  65 cryst_R=+1.28  Qz=0.90  P3=+1.520  P2=-0.880
+  ▶ Skill crystallised at ep 62. Run _validate_skill() with eval_env to confirm.
+    Success trajectories in P1: 52
+  seed=26  cryst_ep=  62 cryst_R=+1.52  Qz=1.00  P3=+1.518  P2=-0.880
+  ▶ Skill crystallised at ep 59. Run _validate_skill() with eval_env to confirm.
+    Success trajectories in P1: 46
+  seed=27  cryst_ep=  59 cryst_R=+1.52  Qz=1.00  P3=+1.518  P2=-0.880
+  ▶ Skill crystallised at ep 63. Run _validate_skill() with eval_env to confirm.
+    Success trajectories in P1: 48
+  seed=28  cryst_ep=  63 cryst_R=+1.52  Qz=1.00  P3=+1.518  P2=-0.880
+  ▶ Skill crystallised at ep 79. Run _validate_skill() with eval_env to confirm.
+    Success trajectories in P1: 61
+  seed=29  cryst_ep=  79 cryst_R=+1.52  Qz=1.00  P3=+1.519  P2=-0.880
+
+── RandomUniform ──
+  ▶ Skill crystallised at ep 1. Run _validate_skill() with eval_env to confirm.
+    Success trajectories in P1: 0
+  seed= 0  cryst_ep=   1 cryst_R=-0.88  Qz=0.20  P3=+1.508  P2=-0.880
+  ▶ Skill crystallised at ep 8. Run _validate_skill() with eval_env to confirm.
+    Success trajectories in P1: 4
+  seed= 1  cryst_ep=   8 cryst_R=-0.88  Qz=0.73  P3=+1.507  P2=-0.880
+  ▶ Skill crystallised at ep 9. Run _validate_skill() with eval_env to confirm.
+    Success trajectories in P1: 2
+  seed= 2  cryst_ep=   9 cryst_R=-0.88  Qz=0.03  P3=-0.880  P2=+1.355
+  ▶ Skill crystallised at ep 22. Run _validate_skill() with eval_env to confirm.
+    Success trajectories in P1: 15
+  seed= 3  cryst_ep=  22 cryst_R=-0.88  Qz=0.87  P3=+1.520  P2=-0.880
+  ▶ Skill crystallised at ep 27. Run _validate_skill() with eval_env to confirm.
+    Success trajectories in P1: 9
+  seed= 4  cryst_ep=  27 cryst_R=+1.44  Qz=0.83  P3=+1.516  P2=-0.880
+  ▶ Skill crystallised at ep 21. Run _validate_skill() with eval_env to confirm.
+    Success trajectories in P1: 14
+  seed= 5  cryst_ep=  21 cryst_R=-0.88  Qz=1.00  P3=+1.516  P2=-0.880
+  ▶ Skill crystallised at ep 49. Run _validate_skill() with eval_env to confirm.
+    Success trajectories in P1: 33
+  seed= 6  cryst_ep=  49 cryst_R=+1.52  Qz=0.97  P3=+1.520  P2=-0.880
+  ▶ Skill crystallised at ep 19. Run _validate_skill() with eval_env to confirm.
+    Success trajectories in P1: 17
+  seed= 7  cryst_ep=  19 cryst_R=+1.44  Qz=1.00  P3=+1.520  P2=-0.880
+  ▶ Skill crystallised at ep 18. Run _validate_skill() with eval_env to confirm.
+    Success trajectories in P1: 0
+  seed= 8  cryst_ep=  18 cryst_R=-0.88  Qz=0.00  P3=-0.880  P2=-0.360
+  ▶ Skill crystallised at ep 23. Run _validate_skill() with eval_env to confirm.
+    Success trajectories in P1: 13
+  seed= 9  cryst_ep=  23 cryst_R=+1.46  Qz=1.00  P3=+1.518  P2=-0.880
+  ▶ Skill crystallised at ep 43. Run _validate_skill() with eval_env to confirm.
+    Success trajectories in P1: 24
+  seed=10  cryst_ep=  43 cryst_R=+1.36  Qz=0.97  P3=+1.518  P2=-0.880
+  ▶ Skill crystallised at ep 73. Run _validate_skill() with eval_env to confirm.
+    Success trajectories in P1: 36
+  seed=11  cryst_ep=  73 cryst_R=+1.48  Qz=1.00  P3=-0.880  P2=+1.325
+  ▶ Skill crystallised at ep 71. Run _validate_skill() with eval_env to confirm.
+    Success trajectories in P1: 67
+  seed=12  cryst_ep=  71 cryst_R=+1.52  Qz=1.00  P3=+1.518  P2=+0.862
+  ▶ Skill crystallised at ep 72. Run _validate_skill() with eval_env to confirm.
+    Success trajectories in P1: 65
+  seed=13  cryst_ep=  72 cryst_R=+1.52  Qz=1.00  P3=+1.520  P2=-0.880
+  ▶ Skill crystallised at ep 72. Run _validate_skill() with eval_env to confirm.
+    Success trajectories in P1: 60
+  seed=14  cryst_ep=  72 cryst_R=+1.52  Qz=1.00  P3=+1.520  P2=-0.880
+  ▶ Skill crystallised at ep 51. Run _validate_skill() with eval_env to confirm.
+    Success trajectories in P1: 36
+  seed=15  cryst_ep=  51 cryst_R=+1.52  Qz=0.97  P3=+1.518  P2=-0.880
+  ▶ Skill crystallised at ep 67. Run _validate_skill() with eval_env to confirm.
+    Success trajectories in P1: 57
+  seed=16  cryst_ep=  67 cryst_R=+1.52  Qz=1.00  P3=+1.518  P2=-0.880
+  ▶ Skill crystallised at ep 23. Run _validate_skill() with eval_env to confirm.
+    Success trajectories in P1: 16
+  seed=17  cryst_ep=  23 cryst_R=+1.48  Qz=0.97  P3=+1.520  P2=-0.880
+  ▶ Skill crystallised at ep 18. Run _validate_skill() with eval_env to confirm.
+    Success trajectories in P1: 12
+  seed=18  cryst_ep=  18 cryst_R=+1.38  Qz=0.63  P3=+1.518  P2=-0.880
+  ▶ Skill crystallised at ep 38. Run _validate_skill() with eval_env to confirm.
+    Success trajectories in P1: 33
+  seed=19  cryst_ep=  38 cryst_R=+1.52  Qz=0.97  P3=+1.516  P2=-0.880
+  ▶ Skill crystallised at ep 26. Run _validate_skill() with eval_env to confirm.
+    Success trajectories in P1: 17
+  seed=20  cryst_ep=  26 cryst_R=-0.88  Qz=0.87  P3=+1.510  P2=-0.880
+  ▶ Skill crystallised at ep 58. Run _validate_skill() with eval_env to confirm.
+    Success trajectories in P1: 36
+  seed=21  cryst_ep=  58 cryst_R=+1.52  Qz=0.93  P3=-0.042  P2=+0.537
+  ▶ Skill crystallised at ep 47. Run _validate_skill() with eval_env to confirm.
+    Success trajectories in P1: 40
+  seed=22  cryst_ep=  47 cryst_R=+1.52  Qz=1.00  P3=+1.520  P2=-0.880
+  ▶ Skill crystallised at ep 12. Run _validate_skill() with eval_env to confirm.
+    Success trajectories in P1: 2
+  seed=23  cryst_ep=  12 cryst_R=-0.88  Qz=0.43  P3=+1.520  P2=-0.880
+  ▶ Skill crystallised at ep 79. Run _validate_skill() with eval_env to confirm.
+    Success trajectories in P1: 65
+  seed=24  cryst_ep=  79 cryst_R=+1.52  Qz=1.00  P3=+1.520  P2=-0.880
+  ▶ Skill crystallised at ep 5. Run _validate_skill() with eval_env to confirm.
+    Success trajectories in P1: 0
+  seed=25  cryst_ep=   5 cryst_R=-0.88  Qz=0.13  P3=-0.880  P2=+0.954
+  ▶ Skill crystallised at ep 22. Run _validate_skill() with eval_env to confirm.
+    Success trajectories in P1: 12
+  seed=26  cryst_ep=  22 cryst_R=-0.88  Qz=0.83  P3=+1.518  P2=-0.880
+  ▶ Skill crystallised at ep 44. Run _validate_skill() with eval_env to confirm.
+    Success trajectories in P1: 32
+  seed=27  cryst_ep=  44 cryst_R=+1.50  Qz=1.00  P3=+1.520  P2=-0.880
+  ▶ Skill crystallised at ep 8. Run _validate_skill() with eval_env to confirm.
+    Success trajectories in P1: 3
+  seed=28  cryst_ep=   8 cryst_R=+1.36  Qz=0.60  P3=+1.519  P2=-0.880
+  ▶ Skill crystallised at ep 70. Run _validate_skill() with eval_env to confirm.
+    Success trajectories in P1: 52
+  seed=29  cryst_ep=  70 cryst_R=+1.52  Qz=1.00  P3=+1.519  P2=-0.880
+
+── NoSkill ──
+  ▶ Skill crystallised at ep 18. Run _validate_skill() with eval_env to confirm.
+    Success trajectories in P1: 7
+  seed= 0  cryst_ep=  18 cryst_R=+1.50  Qz=0.90  P3=+1.518  P2=-0.880
+  ▶ Skill crystallised at ep 10. Run _validate_skill() with eval_env to confirm.
+    Success trajectories in P1: 6
+  seed= 1  cryst_ep=  10 cryst_R=+1.42  Qz=1.00  P3=+1.496  P2=-0.880
+  ▶ Skill crystallised at ep 29. Run _validate_skill() with eval_env to confirm.
+    Success trajectories in P1: 10
+  seed= 2  cryst_ep=  29 cryst_R=+1.52  Qz=0.70  P3=-0.428  P2=-0.318
+  ▶ Skill crystallised at ep 13. Run _validate_skill() with eval_env to confirm.
+    Success trajectories in P1: 8
+  seed= 3  cryst_ep=  13 cryst_R=+1.44  Qz=0.83  P3=+1.519  P2=-0.880
+  ▶ Skill crystallised at ep 28. Run _validate_skill() with eval_env to confirm.
+    Success trajectories in P1: 10
+  seed= 4  cryst_ep=  28 cryst_R=+1.52  Qz=0.77  P3=+1.502  P2=-0.880
+  ▶ Skill crystallised at ep 11. Run _validate_skill() with eval_env to confirm.
+    Success trajectories in P1: 6
+  seed= 5  cryst_ep=  11 cryst_R=+1.38  Qz=0.73  P3=+1.514  P2=-0.880
+  ▶ Skill crystallised at ep 21. Run _validate_skill() with eval_env to confirm.
+    Success trajectories in P1: 8
+  seed= 6  cryst_ep=  21 cryst_R=+1.44  Qz=0.80  P3=+1.152  P2=-0.378
+  ▶ Skill crystallised at ep 10. Run _validate_skill() with eval_env to confirm.
+    Success trajectories in P1: 9
+  seed= 7  cryst_ep=  10 cryst_R=+1.30  Qz=0.77  P3=+1.520  P2=-0.880
+  ▶ Skill crystallised at ep 35. Run _validate_skill() with eval_env to confirm.
+    Success trajectories in P1: 5
+  seed= 8  cryst_ep=  35 cryst_R=+1.52  Qz=0.70  P3=-0.880  P2=-0.386
+  ▶ Skill crystallised at ep 16. Run _validate_skill() with eval_env to confirm.
+    Success trajectories in P1: 6
+  seed= 9  cryst_ep=  16 cryst_R=+1.52  Qz=0.97  P3=+1.512  P2=-0.880
+  ▶ Skill crystallised at ep 30. Run _validate_skill() with eval_env to confirm.
+    Success trajectories in P1: 13
+  seed=10  cryst_ep=  30 cryst_R=+1.48  Qz=0.77  P3=+0.550  P2=+1.077
+  ▶ Skill crystallised at ep 43. Run _validate_skill() with eval_env to confirm.
+    Success trajectories in P1: 10
+  seed=11  cryst_ep=  43 cryst_R=+1.42  Qz=0.67  P3=-0.640  P2=+1.304
+  ▶ Skill crystallised at ep 9. Run _validate_skill() with eval_env to confirm.
+    Success trajectories in P1: 8
+  seed=12  cryst_ep=   9 cryst_R=+1.48  Qz=0.83  P3=-0.880  P2=+0.973
+  ▶ Skill crystallised at ep 11. Run _validate_skill() with eval_env to confirm.
+    Success trajectories in P1: 6
+  seed=13  cryst_ep=  11 cryst_R=+1.34  Qz=0.63  P3=+1.396  P2=-0.880
+  ▶ Skill crystallised at ep 28. Run _validate_skill() with eval_env to confirm.
+    Success trajectories in P1: 17
+  seed=14  cryst_ep=  28 cryst_R=+1.46  Qz=0.80  P3=-0.411  P2=+1.003
+  ▶ Skill crystallised at ep 26. Run _validate_skill() with eval_env to confirm.
+    Success trajectories in P1: 15
+  seed=15  cryst_ep=  26 cryst_R=+1.40  Qz=0.83  P3=+1.518  P2=-0.880
+  ▶ Skill crystallised at ep 19. Run _validate_skill() with eval_env to confirm.
+    Success trajectories in P1: 12
+  seed=16  cryst_ep=  19 cryst_R=+1.50  Qz=0.83  P3=+1.520  P2=-0.880
+  ▶ Skill crystallised at ep 11. Run _validate_skill() with eval_env to confirm.
+    Success trajectories in P1: 5
+  seed=17  cryst_ep=  11 cryst_R=+1.40  Qz=0.57  P3=+1.200  P2=-0.689
+  ▶ Skill crystallised at ep 18. Run _validate_skill() with eval_env to confirm.
+    Success trajectories in P1: 12
+  seed=18  cryst_ep=  18 cryst_R=+1.38  Qz=0.67  P3=+1.516  P2=-0.880
+  ▶ Skill crystallised at ep 10. Run _validate_skill() with eval_env to confirm.
+    Success trajectories in P1: 7
+  seed=19  cryst_ep=  10 cryst_R=+1.44  Qz=0.87  P3=-0.642  P2=+0.754
+  ▶ Skill crystallised at ep 12. Run _validate_skill() with eval_env to confirm.
+    Success trajectories in P1: 6
+  seed=20  cryst_ep=  12 cryst_R=+1.36  Qz=0.63  P3=-0.880  P2=-0.360
+  ▶ Skill crystallised at ep 32. Run _validate_skill() with eval_env to confirm.
+    Success trajectories in P1: 14
+  seed=21  cryst_ep=  32 cryst_R=+1.40  Qz=0.67  P3=+0.312  P2=+0.705
+  ▶ Skill crystallised at ep 14. Run _validate_skill() with eval_env to confirm.
+    Success trajectories in P1: 7
+  seed=22  cryst_ep=  14 cryst_R=+1.10  Qz=0.90  P3=+0.788  P2=-0.063
+  ▶ Skill crystallised at ep 18. Run _validate_skill() with eval_env to confirm.
+    Success trajectories in P1: 7
+  seed=23  cryst_ep=  18 cryst_R=+1.52  Qz=0.83  P3=+1.499  P2=-0.880
+  ▶ Skill crystallised at ep 19. Run _validate_skill() with eval_env to confirm.
+    Success trajectories in P1: 7
+  seed=24  cryst_ep=  19 cryst_R=+1.44  Qz=0.80  P3=+1.498  P2=-0.880
+  ▶ Skill crystallised at ep 51. Run _validate_skill() with eval_env to confirm.
+    Success trajectories in P1: 9
+  seed=25  cryst_ep=  51 cryst_R=+1.52  Qz=0.73  P3=-0.880  P2=-0.360
+  ▶ Skill crystallised at ep 20. Run _validate_skill() with eval_env to confirm.
+    Success trajectories in P1: 11
+  seed=26  cryst_ep=  20 cryst_R=+1.48  Qz=0.63  P3=+1.494  P2=-0.880
+  ▶ Skill crystallised at ep 18. Run _validate_skill() with eval_env to confirm.
+    Success trajectories in P1: 9
+  seed=27  cryst_ep=  18 cryst_R=+1.40  Qz=0.73  P3=+0.918  P2=-0.776
+  ▶ Skill crystallised at ep 27. Run _validate_skill() with eval_env to confirm.
+    Success trajectories in P1: 15
+  seed=28  cryst_ep=  27 cryst_R=+1.40  Qz=0.73  P3=+1.518  P2=-0.880
+  ▶ Skill crystallised at ep 28. Run _validate_skill() with eval_env to confirm.
+    Success trajectories in P1: 13
+  seed=29  cryst_ep=  28 cryst_R=+1.14  Qz=0.87  P3=-0.880  P2=-0.360
+
+==============================================================================
+  P1 RESULTS (N=30, seeded, app_thresh=0.3)
+==============================================================================
+  Arm               Qz mean     P3 early      P2 late   cryst_ep   cryst_R
+  Trigger            0.772    1.403±0.08   -0.729±0.09       21.2      1.42
+  RandomLate         0.987    1.410±0.08   -0.733±0.10       59.8      1.41
+  RandomUniform      0.798    1.146±0.16   -0.548±0.13       36.5      0.69
+  NoSkill            0.772    0.698±0.18   -0.369±0.13       21.2      1.42
+
+  ──────────────────────────────────────────────────────────────────────────
+  KEY COMPARISON (pre-registered): Trigger vs RandomLate
+  ──────────────────────────────────────────────────────────────────────────
+  PRIMARY  Qz   (Trig>RandLate)      0.772 vs   0.987  g=-2.79  CI[-0.25,-0.18]  p=1.000 (FDR 1.000)
+  2ndary   P3   (Trig>RandLate)      1.403 vs   1.410  g=-0.02  CI[-0.22,+0.21]  p=0.889 (FDR 1.000)
+  2ndary   P2   (Trig<RandLate)     -0.729 vs  -0.733  g=+0.01  CI[-0.25,+0.26]  p=0.458 (FDR 0.917)
+  ctrl     Qz   (Trig>RandUnif)      0.772 vs   0.798  g=-0.11  CI[-0.11,+0.07]  p=0.891 (FDR 1.000)
+  sanity   P3   (Trig>NoSkill)       1.403 vs   0.698  g=+0.91  CI[+0.37,+1.06]  p=0.000 (FDR 0.000)
+  sanity   P3   (RandLate>NoSkill)   1.410 vs   0.698  g=+0.91  CI[+0.38,+1.07]  p=0.000 (FDR 0.000)
+
+  ──────────────────────────────────────────────────────────────────────────
+  PRE-REGISTERED VERDICT
+  ──────────────────────────────────────────────────────────────────────────
+  PRIMARY Qz: Trig 0.772 vs RandLate 0.987  g=-2.79  p=1.000  → H1 INCONCLUSIVE
+
+  Saved results/p1_crux.pkl

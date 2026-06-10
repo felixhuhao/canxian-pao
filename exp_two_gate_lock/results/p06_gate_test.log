@@ -1,0 +1,156 @@
+
+── Flat ──
+  seed=0  P2=-0.464  P3=-0.880  apply=0.0%
+  seed=1  P2=-0.880  P3=+1.520  apply=0.0%
+  seed=2  P2=-0.360  P3=-0.880  apply=0.0%
+  seed=3  P2=-0.880  P3=+1.520  apply=0.0%
+  seed=4  P2=-0.880  P3=+1.512  apply=0.0%
+  seed=5  P2=-0.880  P3=+1.515  apply=0.0%
+  seed=6  P2=-0.880  P3=+1.514  apply=0.0%
+  seed=7  P2=-0.880  P3=+1.514  apply=0.0%
+  seed=8  P2=+0.800  P3=-0.880  apply=0.0%
+  seed=9  P2=+1.327  P3=-0.880  apply=0.0%
+
+── PAO app=0.7 ──
+  ▶ Skill crystallised at ep 18. Run _validate_skill() with eval_env to confirm.
+    Success trajectories in P1: 7
+  seed=0  P2=-0.880  P3=+1.518  apply=0.0%
+  ▶ Skill crystallised at ep 10. Run _validate_skill() with eval_env to confirm.
+    Success trajectories in P1: 6
+  seed=1  P2=-0.880  P3=+1.496  apply=0.0%
+  ▶ Skill crystallised at ep 29. Run _validate_skill() with eval_env to confirm.
+    Success trajectories in P1: 10
+  seed=2  P2=-0.318  P3=-0.428  apply=0.0%
+  ▶ Skill crystallised at ep 13. Run _validate_skill() with eval_env to confirm.
+    Success trajectories in P1: 8
+  seed=3  P2=-0.880  P3=+1.519  apply=0.0%
+  ▶ Skill crystallised at ep 28. Run _validate_skill() with eval_env to confirm.
+    Success trajectories in P1: 10
+  seed=4  P2=-0.880  P3=+1.502  apply=0.0%
+  ▶ Skill crystallised at ep 11. Run _validate_skill() with eval_env to confirm.
+    Success trajectories in P1: 6
+  seed=5  P2=-0.880  P3=+1.514  apply=0.0%
+  ▶ Skill crystallised at ep 21. Run _validate_skill() with eval_env to confirm.
+    Success trajectories in P1: 8
+  seed=6  P2=-0.378  P3=+1.152  apply=0.0%
+  ▶ Skill crystallised at ep 10. Run _validate_skill() with eval_env to confirm.
+    Success trajectories in P1: 9
+  seed=7  P2=-0.880  P3=+1.520  apply=0.0%
+  ▶ Skill crystallised at ep 35. Run _validate_skill() with eval_env to confirm.
+    Success trajectories in P1: 5
+  seed=8  P2=-0.386  P3=-0.880  apply=0.0%
+  ▶ Skill crystallised at ep 16. Run _validate_skill() with eval_env to confirm.
+    Success trajectories in P1: 6
+  seed=9  P2=-0.880  P3=+1.512  apply=0.0%
+
+── NoSkill app=0.7 ──
+  ▶ Skill crystallised at ep 18. Run _validate_skill() with eval_env to confirm.
+    Success trajectories in P1: 7
+  seed=0  P2=-0.880  P3=+1.518  apply=0.0%
+  ▶ Skill crystallised at ep 10. Run _validate_skill() with eval_env to confirm.
+    Success trajectories in P1: 6
+  seed=1  P2=-0.880  P3=+1.496  apply=0.0%
+  ▶ Skill crystallised at ep 29. Run _validate_skill() with eval_env to confirm.
+    Success trajectories in P1: 10
+  seed=2  P2=-0.318  P3=-0.428  apply=0.0%
+  ▶ Skill crystallised at ep 13. Run _validate_skill() with eval_env to confirm.
+    Success trajectories in P1: 8
+  seed=3  P2=-0.880  P3=+1.519  apply=0.0%
+  ▶ Skill crystallised at ep 28. Run _validate_skill() with eval_env to confirm.
+    Success trajectories in P1: 10
+  seed=4  P2=-0.880  P3=+1.502  apply=0.0%
+  ▶ Skill crystallised at ep 11. Run _validate_skill() with eval_env to confirm.
+    Success trajectories in P1: 6
+  seed=5  P2=-0.880  P3=+1.514  apply=0.0%
+  ▶ Skill crystallised at ep 21. Run _validate_skill() with eval_env to confirm.
+    Success trajectories in P1: 8
+  seed=6  P2=-0.378  P3=+1.152  apply=0.0%
+  ▶ Skill crystallised at ep 10. Run _validate_skill() with eval_env to confirm.
+    Success trajectories in P1: 9
+  seed=7  P2=-0.880  P3=+1.520  apply=0.0%
+  ▶ Skill crystallised at ep 35. Run _validate_skill() with eval_env to confirm.
+    Success trajectories in P1: 5
+  seed=8  P2=-0.386  P3=-0.880  apply=0.0%
+  ▶ Skill crystallised at ep 16. Run _validate_skill() with eval_env to confirm.
+    Success trajectories in P1: 6
+  seed=9  P2=-0.880  P3=+1.512  apply=0.0%
+
+── PAO app=0.3 ──
+  ▶ Skill crystallised at ep 18. Run _validate_skill() with eval_env to confirm.
+    Success trajectories in P1: 7
+  seed=0  P2=-0.880  P3=+1.519  apply=99.9%
+  ▶ Skill crystallised at ep 10. Run _validate_skill() with eval_env to confirm.
+    Success trajectories in P1: 6
+  seed=1  P2=-0.880  P3=+1.520  apply=47.7%
+  ▶ Skill crystallised at ep 29. Run _validate_skill() with eval_env to confirm.
+    Success trajectories in P1: 10
+  seed=2  P2=-0.880  P3=+1.518  apply=57.6%
+  ▶ Skill crystallised at ep 13. Run _validate_skill() with eval_env to confirm.
+    Success trajectories in P1: 8
+  seed=3  P2=-0.880  P3=+1.512  apply=32.6%
+  ▶ Skill crystallised at ep 28. Run _validate_skill() with eval_env to confirm.
+    Success trajectories in P1: 10
+  seed=4  P2=-0.880  P3=+1.506  apply=20.3%
+  ▶ Skill crystallised at ep 11. Run _validate_skill() with eval_env to confirm.
+    Success trajectories in P1: 6
+  seed=5  P2=-0.880  P3=+1.518  apply=41.5%
+  ▶ Skill crystallised at ep 21. Run _validate_skill() with eval_env to confirm.
+    Success trajectories in P1: 8
+  seed=6  P2=-0.880  P3=+1.518  apply=45.2%
+  ▶ Skill crystallised at ep 10. Run _validate_skill() with eval_env to confirm.
+    Success trajectories in P1: 9
+  seed=7  P2=-0.880  P3=+1.517  apply=39.0%
+  ▶ Skill crystallised at ep 35. Run _validate_skill() with eval_env to confirm.
+    Success trajectories in P1: 5
+  seed=8  P2=-0.880  P3=+1.514  apply=39.0%
+  ▶ Skill crystallised at ep 16. Run _validate_skill() with eval_env to confirm.
+    Success trajectories in P1: 6
+  seed=9  P2=-0.880  P3=+1.520  apply=100.0%
+
+── NoSkill app=0.3 ──
+  ▶ Skill crystallised at ep 18. Run _validate_skill() with eval_env to confirm.
+    Success trajectories in P1: 7
+  seed=0  P2=-0.880  P3=+1.518  apply=0.0%
+  ▶ Skill crystallised at ep 10. Run _validate_skill() with eval_env to confirm.
+    Success trajectories in P1: 6
+  seed=1  P2=-0.880  P3=+1.496  apply=0.0%
+  ▶ Skill crystallised at ep 29. Run _validate_skill() with eval_env to confirm.
+    Success trajectories in P1: 10
+  seed=2  P2=-0.318  P3=-0.428  apply=0.0%
+  ▶ Skill crystallised at ep 13. Run _validate_skill() with eval_env to confirm.
+    Success trajectories in P1: 8
+  seed=3  P2=-0.880  P3=+1.519  apply=0.0%
+  ▶ Skill crystallised at ep 28. Run _validate_skill() with eval_env to confirm.
+    Success trajectories in P1: 10
+  seed=4  P2=-0.880  P3=+1.502  apply=0.0%
+  ▶ Skill crystallised at ep 11. Run _validate_skill() with eval_env to confirm.
+    Success trajectories in P1: 6
+  seed=5  P2=-0.880  P3=+1.514  apply=0.0%
+  ▶ Skill crystallised at ep 21. Run _validate_skill() with eval_env to confirm.
+    Success trajectories in P1: 8
+  seed=6  P2=-0.378  P3=+1.152  apply=0.0%
+  ▶ Skill crystallised at ep 10. Run _validate_skill() with eval_env to confirm.
+    Success trajectories in P1: 9
+  seed=7  P2=-0.880  P3=+1.520  apply=0.0%
+  ▶ Skill crystallised at ep 35. Run _validate_skill() with eval_env to confirm.
+    Success trajectories in P1: 5
+  seed=8  P2=-0.386  P3=-0.880  apply=0.0%
+  ▶ Skill crystallised at ep 16. Run _validate_skill() with eval_env to confirm.
+    Success trajectories in P1: 6
+  seed=9  P2=-0.880  P3=+1.512  apply=0.0%
+
+========================================================================
+  P0.6 GATE CAUSALITY (N=10, seeded)
+========================================================================
+  Condition               P2 late       P3 early  skill-apply%
+  Flat              -0.398±0.254   0.557±0.391          0.0
+  PAO app=0.7       -0.724±0.080   1.042±0.287          0.0
+  NoSkill app=0.7   -0.724±0.080   1.042±0.287          0.0
+  PAO app=0.3       -0.880±0.000   1.516±0.001         52.3
+  NoSkill app=0.3   -0.724±0.080   1.042±0.287          0.0
+
+  Causal test — PAO vs its NoSkill control (byte-identical ⇒ gate inert):
+    app=0.7: PAO == NoSkill ? True
+    app=0.3: PAO == NoSkill ? False
+
+  Saved results/p06_gate_test.pkl

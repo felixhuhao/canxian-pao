@@ -1,0 +1,1112 @@
+1D Rule-Swap Hysteresis  Seeds:[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]  P1:80  P2:120  P3:60
+  ⚡ Quick mode
+
+──────────────────────────────────────────────────
+  PAO-light
+
+── PAO seed=0 ──
+  [PAO-P1] ep=   0 R=+1.480 H=0.674 sk=0
+  [PAO-P1] ep=   1 R=-0.880 H=1.280 sk=0
+  [PAO-P1] ep=   2 R=-0.880 H=1.218 sk=0
+  [PAO-P1] ep=   3 R=+1.380 H=0.659 sk=0
+  [PAO-P1] ep=   4 R=-0.880 H=1.221 sk=0
+  [PAO-P1] ep=  49 R=+1.480 H=0.362 sk=1 sk@[10]
+  [PAO-P1] ep=  79 R=+1.480 H=0.228 sk=1 sk@[10]
+  ── RULE SWAP: B→A (ε=0.1) ──
+  [PAO-P2] ep=   0 R=-0.880 H=0.691 sk=1 sk@[10]
+  [PAO-P2] ep=   1 R=-0.880 H=0.593 sk=1 sk@[10]
+  [PAO-P2] ep=   2 R=-0.880 H=0.489 sk=1 sk@[10]
+  [PAO-P2] ep=   3 R=-0.880 H=0.376 sk=1 sk@[10]
+  [PAO-P2] ep=   4 R=-0.880 H=0.295 sk=1 sk@[10]
+  [PAO-P2] ep=  49 R=-0.880 H=0.083 sk=1 sk@[10]
+  [PAO-P2] ep=  99 R=-0.880 H=0.038 sk=1 sk@[10]
+  [PAO-P2] ep= 119 R=-0.880 H=0.042 sk=1 sk@[10]
+  ── RULE RESTORE: A→B ──
+  [PAO-P3] ep=   0 R=+1.520 H=0.047 sk=1 sk@[10]
+  [PAO-P3] ep=   1 R=+1.520 H=0.049 sk=1 sk@[10]
+  [PAO-P3] ep=   2 R=+1.520 H=0.051 sk=1 sk@[10]
+  [PAO-P3] ep=   3 R=+1.520 H=0.053 sk=1 sk@[10]
+  [PAO-P3] ep=   4 R=+1.520 H=0.056 sk=1 sk@[10]
+  [PAO-P3] ep=  49 R=+1.520 H=0.058 sk=1 sk@[10]
+  [PAO-P3] ep=  59 R=+1.520 H=0.066 sk=1 sk@[10]
+
+── PAO seed=1 ──
+  [PAO-P1] ep=   0 R=-0.880 H=1.368 sk=0
+  [PAO-P1] ep=   1 R=+0.960 H=1.383 sk=0
+  [PAO-P1] ep=   2 R=+1.420 H=0.685 sk=0
+  [PAO-P1] ep=   3 R=+1.420 H=0.682 sk=0
+  [PAO-P1] ep=   4 R=-0.880 H=1.371 sk=0
+  [PAO-P1] ep=  49 R=+1.520 H=0.331 sk=1 sk@[24]
+  [PAO-P1] ep=  79 R=+1.520 H=0.274 sk=1 sk@[24]
+  ── RULE SWAP: B→A (ε=0.1) ──
+  [PAO-P2] ep=   0 R=-0.880 H=0.499 sk=1 sk@[24]
+  [PAO-P2] ep=   1 R=-0.880 H=0.514 sk=1 sk@[24]
+  [PAO-P2] ep=   2 R=-0.880 H=0.487 sk=1 sk@[24]
+  [PAO-P2] ep=   3 R=-0.880 H=0.449 sk=1 sk@[24]
+  [PAO-P2] ep=   4 R=-0.880 H=0.408 sk=1 sk@[24]
+  [PAO-P2] ep=  49 R=-0.880 H=0.262 sk=1 sk@[24]
+  [PAO-P2] ep=  99 R=-0.880 H=0.083 sk=1 sk@[24]
+  [PAO-P2] ep= 119 R=-0.880 H=0.049 sk=1 sk@[24]
+  ── RULE RESTORE: A→B ──
+  [PAO-P3] ep=   0 R=+1.440 H=0.189 sk=1 sk@[24]
+  [PAO-P3] ep=   1 R=+1.520 H=0.102 sk=1 sk@[24]
+  [PAO-P3] ep=   2 R=+1.520 H=0.098 sk=1 sk@[24]
+  [PAO-P3] ep=   3 R=+1.520 H=0.096 sk=1 sk@[24]
+  [PAO-P3] ep=   4 R=+1.500 H=0.127 sk=1 sk@[24]
+  [PAO-P3] ep=  49 R=+1.520 H=0.020 sk=1 sk@[24]
+  [PAO-P3] ep=  59 R=+1.520 H=0.021 sk=1 sk@[24]
+
+── PAO seed=2 ──
+  [PAO-P1] ep=   0 R=+1.280 H=0.684 sk=0
+  [PAO-P1] ep=   1 R=-0.880 H=1.383 sk=0
+  [PAO-P1] ep=   2 R=-0.880 H=1.382 sk=0
+  [PAO-P1] ep=   3 R=-0.360 H=1.381 sk=0
+  [PAO-P1] ep=   4 R=+1.400 H=0.682 sk=0
+  [PAO-P1] ep=  49 R=+1.520 H=0.424 sk=1 sk@[26]
+  [PAO-P1] ep=  79 R=+1.520 H=0.287 sk=1 sk@[26]
+  ── RULE SWAP: B→A (ε=0.1) ──
+  [PAO-P2] ep=   0 R=-0.880 H=0.622 sk=1 sk@[26]
+  [PAO-P2] ep=   1 R=-0.880 H=0.692 sk=1 sk@[26]
+  [PAO-P2] ep=   2 R=-0.880 H=0.780 sk=1 sk@[26]
+  [PAO-P2] ep=   3 R=-0.880 H=0.858 sk=1 sk@[26]
+  [PAO-P2] ep=   4 R=-0.880 H=0.786 sk=1 sk@[26]
+  [PAO-P2] ep=  49 R=-0.880 H=0.211 sk=1 sk@[26]
+  [PAO-P2] ep=  99 R=-0.880 H=0.085 sk=1 sk@[26]
+  [PAO-P2] ep= 119 R=-0.880 H=0.107 sk=1 sk@[26]
+  ── RULE RESTORE: A→B ──
+  [PAO-P3] ep=   0 R=+1.520 H=0.203 sk=1 sk@[26]
+  [PAO-P3] ep=   1 R=+1.520 H=0.202 sk=1 sk@[26]
+  [PAO-P3] ep=   2 R=+1.520 H=0.201 sk=1 sk@[26]
+  [PAO-P3] ep=   3 R=+1.520 H=0.200 sk=1 sk@[26]
+  [PAO-P3] ep=   4 R=+1.520 H=0.199 sk=1 sk@[26]
+  [PAO-P3] ep=  49 R=+1.520 H=0.035 sk=1 sk@[26]
+  [PAO-P3] ep=  59 R=+1.520 H=0.035 sk=1 sk@[26]
+
+── PAO seed=3 ──
+  [PAO-P1] ep=   0 R=-0.360 H=1.358 sk=0
+  [PAO-P1] ep=   1 R=-0.880 H=1.380 sk=0
+  [PAO-P1] ep=   2 R=+1.300 H=0.671 sk=0
+  [PAO-P1] ep=   3 R=+1.360 H=0.644 sk=0
+  [PAO-P1] ep=   4 R=+1.140 H=0.644 sk=0
+  [PAO-P1] ep=  49 R=+1.520 H=0.161 sk=1 sk@[10]
+  [PAO-P1] ep=  79 R=+1.520 H=0.099 sk=1 sk@[10]
+  ── RULE SWAP: B→A (ε=0.1) ──
+  [PAO-P2] ep=   0 R=-0.880 H=0.182 sk=1 sk@[10]
+  [PAO-P2] ep=   1 R=-0.880 H=0.195 sk=1 sk@[10]
+  [PAO-P2] ep=   2 R=-0.880 H=0.216 sk=1 sk@[10]
+  [PAO-P2] ep=   3 R=-0.880 H=0.217 sk=1 sk@[10]
+  [PAO-P2] ep=   4 R=-0.880 H=0.190 sk=1 sk@[10]
+  [PAO-P2] ep=  49 R=-0.880 H=0.093 sk=1 sk@[10]
+  [PAO-P2] ep=  99 R=-0.880 H=0.049 sk=1 sk@[10]
+  [PAO-P2] ep= 119 R=-0.880 H=0.018 sk=1 sk@[10]
+  ── RULE RESTORE: A→B ──
+  [PAO-P3] ep=   0 R=+1.520 H=0.023 sk=1 sk@[10]
+  [PAO-P3] ep=   1 R=+1.520 H=0.022 sk=1 sk@[10]
+  [PAO-P3] ep=   2 R=+1.520 H=0.022 sk=1 sk@[10]
+  [PAO-P3] ep=   3 R=+1.520 H=0.022 sk=1 sk@[10]
+  [PAO-P3] ep=   4 R=+1.520 H=0.022 sk=1 sk@[10]
+  [PAO-P3] ep=  49 R=+1.520 H=0.009 sk=1 sk@[10]
+  [PAO-P3] ep=  59 R=+1.520 H=0.009 sk=1 sk@[10]
+
+── PAO seed=4 ──
+  [PAO-P1] ep=   0 R=-0.880 H=1.372 sk=0
+  [PAO-P1] ep=   1 R=-0.880 H=1.376 sk=0
+  [PAO-P1] ep=   2 R=-0.880 H=1.370 sk=0
+  [PAO-P1] ep=   3 R=-0.880 H=1.381 sk=0
+  [PAO-P1] ep=   4 R=-0.360 H=1.381 sk=0
+  [PAO-P1] ep=  49 R=+1.520 H=0.481 sk=1 sk@[26]
+  [PAO-P1] ep=  79 R=+1.500 H=0.301 sk=1 sk@[26]
+  ── RULE SWAP: B→A (ε=0.1) ──
+  [PAO-P2] ep=   0 R=-0.880 H=0.654 sk=1 sk@[26]
+  [PAO-P2] ep=   1 R=-0.880 H=0.609 sk=1 sk@[26]
+  [PAO-P2] ep=   2 R=-0.880 H=0.549 sk=1 sk@[26]
+  [PAO-P2] ep=   3 R=-0.880 H=0.513 sk=1 sk@[26]
+  [PAO-P2] ep=   4 R=-0.880 H=0.440 sk=1 sk@[26]
+  [PAO-P2] ep=  49 R=-0.880 H=0.175 sk=1 sk@[26]
+  [PAO-P2] ep=  99 R=-0.880 H=0.120 sk=1 sk@[26]
+  [PAO-P2] ep= 119 R=-0.880 H=0.090 sk=1 sk@[26]
+  ── RULE RESTORE: A→B ──
+  [PAO-P3] ep=   0 R=+1.480 H=0.167 sk=1 sk@[26]
+  [PAO-P3] ep=   1 R=+1.520 H=0.131 sk=1 sk@[26]
+  [PAO-P3] ep=   2 R=+1.520 H=0.129 sk=1 sk@[26]
+  [PAO-P3] ep=   3 R=+1.520 H=0.129 sk=1 sk@[26]
+  [PAO-P3] ep=   4 R=+1.520 H=0.129 sk=1 sk@[26]
+  [PAO-P3] ep=  49 R=+1.520 H=0.058 sk=1 sk@[26]
+  [PAO-P3] ep=  59 R=+1.520 H=0.055 sk=1 sk@[26]
+
+── PAO seed=5 ──
+  [PAO-P1] ep=   0 R=+0.960 H=1.369 sk=0
+  [PAO-P1] ep=   1 R=-0.880 H=1.360 sk=0
+  [PAO-P1] ep=   2 R=-0.880 H=1.365 sk=0
+  [PAO-P1] ep=   3 R=-0.880 H=1.351 sk=0
+  [PAO-P1] ep=   4 R=+1.260 H=0.661 sk=0
+  [PAO-P1] ep=  49 R=+1.520 H=0.288 sk=1 sk@[19]
+  [PAO-P1] ep=  79 R=+1.520 H=0.165 sk=1 sk@[19]
+  ── RULE SWAP: B→A (ε=0.1) ──
+  [PAO-P2] ep=   0 R=-0.880 H=0.232 sk=1 sk@[19]
+  [PAO-P2] ep=   1 R=-0.880 H=0.239 sk=1 sk@[19]
+  [PAO-P2] ep=   2 R=-0.880 H=0.263 sk=1 sk@[19]
+  [PAO-P2] ep=   3 R=-0.880 H=0.283 sk=1 sk@[19]
+  [PAO-P2] ep=   4 R=-0.880 H=0.279 sk=1 sk@[19]
+  [PAO-P2] ep=  49 R=-0.880 H=0.053 sk=1 sk@[19]
+  [PAO-P2] ep=  99 R=-0.880 H=0.046 sk=1 sk@[19]
+  [PAO-P2] ep= 119 R=-0.880 H=0.071 sk=1 sk@[19]
+  ── RULE RESTORE: A→B ──
+  [PAO-P3] ep=   0 R=+1.520 H=0.076 sk=1 sk@[19]
+  [PAO-P3] ep=   1 R=+1.520 H=0.077 sk=1 sk@[19]
+  [PAO-P3] ep=   2 R=+1.520 H=0.078 sk=1 sk@[19]
+  [PAO-P3] ep=   3 R=+1.520 H=0.079 sk=1 sk@[19]
+  [PAO-P3] ep=   4 R=+1.520 H=0.080 sk=1 sk@[19]
+  [PAO-P3] ep=  49 R=+1.520 H=0.045 sk=1 sk@[19]
+  [PAO-P3] ep=  59 R=+1.520 H=0.032 sk=1 sk@[19]
+
+── PAO seed=6 ──
+  [PAO-P1] ep=   0 R=-0.880 H=1.226 sk=0
+  [PAO-P1] ep=   1 R=-0.880 H=1.134 sk=0
+  [PAO-P1] ep=   2 R=-0.880 H=1.011 sk=0
+  [PAO-P1] ep=   3 R=-0.880 H=0.931 sk=0
+  [PAO-P1] ep=   4 R=+1.520 H=0.621 sk=0
+  [PAO-P1] ep=  49 R=+1.520 H=0.238 sk=1 sk@[8]
+  [PAO-P1] ep=  79 R=+1.520 H=0.242 sk=1 sk@[8]
+  ── RULE SWAP: B→A (ε=0.1) ──
+  [PAO-P2] ep=   0 R=-0.880 H=0.381 sk=1 sk@[8]
+  [PAO-P2] ep=   1 R=-0.880 H=0.437 sk=1 sk@[8]
+  [PAO-P2] ep=   2 R=-0.880 H=0.505 sk=1 sk@[8]
+  [PAO-P2] ep=   3 R=-0.880 H=0.535 sk=1 sk@[8]
+  [PAO-P2] ep=   4 R=-0.880 H=0.503 sk=1 sk@[8]
+  [PAO-P2] ep=  49 R=-0.880 H=0.197 sk=1 sk@[8]
+  [PAO-P2] ep=  99 R=-0.880 H=0.116 sk=1 sk@[8]
+  [PAO-P2] ep= 119 R=-0.880 H=0.127 sk=1 sk@[8]
+  ── RULE RESTORE: A→B ──
+  [PAO-P3] ep=   0 R=+1.520 H=0.152 sk=1 sk@[8]
+  [PAO-P3] ep=   1 R=+1.520 H=0.147 sk=1 sk@[8]
+  [PAO-P3] ep=   2 R=+1.520 H=0.144 sk=1 sk@[8]
+  [PAO-P3] ep=   3 R=+1.520 H=0.143 sk=1 sk@[8]
+  [PAO-P3] ep=   4 R=+1.520 H=0.141 sk=1 sk@[8]
+  [PAO-P3] ep=  49 R=+1.520 H=0.020 sk=1 sk@[8]
+  [PAO-P3] ep=  59 R=+1.520 H=0.020 sk=1 sk@[8]
+
+── PAO seed=7 ──
+  [PAO-P1] ep=   0 R=+1.160 H=0.677 sk=0
+  [PAO-P1] ep=   1 R=+1.220 H=0.674 sk=0
+  [PAO-P1] ep=   2 R=-0.880 H=1.306 sk=0
+  [PAO-P1] ep=   3 R=+1.360 H=0.634 sk=0
+  [PAO-P1] ep=   4 R=+1.500 H=0.636 sk=0
+  [PAO-P1] ep=  49 R=+1.520 H=0.272 sk=1 sk@[8]
+  [PAO-P1] ep=  79 R=+1.520 H=0.281 sk=1 sk@[8]
+  ── RULE SWAP: B→A (ε=0.1) ──
+  [PAO-P2] ep=   0 R=-0.880 H=0.523 sk=1 sk@[8]
+  [PAO-P2] ep=   1 R=-0.880 H=0.598 sk=1 sk@[8]
+  [PAO-P2] ep=   2 R=-0.880 H=0.613 sk=1 sk@[8]
+  [PAO-P2] ep=   3 R=-0.880 H=0.581 sk=1 sk@[8]
+  [PAO-P2] ep=   4 R=-0.880 H=0.507 sk=1 sk@[8]
+  [PAO-P2] ep=  49 R=-0.880 H=0.191 sk=1 sk@[8]
+  [PAO-P2] ep=  99 R=-0.880 H=0.091 sk=1 sk@[8]
+  [PAO-P2] ep= 119 R=-0.880 H=0.087 sk=1 sk@[8]
+  ── RULE RESTORE: A→B ──
+  [PAO-P3] ep=   0 R=+1.520 H=0.185 sk=1 sk@[8]
+  [PAO-P3] ep=   1 R=+1.520 H=0.189 sk=1 sk@[8]
+  [PAO-P3] ep=   2 R=+1.520 H=0.192 sk=1 sk@[8]
+  [PAO-P3] ep=   3 R=+1.520 H=0.192 sk=1 sk@[8]
+  [PAO-P3] ep=   4 R=+1.520 H=0.192 sk=1 sk@[8]
+  [PAO-P3] ep=  49 R=+1.520 H=0.033 sk=1 sk@[8]
+  [PAO-P3] ep=  59 R=+1.520 H=0.035 sk=1 sk@[8]
+
+── PAO seed=8 ──
+  [PAO-P1] ep=   0 R=-0.880 H=1.385 sk=0
+  [PAO-P1] ep=   1 R=-0.880 H=1.376 sk=0
+  [PAO-P1] ep=   2 R=-0.880 H=1.345 sk=0
+  [PAO-P1] ep=   3 R=-0.880 H=1.288 sk=0
+  [PAO-P1] ep=   4 R=-0.880 H=1.305 sk=0
+  [PAO-P1] ep=  49 R=+1.480 H=0.472 sk=1 sk@[31]
+  [PAO-P1] ep=  79 R=+1.520 H=0.272 sk=1 sk@[31]
+  ── RULE SWAP: B→A (ε=0.1) ──
+  [PAO-P2] ep=   0 R=-0.880 H=0.494 sk=1 sk@[31]
+  [PAO-P2] ep=   1 R=-0.880 H=0.531 sk=1 sk@[31]
+  [PAO-P2] ep=   2 R=-0.880 H=0.559 sk=1 sk@[31]
+  [PAO-P2] ep=   3 R=-0.880 H=0.575 sk=1 sk@[31]
+  [PAO-P2] ep=   4 R=-0.880 H=0.540 sk=1 sk@[31]
+  [PAO-P2] ep=  49 R=-0.880 H=0.274 sk=1 sk@[31]
+  [PAO-P2] ep=  99 R=-0.880 H=0.126 sk=1 sk@[31]
+  [PAO-P2] ep= 119 R=-0.880 H=0.106 sk=1 sk@[31]
+  ── RULE RESTORE: A→B ──
+  [PAO-P3] ep=   0 R=+1.520 H=0.167 sk=1 sk@[31]
+  [PAO-P3] ep=   1 R=+1.520 H=0.160 sk=1 sk@[31]
+  [PAO-P3] ep=   2 R=+1.520 H=0.157 sk=1 sk@[31]
+  [PAO-P3] ep=   3 R=+1.520 H=0.155 sk=1 sk@[31]
+  [PAO-P3] ep=   4 R=+1.520 H=0.153 sk=1 sk@[31]
+  [PAO-P3] ep=  49 R=+1.520 H=0.030 sk=1 sk@[31]
+  [PAO-P3] ep=  59 R=+1.480 H=0.024 sk=1 sk@[31]
+
+── PAO seed=9 ──
+  [PAO-P1] ep=   0 R=-0.880 H=1.311 sk=0
+  [PAO-P1] ep=   1 R=-0.880 H=1.275 sk=0
+  [PAO-P1] ep=   2 R=-0.880 H=1.331 sk=0
+  [PAO-P1] ep=   3 R=-0.880 H=1.305 sk=0
+  [PAO-P1] ep=   4 R=-0.880 H=1.346 sk=0
+  [PAO-P1] ep=  49 R=+1.520 H=0.463 sk=1 sk@[21]
+  [PAO-P1] ep=  79 R=+1.520 H=0.316 sk=1 sk@[21]
+  ── RULE SWAP: B→A (ε=0.1) ──
+  [PAO-P2] ep=   0 R=-0.880 H=0.893 sk=1 sk@[21]
+  [PAO-P2] ep=   1 R=-0.880 H=0.819 sk=1 sk@[21]
+  [PAO-P2] ep=   2 R=-0.880 H=0.783 sk=1 sk@[21]
+  [PAO-P2] ep=   3 R=-0.880 H=0.691 sk=1 sk@[21]
+  [PAO-P2] ep=   4 R=-0.880 H=0.607 sk=1 sk@[21]
+  [PAO-P2] ep=  49 R=-0.880 H=0.144 sk=1 sk@[21]
+  [PAO-P2] ep=  99 R=-0.880 H=0.216 sk=1 sk@[21]
+  [PAO-P2] ep= 119 R=-0.880 H=0.099 sk=1 sk@[21]
+  ── RULE RESTORE: A→B ──
+  [PAO-P3] ep=   0 R=+1.520 H=0.173 sk=1 sk@[21]
+  [PAO-P3] ep=   1 R=+1.520 H=0.176 sk=1 sk@[21]
+  [PAO-P3] ep=   2 R=+1.520 H=0.179 sk=1 sk@[21]
+  [PAO-P3] ep=   3 R=+1.520 H=0.182 sk=1 sk@[21]
+  [PAO-P3] ep=   4 R=+1.520 H=0.184 sk=1 sk@[21]
+  [PAO-P3] ep=  49 R=+1.520 H=0.075 sk=1 sk@[21]
+  [PAO-P3] ep=  59 R=+1.520 H=0.079 sk=1 sk@[21]
+
+──────────────────────────────────────────────────
+  Flat PPO
+
+── Flat seed=0 ──
+  [Flat-P1] ep=   0 R=-0.880 H=1.373 sk=0
+  [Flat-P1] ep=   1 R=+1.400 H=0.693 sk=0
+  [Flat-P1] ep=   2 R=-0.880 H=1.368 sk=0
+  [Flat-P1] ep=   3 R=-0.880 H=1.377 sk=0
+  [Flat-P1] ep=   4 R=-0.880 H=1.373 sk=0
+  [Flat-P1] ep=  49 R=+1.320 H=0.631 sk=0
+  [Flat-P1] ep=  79 R=+1.520 H=0.289 sk=0
+  ── RULE SWAP: B→A (ε=0.1) ──
+  [Flat-P2] ep=   0 R=-0.880 H=0.423 sk=0
+  [Flat-P2] ep=   1 R=-0.880 H=0.447 sk=0
+  [Flat-P2] ep=   2 R=-0.880 H=0.478 sk=0
+  [Flat-P2] ep=   3 R=-0.880 H=0.532 sk=0
+  [Flat-P2] ep=   4 R=-0.880 H=0.564 sk=0
+  [Flat-P2] ep=  49 R=-0.360 H=0.973 sk=0
+  [Flat-P2] ep=  99 R=+1.300 H=0.370 sk=0
+  [Flat-P2] ep= 119 R=+1.340 H=0.429 sk=0
+  ── RULE RESTORE: A→B ──
+  [Flat-P3] ep=   0 R=+1.480 H=0.466 sk=0
+  [Flat-P3] ep=   1 R=-0.880 H=0.224 sk=0
+  [Flat-P3] ep=   2 R=-0.880 H=0.244 sk=0
+  [Flat-P3] ep=   3 R=-0.880 H=0.231 sk=0
+  [Flat-P3] ep=   4 R=-0.880 H=0.240 sk=0
+  [Flat-P3] ep=  49 R=+1.480 H=0.168 sk=0
+  [Flat-P3] ep=  59 R=+1.520 H=0.096 sk=0
+
+── Flat seed=1 ──
+  [Flat-P1] ep=   0 R=-0.880 H=1.372 sk=0
+  [Flat-P1] ep=   1 R=-0.880 H=1.353 sk=0
+  [Flat-P1] ep=   2 R=-0.880 H=1.332 sk=0
+  [Flat-P1] ep=   3 R=-0.880 H=1.328 sk=0
+  [Flat-P1] ep=   4 R=+1.440 H=0.690 sk=0
+  [Flat-P1] ep=  49 R=+1.520 H=0.216 sk=0
+  [Flat-P1] ep=  79 R=+1.520 H=0.128 sk=0
+  ── RULE SWAP: B→A (ε=0.1) ──
+  [Flat-P2] ep=   0 R=-0.880 H=0.528 sk=0
+  [Flat-P2] ep=   1 R=-0.880 H=0.599 sk=0
+  [Flat-P2] ep=   2 R=-0.880 H=0.666 sk=0
+  [Flat-P2] ep=   3 R=-0.880 H=0.665 sk=0
+  [Flat-P2] ep=   4 R=-0.880 H=0.797 sk=0
+  [Flat-P2] ep=  49 R=-0.880 H=0.894 sk=0
+  [Flat-P2] ep=  99 R=-0.360 H=0.403 sk=0
+  [Flat-P2] ep= 119 R=-0.360 H=0.704 sk=0
+  ── RULE RESTORE: A→B ──
+  [Flat-P3] ep=   0 R=-0.880 H=0.215 sk=0
+  [Flat-P3] ep=   1 R=-0.880 H=0.208 sk=0
+  [Flat-P3] ep=   2 R=-0.880 H=0.222 sk=0
+  [Flat-P3] ep=   3 R=-0.880 H=0.204 sk=0
+  [Flat-P3] ep=   4 R=-0.880 H=0.230 sk=0
+  [Flat-P3] ep=  49 R=+1.520 H=0.266 sk=0
+  [Flat-P3] ep=  59 R=+1.520 H=0.149 sk=0
+
+── Flat seed=2 ──
+  [Flat-P1] ep=   0 R=+1.060 H=0.683 sk=0
+  [Flat-P1] ep=   1 R=-0.880 H=1.365 sk=0
+  [Flat-P1] ep=   2 R=-0.880 H=1.365 sk=0
+  [Flat-P1] ep=   3 R=-0.880 H=1.349 sk=0
+  [Flat-P1] ep=   4 R=+1.440 H=0.656 sk=0
+  [Flat-P1] ep=  49 R=+1.480 H=0.463 sk=0
+  [Flat-P1] ep=  79 R=+1.520 H=0.107 sk=0
+  ── RULE SWAP: B→A (ε=0.1) ──
+  [Flat-P2] ep=   0 R=-0.880 H=0.500 sk=0
+  [Flat-P2] ep=   1 R=-0.880 H=0.526 sk=0
+  [Flat-P2] ep=   2 R=-0.880 H=0.467 sk=0
+  [Flat-P2] ep=   3 R=-0.880 H=0.581 sk=0
+  [Flat-P2] ep=   4 R=-0.880 H=0.609 sk=0
+  [Flat-P2] ep=  49 R=-0.880 H=0.996 sk=0
+  [Flat-P2] ep=  99 R=-0.880 H=0.799 sk=0
+  [Flat-P2] ep= 119 R=-0.880 H=0.697 sk=0
+  ── RULE RESTORE: A→B ──
+  [Flat-P3] ep=   0 R=+1.500 H=0.097 sk=0
+  [Flat-P3] ep=   1 R=+1.520 H=0.098 sk=0
+  [Flat-P3] ep=   2 R=+1.520 H=0.099 sk=0
+  [Flat-P3] ep=   3 R=+1.520 H=0.101 sk=0
+  [Flat-P3] ep=   4 R=+1.520 H=0.104 sk=0
+  [Flat-P3] ep=  49 R=+1.480 H=0.147 sk=0
+  [Flat-P3] ep=  59 R=+1.520 H=0.075 sk=0
+
+── Flat seed=3 ──
+  [Flat-P1] ep=   0 R=-0.880 H=1.371 sk=0
+  [Flat-P1] ep=   1 R=+1.420 H=0.690 sk=0
+  [Flat-P1] ep=   2 R=-0.880 H=1.383 sk=0
+  [Flat-P1] ep=   3 R=-0.880 H=1.380 sk=0
+  [Flat-P1] ep=   4 R=+1.460 H=0.688 sk=0
+  [Flat-P1] ep=  49 R=+1.480 H=0.488 sk=0
+  [Flat-P1] ep=  79 R=+1.520 H=0.233 sk=0
+  ── RULE SWAP: B→A (ε=0.1) ──
+  [Flat-P2] ep=   0 R=-0.880 H=0.638 sk=0
+  [Flat-P2] ep=   1 R=-0.880 H=0.678 sk=0
+  [Flat-P2] ep=   2 R=-0.880 H=0.738 sk=0
+  [Flat-P2] ep=   3 R=-0.880 H=0.772 sk=0
+  [Flat-P2] ep=   4 R=-0.880 H=0.716 sk=0
+  [Flat-P2] ep=  49 R=-0.880 H=1.014 sk=0
+  [Flat-P2] ep=  99 R=-0.880 H=0.411 sk=0
+  [Flat-P2] ep= 119 R=-0.880 H=0.491 sk=0
+  ── RULE RESTORE: A→B ──
+  [Flat-P3] ep=   0 R=+1.520 H=0.080 sk=0
+  [Flat-P3] ep=   1 R=+1.480 H=0.099 sk=0
+  [Flat-P3] ep=   2 R=+1.480 H=0.090 sk=0
+  [Flat-P3] ep=   3 R=+1.520 H=0.082 sk=0
+  [Flat-P3] ep=   4 R=+1.480 H=0.103 sk=0
+  [Flat-P3] ep=  49 R=+1.520 H=0.068 sk=0
+  [Flat-P3] ep=  59 R=+1.480 H=0.086 sk=0
+
+── Flat seed=4 ──
+  [Flat-P1] ep=   0 R=-0.880 H=1.365 sk=0
+  [Flat-P1] ep=   1 R=-0.360 H=1.374 sk=0
+  [Flat-P1] ep=   2 R=-0.880 H=1.320 sk=0
+  [Flat-P1] ep=   3 R=-0.880 H=1.356 sk=0
+  [Flat-P1] ep=   4 R=-0.880 H=1.377 sk=0
+  [Flat-P1] ep=  49 R=+1.520 H=0.270 sk=0
+  [Flat-P1] ep=  79 R=+1.520 H=0.060 sk=0
+  ── RULE SWAP: B→A (ε=0.1) ──
+  [Flat-P2] ep=   0 R=-0.880 H=0.084 sk=0
+  [Flat-P2] ep=   1 R=-0.880 H=0.098 sk=0
+  [Flat-P2] ep=   2 R=-0.880 H=0.115 sk=0
+  [Flat-P2] ep=   3 R=-0.880 H=0.129 sk=0
+  [Flat-P2] ep=   4 R=-0.880 H=0.137 sk=0
+  [Flat-P2] ep=  49 R=-0.880 H=0.459 sk=0
+  [Flat-P2] ep=  99 R=-0.880 H=0.078 sk=0
+  [Flat-P2] ep= 119 R=-0.880 H=0.037 sk=0
+  ── RULE RESTORE: A→B ──
+  [Flat-P3] ep=   0 R=+1.480 H=0.055 sk=0
+  [Flat-P3] ep=   1 R=+1.520 H=0.049 sk=0
+  [Flat-P3] ep=   2 R=+1.520 H=0.049 sk=0
+  [Flat-P3] ep=   3 R=+1.520 H=0.049 sk=0
+  [Flat-P3] ep=   4 R=+1.520 H=0.050 sk=0
+  [Flat-P3] ep=  49 R=+1.520 H=0.049 sk=0
+  [Flat-P3] ep=  59 R=+1.520 H=0.051 sk=0
+
+── Flat seed=5 ──
+  [Flat-P1] ep=   0 R=-0.880 H=1.374 sk=0
+  [Flat-P1] ep=   1 R=-0.880 H=1.375 sk=0
+  [Flat-P1] ep=   2 R=+1.380 H=0.692 sk=0
+  [Flat-P1] ep=   3 R=-0.360 H=1.385 sk=0
+  [Flat-P1] ep=   4 R=+1.240 H=0.686 sk=0
+  [Flat-P1] ep=  49 R=+1.520 H=0.426 sk=0
+  [Flat-P1] ep=  79 R=+1.520 H=0.099 sk=0
+  ── RULE SWAP: B→A (ε=0.1) ──
+  [Flat-P2] ep=   0 R=-0.880 H=0.509 sk=0
+  [Flat-P2] ep=   1 R=-0.880 H=0.593 sk=0
+  [Flat-P2] ep=   2 R=-0.880 H=0.628 sk=0
+  [Flat-P2] ep=   3 R=-0.880 H=0.663 sk=0
+  [Flat-P2] ep=   4 R=-0.880 H=0.639 sk=0
+  [Flat-P2] ep=  49 R=-0.880 H=0.638 sk=0
+  [Flat-P2] ep=  99 R=-0.360 H=0.219 sk=0
+  [Flat-P2] ep= 119 R=-0.360 H=0.251 sk=0
+  ── RULE RESTORE: A→B ──
+  [Flat-P3] ep=   0 R=-0.880 H=0.091 sk=0
+  [Flat-P3] ep=   1 R=-0.880 H=0.082 sk=0
+  [Flat-P3] ep=   2 R=-0.880 H=0.076 sk=0
+  [Flat-P3] ep=   3 R=-0.880 H=0.076 sk=0
+  [Flat-P3] ep=   4 R=-0.880 H=0.082 sk=0
+  [Flat-P3] ep=  49 R=-0.880 H=0.101 sk=0
+  [Flat-P3] ep=  59 R=-0.880 H=0.107 sk=0
+
+── Flat seed=6 ──
+  [Flat-P1] ep=   0 R=-0.880 H=1.326 sk=0
+  [Flat-P1] ep=   1 R=-0.880 H=1.339 sk=0
+  [Flat-P1] ep=   2 R=-0.880 H=1.291 sk=0
+  [Flat-P1] ep=   3 R=-0.880 H=1.250 sk=0
+  [Flat-P1] ep=   4 R=-0.880 H=1.269 sk=0
+  [Flat-P1] ep=  49 R=+1.420 H=0.590 sk=0
+  [Flat-P1] ep=  79 R=+1.520 H=0.215 sk=0
+  ── RULE SWAP: B→A (ε=0.1) ──
+  [Flat-P2] ep=   0 R=-0.880 H=0.895 sk=0
+  [Flat-P2] ep=   1 R=-0.880 H=0.897 sk=0
+  [Flat-P2] ep=   2 R=-0.880 H=0.915 sk=0
+  [Flat-P2] ep=   3 R=-0.880 H=0.937 sk=0
+  [Flat-P2] ep=   4 R=-0.880 H=0.941 sk=0
+  [Flat-P2] ep=  49 R=-0.360 H=0.804 sk=0
+  [Flat-P2] ep=  99 R=-0.360 H=1.134 sk=0
+  [Flat-P2] ep= 119 R=+1.320 H=0.350 sk=0
+  ── RULE RESTORE: A→B ──
+  [Flat-P3] ep=   0 R=-0.880 H=0.181 sk=0
+  [Flat-P3] ep=   1 R=-0.880 H=0.172 sk=0
+  [Flat-P3] ep=   2 R=-0.880 H=0.165 sk=0
+  [Flat-P3] ep=   3 R=-0.880 H=0.168 sk=0
+  [Flat-P3] ep=   4 R=-0.880 H=0.139 sk=0
+  [Flat-P3] ep=  49 R=-0.880 H=0.203 sk=0
+  [Flat-P3] ep=  59 R=+1.520 H=0.166 sk=0
+
+── Flat seed=7 ──
+  [Flat-P1] ep=   0 R=+0.840 H=1.370 sk=0
+  [Flat-P1] ep=   1 R=-0.880 H=1.377 sk=0
+  [Flat-P1] ep=   2 R=-0.880 H=1.362 sk=0
+  [Flat-P1] ep=   3 R=-0.880 H=1.365 sk=0
+  [Flat-P1] ep=   4 R=-0.880 H=1.331 sk=0
+  [Flat-P1] ep=  49 R=+1.520 H=0.301 sk=0
+  [Flat-P1] ep=  79 R=+1.520 H=0.151 sk=0
+  ── RULE SWAP: B→A (ε=0.1) ──
+  [Flat-P2] ep=   0 R=-0.880 H=0.312 sk=0
+  [Flat-P2] ep=   1 R=-0.880 H=0.357 sk=0
+  [Flat-P2] ep=   2 R=-0.880 H=0.408 sk=0
+  [Flat-P2] ep=   3 R=-0.880 H=0.481 sk=0
+  [Flat-P2] ep=   4 R=-0.880 H=0.548 sk=0
+  [Flat-P2] ep=  49 R=+0.920 H=1.258 sk=0
+  [Flat-P2] ep=  99 R=+1.260 H=0.520 sk=0
+  [Flat-P2] ep= 119 R=+1.380 H=0.274 sk=0
+  ── RULE RESTORE: A→B ──
+  [Flat-P3] ep=   0 R=-0.880 H=0.208 sk=0
+  [Flat-P3] ep=   1 R=-0.880 H=0.183 sk=0
+  [Flat-P3] ep=   2 R=-0.880 H=0.149 sk=0
+  [Flat-P3] ep=   3 R=-0.880 H=0.138 sk=0
+  [Flat-P3] ep=   4 R=-0.880 H=0.118 sk=0
+  [Flat-P3] ep=  49 R=+1.520 H=0.096 sk=0
+  [Flat-P3] ep=  59 R=+1.480 H=0.039 sk=0
+
+── Flat seed=8 ──
+  [Flat-P1] ep=   0 R=-0.880 H=1.361 sk=0
+  [Flat-P1] ep=   1 R=+1.520 H=0.690 sk=0
+  [Flat-P1] ep=   2 R=+1.040 H=0.688 sk=0
+  [Flat-P1] ep=   3 R=-0.880 H=1.255 sk=0
+  [Flat-P1] ep=   4 R=-0.880 H=1.116 sk=0
+  [Flat-P1] ep=  49 R=+1.340 H=0.565 sk=0
+  [Flat-P1] ep=  79 R=+1.520 H=0.071 sk=0
+  ── RULE SWAP: B→A (ε=0.1) ──
+  [Flat-P2] ep=   0 R=-0.880 H=0.087 sk=0
+  [Flat-P2] ep=   1 R=-0.880 H=0.085 sk=0
+  [Flat-P2] ep=   2 R=-0.880 H=0.091 sk=0
+  [Flat-P2] ep=   3 R=-0.880 H=0.093 sk=0
+  [Flat-P2] ep=   4 R=-0.880 H=0.094 sk=0
+  [Flat-P2] ep=  49 R=-0.880 H=0.360 sk=0
+  [Flat-P2] ep=  99 R=-0.880 H=0.770 sk=0
+  [Flat-P2] ep= 119 R=+1.220 H=0.551 sk=0
+  ── RULE RESTORE: A→B ──
+  [Flat-P3] ep=   0 R=-0.880 H=0.325 sk=0
+  [Flat-P3] ep=   1 R=+1.520 H=0.493 sk=0
+  [Flat-P3] ep=   2 R=+1.520 H=0.485 sk=0
+  [Flat-P3] ep=   3 R=-0.880 H=0.372 sk=0
+  [Flat-P3] ep=   4 R=+1.520 H=0.435 sk=0
+  [Flat-P3] ep=  49 R=-0.880 H=0.387 sk=0
+  [Flat-P3] ep=  59 R=-0.880 H=0.494 sk=0
+
+── Flat seed=9 ──
+  [Flat-P1] ep=   0 R=+1.380 H=0.690 sk=0
+  [Flat-P1] ep=   1 R=-0.880 H=1.377 sk=0
+  [Flat-P1] ep=   2 R=+1.320 H=0.682 sk=0
+  [Flat-P1] ep=   3 R=-0.880 H=1.325 sk=0
+  [Flat-P1] ep=   4 R=-0.880 H=1.261 sk=0
+  [Flat-P1] ep=  49 R=+1.520 H=0.416 sk=0
+  [Flat-P1] ep=  79 R=+1.520 H=0.083 sk=0
+  ── RULE SWAP: B→A (ε=0.1) ──
+  [Flat-P2] ep=   0 R=-0.880 H=0.325 sk=0
+  [Flat-P2] ep=   1 R=-0.880 H=0.310 sk=0
+  [Flat-P2] ep=   2 R=-0.880 H=0.375 sk=0
+  [Flat-P2] ep=   3 R=-0.880 H=0.389 sk=0
+  [Flat-P2] ep=   4 R=-0.880 H=0.388 sk=0
+  [Flat-P2] ep=  49 R=-0.880 H=0.502 sk=0
+  [Flat-P2] ep=  99 R=-0.880 H=0.422 sk=0
+  [Flat-P2] ep= 119 R=-0.880 H=0.140 sk=0
+  ── RULE RESTORE: A→B ──
+  [Flat-P3] ep=   0 R=+1.480 H=0.061 sk=0
+  [Flat-P3] ep=   1 R=+1.480 H=0.054 sk=0
+  [Flat-P3] ep=   2 R=+1.520 H=0.060 sk=0
+  [Flat-P3] ep=   3 R=+1.520 H=0.060 sk=0
+  [Flat-P3] ep=   4 R=+1.520 H=0.061 sk=0
+  [Flat-P3] ep=  49 R=+1.520 H=0.043 sk=0
+  [Flat-P3] ep=  59 R=+1.520 H=0.035 sk=0
+
+==============================================================================
+  HYSTERESIS STATISTICS (N=10 seeds)
+==============================================================================
+  Metric                                              PAO               Flat
+  ────────────────────────────────────────────────────────────────────────
+  Phase 2 (late 20)                          -0.880±0.000       -0.155±0.274
+  Phase 3 (early 20)                          1.519±0.001        0.300±0.374
+  Phase 3 (late 20)                            1.520±0.000        0.821±0.322
+  ────────────────────────────────────────────────────────────────────────
+  Wilcoxon (P2 inertia, PAO<Flat): W=0.0 p=0.0156
+  Wilcoxon (P3 reuse, PAO>Flat):   W=55.0 p=0.0010
+  Hedges' g (P2): -1.13  |  Hedges' g (P3): 1.39
+  ────────────────────────────────────────────────────────────────────────
+  Phase 2: PAO=-0.880±0.000 (locked); Flat=-0.155±0.274 (fails to consolidate B→A)
+  Phase 3: PAO=1.519±0.001 (instant); Flat=0.300±0.374 (unstable partial, variance large)
+  → Asymmetric adaptation consistent with hysteresis (preliminary, N=10).
+    Effect sizes g=-1.13/1.39 require full protocol (N≥30) for definitive test.
+
+  Plot: /Users/caihengjin/.openclaw/workspace/analysis/exp_two_gate_lock/results/1d_rule_swap_hysteresis.png
+  Plot: /Users/caihengjin/.openclaw/workspace/analysis/exp_two_gate_lock/results/1d_rule_swap_hysteresis.pdf
+
+══════════════════════════════════════════════════
+  ABLATION: PAO-no-dormancy (lr_factor=1.0)
+
+── NoDorm seed=0 ──
+  [NoDorm-P1] ep=   0 R=-0.880 H=1.363 sk=0
+  [NoDorm-P1] ep=   1 R=+1.480 H=0.692 sk=0
+  [NoDorm-P1] ep=   2 R=+1.360 H=0.692 sk=0
+  [NoDorm-P1] ep=   3 R=+1.180 H=0.689 sk=0
+  [NoDorm-P1] ep=   4 R=+1.440 H=0.690 sk=0
+  [NoDorm-P1] ep=  49 R=+1.520 H=0.287 sk=1 sk@[15]
+  [NoDorm-P1] ep=  79 R=+1.520 H=0.280 sk=1 sk@[15]
+  ── RULE SWAP: B→A (ε=0.1) ──
+  [NoDorm-P2] ep=   0 R=-0.880 H=0.299 sk=1 sk@[15]
+  [NoDorm-P2] ep=   1 R=-0.880 H=0.325 sk=1 sk@[15]
+  [NoDorm-P2] ep=   2 R=-0.880 H=0.363 sk=1 sk@[15]
+  [NoDorm-P2] ep=   3 R=-0.880 H=0.363 sk=1 sk@[15]
+  [NoDorm-P2] ep=   4 R=-0.880 H=0.348 sk=1 sk@[15]
+  [NoDorm-P2] ep=  49 R=-0.880 H=0.237 sk=1 sk@[15]
+  [NoDorm-P2] ep=  99 R=-0.880 H=0.173 sk=1 sk@[15]
+  [NoDorm-P2] ep= 119 R=-0.880 H=0.098 sk=1 sk@[15]
+  ── RULE RESTORE: A→B ──
+  [NoDorm-P3] ep=   0 R=+1.520 H=0.168 sk=1 sk@[15]
+  [NoDorm-P3] ep=   1 R=+1.520 H=0.171 sk=1 sk@[15]
+  [NoDorm-P3] ep=   2 R=+1.520 H=0.173 sk=1 sk@[15]
+  [NoDorm-P3] ep=   3 R=+1.500 H=0.200 sk=1 sk@[15]
+  [NoDorm-P3] ep=   4 R=+1.520 H=0.174 sk=1 sk@[15]
+  [NoDorm-P3] ep=  49 R=+1.520 H=0.047 sk=1 sk@[15]
+  [NoDorm-P3] ep=  59 R=+1.520 H=0.042 sk=1 sk@[15]
+
+── NoDorm seed=1 ──
+  [NoDorm-P1] ep=   0 R=+1.440 H=0.688 sk=0
+  [NoDorm-P1] ep=   1 R=+1.200 H=0.685 sk=0
+  [NoDorm-P1] ep=   2 R=+0.960 H=1.373 sk=0
+  [NoDorm-P1] ep=   3 R=-0.880 H=1.290 sk=0
+  [NoDorm-P1] ep=   4 R=+1.440 H=0.658 sk=0
+  [NoDorm-P1] ep=  49 R=+1.520 H=0.402 sk=1 sk@[17]
+  [NoDorm-P1] ep=  79 R=+1.520 H=0.328 sk=1 sk@[17]
+  ── RULE SWAP: B→A (ε=0.1) ──
+  [NoDorm-P2] ep=   0 R=-0.880 H=0.793 sk=1 sk@[17]
+  [NoDorm-P2] ep=   1 R=-0.880 H=0.786 sk=1 sk@[17]
+  [NoDorm-P2] ep=   2 R=-0.880 H=0.725 sk=1 sk@[17]
+  [NoDorm-P2] ep=   3 R=-0.880 H=0.625 sk=1 sk@[17]
+  [NoDorm-P2] ep=   4 R=-0.880 H=0.490 sk=1 sk@[17]
+  [NoDorm-P2] ep=  49 R=-0.880 H=0.118 sk=1 sk@[17]
+  [NoDorm-P2] ep=  99 R=-0.880 H=0.164 sk=1 sk@[17]
+  [NoDorm-P2] ep= 119 R=-0.880 H=0.062 sk=1 sk@[17]
+  ── RULE RESTORE: A→B ──
+  [NoDorm-P3] ep=   0 R=+1.520 H=0.110 sk=1 sk@[17]
+  [NoDorm-P3] ep=   1 R=+1.520 H=0.108 sk=1 sk@[17]
+  [NoDorm-P3] ep=   2 R=+1.520 H=0.108 sk=1 sk@[17]
+  [NoDorm-P3] ep=   3 R=+1.520 H=0.108 sk=1 sk@[17]
+  [NoDorm-P3] ep=   4 R=+1.520 H=0.108 sk=1 sk@[17]
+  [NoDorm-P3] ep=  49 R=+1.520 H=0.055 sk=1 sk@[17]
+  [NoDorm-P3] ep=  59 R=+1.520 H=0.053 sk=1 sk@[17]
+
+── NoDorm seed=2 ──
+  [NoDorm-P1] ep=   0 R=+1.340 H=0.690 sk=0
+  [NoDorm-P1] ep=   1 R=-0.880 H=1.381 sk=0
+  [NoDorm-P1] ep=   2 R=-0.880 H=1.376 sk=0
+  [NoDorm-P1] ep=   3 R=+1.400 H=0.684 sk=0
+  [NoDorm-P1] ep=   4 R=+1.340 H=0.684 sk=0
+  [NoDorm-P1] ep=  49 R=+1.520 H=0.344 sk=1 sk@[24]
+  [NoDorm-P1] ep=  79 R=+1.520 H=0.252 sk=1 sk@[24]
+  ── RULE SWAP: B→A (ε=0.1) ──
+  [NoDorm-P2] ep=   0 R=-0.880 H=0.702 sk=1 sk@[24]
+  [NoDorm-P2] ep=   1 R=-0.880 H=0.643 sk=1 sk@[24]
+  [NoDorm-P2] ep=   2 R=-0.880 H=0.572 sk=1 sk@[24]
+  [NoDorm-P2] ep=   3 R=-0.880 H=0.541 sk=1 sk@[24]
+  [NoDorm-P2] ep=   4 R=-0.880 H=0.452 sk=1 sk@[24]
+  [NoDorm-P2] ep=  49 R=-0.880 H=0.131 sk=1 sk@[24]
+  [NoDorm-P2] ep=  99 R=-0.880 H=0.110 sk=1 sk@[24]
+  [NoDorm-P2] ep= 119 R=-0.880 H=0.040 sk=1 sk@[24]
+  ── RULE RESTORE: A→B ──
+  [NoDorm-P3] ep=   0 R=+1.520 H=0.058 sk=1 sk@[24]
+  [NoDorm-P3] ep=   1 R=+1.520 H=0.059 sk=1 sk@[24]
+  [NoDorm-P3] ep=   2 R=+1.520 H=0.060 sk=1 sk@[24]
+  [NoDorm-P3] ep=   3 R=+1.520 H=0.061 sk=1 sk@[24]
+  [NoDorm-P3] ep=   4 R=+1.520 H=0.063 sk=1 sk@[24]
+  [NoDorm-P3] ep=  49 R=+1.520 H=0.039 sk=1 sk@[24]
+  [NoDorm-P3] ep=  59 R=+1.520 H=0.042 sk=1 sk@[24]
+
+── NoDorm seed=3 ──
+  [NoDorm-P1] ep=   0 R=+1.060 H=0.688 sk=0
+  [NoDorm-P1] ep=   1 R=+1.380 H=0.685 sk=0
+  [NoDorm-P1] ep=   2 R=+1.440 H=0.680 sk=0
+  [NoDorm-P1] ep=   3 R=+1.380 H=0.680 sk=0
+  [NoDorm-P1] ep=   4 R=+1.520 H=0.674 sk=0
+  [NoDorm-P1] ep=  49 R=+1.500 H=0.240 sk=1 sk@[13]
+  [NoDorm-P1] ep=  79 R=+1.520 H=0.061 sk=1 sk@[13]
+  ── RULE SWAP: B→A (ε=0.1) ──
+  [NoDorm-P2] ep=   0 R=-0.880 H=0.396 sk=1 sk@[13]
+  [NoDorm-P2] ep=   1 R=-0.880 H=0.361 sk=1 sk@[13]
+  [NoDorm-P2] ep=   2 R=-0.880 H=0.351 sk=1 sk@[13]
+  [NoDorm-P2] ep=   3 R=-0.880 H=0.298 sk=1 sk@[13]
+  [NoDorm-P2] ep=   4 R=-0.880 H=0.223 sk=1 sk@[13]
+  [NoDorm-P2] ep=  49 R=-0.880 H=0.026 sk=1 sk@[13]
+  [NoDorm-P2] ep=  99 R=-0.880 H=0.018 sk=1 sk@[13]
+  [NoDorm-P2] ep= 119 R=-0.880 H=0.022 sk=1 sk@[13]
+  ── RULE RESTORE: A→B ──
+  [NoDorm-P3] ep=   0 R=+1.520 H=0.026 sk=1 sk@[13]
+  [NoDorm-P3] ep=   1 R=+1.520 H=0.027 sk=1 sk@[13]
+  [NoDorm-P3] ep=   2 R=+1.520 H=0.026 sk=1 sk@[13]
+  [NoDorm-P3] ep=   3 R=+1.520 H=0.026 sk=1 sk@[13]
+  [NoDorm-P3] ep=   4 R=+1.520 H=0.026 sk=1 sk@[13]
+  [NoDorm-P3] ep=  49 R=+1.520 H=0.025 sk=1 sk@[13]
+  [NoDorm-P3] ep=  59 R=+1.520 H=0.027 sk=1 sk@[13]
+
+── NoDorm seed=4 ──
+  [NoDorm-P1] ep=   0 R=-0.880 H=1.373 sk=0
+  [NoDorm-P1] ep=   1 R=-0.880 H=1.352 sk=0
+  [NoDorm-P1] ep=   2 R=-0.880 H=1.359 sk=0
+  [NoDorm-P1] ep=   3 R=-0.880 H=1.370 sk=0
+  [NoDorm-P1] ep=   4 R=-0.880 H=1.382 sk=0
+  [NoDorm-P1] ep=  49 R=+1.520 H=0.379 sk=1 sk@[21]
+  [NoDorm-P1] ep=  79 R=+1.480 H=0.187 sk=1 sk@[21]
+  ── RULE SWAP: B→A (ε=0.1) ──
+  [NoDorm-P2] ep=   0 R=-0.880 H=0.164 sk=1 sk@[21]
+  [NoDorm-P2] ep=   1 R=-0.880 H=0.172 sk=1 sk@[21]
+  [NoDorm-P2] ep=   2 R=-0.880 H=0.196 sk=1 sk@[21]
+  [NoDorm-P2] ep=   3 R=-0.880 H=0.223 sk=1 sk@[21]
+  [NoDorm-P2] ep=   4 R=-0.880 H=0.256 sk=1 sk@[21]
+  [NoDorm-P2] ep=  49 R=-0.880 H=0.249 sk=1 sk@[21]
+  [NoDorm-P2] ep=  99 R=-0.880 H=0.052 sk=1 sk@[21]
+  [NoDorm-P2] ep= 119 R=-0.880 H=0.059 sk=1 sk@[21]
+  ── RULE RESTORE: A→B ──
+  [NoDorm-P3] ep=   0 R=+1.520 H=0.101 sk=1 sk@[21]
+  [NoDorm-P3] ep=   1 R=+1.520 H=0.099 sk=1 sk@[21]
+  [NoDorm-P3] ep=   2 R=+1.520 H=0.099 sk=1 sk@[21]
+  [NoDorm-P3] ep=   3 R=+1.520 H=0.098 sk=1 sk@[21]
+  [NoDorm-P3] ep=   4 R=+1.520 H=0.099 sk=1 sk@[21]
+  [NoDorm-P3] ep=  49 R=+1.520 H=0.041 sk=1 sk@[21]
+  [NoDorm-P3] ep=  59 R=+1.520 H=0.041 sk=1 sk@[21]
+
+── NoDorm seed=5 ──
+  [NoDorm-P1] ep=   0 R=-0.880 H=1.383 sk=0
+  [NoDorm-P1] ep=   1 R=-0.880 H=1.367 sk=0
+  [NoDorm-P1] ep=   2 R=+1.360 H=0.686 sk=0
+  [NoDorm-P1] ep=   3 R=-0.360 H=1.373 sk=0
+  [NoDorm-P1] ep=   4 R=+1.240 H=0.666 sk=0
+  [NoDorm-P1] ep=  49 R=+1.520 H=0.431 sk=1 sk@[14]
+  [NoDorm-P1] ep=  79 R=+1.520 H=0.268 sk=1 sk@[14]
+  ── RULE SWAP: B→A (ε=0.1) ──
+  [NoDorm-P2] ep=   0 R=-0.880 H=0.371 sk=1 sk@[14]
+  [NoDorm-P2] ep=   1 R=-0.880 H=0.411 sk=1 sk@[14]
+  [NoDorm-P2] ep=   2 R=-0.880 H=0.432 sk=1 sk@[14]
+  [NoDorm-P2] ep=   3 R=-0.880 H=0.435 sk=1 sk@[14]
+  [NoDorm-P2] ep=   4 R=-0.880 H=0.383 sk=1 sk@[14]
+  [NoDorm-P2] ep=  49 R=-0.880 H=0.304 sk=1 sk@[14]
+  [NoDorm-P2] ep=  99 R=-0.880 H=0.153 sk=1 sk@[14]
+  [NoDorm-P2] ep= 119 R=-0.880 H=0.188 sk=1 sk@[14]
+  ── RULE RESTORE: A→B ──
+  [NoDorm-P3] ep=   0 R=+1.520 H=0.183 sk=1 sk@[14]
+  [NoDorm-P3] ep=   1 R=+1.480 H=0.234 sk=1 sk@[14]
+  [NoDorm-P3] ep=   2 R=+1.520 H=0.164 sk=1 sk@[14]
+  [NoDorm-P3] ep=   3 R=+1.520 H=0.156 sk=1 sk@[14]
+  [NoDorm-P3] ep=   4 R=+1.520 H=0.151 sk=1 sk@[14]
+  [NoDorm-P3] ep=  49 R=+1.520 H=0.026 sk=1 sk@[14]
+  [NoDorm-P3] ep=  59 R=+1.520 H=0.016 sk=1 sk@[14]
+
+── NoDorm seed=6 ──
+  [NoDorm-P1] ep=   0 R=-0.880 H=1.365 sk=0
+  [NoDorm-P1] ep=   1 R=-0.880 H=1.366 sk=0
+  [NoDorm-P1] ep=   2 R=-0.880 H=1.329 sk=0
+  [NoDorm-P1] ep=   3 R=+1.280 H=0.675 sk=0
+  [NoDorm-P1] ep=   4 R=-0.880 H=1.253 sk=0
+  [NoDorm-P1] ep=  49 R=+1.520 H=0.363 sk=1 sk@[13]
+  [NoDorm-P1] ep=  79 R=+1.520 H=0.360 sk=1 sk@[13]
+  ── RULE SWAP: B→A (ε=0.1) ──
+  [NoDorm-P2] ep=   0 R=-0.880 H=0.534 sk=1 sk@[13]
+  [NoDorm-P2] ep=   1 R=-0.880 H=0.543 sk=1 sk@[13]
+  [NoDorm-P2] ep=   2 R=-0.880 H=0.583 sk=1 sk@[13]
+  [NoDorm-P2] ep=   3 R=-0.880 H=0.605 sk=1 sk@[13]
+  [NoDorm-P2] ep=   4 R=-0.880 H=0.572 sk=1 sk@[13]
+  [NoDorm-P2] ep=  49 R=-0.880 H=0.139 sk=1 sk@[13]
+  [NoDorm-P2] ep=  99 R=-0.880 H=0.038 sk=1 sk@[13]
+  [NoDorm-P2] ep= 119 R=-0.880 H=0.054 sk=1 sk@[13]
+  ── RULE RESTORE: A→B ──
+  [NoDorm-P3] ep=   0 R=+1.520 H=0.085 sk=1 sk@[13]
+  [NoDorm-P3] ep=   1 R=+1.520 H=0.086 sk=1 sk@[13]
+  [NoDorm-P3] ep=   2 R=+1.520 H=0.088 sk=1 sk@[13]
+  [NoDorm-P3] ep=   3 R=+1.520 H=0.089 sk=1 sk@[13]
+  [NoDorm-P3] ep=   4 R=+1.520 H=0.091 sk=1 sk@[13]
+  [NoDorm-P3] ep=  49 R=+1.520 H=0.034 sk=1 sk@[13]
+  [NoDorm-P3] ep=  59 R=+1.520 H=0.033 sk=1 sk@[13]
+
+── NoDorm seed=7 ──
+  [NoDorm-P1] ep=   0 R=+1.400 H=0.666 sk=0
+  [NoDorm-P1] ep=   1 R=-0.880 H=1.251 sk=0
+  [NoDorm-P1] ep=   2 R=-0.880 H=1.133 sk=0
+  [NoDorm-P1] ep=   3 R=+1.400 H=0.609 sk=0
+  [NoDorm-P1] ep=   4 R=+1.480 H=0.593 sk=1 sk@[4]
+  [NoDorm-P1] ep=  49 R=+1.520 H=0.260 sk=1 sk@[4]
+  [NoDorm-P1] ep=  79 R=+1.520 H=0.216 sk=1 sk@[4]
+  ── RULE SWAP: B→A (ε=0.1) ──
+  [NoDorm-P2] ep=   0 R=-0.880 H=0.361 sk=1 sk@[4]
+  [NoDorm-P2] ep=   1 R=-0.880 H=0.407 sk=1 sk@[4]
+  [NoDorm-P2] ep=   2 R=-0.880 H=0.416 sk=1 sk@[4]
+  [NoDorm-P2] ep=   3 R=-0.880 H=0.362 sk=1 sk@[4]
+  [NoDorm-P2] ep=   4 R=-0.880 H=0.300 sk=1 sk@[4]
+  [NoDorm-P2] ep=  49 R=-0.880 H=0.099 sk=1 sk@[4]
+  [NoDorm-P2] ep=  99 R=-0.880 H=0.057 sk=1 sk@[4]
+  [NoDorm-P2] ep= 119 R=-0.880 H=0.157 sk=1 sk@[4]
+  ── RULE RESTORE: A→B ──
+  [NoDorm-P3] ep=   0 R=+1.520 H=0.335 sk=1 sk@[4]
+  [NoDorm-P3] ep=   1 R=+1.520 H=0.346 sk=1 sk@[4]
+  [NoDorm-P3] ep=   2 R=+1.520 H=0.353 sk=1 sk@[4]
+  [NoDorm-P3] ep=   3 R=+1.520 H=0.357 sk=1 sk@[4]
+  [NoDorm-P3] ep=   4 R=+1.520 H=0.360 sk=1 sk@[4]
+  [NoDorm-P3] ep=  49 R=+1.520 H=0.101 sk=1 sk@[4]
+  [NoDorm-P3] ep=  59 R=+1.520 H=0.156 sk=1 sk@[4]
+
+── NoDorm seed=8 ──
+  [NoDorm-P1] ep=   0 R=-0.880 H=1.384 sk=0
+  [NoDorm-P1] ep=   1 R=-0.880 H=1.376 sk=0
+  [NoDorm-P1] ep=   2 R=-0.880 H=1.367 sk=0
+  [NoDorm-P1] ep=   3 R=-0.880 H=1.360 sk=0
+  [NoDorm-P1] ep=   4 R=-0.880 H=1.348 sk=0
+  [NoDorm-P1] ep=  49 R=+1.520 H=0.394 sk=1 sk@[26]
+  [NoDorm-P1] ep=  79 R=+1.520 H=0.225 sk=1 sk@[26]
+  ── RULE SWAP: B→A (ε=0.1) ──
+  [NoDorm-P2] ep=   0 R=-0.880 H=0.602 sk=1 sk@[26]
+  [NoDorm-P2] ep=   1 R=-0.880 H=0.632 sk=1 sk@[26]
+  [NoDorm-P2] ep=   2 R=-0.880 H=0.677 sk=1 sk@[26]
+  [NoDorm-P2] ep=   3 R=-0.880 H=0.650 sk=1 sk@[26]
+  [NoDorm-P2] ep=   4 R=-0.880 H=0.591 sk=1 sk@[26]
+  [NoDorm-P2] ep=  49 R=-0.880 H=0.190 sk=1 sk@[26]
+  [NoDorm-P2] ep=  99 R=-0.880 H=0.046 sk=1 sk@[26]
+  [NoDorm-P2] ep= 119 R=-0.880 H=0.033 sk=1 sk@[26]
+  ── RULE RESTORE: A→B ──
+  [NoDorm-P3] ep=   0 R=+1.520 H=0.054 sk=1 sk@[26]
+  [NoDorm-P3] ep=   1 R=+1.520 H=0.054 sk=1 sk@[26]
+  [NoDorm-P3] ep=   2 R=+1.520 H=0.055 sk=1 sk@[26]
+  [NoDorm-P3] ep=   3 R=+1.520 H=0.055 sk=1 sk@[26]
+  [NoDorm-P3] ep=   4 R=+1.520 H=0.055 sk=1 sk@[26]
+  [NoDorm-P3] ep=  49 R=+1.520 H=0.024 sk=1 sk@[26]
+  [NoDorm-P3] ep=  59 R=+1.480 H=0.019 sk=1 sk@[26]
+
+── NoDorm seed=9 ──
+  [NoDorm-P1] ep=   0 R=-0.880 H=1.384 sk=0
+  [NoDorm-P1] ep=   1 R=-0.880 H=1.367 sk=0
+  [NoDorm-P1] ep=   2 R=-0.880 H=1.361 sk=0
+  [NoDorm-P1] ep=   3 R=-0.880 H=1.363 sk=0
+  [NoDorm-P1] ep=   4 R=-0.880 H=1.378 sk=0
+  [NoDorm-P1] ep=  49 R=+1.480 H=0.548 sk=1 sk@[35]
+  [NoDorm-P1] ep=  79 R=+1.520 H=0.206 sk=1 sk@[35]
+  ── RULE SWAP: B→A (ε=0.1) ──
+  [NoDorm-P2] ep=   0 R=-0.880 H=0.519 sk=1 sk@[35]
+  [NoDorm-P2] ep=   1 R=-0.880 H=0.534 sk=1 sk@[35]
+  [NoDorm-P2] ep=   2 R=-0.880 H=0.607 sk=1 sk@[35]
+  [NoDorm-P2] ep=   3 R=-0.880 H=0.627 sk=1 sk@[35]
+  [NoDorm-P2] ep=   4 R=-0.880 H=0.563 sk=1 sk@[35]
+  [NoDorm-P2] ep=  49 R=-0.880 H=0.121 sk=1 sk@[35]
+  [NoDorm-P2] ep=  99 R=-0.880 H=0.078 sk=1 sk@[35]
+  [NoDorm-P2] ep= 119 R=-0.880 H=0.054 sk=1 sk@[35]
+  ── RULE RESTORE: A→B ──
+  [NoDorm-P3] ep=   0 R=+1.520 H=0.074 sk=1 sk@[35]
+  [NoDorm-P3] ep=   1 R=+1.520 H=0.074 sk=1 sk@[35]
+  [NoDorm-P3] ep=   2 R=+1.520 H=0.074 sk=1 sk@[35]
+  [NoDorm-P3] ep=   3 R=+1.520 H=0.075 sk=1 sk@[35]
+  [NoDorm-P3] ep=   4 R=+1.520 H=0.075 sk=1 sk@[35]
+  [NoDorm-P3] ep=  49 R=+1.520 H=0.063 sk=1 sk@[35]
+  [NoDorm-P3] ep=  59 R=+1.520 H=0.063 sk=1 sk@[35]
+
+==============================================================================
+  HYSTERESIS STATISTICS NoDorm vs Flat (N=10 seeds)
+==============================================================================
+  Metric                                              PAO               Flat
+  ────────────────────────────────────────────────────────────────────────
+  Phase 2 (late 20)                          -0.880±0.000       -0.155±0.274
+  Phase 3 (early 20)                          1.518±0.001        0.300±0.374
+  Phase 3 (late 20)                            1.519±0.000        0.821±0.322
+  ────────────────────────────────────────────────────────────────────────
+  Wilcoxon (P2 inertia, PAO<Flat): W=0.0 p=0.0156
+  Wilcoxon (P3 reuse, PAO>Flat):   W=55.0 p=0.0010
+  Hedges' g (P2): -1.13  |  Hedges' g (P3): 1.39
+  ────────────────────────────────────────────────────────────────────────
+  Phase 2: PAO=-0.880±0.000 (locked); Flat=-0.155±0.274 (fails to consolidate B→A)
+  Phase 3: PAO=1.518±0.001 (instant); Flat=0.300±0.374 (unstable partial, variance large)
+  → Asymmetric adaptation consistent with hysteresis (preliminary, N=10).
+    Effect sizes g=-1.13/1.39 require full protocol (N≥30) for definitive test.
+
+
+══════════════════════════════════════════════════
+  ABLATION: PAO-no-skill (bias_strength=0)
+
+── NoSkill seed=0 ──
+  [NoSkill-P1] ep=   0 R=-0.880 H=1.373 sk=0
+  [NoSkill-P1] ep=   1 R=-0.880 H=1.340 sk=0
+  [NoSkill-P1] ep=   2 R=+1.340 H=0.692 sk=0
+  [NoSkill-P1] ep=   3 R=-0.880 H=1.339 sk=0
+  [NoSkill-P1] ep=   4 R=-0.880 H=1.308 sk=0
+  [NoSkill-P1] ep=  49 R=+1.520 H=0.456 sk=1 sk@[28]
+  [NoSkill-P1] ep=  79 R=+1.480 H=0.219 sk=1 sk@[28]
+  ── RULE SWAP: B→A (ε=0.1) ──
+  [NoSkill-P2] ep=   0 R=-0.880 H=0.237 sk=1 sk@[28]
+  [NoSkill-P2] ep=   1 R=-0.880 H=0.236 sk=1 sk@[28]
+  [NoSkill-P2] ep=   2 R=-0.880 H=0.228 sk=1 sk@[28]
+  [NoSkill-P2] ep=   3 R=-0.880 H=0.249 sk=1 sk@[28]
+  [NoSkill-P2] ep=   4 R=-0.880 H=0.261 sk=1 sk@[28]
+  [NoSkill-P2] ep=  49 R=-0.880 H=0.250 sk=1 sk@[28]
+  [NoSkill-P2] ep=  99 R=-0.880 H=0.095 sk=1 sk@[28]
+  [NoSkill-P2] ep= 119 R=-0.880 H=0.071 sk=1 sk@[28]
+  ── RULE RESTORE: A→B ──
+  [NoSkill-P3] ep=   0 R=+1.520 H=0.085 sk=1 sk@[28]
+  [NoSkill-P3] ep=   1 R=+1.520 H=0.084 sk=1 sk@[28]
+  [NoSkill-P3] ep=   2 R=+1.520 H=0.084 sk=1 sk@[28]
+  [NoSkill-P3] ep=   3 R=+1.520 H=0.085 sk=1 sk@[28]
+  [NoSkill-P3] ep=   4 R=+1.520 H=0.086 sk=1 sk@[28]
+  [NoSkill-P3] ep=  49 R=+1.520 H=0.065 sk=1 sk@[28]
+  [NoSkill-P3] ep=  59 R=+1.520 H=0.061 sk=1 sk@[28]
+
+── NoSkill seed=1 ──
+  [NoSkill-P1] ep=   0 R=-0.880 H=1.374 sk=0
+  [NoSkill-P1] ep=   1 R=-0.880 H=1.353 sk=0
+  [NoSkill-P1] ep=   2 R=+1.340 H=0.679 sk=0
+  [NoSkill-P1] ep=   3 R=-0.880 H=1.364 sk=0
+  [NoSkill-P1] ep=   4 R=+1.400 H=0.673 sk=0
+  [NoSkill-P1] ep=  49 R=+1.440 H=0.283 sk=1 sk@[12]
+  [NoSkill-P1] ep=  79 R=+1.520 H=0.080 sk=1 sk@[12]
+  ── RULE SWAP: B→A (ε=0.1) ──
+  [NoSkill-P2] ep=   0 R=-0.880 H=0.201 sk=1 sk@[12]
+  [NoSkill-P2] ep=   1 R=-0.880 H=0.225 sk=1 sk@[12]
+  [NoSkill-P2] ep=   2 R=-0.880 H=0.248 sk=1 sk@[12]
+  [NoSkill-P2] ep=   3 R=-0.880 H=0.294 sk=1 sk@[12]
+  [NoSkill-P2] ep=   4 R=-0.880 H=0.328 sk=1 sk@[12]
+  [NoSkill-P2] ep=  49 R=-0.880 H=0.477 sk=1 sk@[12]
+  [NoSkill-P2] ep=  99 R=-0.880 H=0.619 sk=1 sk@[12]
+  [NoSkill-P2] ep= 119 R=-0.880 H=0.528 sk=1 sk@[12]
+  ── RULE RESTORE: A→B ──
+  [NoSkill-P3] ep=   0 R=+1.520 H=0.259 sk=1 sk@[12]
+  [NoSkill-P3] ep=   1 R=+1.520 H=0.251 sk=1 sk@[12]
+  [NoSkill-P3] ep=   2 R=+1.480 H=0.288 sk=1 sk@[12]
+  [NoSkill-P3] ep=   3 R=+1.480 H=0.281 sk=1 sk@[12]
+  [NoSkill-P3] ep=   4 R=+1.520 H=0.241 sk=1 sk@[12]
+  [NoSkill-P3] ep=  49 R=+1.520 H=0.027 sk=1 sk@[12]
+  [NoSkill-P3] ep=  59 R=+1.520 H=0.018 sk=1 sk@[12]
+
+── NoSkill seed=2 ──
+  [NoSkill-P1] ep=   0 R=-0.880 H=1.380 sk=0
+  [NoSkill-P1] ep=   1 R=-0.880 H=1.378 sk=0
+  [NoSkill-P1] ep=   2 R=-0.880 H=1.374 sk=0
+  [NoSkill-P1] ep=   3 R=+1.260 H=0.688 sk=0
+  [NoSkill-P1] ep=   4 R=-0.880 H=1.383 sk=0
+  [NoSkill-P1] ep=  49 R=+1.440 H=0.518 sk=1 sk@[28]
+  [NoSkill-P1] ep=  79 R=+1.520 H=0.215 sk=1 sk@[28]
+  ── RULE SWAP: B→A (ε=0.1) ──
+  [NoSkill-P2] ep=   0 R=-0.880 H=0.189 sk=1 sk@[28]
+  [NoSkill-P2] ep=   1 R=-0.880 H=0.188 sk=1 sk@[28]
+  [NoSkill-P2] ep=   2 R=-0.880 H=0.221 sk=1 sk@[28]
+  [NoSkill-P2] ep=   3 R=-0.880 H=0.244 sk=1 sk@[28]
+  [NoSkill-P2] ep=   4 R=-0.880 H=0.258 sk=1 sk@[28]
+  [NoSkill-P2] ep=  49 R=-0.880 H=0.125 sk=1 sk@[28]
+  [NoSkill-P2] ep=  99 R=-0.880 H=0.056 sk=1 sk@[28]
+  [NoSkill-P2] ep= 119 R=-0.880 H=0.060 sk=1 sk@[28]
+  ── RULE RESTORE: A→B ──
+  [NoSkill-P3] ep=   0 R=+1.520 H=0.121 sk=1 sk@[28]
+  [NoSkill-P3] ep=   1 R=+1.520 H=0.123 sk=1 sk@[28]
+  [NoSkill-P3] ep=   2 R=+1.520 H=0.127 sk=1 sk@[28]
+  [NoSkill-P3] ep=   3 R=+1.520 H=0.131 sk=1 sk@[28]
+  [NoSkill-P3] ep=   4 R=+1.520 H=0.137 sk=1 sk@[28]
+  [NoSkill-P3] ep=  49 R=+1.520 H=0.072 sk=1 sk@[28]
+  [NoSkill-P3] ep=  59 R=+1.520 H=0.074 sk=1 sk@[28]
+
+── NoSkill seed=3 ──
+  [NoSkill-P1] ep=   0 R=+1.360 H=0.685 sk=0
+  [NoSkill-P1] ep=   1 R=-0.880 H=1.353 sk=0
+  [NoSkill-P1] ep=   2 R=+1.440 H=0.673 sk=0
+  [NoSkill-P1] ep=   3 R=+1.220 H=0.649 sk=0
+  [NoSkill-P1] ep=   4 R=-0.880 H=1.272 sk=0
+  [NoSkill-P1] ep=  49 R=+1.480 H=0.168 sk=1 sk@[10]
+  [NoSkill-P1] ep=  79 R=+1.520 H=0.047 sk=1 sk@[10]
+  ── RULE SWAP: B→A (ε=0.1) ──
+  [NoSkill-P2] ep=   0 R=-0.880 H=0.083 sk=1 sk@[10]
+  [NoSkill-P2] ep=   1 R=-0.880 H=0.095 sk=1 sk@[10]
+  [NoSkill-P2] ep=   2 R=-0.880 H=0.114 sk=1 sk@[10]
+  [NoSkill-P2] ep=   3 R=-0.880 H=0.137 sk=1 sk@[10]
+  [NoSkill-P2] ep=   4 R=-0.880 H=0.155 sk=1 sk@[10]
+  [NoSkill-P2] ep=  49 R=-0.880 H=0.088 sk=1 sk@[10]
+  [NoSkill-P2] ep=  99 R=-0.880 H=0.077 sk=1 sk@[10]
+  [NoSkill-P2] ep= 119 R=-0.880 H=0.042 sk=1 sk@[10]
+  ── RULE RESTORE: A→B ──
+  [NoSkill-P3] ep=   0 R=+1.520 H=0.041 sk=1 sk@[10]
+  [NoSkill-P3] ep=   1 R=+1.520 H=0.041 sk=1 sk@[10]
+  [NoSkill-P3] ep=   2 R=+1.520 H=0.040 sk=1 sk@[10]
+  [NoSkill-P3] ep=   3 R=+1.520 H=0.040 sk=1 sk@[10]
+  [NoSkill-P3] ep=   4 R=+1.520 H=0.039 sk=1 sk@[10]
+  [NoSkill-P3] ep=  49 R=+1.520 H=0.043 sk=1 sk@[10]
+  [NoSkill-P3] ep=  59 R=+1.520 H=0.046 sk=1 sk@[10]
+
+── NoSkill seed=4 ──
+  [NoSkill-P1] ep=   0 R=+0.800 H=1.379 sk=0
+  [NoSkill-P1] ep=   1 R=-0.880 H=1.377 sk=0
+  [NoSkill-P1] ep=   2 R=+1.040 H=0.675 sk=0
+  [NoSkill-P1] ep=   3 R=+1.420 H=0.672 sk=0
+  [NoSkill-P1] ep=   4 R=-0.880 H=1.333 sk=0
+  [NoSkill-P1] ep=  49 R=+1.520 H=0.228 sk=1 sk@[10]
+  [NoSkill-P1] ep=  79 R=+1.520 H=0.074 sk=1 sk@[10]
+  ── RULE SWAP: B→A (ε=0.1) ──
+  [NoSkill-P2] ep=   0 R=-0.880 H=0.568 sk=1 sk@[10]
+  [NoSkill-P2] ep=   1 R=-0.880 H=0.642 sk=1 sk@[10]
+  [NoSkill-P2] ep=   2 R=-0.880 H=0.598 sk=1 sk@[10]
+  [NoSkill-P2] ep=   3 R=-0.880 H=0.589 sk=1 sk@[10]
+  [NoSkill-P2] ep=   4 R=-0.880 H=0.529 sk=1 sk@[10]
+  [NoSkill-P2] ep=  49 R=-0.880 H=0.303 sk=1 sk@[10]
+  [NoSkill-P2] ep=  99 R=-0.360 H=0.899 sk=1 sk@[10]
+  [NoSkill-P2] ep= 119 R=-0.360 H=0.492 sk=1 sk@[10]
+  ── RULE RESTORE: A→B ──
+  [NoSkill-P3] ep=   0 R=-0.880 H=0.256 sk=1 sk@[10]
+  [NoSkill-P3] ep=   1 R=-0.880 H=0.270 sk=1 sk@[10]
+  [NoSkill-P3] ep=   2 R=-0.880 H=0.265 sk=1 sk@[10]
+  [NoSkill-P3] ep=   3 R=-0.880 H=0.239 sk=1 sk@[10]
+  [NoSkill-P3] ep=   4 R=-0.880 H=0.248 sk=1 sk@[10]
+  [NoSkill-P3] ep=  49 R=-0.880 H=0.158 sk=1 sk@[10]
+  [NoSkill-P3] ep=  59 R=-0.880 H=0.266 sk=1 sk@[10]
+
+── NoSkill seed=5 ──
+  [NoSkill-P1] ep=   0 R=-0.880 H=1.382 sk=0
+  [NoSkill-P1] ep=   1 R=-0.880 H=1.382 sk=0
+  [NoSkill-P1] ep=   2 R=-0.880 H=1.367 sk=0
+  [NoSkill-P1] ep=   3 R=-0.880 H=1.355 sk=0
+  [NoSkill-P1] ep=   4 R=-0.880 H=1.367 sk=0
+  [NoSkill-P1] ep=  49 R=+1.480 H=0.616 sk=1 sk@[33]
+  [NoSkill-P1] ep=  79 R=+1.520 H=0.198 sk=1 sk@[33]
+  ── RULE SWAP: B→A (ε=0.1) ──
+  [NoSkill-P2] ep=   0 R=-0.880 H=0.162 sk=1 sk@[33]
+  [NoSkill-P2] ep=   1 R=-0.880 H=0.169 sk=1 sk@[33]
+  [NoSkill-P2] ep=   2 R=-0.880 H=0.185 sk=1 sk@[33]
+  [NoSkill-P2] ep=   3 R=-0.880 H=0.196 sk=1 sk@[33]
+  [NoSkill-P2] ep=   4 R=-0.880 H=0.196 sk=1 sk@[33]
+  [NoSkill-P2] ep=  49 R=-0.880 H=0.393 sk=1 sk@[33]
+  [NoSkill-P2] ep=  99 R=-0.880 H=0.074 sk=1 sk@[33]
+  [NoSkill-P2] ep= 119 R=-0.880 H=0.043 sk=1 sk@[33]
+  ── RULE RESTORE: A→B ──
+  [NoSkill-P3] ep=   0 R=+1.520 H=0.146 sk=1 sk@[33]
+  [NoSkill-P3] ep=   1 R=+1.520 H=0.149 sk=1 sk@[33]
+  [NoSkill-P3] ep=   2 R=+1.520 H=0.154 sk=1 sk@[33]
+  [NoSkill-P3] ep=   3 R=+1.520 H=0.160 sk=1 sk@[33]
+  [NoSkill-P3] ep=   4 R=+1.520 H=0.168 sk=1 sk@[33]
+  [NoSkill-P3] ep=  49 R=-0.880 H=0.203 sk=1 sk@[33]
+  [NoSkill-P3] ep=  59 R=-0.360 H=0.831 sk=1 sk@[33]
+
+── NoSkill seed=6 ──
+  [NoSkill-P1] ep=   0 R=-0.880 H=1.378 sk=0
+  [NoSkill-P1] ep=   1 R=+0.780 H=1.380 sk=0
+  [NoSkill-P1] ep=   2 R=-0.880 H=1.382 sk=0
+  [NoSkill-P1] ep=   3 R=-0.880 H=1.381 sk=0
+  [NoSkill-P1] ep=   4 R=-0.880 H=1.381 sk=0
+  [NoSkill-P1] ep=  49 R=+1.520 H=0.267 sk=1 sk@[15]
+  [NoSkill-P1] ep=  79 R=+1.520 H=0.114 sk=1 sk@[15]
+  ── RULE SWAP: B→A (ε=0.1) ──
+  [NoSkill-P2] ep=   0 R=-0.880 H=0.227 sk=1 sk@[15]
+  [NoSkill-P2] ep=   1 R=-0.880 H=0.247 sk=1 sk@[15]
+  [NoSkill-P2] ep=   2 R=-0.880 H=0.276 sk=1 sk@[15]
+  [NoSkill-P2] ep=   3 R=-0.880 H=0.290 sk=1 sk@[15]
+  [NoSkill-P2] ep=   4 R=-0.880 H=0.323 sk=1 sk@[15]
+  [NoSkill-P2] ep=  49 R=-0.880 H=0.090 sk=1 sk@[15]
+  [NoSkill-P2] ep=  99 R=-0.880 H=0.048 sk=1 sk@[15]
+  [NoSkill-P2] ep= 119 R=-0.880 H=0.039 sk=1 sk@[15]
+  ── RULE RESTORE: A→B ──
+  [NoSkill-P3] ep=   0 R=+1.520 H=0.034 sk=1 sk@[15]
+  [NoSkill-P3] ep=   1 R=+1.520 H=0.035 sk=1 sk@[15]
+  [NoSkill-P3] ep=   2 R=+1.520 H=0.035 sk=1 sk@[15]
+  [NoSkill-P3] ep=   3 R=+1.520 H=0.036 sk=1 sk@[15]
+  [NoSkill-P3] ep=   4 R=+1.520 H=0.036 sk=1 sk@[15]
+  [NoSkill-P3] ep=  49 R=+1.520 H=0.060 sk=1 sk@[15]
+  [NoSkill-P3] ep=  59 R=+1.520 H=0.040 sk=1 sk@[15]
+
+── NoSkill seed=7 ──
+  [NoSkill-P1] ep=   0 R=-0.880 H=1.350 sk=0
+  [NoSkill-P1] ep=   1 R=-0.360 H=1.369 sk=0
+  [NoSkill-P1] ep=   2 R=-0.880 H=1.327 sk=0
+  [NoSkill-P1] ep=   3 R=-0.880 H=1.356 sk=0
+  [NoSkill-P1] ep=   4 R=+0.860 H=1.382 sk=0
+  [NoSkill-P1] ep=  49 R=+1.400 H=0.283 sk=1 sk@[16]
+  [NoSkill-P1] ep=  79 R=+1.480 H=0.158 sk=1 sk@[16]
+  ── RULE SWAP: B→A (ε=0.1) ──
+  [NoSkill-P2] ep=   0 R=-0.880 H=0.500 sk=1 sk@[16]
+  [NoSkill-P2] ep=   1 R=-0.880 H=0.597 sk=1 sk@[16]
+  [NoSkill-P2] ep=   2 R=-0.880 H=0.596 sk=1 sk@[16]
+  [NoSkill-P2] ep=   3 R=-0.880 H=0.632 sk=1 sk@[16]
+  [NoSkill-P2] ep=   4 R=-0.880 H=0.729 sk=1 sk@[16]
+  [NoSkill-P2] ep=  49 R=-0.880 H=0.877 sk=1 sk@[16]
+  [NoSkill-P2] ep=  99 R=-0.880 H=0.656 sk=1 sk@[16]
+  [NoSkill-P2] ep= 119 R=-0.880 H=0.802 sk=1 sk@[16]
+  ── RULE RESTORE: A→B ──
+  [NoSkill-P3] ep=   0 R=+1.520 H=0.239 sk=1 sk@[16]
+  [NoSkill-P3] ep=   1 R=+1.520 H=0.239 sk=1 sk@[16]
+  [NoSkill-P3] ep=   2 R=+1.520 H=0.240 sk=1 sk@[16]
+  [NoSkill-P3] ep=   3 R=+1.500 H=0.238 sk=1 sk@[16]
+  [NoSkill-P3] ep=   4 R=+1.520 H=0.246 sk=1 sk@[16]
+  [NoSkill-P3] ep=  49 R=+1.520 H=0.079 sk=1 sk@[16]
+  [NoSkill-P3] ep=  59 R=+1.480 H=0.077 sk=1 sk@[16]
+
+── NoSkill seed=8 ──
+  [NoSkill-P1] ep=   0 R=-0.880 H=1.361 sk=0
+  [NoSkill-P1] ep=   1 R=-0.880 H=1.347 sk=0
+  [NoSkill-P1] ep=   2 R=-0.880 H=1.294 sk=0
+  [NoSkill-P1] ep=   3 R=+1.320 H=0.692 sk=0
+  [NoSkill-P1] ep=   4 R=+1.520 H=0.691 sk=0
+  [NoSkill-P1] ep=  49 R=+1.460 H=0.398 sk=1 sk@[15]
+  [NoSkill-P1] ep=  79 R=+1.520 H=0.110 sk=1 sk@[15]
+  ── RULE SWAP: B→A (ε=0.1) ──
+  [NoSkill-P2] ep=   0 R=-0.880 H=0.211 sk=1 sk@[15]
+  [NoSkill-P2] ep=   1 R=-0.880 H=0.256 sk=1 sk@[15]
+  [NoSkill-P2] ep=   2 R=-0.880 H=0.314 sk=1 sk@[15]
+  [NoSkill-P2] ep=   3 R=-0.880 H=0.356 sk=1 sk@[15]
+  [NoSkill-P2] ep=   4 R=-0.880 H=0.369 sk=1 sk@[15]
+  [NoSkill-P2] ep=  49 R=-0.880 H=0.643 sk=1 sk@[15]
+  [NoSkill-P2] ep=  99 R=-0.880 H=0.440 sk=1 sk@[15]
+  [NoSkill-P2] ep= 119 R=-0.880 H=0.426 sk=1 sk@[15]
+  ── RULE RESTORE: A→B ──
+  [NoSkill-P3] ep=   0 R=-0.880 H=0.325 sk=1 sk@[15]
+  [NoSkill-P3] ep=   1 R=-0.880 H=0.314 sk=1 sk@[15]
+  [NoSkill-P3] ep=   2 R=+1.520 H=0.390 sk=1 sk@[15]
+  [NoSkill-P3] ep=   3 R=-0.880 H=0.356 sk=1 sk@[15]
+  [NoSkill-P3] ep=   4 R=+1.520 H=0.384 sk=1 sk@[15]
+  [NoSkill-P3] ep=  49 R=+1.520 H=0.073 sk=1 sk@[15]
+  [NoSkill-P3] ep=  59 R=+1.480 H=0.092 sk=1 sk@[15]
+
+── NoSkill seed=9 ──
+  [NoSkill-P1] ep=   0 R=+1.440 H=0.693 sk=0
+  [NoSkill-P1] ep=   1 R=-0.880 H=1.385 sk=0
+  [NoSkill-P1] ep=   2 R=-0.880 H=1.382 sk=0
+  [NoSkill-P1] ep=   3 R=+1.240 H=0.688 sk=0
+  [NoSkill-P1] ep=   4 R=-0.880 H=1.361 sk=0
+  [NoSkill-P1] ep=  49 R=+1.520 H=0.449 sk=1 sk@[15]
+  [NoSkill-P1] ep=  79 R=+1.500 H=0.147 sk=1 sk@[15]
+  ── RULE SWAP: B→A (ε=0.1) ──
+  [NoSkill-P2] ep=   0 R=-0.880 H=0.169 sk=1 sk@[15]
+  [NoSkill-P2] ep=   1 R=-0.880 H=0.174 sk=1 sk@[15]
+  [NoSkill-P2] ep=   2 R=-0.880 H=0.196 sk=1 sk@[15]
+  [NoSkill-P2] ep=   3 R=-0.880 H=0.212 sk=1 sk@[15]
+  [NoSkill-P2] ep=   4 R=-0.880 H=0.220 sk=1 sk@[15]
+  [NoSkill-P2] ep=  49 R=-0.880 H=0.819 sk=1 sk@[15]
+  [NoSkill-P2] ep=  99 R=+1.140 H=0.497 sk=1 sk@[15]
+  [NoSkill-P2] ep= 119 R=+1.020 H=0.605 sk=1 sk@[15]
+  ── RULE RESTORE: A→B ──
+  [NoSkill-P3] ep=   0 R=-0.880 H=0.337 sk=1 sk@[15]
+  [NoSkill-P3] ep=   1 R=-0.880 H=0.286 sk=1 sk@[15]
+  [NoSkill-P3] ep=   2 R=-0.880 H=0.281 sk=1 sk@[15]
+  [NoSkill-P3] ep=   3 R=-0.880 H=0.277 sk=1 sk@[15]
+  [NoSkill-P3] ep=   4 R=-0.880 H=0.281 sk=1 sk@[15]
+  [NoSkill-P3] ep=  49 R=-0.880 H=0.320 sk=1 sk@[15]
+  [NoSkill-P3] ep=  59 R=-0.880 H=0.266 sk=1 sk@[15]
+
+==============================================================================
+  HYSTERESIS STATISTICS NoSkill vs Flat (N=10 seeds)
+==============================================================================
+  Metric                                              PAO               Flat
+  ────────────────────────────────────────────────────────────────────────
+  Phase 2 (late 20)                          -0.551±0.188       -0.155±0.274
+  Phase 3 (early 20)                          0.918±0.308        0.300±0.374
+  Phase 3 (late 20)                            0.837±0.348        0.821±0.322
+  ────────────────────────────────────────────────────────────────────────
+  Wilcoxon (P2 inertia, PAO<Flat): W=11.0 p=0.1836
+  Wilcoxon (P3 reuse, PAO>Flat):   W=33.0 p=0.3125
+  Hedges' g (P2): -0.51  |  Hedges' g (P3): 0.55
+  ────────────────────────────────────────────────────────────────────────
+  Phase 2: PAO=-0.551±0.188 (locked); Flat=-0.155±0.274 (fails to consolidate B→A)
+  Phase 3: PAO=0.918±0.308 (instant); Flat=0.300±0.374 (unstable partial, variance large)
+
+  Data: /Users/caihengjin/.openclaw/workspace/analysis/exp_two_gate_lock/results/rule_swap_1d.pkl

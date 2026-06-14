@@ -4,6 +4,44 @@ Running lab notebook. Newest first. Each entry: what was done, what was found, e
 
 ---
 
+## 2026-06-14 — RDD crossover: NO regime where LI helps downstream (repulsion is task-blind)
+
+Pre-registered in `PREREG_RDD_crossover.md` (frozen before run). `exp_rdd/rdd_crossover.py`,
+log `…/results/rdd_crossover.log`, data `…/rdd_crossover.pkl`. Follow-up to the RDD-LI entry below:
+that test found LI harmful in a *no-collapse* regime; RDD's benefit claim is conditional on **collapse**
+("escape through symmetry breaking"), so this constructs the collapse regime and hunts the crossover.
+Manipulated variable = init symmetry: **asym** (per-channel `W_in`/`W_out` → channels self-separate)
+vs **sym** (shared `W_in`/`W_out` + near-identical τ init with tiny jitter → near-degenerate, LI is the
+dominant separating force). Crossed with {no-LI, LI β=10} × M∈{3,8}. N=20.
+
+| regime | no-LI test MSE | LI test MSE | diversity no-LI→LI | verdict |
+|---|---|---|---|---|
+| M3 asym (no collapse) | 3.397 | 4.407 | 3.80 → 9.63 | LI hurts |
+| M3 sym (collapse) | 5.845 | 6.338 | 0.67 → 10.98 | LI hurts |
+| M8 asym | 3.510 | 4.417 | 2.69 → 7.55 | LI hurts |
+| M8 sym (collapse) | 5.856 | 6.342 | 0.70 → 9.07 | LI hurts |
+
+### Verdict: NO CROSSOVER. LI never helps downstream — not even in the collapse regime built to favour it
+- LI HURTS test MSE in **all four** cells (and OOD); pre-registered prediction confirmed.
+- Crucially, in the **sym/collapse** regime LI **did act** — it broke the degeneracy (diversity 0.7 →
+  ~10) — yet MSE still **worsened** (5.85 → 6.34). So this is not "LI couldn't separate the channels";
+  it's "LI separated them and that made prediction worse."
+- A perfectly symmetric init is an **LI-proof fixed point** (calibration: div=0 even with LI) — LI needs
+  a seed of asymmetry to act on. The jittered sym regime is the meaningful collapse case.
+
+### Mechanism (the actual lead)
+**LI's repulsion is task-blind.** It maximizes mutual channel distance, which is *not* coverage of the
+signal's relevant timescales. The force that places channels *usefully* is the task (MSE) gradient; LI
+fights it. So: in **asym**, channels self-organize to useful timescales and LI drags them off; in
+**sym**, channels collapse and LI separates them to *task-agnostic* timescales — worse either way.
+Diversity ≠ functional coverage ≠ usefulness. This is a sharper, mechanistic answer to RDD's open
+question than the first test alone, and extends the project-wide "property ≠ usefulness" pattern
+(cf. H_M, crystallisation, skill diversity) with a causal explanation: the property is produced by a
+task-blind force, so it cannot align with task needs. (RDD's *mechanism* claim — γ-inertness — remains
+validated; see entry below. Only its downstream-*usefulness* hope fails.)
+
+---
+
 ## 2026-06-14 — RDD lateral inhibition: γ-inertness CONFIRMED; diversity does NOT help downstream
 
 Pre-registered in `PREREG_RDD_LI.md` (frozen before the N=20 run). `exp_rdd/rdd_li.py`,

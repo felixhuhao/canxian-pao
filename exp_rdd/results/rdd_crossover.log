@@ -1,0 +1,24 @@
+M3_asym_noLI     div= 3.796  test_mse=3.3971  ood_mse=4.0183
+M3_asym_LI       div= 9.627  test_mse=4.4067  ood_mse=4.9953
+M3_sym_noLI      div= 0.668  test_mse=5.8448  ood_mse=6.3634
+M3_sym_LI        div=10.981  test_mse=6.3382  ood_mse=6.5438
+M8_asym_noLI     div= 2.686  test_mse=3.5103  ood_mse=4.1077
+M8_asym_LI       div= 7.552  test_mse=4.4171  ood_mse=5.0042
+M8_sym_noLI      div= 0.696  test_mse=5.8557  ood_mse=6.3688
+M8_sym_LI        div= 9.067  test_mse=6.3418  ood_mse=6.5453
+
+================================================================================
+  RDD CROSSOVER (N=20, device=cuda)
+================================================================================
+  Does LI help (test MSE) in sym (collapse) regime but hurt in asym (no-collapse)?
+
+  M=3 asym  noLI 3.3971 (div  3.80) -> LI 4.4067 (div  9.63)  g=+18.49 p(help)=1.000  => LI HURTS
+  M=3 sym   noLI 5.8448 (div  0.67) -> LI 6.3382 (div 10.98)  g=+10.53 p(help)=1.000  => LI HURTS
+  M=8 asym  noLI 3.5103 (div  2.69) -> LI 4.4171 (div  7.55)  g=+13.50 p(help)=1.000  => LI HURTS
+  M=8 sym   noLI 5.8557 (div  0.70) -> LI 6.3418 (div  9.07)  g=+13.69 p(help)=1.000  => LI HURTS
+
+  OOD (M=8):
+  M=8 asym  noLI 4.1077 -> LI 5.0042  g=+11.23 p(help)=1.000
+  M=8 sym   noLI 6.3688 -> LI 6.5453  g=+9.67 p(help)=1.000
+
+  Saved results/rdd_crossover.pkl

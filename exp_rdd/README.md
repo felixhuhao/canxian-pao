@@ -12,7 +12,11 @@ should do nothing without the actual repulsion kernel — RDD Table 2).
 ## Files
 - `rdd_li.py` — model, sine-mixture next-step-prediction task, all conditions, stats. Run:
   ```bash
-  python rdd_li.py --seeds 20      # writes results/rdd_li.{log,pkl}
+  python rdd_li.py --seeds 20         # writes results/rdd_li.{log,pkl}
+  ```
+- `rdd_crossover.py` — follow-up: does LI help in the *collapse* regime (sym vs asym init)?
+  ```bash
+  python rdd_crossover.py --seeds 20  # writes results/rdd_crossover.{log,pkl}
   ```
 - `results/` — `.log` + `.pkl` evidence.
 
@@ -26,5 +30,9 @@ Pre-registration: `../PREREG_RDD_LI.md` (frozen before the N=20 run). Verdict: `
 - **Diversity → downstream gains — NO.** LI raises τ-diversity (3.8 → ~10, matching the paper) but
   **monotonically worsens** test MSE (3.40 → 4.41) and OOD MSE; diversity is anti-correlated with
   usefulness (Spearman +0.47). LI is a coverage / anti-collapse tool, not a performance regularizer.
+- **No crossover (`rdd_crossover.py`).** Even in a *collapse* regime (symmetric init) built to favour
+  LI, LI breaks the degeneracy (diversity 0.7 → ~10) but still **worsens** MSE (5.85 → 6.34), in every
+  cell. Mechanism: LI's repulsion is **task-blind** — it maximizes channel distance, not coverage of
+  the signal's timescales, so it fights the task gradient. Diversity ≠ functional coverage ≠ usefulness.
 
 Direction 2 (Busch IM/WMP/OMP manifold-alignment) is deferred pending the Busch preprint.

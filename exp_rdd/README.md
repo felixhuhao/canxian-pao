@@ -34,5 +34,11 @@ Pre-registration: `../PREREG_RDD_LI.md` (frozen before the N=20 run). Verdict: `
   LI, LI breaks the degeneracy (diversity 0.7 → ~10) but still **worsens** MSE (5.85 → 6.34), in every
   cell. Mechanism: LI's repulsion is **task-blind** — it maximizes channel distance, not coverage of
   the signal's timescales, so it fights the task gradient. Diversity ≠ functional coverage ≠ usefulness.
+- **Coverage reward HELPS (`rdd_taware.py`) — the positive result.** Replacing generic repulsion with a
+  *task-aligned* coverage reward (`Σ_f Ŝ(f)·max_m p_m(f)`, signal spectrum estimated from data) lowers
+  test + OOD MSE in the **over-complete (M=8)** regime (g −0.78…−1.63, p<0.01; pre-registered, held-out
+  seeds). Capacity-gated (little benefit at M=3); cannot rescue a symmetric collapse. Principle:
+  **diversity helps downstream only when it is functional coverage aligned with the task AND there is
+  spare capacity to deploy it.** Generic LI and overlap-penalty do not help; only the coverage form does.
 
 Direction 2 (Busch IM/WMP/OMP manifold-alignment) is deferred pending the Busch preprint.

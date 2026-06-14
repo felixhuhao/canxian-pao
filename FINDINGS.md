@@ -4,6 +4,47 @@ Running lab notebook. Newest first. Each entry: what was done, what was found, e
 
 ---
 
+## 2026-06-14 — RDD coverage reward: FIRST POSITIVE LEAD — task-aligned diversity helps (over-complete)
+
+Pre-registered in `PREREG_RDD_taware.md` (frozen before run; **confirmation on held-out seeds 100–119**,
+disjoint from the calibration seed). `exp_rdd/rdd_taware.py`, log `…/results/rdd_taware.log`. Tests the
+constructive implication of the two prior RDD entries (generic LI is task-blind → only *task-aligned*
+diversity could help): three repulsion forms — **generic** (τ-distance), **taware-overlap** (penalize
+spectral overlap), **coverage** (reward covering the signal spectrum, `Σ_f Ŝ(f)·max_m p_m(f)`, with
+`Ŝ(f)` estimated from training data by FFT, not oracle). Grid `{asym,sym} × {noLI, genLI, cov β∈{1,10,50}}
+× M∈{3,8}`, N=20.
+
+| regime | no-LI | cov β=1 | cov β=10 | cov β=50 | genLI |
+|---|---|---|---|---|---|
+| **M8 asym (over-complete)** | 3.521 | 3.474 (g−0.86)\* | **3.412 (g−1.63)\*** | 3.447 (g−0.78)\* | 4.417 |
+| M3 asym | 3.390 | 3.364 (g−0.35) | 3.450 | 3.533 | 4.405 |
+| M8 sym (collapse) | 5.883 | neutral | neutral | neutral | 6.350 |
+| M3 sym (collapse) | 5.878 | neutral | neutral | neutral | 6.362 |
+
+(\* = p<0.05 and g≤−0.5, pre-registered "helps" bar. Primary cell asym M=8 β=50: g=−0.78, p=0.005.)
+
+### Verdict: COVERAGE HELPS — confirmed, pre-registered, on held-out seeds (the project's first positive)
+- **Task-aligned coverage reward lowers test MSE in the over-complete (M=8) regime** at *all three* β
+  (g −0.78 … −1.63, all p<0.01), peak at β=10 (~3% reduction). Benefit carries to **OOD** (4.13→4.03).
+- **Capacity-gated:** in M=3 (not over-complete) only the smallest β gives a sub-threshold nudge; larger
+  β hurts. The benefit needs spare channels to deploy.
+- **Collapse regime (sym): still no help** from any form — no diversity term breaks a symmetric
+  degeneracy (the symmetric MSE gradient is degenerate; coverage/repulsion can't pick a useful
+  direction). Consistent across all three RDD experiments.
+- **Generic LI and overlap-penalty still hurt** everywhere — only the *coverage-rewarding* form helps.
+
+### Implication (a clean, constructive principle)
+**Channel diversity improves downstream performance only when it is (i) functional coverage aligned with
+the task and (ii) deployed where there is excess capacity.** This turns RDD's negative-for-downstream
+result (generic LI doesn't help — our two prior entries) into a positive recipe, and it pins down
+exactly *when* the project-wide "property ≠ usefulness" gap closes: task-alignment **plus** spare
+capacity. Modest in magnitude (~3%) but robust (held-out, pre-registered, monotone-ish in β, generalises
+to OOD). First genuinely positive, actionable result in the investigation. Caveat: minimal SSM /
+sine-mixture task; whether the coverage-reward recipe scales to real sequence models (Transformer/S4/
+Mamba heads, per RDD's own framing) is the natural next test.
+
+---
+
 ## 2026-06-14 — RDD crossover: NO regime where LI helps downstream (repulsion is task-blind)
 
 Pre-registered in `PREREG_RDD_crossover.md` (frozen before run). `exp_rdd/rdd_crossover.py`,

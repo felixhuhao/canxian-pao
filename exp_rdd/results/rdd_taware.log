@@ -1,0 +1,34 @@
+M3_asym_noLI     div= 3.742  test_mse=3.3898  ood_mse=4.0178
+M3_asym_genLI    div= 9.687  test_mse=4.4054  ood_mse=5.0040
+M3_asym_cov1     div= 3.672  test_mse=3.3643  ood_mse=3.9917
+M3_asym_cov10    div= 3.781  test_mse=3.4497  ood_mse=4.0721
+M3_asym_cov50    div= 4.007  test_mse=3.5328  ood_mse=4.1360
+M3_sym_noLI      div= 0.637  test_mse=5.8775  ood_mse=6.3772
+M3_sym_genLI     div=11.518  test_mse=6.3615  ood_mse=6.5454
+M3_sym_cov1      div= 0.584  test_mse=5.8839  ood_mse=6.3805
+M3_sym_cov10     div= 0.869  test_mse=5.9231  ood_mse=6.3990
+M3_sym_cov50     div= 1.585  test_mse=5.9498  ood_mse=6.4101
+M8_asym_noLI     div= 2.681  test_mse=3.5212  ood_mse=4.1330
+M8_asym_genLI    div= 7.662  test_mse=4.4172  ood_mse=5.0181
+M8_asym_cov1     div= 2.661  test_mse=3.4742  ood_mse=4.0917
+M8_asym_cov10    div= 2.620  test_mse=3.4117  ood_mse=4.0330
+M8_asym_cov50    div= 2.633  test_mse=3.4468  ood_mse=4.0670
+M8_sym_noLI      div= 0.720  test_mse=5.8834  ood_mse=6.3799
+M8_sym_genLI     div= 9.098  test_mse=6.3499  ood_mse=6.5447
+M8_sym_cov1      div= 0.683  test_mse=5.8889  ood_mse=6.3827
+M8_sym_cov10     div= 0.819  test_mse=5.9043  ood_mse=6.3899
+M8_sym_cov50     div= 0.942  test_mse=5.9112  ood_mse=6.3929
+
+====================================================================================
+  RDD COVERAGE-REWARD (N=20, seeds 100..119, device=cuda)
+====================================================================================
+  Does TASK-ALIGNED coverage reward beat no-LI on test MSE? (primary: asym M=8, β=50)
+
+  M=3 asym noLI=3.3898  | cov1=3.3643(g-0.35,p0.015)  | cov10=3.4497(g+0.97,p1.000)  | cov50=3.5328(g+1.60,p1.000)
+  M=3 sym  noLI=5.8775  | cov1=5.8839(g+0.11,p1.000)  | cov10=5.9231(g+0.76,p1.000)  | cov50=5.9498(g+1.21,p1.000)
+  M=8 asym noLI=3.5212  | cov1=3.4742(g-0.86,p0.000)*  | cov10=3.4117(g-1.63,p0.000)*  | cov50=3.4468(g-0.78,p0.005)*
+  M=8 sym  noLI=5.8834  | cov1=5.8889(g+0.13,p1.000)  | cov10=5.9043(g+0.50,p1.000)  | cov50=5.9112(g+0.66,p1.000)
+
+  PRIMARY (asym M=8, cov β=50 vs noLI): 3.4468 vs 3.5212  g=-0.78 p(<)=0.005 -> COVERAGE HELPS
+
+  Saved results/rdd_taware.pkl

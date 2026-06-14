@@ -48,4 +48,14 @@ Pre-registration: `../PREREG_RDD_LI.md` (frozen before the N=20 run). Verdict: `
   redundancy. Pre-registered, held-out seeds. Principle: **the value of task-aligned diversity scales
   with excess capacity.**
 
+- **Ladder R1 (`rdd_ladder_r1.py`) — transfer toward PAO's mechanism.** Rebuild the ensemble by
+  *sequential crystallization of frozen channels* with a coverage admission gate (PAO-style), vs ungated
+  admit-all, swept over capacity. **The coverage *performance* benefit does NOT survive** (gated ≈
+  ungated; frozen units + ridge readout are robust to redundancy) — R0's win was specific to joint
+  co-adaptation. **Parsimony does survive:** the gate keeps ~6.7 units vs 16 at equal MSE. Lesson: R0's
+  benefit and PAO's redundant-skill harm are *different mechanisms*; PAO's harm is its fragile RL
+  skill-application (P3), so the coverage *performance* payoff for PAO lives in the RL regime, not
+  supervised regression. (Controlled RDD→PAO transfer ladder: R1 mechanism; R2 coverage-estimation;
+  R3 rich units; R4 RL.)
+
 Direction 2 (Busch IM/WMP/OMP manifold-alignment) is deferred pending the Busch preprint.

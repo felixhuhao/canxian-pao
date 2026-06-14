@@ -1,0 +1,28 @@
+M_max=2  GATED  test_mse=1.7640  n_admitted=2.0
+M_max=2  ungated test_mse=1.7640  n_admitted=2.0
+M_max=3  GATED  test_mse=1.4929  n_admitted=3.0
+M_max=3  ungated test_mse=1.4929  n_admitted=3.0
+M_max=5  GATED  test_mse=1.3079  n_admitted=4.9
+M_max=5  ungated test_mse=1.3079  n_admitted=5.0
+M_max=8  GATED  test_mse=1.3012  n_admitted=6.1
+M_max=8  ungated test_mse=1.3054  n_admitted=8.0
+M_max=12 GATED  test_mse=1.2956  n_admitted=6.7
+M_max=12 ungated test_mse=1.3073  n_admitted=12.0
+M_max=16 GATED  test_mse=1.2954  n_admitted=6.7
+M_max=16 ungated test_mse=1.2949  n_admitted=16.0
+
+==============================================================================
+  LADDER R1: coverage-GATED vs ungated sequential frozen admission (N=15, K=5)
+==============================================================================
+    M   M/K    gated  ungated  Δ(un−ga)       g       p  n_adm(ga)
+    2   0.4   1.7640   1.7640   +0.0000   +0.00   1.000          2.0
+    3   0.6   1.4929   1.4929   +0.0000   +0.00   1.000          3.0
+    5   1.0   1.3079   1.3079   -0.0000   +0.00   0.841          4.9
+    8   1.6   1.3012   1.3054   +0.0042   -0.03   0.972          6.1
+   12   2.4   1.2956   1.3073   +0.0117   -0.08   0.598          6.7
+   16   3.2   1.2954   1.2949   -0.0005   +0.00   0.862          6.7
+
+  TREND Spearman(M/K, Δ(ungated−gated)) = -0.058 (p=0.913)
+  -> coverage benefit under PAO-style mechanism: DOES NOT SURVIVE
+
+  Saved results/rdd_ladder_r1.pkl

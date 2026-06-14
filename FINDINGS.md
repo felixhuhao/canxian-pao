@@ -4,6 +4,44 @@ Running lab notebook. Newest first. Each entry: what was done, what was found, e
 
 ---
 
+## 2026-06-15 — Ladder R1: coverage PERFORMANCE benefit does NOT survive freeze-and-admit (parsimony does)
+
+Pre-registered in `PREREG_RDD_ladder_r1.md` (frozen before run; held-out seeds 300–314).
+`exp_rdd/rdd_ladder_r1.py`, log `…/results/rdd_ladder_r1.log`. First rung of the controlled RDD→PAO
+transfer ladder: change ONLY the mechanism — joint co-adaptation + auxiliary loss (R0) → **sequential
+crystallization of FROZEN units + a coverage admission gate** (PAO-style) — keeping the RDD task/units/
+supervision fixed. Build = residual boosting of frozen low-pass channels; global readout = ridge LS.
+Arms: **gated** (admit only if it lowers val MSE > EPS) vs **ungated** (admit all), swept over capacity.
+
+| M_max | M/K | gated | ungated | Δ(un−ga) | gated admits |
+|---|---|---|---|---|---|
+| 2 | 0.4 | 1.764 | 1.764 | 0.000 | 2.0 |
+| 5 | 1.0 | 1.308 | 1.308 | 0.000 | 4.9 |
+| 8 | 1.6 | 1.301 | 1.305 | +0.004 | 6.1 |
+| 12 | 2.4 | 1.296 | 1.307 | +0.012 | 6.7 |
+| 16 | 3.2 | 1.295 | 1.295 | −0.001 | 6.7 |
+
+### Verdict: PERFORMANCE benefit does NOT survive; PARSIMONY benefit does
+- **No performance benefit:** gated ≈ ungated at every capacity (Spearman(M/K, Δ) = −0.06, p=0.91).
+  The R0 coverage *performance* win does **not** transfer to the freeze-and-admit mechanism.
+- **Why:** frozen units + a regularized (ridge) readout are **robust to redundancy** — the readout
+  simply down-weights redundant frozen channels. There is no joint-coadaptation overfitting for
+  coverage to prevent. (Contrast R0 joint: no-LI MSE *rose* with M, 3.40→3.64.)
+- **Parsimony survives:** the gate saturates at ~6.7 admitted units regardless of budget while matching
+  ungated's MSE — at M_max=16 that is **6.7 vs 16 units at equal accuracy.** A lean library for free.
+
+### Implication (this is exactly why the controlled ladder mattered)
+**R0's coverage benefit and PAO's redundant-skill harm are different mechanisms.** R0's benefit came
+from joint-coadaptation fragility; freezing + a good readout removes it, leaving only parsimony. PAO's
+harm (P3: redundant/wrong skills *applied as policy bias* actively hurt reward) is a property of its
+**fragile RL skill-application**, not of a clean readout. So a single jump RDD→PAO-gridworld would have
+conflated these — the ladder localized it on one cheap rung. Consequence for the roadmap: the coverage-
+gating *performance* payoff for PAO is expected in the **fragile-combination / RL regime**, not in
+supervised regression; the immediately transferable win is **library parsimony** (coverage-gating prunes
+the redundant skill library at no accuracy cost — directly addresses the P3 redundant-library problem).
+
+---
+
 ## 2026-06-14 — RDD capacity law: coverage benefit scales with excess capacity M/K (CONFIRMED)
 
 Pre-registered in `PREREG_RDD_capacity.md` (frozen before run; held-out seeds 200–219).

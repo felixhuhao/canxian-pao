@@ -1,0 +1,214 @@
+
+── BOCPD ──
+  seed= 0  adapt=+0.090  asymp=+1.072  total=+346.0  lib=4  resets=8
+  seed= 1  adapt=+0.219  asymp=-0.133  total=+34.2  lib=4  resets=9
+  seed= 2  adapt=-0.846  asymp=+0.577  total=+39.3  lib=6  resets=11
+  seed= 3  adapt=+0.031  asymp=+0.296  total=-37.5  lib=2  resets=7
+  seed= 4  adapt=+0.258  asymp=+0.270  total=+68.6  lib=3  resets=7
+  seed= 5  adapt=-0.222  asymp=+0.850  total=+145.6  lib=4  resets=7
+  seed= 6  adapt=-0.956  asymp=+1.080  total=+91.9  lib=5  resets=13
+  seed= 7  adapt=+0.263  asymp=+0.484  total=+160.7  lib=4  resets=8
+  seed= 8  adapt=+0.262  asymp=+0.262  total=+85.4  lib=3  resets=7
+  seed= 9  adapt=+0.252  asymp=-0.157  total=-0.2  lib=3  resets=7
+  seed=10  adapt=-0.147  asymp=+0.382  total=-29.7  lib=5  resets=10
+  seed=11  adapt=-0.013  asymp=+0.557  total=+20.6  lib=3  resets=7
+  seed=12  adapt=+0.231  asymp=+0.245  total=-34.5  lib=4  resets=7
+  seed=13  adapt=-0.144  asymp=+0.262  total=+97.2  lib=3  resets=8
+  seed=14  adapt=+0.258  asymp=+0.648  total=+134.6  lib=4  resets=8
+  seed=15  adapt=-0.504  asymp=+0.577  total=+104.0  lib=4  resets=9
+  seed=16  adapt=+0.269  asymp=+0.065  total=-43.7  lib=2  resets=7
+  seed=17  adapt=+0.259  asymp=+0.265  total=+66.0  lib=4  resets=7
+  seed=18  adapt=+0.231  asymp=+0.262  total=+23.7  lib=4  resets=8
+  seed=19  adapt=-0.171  asymp=+0.426  total=+47.1  lib=4  resets=8
+  seed=20  adapt=-0.024  asymp=+0.712  total=+126.4  lib=3  resets=8
+  seed=21  adapt=-0.148  asymp=+0.260  total=+94.9  lib=3  resets=9
+  seed=22  adapt=-0.219  asymp=+0.149  total=+135.9  lib=3  resets=8
+  seed=23  adapt=-0.307  asymp=+0.559  total=+166.3  lib=3  resets=10
+  seed=24  adapt=-0.135  asymp=-0.055  total=-8.6  lib=4  resets=8
+  seed=25  adapt=+0.262  asymp=+0.431  total=+57.5  lib=3  resets=6
+  seed=26  adapt=-0.156  asymp=+0.094  total=-52.2  lib=4  resets=8
+  seed=27  adapt=-0.132  asymp=+0.508  total=+55.6  lib=3  resets=7
+  seed=28  adapt=+0.536  asymp=-0.143  total=-63.2  lib=3  resets=7
+  seed=29  adapt=-0.153  asymp=+0.215  total=-67.1  lib=4  resets=7
+
+── Random ──
+  seed= 0  adapt=-0.572  asymp=+0.680  total=+74.6  lib=6  resets=8
+  seed= 1  adapt=-0.066  asymp=+0.313  total=+172.4  lib=3  resets=9
+  seed= 2  adapt=-0.886  asymp=+0.818  total=+38.3  lib=6  resets=11
+  seed= 3  adapt=+0.051  asymp=-0.100  total=+116.6  lib=3  resets=7
+  seed= 4  adapt=-0.604  asymp=+0.510  total=+48.2  lib=4  resets=7
+  seed= 5  adapt=+0.254  asymp=+0.258  total=+81.3  lib=3  resets=7
+  seed= 6  adapt=-0.525  asymp=+0.505  total=+89.9  lib=4  resets=13
+  seed= 7  adapt=+0.023  asymp=+0.274  total=+116.0  lib=2  resets=8
+  seed= 8  adapt=-0.150  asymp=+0.175  total=+38.9  lib=4  resets=7
+  seed= 9  adapt=-0.554  asymp=+0.836  total=+48.9  lib=5  resets=7
+  seed=10  adapt=-0.572  asymp=+0.561  total=+41.2  lib=4  resets=10
+  seed=11  adapt=+0.248  asymp=+0.273  total=+80.3  lib=3  resets=7
+  seed=12  adapt=-0.143  asymp=+0.262  total=+136.9  lib=4  resets=7
+  seed=13  adapt=+0.151  asymp=+0.263  total=+154.3  lib=3  resets=8
+  seed=14  adapt=-0.298  asymp=+0.614  total=+94.3  lib=5  resets=8
+  seed=15  adapt=-0.140  asymp=+0.099  total=+14.4  lib=4  resets=9
+  seed=16  adapt=-0.496  asymp=+0.626  total=+75.3  lib=5  resets=7
+  seed=17  adapt=-0.156  asymp=+0.227  total=+130.3  lib=2  resets=7
+  seed=18  adapt=-0.100  asymp=+0.488  total=+104.4  lib=4  resets=8
+  seed=19  adapt=+0.217  asymp=+0.688  total=+138.6  lib=3  resets=8
+  seed=20  adapt=-0.304  asymp=+0.189  total=+56.3  lib=4  resets=8
+  seed=21  adapt=+0.251  asymp=+0.264  total=+41.9  lib=4  resets=9
+  seed=22  adapt=-0.240  asymp=+0.556  total=+180.2  lib=3  resets=8
+  seed=23  adapt=+0.028  asymp=+0.264  total=+78.9  lib=4  resets=10
+  seed=24  adapt=+0.261  asymp=+0.258  total=+152.7  lib=4  resets=8
+  seed=25  adapt=-0.254  asymp=+0.537  total=+12.8  lib=3  resets=6
+  seed=26  adapt=-0.388  asymp=+0.577  total=+89.7  lib=4  resets=8
+  seed=27  adapt=+0.304  asymp=+0.277  total=+66.2  lib=5  resets=7
+  seed=28  adapt=-0.200  asymp=+0.599  total=-4.3  lib=4  resets=7
+  seed=29  adapt=-0.555  asymp=+0.432  total=-3.2  lib=2  resets=7
+
+── Obs ──
+  seed= 0  adapt=+0.254  asymp=+0.262  total=+138.9  lib=1  resets=0
+  seed= 1  adapt=+0.256  asymp=+0.266  total=+195.6  lib=1  resets=0
+  seed= 2  adapt=-0.514  asymp=-0.207  total=-227.4  lib=1  resets=0
+  seed= 3  adapt=+0.259  asymp=+0.259  total=+78.7  lib=1  resets=0
+  seed= 4  adapt=+0.226  asymp=+0.261  total=+83.5  lib=1  resets=0
+  seed= 5  adapt=+0.260  asymp=+0.257  total=+102.0  lib=1  resets=0
+  seed= 6  adapt=+0.262  asymp=+0.262  total=+161.3  lib=1  resets=0
+  seed= 7  adapt=+0.257  asymp=+0.258  total=+146.0  lib=1  resets=0
+  seed= 8  adapt=+0.256  asymp=+0.266  total=+87.0  lib=1  resets=0
+  seed= 9  adapt=+0.260  asymp=+0.252  total=+59.5  lib=1  resets=0
+  seed=10  adapt=-0.398  asymp=+0.310  total=-33.2  lib=1  resets=0
+  seed=11  adapt=+0.264  asymp=+0.259  total=+92.4  lib=1  resets=0
+  seed=12  adapt=+0.264  asymp=+0.261  total=+85.9  lib=1  resets=0
+  seed=13  adapt=+0.253  asymp=+0.260  total=+58.1  lib=1  resets=0
+  seed=14  adapt=+0.251  asymp=+0.226  total=+84.6  lib=1  resets=0
+  seed=15  adapt=+0.263  asymp=+0.255  total=+53.8  lib=1  resets=0
+  seed=16  adapt=+0.256  asymp=+0.228  total=+91.7  lib=1  resets=0
+  seed=17  adapt=+0.259  asymp=+0.254  total=+76.0  lib=1  resets=0
+  seed=18  adapt=+0.254  asymp=+0.258  total=+117.4  lib=1  resets=0
+  seed=19  adapt=+0.254  asymp=+0.263  total=+89.0  lib=1  resets=0
+  seed=20  adapt=+0.255  asymp=+0.257  total=+110.2  lib=1  resets=0
+  seed=21  adapt=+0.263  asymp=+0.252  total=+43.4  lib=1  resets=0
+  seed=22  adapt=+0.254  asymp=+0.227  total=+18.0  lib=1  resets=0
+  seed=23  adapt=+0.264  asymp=+0.257  total=+98.2  lib=1  resets=0
+  seed=24  adapt=+0.266  asymp=+0.234  total=+156.1  lib=1  resets=0
+  seed=25  adapt=+0.268  asymp=+0.262  total=+43.3  lib=1  resets=0
+  seed=26  adapt=+0.260  asymp=+0.231  total=+77.8  lib=1  resets=0
+  seed=27  adapt=+0.257  asymp=+0.260  total=+67.4  lib=1  resets=0
+  seed=28  adapt=+0.256  asymp=+0.240  total=-4.3  lib=1  resets=0
+  seed=29  adapt=+0.257  asymp=+0.263  total=+24.7  lib=1  resets=0
+
+── NoSkill ──
+  ▶ Skill crystallised at ep 23. Run _validate_skill() with eval_env to confirm.
+    Success trajectories in P1: 9
+  seed= 0  adapt=-0.620  asymp=+1.002  total=+187.9  lib=0  resets=0
+  ▶ Skill crystallised at ep 14. Run _validate_skill() with eval_env to confirm.
+    Success trajectories in P1: 8
+  seed= 1  adapt=-0.232  asymp=+0.564  total=+210.3  lib=0  resets=0
+  ▶ Skill crystallised at ep 48. Run _validate_skill() with eval_env to confirm.
+    Success trajectories in P1: 6
+  seed= 2  adapt=-0.514  asymp=+0.543  total=+107.9  lib=0  resets=0
+  ▶ Skill crystallised at ep 19. Run _validate_skill() with eval_env to confirm.
+    Success trajectories in P1: 14
+  seed= 3  adapt=-0.822  asymp=+1.362  total=+165.9  lib=0  resets=0
+  ▶ Skill crystallised at ep 28. Run _validate_skill() with eval_env to confirm.
+    Success trajectories in P1: 14
+  seed= 4  adapt=-0.872  asymp=+1.013  total=+50.9  lib=0  resets=0
+  ▶ Skill crystallised at ep 21. Run _validate_skill() with eval_env to confirm.
+    Success trajectories in P1: 12
+  seed= 5  adapt=-0.286  asymp=+0.380  total=+60.1  lib=0  resets=0
+  ▶ Skill crystallised at ep 26. Run _validate_skill() with eval_env to confirm.
+    Success trajectories in P1: 7
+  seed= 6  adapt=+0.129  asymp=+0.304  total=+151.9  lib=0  resets=0
+  ▶ Skill crystallised at ep 12. Run _validate_skill() with eval_env to confirm.
+    Success trajectories in P1: 6
+  seed= 7  adapt=-0.264  asymp=+0.808  total=+158.5  lib=0  resets=0
+  ▶ Skill crystallised at ep 35. Run _validate_skill() with eval_env to confirm.
+    Success trajectories in P1: 4
+  seed= 8  adapt=-0.889  asymp=+0.763  total=+18.3  lib=0  resets=0
+  ▶ Skill crystallised at ep 15. Run _validate_skill() with eval_env to confirm.
+    Success trajectories in P1: 6
+  seed= 9  adapt=-0.031  asymp=+0.311  total=+177.0  lib=0  resets=0
+  ▶ Skill crystallised at ep 34. Run _validate_skill() with eval_env to confirm.
+    Success trajectories in P1: 13
+  seed=10  adapt=-0.749  asymp=+0.768  total=+121.1  lib=0  resets=0
+  ▶ Skill crystallised at ep 30. Run _validate_skill() with eval_env to confirm.
+    Success trajectories in P1: 10
+  seed=11  adapt=-0.915  asymp=+0.962  total=+123.3  lib=0  resets=0
+  ▶ Skill crystallised at ep 21. Run _validate_skill() with eval_env to confirm.
+    Success trajectories in P1: 11
+  seed=12  adapt=-0.853  asymp=+0.713  total=+61.0  lib=0  resets=0
+  ▶ Skill crystallised at ep 12. Run _validate_skill() with eval_env to confirm.
+    Success trajectories in P1: 4
+  seed=13  adapt=-0.791  asymp=+0.530  total=-24.9  lib=0  resets=0
+  ▶ Skill crystallised at ep 26. Run _validate_skill() with eval_env to confirm.
+    Success trajectories in P1: 14
+  seed=14  adapt=-0.174  asymp=+0.530  total=+83.0  lib=0  resets=0
+  ▶ Skill crystallised at ep 13. Run _validate_skill() with eval_env to confirm.
+    Success trajectories in P1: 5
+  seed=15  adapt=-0.892  asymp=+0.769  total=+48.2  lib=0  resets=0
+  ▶ Skill crystallised at ep 15. Run _validate_skill() with eval_env to confirm.
+    Success trajectories in P1: 6
+  seed=16  adapt=-0.898  asymp=+1.013  total=+66.4  lib=0  resets=0
+  ▶ Skill crystallised at ep 28. Run _validate_skill() with eval_env to confirm.
+    Success trajectories in P1: 18
+  seed=17  adapt=-0.526  asymp=+0.850  total=+100.2  lib=0  resets=0
+  ▶ Skill crystallised at ep 20. Run _validate_skill() with eval_env to confirm.
+    Success trajectories in P1: 11
+  seed=18  adapt=+0.344  asymp=+0.295  total=+234.9  lib=0  resets=0
+  ▶ Skill crystallised at ep 18. Run _validate_skill() with eval_env to confirm.
+    Success trajectories in P1: 12
+  seed=19  adapt=-0.658  asymp=+0.542  total=+44.4  lib=0  resets=0
+  ▶ Skill crystallised at ep 19. Run _validate_skill() with eval_env to confirm.
+    Success trajectories in P1: 9
+  seed=20  adapt=-0.717  asymp=+0.331  total=+38.5  lib=0  resets=0
+  ▶ Skill crystallised at ep 30. Run _validate_skill() with eval_env to confirm.
+    Success trajectories in P1: 11
+  seed=21  adapt=-0.138  asymp=+0.679  total=+192.1  lib=0  resets=0
+  ▶ Skill crystallised at ep 16. Run _validate_skill() with eval_env to confirm.
+    Success trajectories in P1: 9
+  seed=22  adapt=-0.036  asymp=+0.253  total=+5.4  lib=0  resets=0
+  ▶ Skill crystallised at ep 30. Run _validate_skill() with eval_env to confirm.
+    Success trajectories in P1: 15
+  seed=23  adapt=-0.902  asymp=+1.215  total=+96.9  lib=0  resets=0
+  ▶ Skill crystallised at ep 17. Run _validate_skill() with eval_env to confirm.
+    Success trajectories in P1: 9
+  seed=24  adapt=-0.451  asymp=+1.093  total=+188.2  lib=0  resets=0
+  ▶ Skill crystallised at ep 68. Run _validate_skill() with eval_env to confirm.
+    Success trajectories in P1: 16
+  seed=25  adapt=-0.722  asymp=+0.701  total=-12.1  lib=0  resets=0
+  ▶ Skill crystallised at ep 34. Run _validate_skill() with eval_env to confirm.
+    Success trajectories in P1: 17
+  seed=26  adapt=-0.937  asymp=+1.266  total=+116.1  lib=0  resets=0
+  ▶ Skill crystallised at ep 19. Run _validate_skill() with eval_env to confirm.
+    Success trajectories in P1: 11
+  seed=27  adapt=-0.727  asymp=+1.080  total=+139.1  lib=0  resets=0
+  ▶ Skill crystallised at ep 36. Run _validate_skill() with eval_env to confirm.
+    Success trajectories in P1: 21
+  seed=28  adapt=-0.332  asymp=+0.233  total=+126.7  lib=0  resets=0
+  ▶ Skill crystallised at ep 29. Run _validate_skill() with eval_env to confirm.
+    Success trajectories in P1: 13
+  seed=29  adapt=-0.916  asymp=+1.032  total=+68.1  lib=0  resets=0
+
+====================================================================================
+  P3 RESULTS (N=30, seeded, unpredictable recurring env)
+====================================================================================
+  Arm             adapt      asymp      total    lib   resets
+  BOCPD       -0.029±0.06   0.367±0.06       58.8    3.6      8.0
+  Random      -0.180±0.06   0.411±0.04       82.2    3.8      8.0
+  Obs          0.210±0.03   0.240±0.02       72.5    1.0      0.0
+  NoSkill     -0.546±0.07   0.730±0.06      103.5    0.0      0.0
+
+  ────────────────────────────────────────────────────────────────────────────────
+  COMPARISONS (paired Wilcoxon, Hedges g, bootstrap CI) on PRIMARY metric 'adapt'
+  ────────────────────────────────────────────────────────────────────────────────
+  HEADLINE  BOCPD > NoSkill  (any lead?)               -0.029 vs -0.546  g=+1.47 CI[+0.34,+0.68] p=0.000
+  DECISIVE  BOCPD > Random   (detection load-bearing?) -0.029 vs -0.180  g=+0.46 CI[-0.00,+0.30] p=0.046
+  ctx       BOCPD > Obs      (detection > obs-select?) -0.029 vs  0.210  g=-0.88 CI[-0.35,-0.14] p=1.000
+  ctx       Random > NoSkill (any library benefit?)    -0.180 vs -0.546  g=+1.06 CI[+0.20,+0.53] p=0.000
+  ctx       Obs > NoSkill                               0.210 vs -0.546  g=+2.61 CI[+0.62,+0.89] p=0.000
+
+  ────────────────────────────────────────────────────────────────────────────────
+  PRE-REGISTERED VERDICT (primary metric = adapt)
+  ────────────────────────────────────────────────────────────────────────────────
+  HEADLINE  BOCPD -0.029 vs NoSkill -0.546  g=+1.47 p(>)=0.000 p(rev)=1.000  -> LEAD FOUND (BOCPD > NoSkill)
+  DECISIVE  BOCPD -0.029 vs Random -0.180  g=+0.46 p(>)=0.046 p(rev)=0.956  -> detection load-bearing: NO
+
+  Saved results/p3_unpredictable.pkl

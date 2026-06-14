@@ -6,7 +6,8 @@ instantiation, **PAO (Progressive Assembly Objective)**, developed by Hengjin Ca
 
 It takes the framework's own minimal experiment (the *Two-Gate Lock*) plus several new, seed-controlled
 experiments, and tests — under frozen pre-registrations — whether the mechanisms behave as the theory
-claims. **Short version: the three distinctive, load-bearing claims did not survive controlled testing.**
+claims. **Short version: the distinctive, load-bearing claims did not survive controlled testing — not even
+a generous steelman of them.**
 
 > Full evidence and dated history are in [`FINDINGS.md`](FINDINGS.md). This README is the orientation;
 > `FINDINGS.md` is the authoritative record.
@@ -37,6 +38,7 @@ Each claim was pre-registered (hypothesis, controls, frozen decision rule) **bef
 | **Crystallisation timing matters** — the trigger detects a *special* moment, not just "trained enough" | `p1_crux.py` (1D), `p2_harder.py` (non-convex 2D + BOCPD) | **Falsified.** Trigger windows are no more reusable than competence-matched **random** windows (1D: tie; harder env: BOCPD significantly *worse*, Hedges' g = −0.82). The trigger tracks *amount of training*, nothing more. |
 | **Skill caching helps** | `p1_crux.py`, `p2_harder.py` | **Environment-dependent → net-harmful.** Helps only in a trivial corridor; in a non-trivial env, plain PPO (no skills) **beat every skill arm** on reuse (g ≈ −1.0 to −1.2). |
 | **Manifold health $H_{\mathcal{M}}$ gates skill quality** | `hm_test.py` (N=80, pre-registered) | **Anti-correlated.** $H_{\mathcal{M}}$ is *negatively* related to actual skill usefulness (ρ = −0.52; partial ρ = −0.32 controlling for training). Both components are inverted vs. the theory. As an acceptance gate it would select the **wrong** skills. |
+| **Event-triggered crystallisation + reuse helps (steelmanned)** — a skill *library* + change-point re-selection, in the regime built to favour it (random, unsignaled, recurring shifts) | `p3_unpredictable.py` (N=30, pre-registered) | **No lead.** The pre-registered primary metric fires "LEAD FOUND" — but it is a **metric artifact**: plain PPO wins on total reward, asymptotic competence, and recovery time; the change-point detector is **not** load-bearing (the no-detection arm scores *best* on the primary). Even PAO's best possible shot is net-harmful. A clean, pre-registered demonstration that the Two-Gate "fast-recovery" metric is gameable. |
 
 Alongside the claims, a code/reporting audit found: **no RNG seeding** anywhere (results irreproducible
 as shipped), a **dead dormancy gate** (`dormancy_weights` accepted but never used), a **collapsed
@@ -70,6 +72,7 @@ FINDINGS.md               Dated lab notebook — the authoritative results recor
 PREREG_P1.md              Frozen pre-registration: the crux H1 test (1D)
 PREREG_P2_harderenv.md    Frozen pre-registration: BOCPD + harder env
 PREREG_HM.md              Frozen pre-registration: manifold-health discrimination
+PREREG_P3_unpredictable.md Frozen pre-registration: trigger steelman (library reuse)
 cit/                      Cognitive Inertia Theorem simulation code + paper source
   └─ README.md            CIT-specific layout and reproduction commands
 exp_two_gate_lock/        Code (original Two-Gate Lock + our additions)
@@ -81,7 +84,9 @@ exp_two_gate_lock/        Code (original Two-Gate Lock + our additions)
   ├─ p2_harder.py         OURS — BOCPD + non-convex 2D steelman
   ├─ p06_gate_test.py     OURS — applicability-gate causality test
   ├─ hm_test.py           OURS — manifold-health discrimination test
-  ├─ cal_2d.py            OURS — 2D env calibration / BOCPD diagnostics
+  ├─ p3_unpredictable.py  OURS — trigger steelman: skill-library reuse, unpredictable env
+  ├─ agents.py::PAOLibrary* OURS — multi-skill library + change-point re-selection
+  ├─ cal_2d.py / cal_p3.py OURS — env/BOCPD calibration harnesses
   └─ results/             .log + .pkl evidence (results_original/ = untouched upstream)
 doc/                      Source papers (PDF/DOCX) — gitignored; live on D:\Documents\Research
 ```
@@ -121,9 +126,13 @@ states the frozen decision rule.
 
 ## Status
 
-Three pre-registered tests complete; all three distinctive claims falsified or inverted. Open:
-**(1)** ecological $H_{\mathcal{M}}$ confirmation on `run6` checkpoints; **(2)** a consolidated
-negative-results write-up.
+**Two-Gate Lock investigation wrapped (2026-06-14).** Four pre-registered tests complete; all four
+distinctive claims falsified, inverted, or shown to be metric artifacts — including a generous
+*steelman* (skill library + change-point reuse) in the regime engineered to favour PAO. On every
+holistic measure, plain PPO matches or beats the mechanism. Open / not pursued here:
+**(1)** ecological $H_{\mathcal{M}}$ confirmation on `run6` checkpoints (no access);
+**(2)** a consolidated negative-results / methodology write-up;
+**(3)** whether reuse pays off in an expensive-relearning regime the toy harness cannot exhibit.
 
 ## Credit
 

@@ -621,6 +621,187 @@ class PAONoSkill(PAOLight):
         self.skill_bias_strength = 0.0
 
 
+# ═══════════════════════════════════════════════════════════════════════════════
+# Multi-skill steelman (PAOLibrary) — for the unpredictable recurring-regime test
+# (PREREG_P3_unpredictable.md). PAO as shipped crystallises ONCE; the theory
+# ("progressive assembly") envisions a growing skill library reused across regimes.
+# This is the steelman: a library of frozen sub-policies + event-triggered
+# re-selection. Crystallisation rule is IDENTICAL across all library arms; arms
+# differ ONLY in what triggers skill re-selection (the manipulated variable).
+# ═══════════════════════════════════════════════════════════════════════════════
+
+class PAOLibrary(PAOLight):
+    """Skill-library PAO. Builds a library of frozen ActorCritic sub-policies at
+    competent+stable+debounced episodes (same rule for every arm). On a 'reset'
+    signal it searches the library (one candidate skill per episode, plus a
+    no-skill candidate), then exploits the best until the next reset. The reset
+    trigger is supplied by subclasses via _reset_signal()."""
+
+    def __init__(self, *args, cryst_debounce: int = 10, max_lib: int = 6,
+                 obs_conf_thresh: float = 0.5, reset_refractory: int = 30,
+                 reset_eps=None, bocpd_hazard: float = 0.01, **kwargs):
+        super().__init__(*args, **kwargs)
+        self.library: List[ActorCritic] = []
+        self._last_cryst_ep = -10**9
+        self._cryst_debounce = cryst_debounce
+        self.max_lib = max_lib
+        self._reset_refractory = reset_refractory
+        self._last_reset_ep = -10**9
+        self._mode = "exploit"          # "exploit" | "search"
+        self._active_idx = None         # library index (or None = base policy)
+        self._search_queue: list = []
+        self._search_results: dict = {}
+        self._episode_bias_idx = None
+        self._searched_this_ep = False
+        self._pending_reset = False
+        self._cryst_done_since_reset = False
+        self._obs_select = False
+        self._obs_conf_thresh = obs_conf_thresh
+        self.reset_eps = set(reset_eps) if reset_eps else set()
+        self.reset_count = 0
+        self.lib_size_log: List[int] = []
+        # own BOCPD (fresh hazard) for the BOCPD subclass
+        self.bocpd = BOCPD(hazard=bocpd_hazard, min_data=15)
+        self._prev_map_rl = 0
+
+    # disable PAOLight's single-skill crystallisation path
+    def _should_crystallize(self, *a, **k) -> bool:
+        return False
+
+    def begin_episode(self):
+        """Decide this episode's skill bias. Called by the driver before each episode."""
+        if self._obs_select:
+            self._searched_this_ep = False
+            return
+        if self._pending_reset:
+            self._pending_reset = False
+            if len(self.library) > 0:
+                self._mode = "search"
+                self._search_queue = list(range(len(self.library))) + [None]
+                self._search_results = {}
+        if self._mode == "search":
+            if len(self._search_queue) == 0:
+                best = (max(self._search_results, key=self._search_results.get)
+                        if self._search_results else None)
+                # competence fallback: if no cached skill clears the bar, relearn
+                # from the base policy (active=None) rather than lock onto a bad skill.
+                if best is not None and self._search_results.get(best, -1e9) <= self._tr:
+                    best = None
+                self._active_idx = best
+                self._mode = "exploit"
+                self._episode_bias_idx = self._active_idx
+                self._searched_this_ep = False
+            else:
+                self._episode_bias_idx = self._search_queue[0]
+                self._searched_this_ep = True
+        else:
+            self._episode_bias_idx = self._active_idx
+            self._searched_this_ep = False
+
+    def act(self, obs: np.ndarray, training: bool = True) -> int:
+        obs_t = torch.as_tensor(obs, dtype=torch.float32).unsqueeze(0)
+        logits, val = self.policy(obs_t)
+        bias_idx = None
+        if training and self.library:
+            if self._obs_select:
+                best_conf, best_i = -1.0, None
+                for i, sk in enumerate(self.library):
+                    with torch.no_grad():
+                        sl, _ = sk(obs_t)
+                    conf = float(torch.softmax(sl, dim=-1).max())
+                    if conf > best_conf:
+                        best_conf, best_i = conf, i
+                if best_conf >= self._obs_conf_thresh:
+                    bias_idx = best_i
+            else:
+                bias_idx = self._episode_bias_idx
+        if bias_idx is not None:
+            with torch.no_grad():
+                sl, _ = self.library[bias_idx](obs_t)
+            logits = logits + self.skill_bias_strength * sl
+        dist = torch.distributions.Categorical(logits=logits)
+        a = dist.sample()
+        logp = dist.log_prob(a)
+        if training:
+            self.buf.states.append(obs.copy())
+            self.buf.actions.append(int(a.item()))
+            self.buf.log_probs.append(float(logp.item()))
+            self.buf.vals.append(float(val.item()))
+        return int(a.item())
+
+    def finish_episode(self):
+        if len(self.buf) == 0:
+            return
+        super().finish_episode()  # PPO update + logging (no single-skill crystallise)
+        ep_idx = len(self.episode_returns) - 1
+        ep_return = self.episode_returns[-1]
+        mean_ent = self.episode_entropies[-1]
+        if self._searched_this_ep and self._mode == "search" and len(self._search_queue) > 0:
+            cand = self._search_queue.pop(0)
+            self._search_results[cand] = ep_return
+        self._maybe_crystallize(ep_idx, ep_return, mean_ent)
+        # detector always updates state; refractory gates whether we ACT on a reset
+        raw = self._reset_signal(ep_idx, ep_return)
+        if raw and (ep_idx - self._last_reset_ep) >= self._reset_refractory:
+            self._pending_reset = True
+            self._cryst_done_since_reset = False
+            self._last_reset_ep = ep_idx
+            self.reset_count += 1
+        self.lib_size_log.append(len(self.library))
+
+    def _maybe_crystallize(self, ep_idx, ep_return, mean_ent):
+        # Cap library; only crystallise a regime mastered by the BASE policy
+        # (not while exploiting a cached skill) -> ~1 skill per distinct regime.
+        if len(self.library) >= self.max_lib or self._cryst_done_since_reset:
+            return
+        if self._mode != "exploit" or self._active_idx is not None:
+            return
+        if ep_return <= self._tr or mean_ent >= self._te:
+            return
+        if sum(1 for r in self.episode_returns[-5:] if r > self._tr) < self._ts:
+            return
+        if ep_idx - self._last_cryst_ep < self._cryst_debounce:
+            return
+        sk = ActorCritic(self.obs_dim, self.act_dim)
+        sk.load_state_dict(self.policy.state_dict())
+        for p in sk.parameters():
+            p.requires_grad = False
+        self.library.append(sk)
+        self._last_cryst_ep = ep_idx
+        self._cryst_done_since_reset = True
+        self.skill_formation_eps.append(ep_idx)
+
+    def _reset_signal(self, ep_idx, ep_return) -> bool:
+        return False
+
+
+class PAOLibraryBOCPD(PAOLibrary):
+    """Re-selection triggered by BOCPD change-point detection (the mechanism under test)."""
+    def _reset_signal(self, ep_idx, ep_return) -> bool:
+        self.bocpd.update(ep_return)
+        p = np.exp(np.asarray(self.bocpd.log_run_probs))
+        if p.sum() <= 0:
+            return False
+        map_rl = int(np.argmax(p / p.sum()))
+        reset = (self._prev_map_rl >= 12 and map_rl < self._prev_map_rl - 6)
+        self._prev_map_rl = map_rl
+        return reset
+
+
+class PAOLibraryRandom(PAOLibrary):
+    """Re-selection triggered at pre-specified random episodes (count-matched to BOCPD)."""
+    def _reset_signal(self, ep_idx, ep_return) -> bool:
+        return ep_idx in self.reset_eps
+
+
+class PAOLibraryObs(PAOLibrary):
+    """Skill selection by per-step observation confidence (no change-point detection).
+    Expected to fail: the env is rule-unsignaled, so obs cannot reveal the active rule."""
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+        self._obs_select = True
+
+
 class FlatPPO:
     """Pure PPO agent. Identical architecture to PAOLight, no skill mechanisms."""
 

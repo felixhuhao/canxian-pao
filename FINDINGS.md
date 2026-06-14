@@ -4,6 +4,60 @@ Running lab notebook. Newest first. Each entry: what was done, what was found, e
 
 ---
 
+## 2026-06-14 — P3 steelman: the "lead" is a metric artifact; plain PPO dominates
+
+Pre-registered in `PREREG_P3_unpredictable.md` (frozen before the N=30 run). `p3_unpredictable.py`,
+`agents.py::PAOLibrary*`. Log `results/p3_unpredictable.log`, data `results/p3_unpredictable.pkl`.
+
+**Motivation.** P1/P2 swapped rules on a *fixed, known schedule*, where a clock suffices by
+construction — so the trigger trivially added nothing. This test gives PAO its **best honest shot**:
+the one regime engineered to need event-triggered crystallisation+reuse — **random, unsignaled,
+recurring** shifts (action-mapping flips on the 1D corridor; observations cannot reveal the active
+regime). And it **steelmans** PAO beyond the shipped single-skill code to a multi-skill **library**
+with change-point-triggered crystallisation *and* re-selection (`PAOLibrary`). Arms (identical
+library-building; differ only in the re-selection trigger): **BOCPD** (change-point detection),
+**Random** (count-matched random resets), **Obs** (per-step obs-confidence selection, *no* detection),
+**NoSkill** (plain PPO). N=30.
+
+| Arm | adapt (primary) | recov ↓ | asymp | total |
+|---|---|---|---|---|
+| BOCPD | −0.029 | 32.0 | 0.367 | 58.8 |
+| Random | −0.180 | 33.5 | 0.411 | 82.2 |
+| **Obs** (no detection) | **+0.210** | 32.9 | 0.240 | 72.5 |
+| **NoSkill** (plain PPO) | −0.546 | **30.9** | **0.730** | **103.5** |
+
+### Verdict: pre-registered primary says "LEAD FOUND" — and the cross-checks expose it as an artifact
+- **Primary metric fires:** BOCPD > NoSkill on `adapt` (first-15-eps after recurrence), g=+1.47,
+  p<0.001 → the frozen rule prints **"LEAD FOUND."**
+- **But it is not a real benefit.** The cross-checks I pre-registered exactly to catch this all
+  contradict it: on **total reward** NoSkill wins (103.5 vs 58.8, g=−0.56); on **asymptotic
+  competence** NoSkill wins hugely (0.73 vs 0.37, g=−1.11); on **recovery time** they tie (g=+0.21,
+  ns). The `adapt` metric merely rewards *not crashing to the floor in the first 15 episodes*: a
+  cached skill blunts the immediate post-swap crash, buying a head-start — paid back with worse
+  asymptotic performance and less total reward. Plain PPO crashes, then relearns to a **higher** level.
+- **Detection is NOT load-bearing.** BOCPD ≈ Random on `adapt` (g=+0.46, just under the 0.5 bar →
+  rule prints "detection load-bearing: NO"), and **Obs — which uses no change-point detection at all —
+  scores *best* on the primary metric** (+0.210). So whatever lifts `adapt` is "apply some cached skill
+  to soften the crash," which needs none of PAO's distinctive machinery.
+- **Net:** on every holistic measure (total, asymptotic, recovery), the skill library is **net-harmful
+  vs plain PPO** — consistent with P1/P2. The steelman, in the regime built to favor it, fails.
+
+### Why this matters (methodological lead)
+This is a clean, pre-registered demonstration that the **"fast post-swap recovery" style of metric**
+— the kind the Two-Gate papers lean on — is **gameable by a head-start artifact** that does not
+reflect real competence and does not require the mechanism under test. It explains *how* a published
+Two-Gate result can look positive while the mechanism neither generalises nor beats a PPO baseline.
+Pre-registering the effect direction + cross-checks (not just the headline comparison) is what caught it.
+
+### Integrity note
+The `PAOLibrary` mechanism was developed against seeds {0,1,2} (bugs fixed pre-freeze: action-flip
+regimes, competence fallback, detection refractory, no-exploration-on-cached-skill — see PREREG §6),
+then **frozen** before the N=30 run. Calibration was seed-fragile (1 big win, 2 losses); the N=30
+result resolves it. On-record prediction (inconclusive/null/anti, high variance) was essentially
+correct: the primary fires positive but is an artifact; holistically it is ANTI.
+
+---
+
 ## 2026-06-09 — H_M test: manifold health is ANTI-correlated with skill usefulness
 
 Pre-registered in `PREREG_HM.md` (frozen before run). `hm_test.py`, controlled replica, N=80 skills

@@ -1,0 +1,39 @@
+M1             div= 0.000  test_mse=5.8337  ood_mse=6.3590  (136s)
+M3_noLI        div= 3.796  test_mse=3.3971  ood_mse=4.0183  (159s)
+M3_LI_b0.1     div= 6.293  test_mse=3.5587  ood_mse=4.1454  (183s)
+M3_LI_b1       div=10.555  test_mse=4.1312  ood_mse=4.7301  (189s)
+M3_LI_b10      div= 9.627  test_mse=4.4067  ood_mse=4.9953  (185s)
+M3_LI_b30      div= 9.576  test_mse=4.4302  ood_mse=5.0182  (184s)
+M3_inert_b0.1  div= 3.796  test_mse=3.3971  ood_mse=4.0183  (181s)
+M3_inert_b1    div= 3.796  test_mse=3.3971  ood_mse=4.0183  (178s)
+M3_inert_b10   div= 3.796  test_mse=3.3971  ood_mse=4.0183  (183s)
+M3_inert_b30   div= 3.796  test_mse=3.3971  ood_mse=4.0183  (179s)
+
+==============================================================================
+  RDD-LI RESULTS (N=20, device=cuda)
+==============================================================================
+
+  D3 PRIMARY — does LI-driven diversity lower downstream test MSE?
+    LI_b10 < noLI          4.4067 vs 3.3971  g=+18.49 CI[+0.9827,+1.0387] p(<)=1.000
+    LI_b10 < M1            4.4067 vs 5.8337  g=-75.64 CI[-1.4395,-1.4149] p(<)=0.000
+    LI_b10 < noLI (OOD)    4.9953 vs 4.0183  g=+20.31 CI[+0.9500,+1.0046] p(<)=1.000
+
+  LI β-sweep (does benefit scale, per RDD monotonicity?)
+    M3_noLI        div= 3.796  test_mse=3.3971
+    M3_LI_b0.1     div= 6.293  test_mse=3.5587
+    M3_LI_b1       div=10.555  test_mse=4.1312
+    M3_LI_b10      div= 9.627  test_mse=4.4067
+    M3_LI_b30      div= 9.576  test_mse=4.4302
+
+  D1 γ-INERTNESS — real-LI responds to β, inert-LI does NOT
+         β   real div   inert div
+       0.1      6.293       3.796
+         1     10.555       3.796
+        10      9.627       3.796
+        30      9.576       3.796
+    real-LI div range across β = 4.261 (responsive);  inert-LI div range = 0.000 (should be ~0)
+
+  diversity↔usefulness: within M3-LI runs, corr(div, -test_mse)
+    Spearman(div, test_mse) = +0.466 (p=0.000)  [negative => more diversity helps]
+
+  Saved results/rdd_li.pkl

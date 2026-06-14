@@ -4,6 +4,55 @@ Running lab notebook. Newest first. Each entry: what was done, what was found, e
 
 ---
 
+## 2026-06-14 — RDD lateral inhibition: γ-inertness CONFIRMED; diversity does NOT help downstream
+
+Pre-registered in `PREREG_RDD_LI.md` (frozen before the N=20 run). `exp_rdd/rdd_li.py`,
+log `exp_rdd/results/rdd_li.log`, data `…/rdd_li.pkl`. New experiment line on the **RDD** paper
+(Cai, *"Lateral inhibition enables escape from geometric deadlock"*, `docs/RDD_main.pdf` + supp).
+Reproduces RDD's NN proof-of-concept (multi-channel low-pass SSM, learned τ_m=exp(θ_m), Gaussian
+repulsion loss, Table S8) and **extends it to RDD's own explicitly-stated open question** — does the
+LI-induced diversity translate to downstream gains? Folds in **Direction 1** (γ-inertness) and
+**Direction 3** (LI → downstream MSE). N=20 seeds.
+
+| Condition | diversity D | test MSE | OOD MSE |
+|---|---|---|---|
+| M1 (single channel) | 0.00 | 5.834 | 6.359 |
+| **M3, no-LI** | 3.80 | **3.397** | **4.018** |
+| M3, LI β=0.1 | 6.29 | 3.559 | 4.145 |
+| M3, LI β=1 | 10.56 | 4.131 | 4.730 |
+| M3, LI β=10 | 9.63 | 4.407 | 4.995 |
+| M3, LI β=30 | 9.58 | 4.430 | 5.018 |
+| M3, **inert**-LI (any β) | 3.80 | 3.397 | 4.018 |
+
+### Direction 1 — γ-inertness: CONFIRMED (a clean positive validation of RDD)
+The inert-LI arm (β present, repulsion kernel's gradient detached) is **identical to no-LI at every
+β** — diversity flat at 3.796, range **0.000** — while real-LI diversity varies with β (range 4.26).
+**The scalar gain does nothing without the actual repulsion interaction.** This replicates RDD's
+central structural claim (Table 2: no-kernel configs are non-responsive to γ_LI) in a *trained neural
+net*, not just the scalar resonance toy. RDD's mechanism claim holds.
+
+### Direction 3 — does diversity translate to downstream performance? NO (monotonically harmful)
+- **LI raises diversity but worsens prediction.** test MSE 3.40 (no-LI) → 4.41 (β=10); OOD 4.02 → 5.00.
+  Harm is **monotone in β** and present even at the smallest β=0.1 (3.56 > 3.40) — **no sweet spot.**
+- **Diversity is anti-correlated with usefulness:** Spearman ρ(D, test MSE) = **+0.466, p<0.001**
+  across all LI runs — more separation, worse prediction. (Effect sizes vs no-LI are huge, g≈+18,
+  only because the conditions are near-deterministic across seeds; the meaningful figure is the ~30%
+  MSE gap and the monotone trend.)
+- **The premise barely holds:** without LI the channels already differentiate (D=3.80, not collapsed),
+  so LI mostly *forces* extra separation the task doesn't want — pushing τ away from the frequencies
+  actually present in the signal. **Coverage and accuracy trade off:** repulsion helps avoid deadlock
+  (RDD's regime) but costs fit when natural differentiation already suffices (this regime).
+
+### Implication
+This **directly answers RDD's open question** ("does the diversity increase translate to downstream
+performance gains?" — RDD Supp §4): in the NN PoC, **it does not — it costs them.** Two-sided result:
+RDD's *mechanism* claim (γ-inertness; repulsion is the operative ingredient) is **validated**, but its
+*usefulness* hope is **not** — the same "property ≠ usefulness" pattern as the H_M test. LI is a
+coverage/anti-collapse tool, not a downstream-performance regularizer here. (Direction 2, Busch
+IM/WMP/OMP, deferred — paper not yet available.)
+
+---
+
 ## 2026-06-14 — P3 steelman: the "lead" is a metric artifact; plain PPO dominates
 
 Pre-registered in `PREREG_P3_unpredictable.md` (frozen before the N=30 run). `p3_unpredictable.py`,

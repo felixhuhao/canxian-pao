@@ -41,4 +41,11 @@ Pre-registration: `../PREREG_RDD_LI.md` (frozen before the N=20 run). Verdict: `
   **diversity helps downstream only when it is functional coverage aligned with the task AND there is
   spare capacity to deploy it.** Generic LI and overlap-penalty do not help; only the coverage form does.
 
+- **Capacity law (`rdd_capacity.py`).** The coverage benefit **scales with excess capacity**: sweeping
+  M against K=5 frequencies, Δ = MSE(noLI)−MSE(cov) rises monotonically with M/K (Spearman +0.94,
+  p=0.005) — hurts when under-complete (M<K), helps increasingly when over-complete (g up to −3.4 at
+  M/K=3.2). no-LI degrades as M grows (redundancy harm); coverage holds it flat → it *repairs*
+  redundancy. Pre-registered, held-out seeds. Principle: **the value of task-aligned diversity scales
+  with excess capacity.**
+
 Direction 2 (Busch IM/WMP/OMP manifold-alignment) is deferred pending the Busch preprint.

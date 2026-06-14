@@ -1,0 +1,35 @@
+M2_noLI      test_mse=3.3958
+M2_cov1      test_mse=3.3333
+M2_cov10     test_mse=3.4100
+M3_noLI      test_mse=3.3748
+M3_cov1      test_mse=3.3545
+M3_cov10     test_mse=3.4435
+M5_noLI      test_mse=3.4656
+M5_cov1      test_mse=3.4055
+M5_cov10     test_mse=3.4790
+M8_noLI      test_mse=3.5131
+M8_cov1      test_mse=3.4417
+M8_cov10     test_mse=3.4141
+M12_noLI     test_mse=3.5710
+M12_cov1     test_mse=3.5153
+M12_cov10    test_mse=3.4053
+M16_noLI     test_mse=3.6384
+M16_cov1     test_mse=3.5206
+M16_cov10    test_mse=3.3564
+
+==============================================================================
+  RDD CAPACITY LAW (N=20, seeds 200..219, K=5)
+==============================================================================
+    M   M/K     noLI    cov10      Δ10       g    p(<)     cov1       Δ1
+    2   0.4   3.3958   3.4100  -0.0142   +0.09   0.976     3.3333  +0.0625
+    3   0.6   3.3748   3.4435  -0.0687   +1.22   1.000     3.3545  +0.0204
+    5   1.0   3.4656   3.4790  -0.0134   +0.20   0.853     3.4055  +0.0601
+    8   1.6   3.5131   3.4141  +0.0989   -1.12   0.000 *   3.4417  +0.0714
+   12   2.4   3.5710   3.4053  +0.1657   -1.75   0.000 *   3.5153  +0.0557
+   16   3.2   3.6384   3.3564  +0.2820   -3.41   0.000 *   3.5206  +0.1178
+
+  TREND: Spearman(M/K, Δ10) = +0.943 (p=0.005)  [positive => benefit grows with capacity]
+  mean Δ10 under-complete (M<5) = -0.0414;  over-complete (M>=5) = +0.1333
+  -> CAPACITY LAW CONFIRMED
+
+  Saved results/rdd_capacity.pkl

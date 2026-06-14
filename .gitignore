@@ -5,6 +5,7 @@ __pycache__/
 .ipynb_checkpoints/
 *.egg-info/
 .pytest_cache/
+.DS_Store
 
 # Claude local settings (machine-specific)
 .claude/settings.local.json
@@ -16,3 +17,22 @@ doc/
 *.png
 *.pdf
 *.docx
+
+# CIT / LaTeX generated files
+cit/**/*.log
+cit/**/*.aux
+cit/**/*.out
+cit/**/*.tmp
+cit/**/*.xref
+cit/**/*.idv
+cit/**/*.lg
+cit/**/*.4ct
+cit/**/*.4tc
+cit/**/*.css
+cit/**/*.dvi
+cit/**/*.fls
+cit/**/*.fdb_latexmk
+cit/**/*.bbl
+cit/**/*.blg
+!cit/paper/CIT_paper_source_only.docx
+!cit/paper/CIT_supplementary_source_only.docx

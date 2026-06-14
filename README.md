@@ -11,6 +11,9 @@ claims. **Short version: the three distinctive, load-bearing claims did not surv
 > Full evidence and dated history are in [`FINDINGS.md`](FINDINGS.md). This README is the orientation;
 > `FINDINGS.md` is the authoritative record.
 
+This repository also contains [`cit/`](cit/), simulation code and paper source for the
+**Cognitive Inertia Theorem (CIT)**. See [`cit/README.md`](cit/README.md) for its layout and commands.
+
 ---
 
 ## The framework under test (one paragraph)
@@ -67,6 +70,8 @@ FINDINGS.md               Dated lab notebook — the authoritative results recor
 PREREG_P1.md              Frozen pre-registration: the crux H1 test (1D)
 PREREG_P2_harderenv.md    Frozen pre-registration: BOCPD + harder env
 PREREG_HM.md              Frozen pre-registration: manifold-health discrimination
+cit/                      Cognitive Inertia Theorem simulation code + paper source
+  └─ README.md            CIT-specific layout and reproduction commands
 exp_two_gate_lock/        Code (original Two-Gate Lock + our additions)
   ├─ README.md            Dr. Cai's original experiment readme
   ├─ agents.py            Agents (modified: + PAOForced, PAOBocpd, refactored trigger)

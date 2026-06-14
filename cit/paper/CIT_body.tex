@@ -1,0 +1,374 @@
+\maketitle
+
+\begin{abstract}
+Biological and artificial adaptive systems can retain acquired temporal structure after the driving signal is altered or removed, but the minimal dynamical conditions for such persistence remain unclear. Here I show that, within a minimal class of delayed adaptive systems, cognitive inertia arises from the joint action of delayed self-coupling, delayed self-correlation accumulation, and threshold-gated structural consolidation. I formulate and analyze a conditional cognitive inertia theorem for this system class: the structural consolidation variable $\kappa_t$ enters a locked regime when the time-averaged delayed self-correlation exceeds a threshold; once locked, the residue-class phase configuration has a positive structural-preservation lower bound determined by the consolidated state and the maximum structural decay speed. Numerical simulations within this system class with $N=100$ independent seeds confirm that all three conditions are jointly necessary for persistence---removing any one eliminates persistence entirely. The theorem yields three experimentally testable predictions: phase preservation after stimulus omission, inertial drag under frequency perturbation, and frequency coexistence modulation when internal and external periods differ.
+\end{abstract}
+
+%=============================================================================
+\section{Introduction}
+%=============================================================================
+
+\subsection{The gap}
+
+Many influential theories of cognition characterize the organization or processing of an already-formed system \\cite{kelso1995dynamic, strogatz2015nonlinear, izhikevich2007dynamical}. A complementary question concerns the minimal dynamical mechanism by which temporal structure becomes historically consolidated---that is, how a system acquires an internal temporal constraint that persists beyond the conditions that gave rise to it.
+
+Standard large language models \cite{brown2020language, openai2023gpt4} exhibit remarkable behavioural flexibility, but whether stateless inference (even with learned parameters) produces history-bearing internal structures of the kind studied here---structures whose temporal phase cannot be instantaneously reset by input changes---remains an open question. A formal criterion for historically consolidated internal structure is missing across these frameworks.
+
+I argue that the key dynamical signature is not how much a system knows or how flexibly it behaves, but whether it has formed a structure that cannot be instantaneously reset. The relevant measure is \textbf{cognitive inertia}: the persistence of an acquired temporal response phase after the driving stimulus is altered or removed.
+
+\subsection{The mechanism}
+
+Consider a system with three minimal properties:
+\begin{enumerate}[itemsep=0pt]
+    \item \textbf{Delayed self-coupling}: the system's current state depends on its own past state at a fixed delay $\delta$, not merely on instantaneous input. This follows a tradition of delay-based dynamical modelling \cite{mackey1977oscillation, yanchuk2014multistability, hale1993introduction} and weakly connected oscillator theory \cite{hoppensteadt1997synaptic}.
+    \item \textbf{Delayed self-correlation accumulation}: the system accumulates a running trace of the delayed self-correlation.
+    \item \textbf{Threshold-gated autocatalytic consolidation}: when the accumulated correlation exceeds a threshold, a structural consolidation variable $\kappa_t$ activates a self-amplifying term that drives it to a locked operating point.
+\end{enumerate}
+
+Jointly, these conditions produce \textbf{structural hysteresis}: the consolidation variable $\kappa_t$ locks at an intermediate operating point $\kappa^*_{\mathrm{train}}$ that persists after the correlation that triggered it recedes. Hysteresis is a well-studied phenomenon in coordination dynamics \cite{haken1985theoretical, kelso1995dynamic} and nonlinear systems more generally \cite{pikovsky2001synchronization}. This hysteresis, in turn, produces cognitive inertia: the output phase cannot track instantaneous changes in the driving stimulus, because the structural gate that couples the system to its own past does not dissolve on the stimulus timescale.
+
+\subsection{Three contributions}
+
+This paper makes three contributions.
+
+\textbf{First}, I define a minimal discrete-time delayed adaptive system (Section~2) that instantiates the three conditions above with three mechanistic components (delayed self-coupling, delayed self-correlation accumulation, threshold-gated autocatalytic consolidation) and a scalar consolidation gate.
+
+\textbf{Second}, I prove the \textbf{cognitive inertia theorem} (Section~3): for the system class defined by Eqs.~\eqref{eq:state}--\eqref{eq:kapfull}, if the time-averaged delayed self-correlation exceeds a threshold for sufficient duration, the structural variable $\kappa_t$ enters a locked regime ($\kappa_t > \theta_\kappa$); after perturbation, the residue-class structural phase configuration has a positive structural-preservation lower bound $I_{\mathrm{struct}} \geq (\kappa^*_{\mathrm{train}} - \kappa_c)/r_{\max}$ determined by the consolidated state, the structural phase-stability threshold $\kappa_c$, and the maximum structural decay speed $r_{\max}$. Observable output-phase persistence follows when the structural basin is preserved.
+
+\textbf{Third}, I verify the theorem numerically (Section~4), demonstrate through ablation (Section~5) with $N=100$ seeds that all three conditions are jointly necessary, map the parameter regimes in which cognitive inertia emerges (Section~6), and derive three experimentally testable predictions (Section~7).
+
+The discussion (Section~8) connects the structural consolidation variable $\kappa_t$ to the broader concept of historically consolidated structure, and discusses limitations and implications for artificial systems.
+
+%=============================================================================
+\section{A Minimal Delayed Adaptive System}
+%=============================================================================
+
+\subsection{State dynamics}
+
+Consider a discrete-time system with state $x_t \in \mathbb{R}$ driven by a periodic stimulus $S_t = A\sin(2\pi t/T)$ and coupled to its own delayed state $x_{t-\delta}$:
+
+\begin{equation}\label{eq:state}
+x_t = (1-\kappa_t)\tanh(\alpha S_t) + \kappa_t\tanh(\beta x_{t-\delta}) + \varepsilon_t,
+\end{equation}
+
+where $\alpha > 0$ is the stimulus gain, $\beta > 0$ is the self-coupling gain, $\delta \in \mathbb{N}$ is the fixed delay, $\varepsilon_t \sim \mathcal{N}(0,\sigma^2)$ is additive noise, and $\kappa_t \in [0,1]$ is the structural consolidation variable that gates the balance between external driving ($\kappa_t=0$: purely driven) and internal recurrence ($\kappa_t \to 1$: predominantly self-coupled). The state $x_t$ is the system's observable response; all phase, period, and amplitude measurements are performed on $x_t$.
+
+The delay map $x_t = \kappa\tanh(\beta x_{t-\delta})$ at fixed $\kappa$ is a discrete-time delayed system of the class studied in the Ikeda mapping literature \cite{ikeda1979multiple, yanchuk2009delayed}: the delayed $\tanh$ nonlinearity produces multistable residue-class fixed-point configurations whose bifurcation structure is well characterised. The pitchfork bifurcation at $\kappa\beta = 1$ that separates the trivial ($x\equiv0$) from the non-zero residue-class regime (Eq.~\eqref{eq:kappac}) is a direct analogue of the instability analysed for Ikeda-type delay maps.
+
+For the main theorem and default simulations I use the primary resonance condition $\delta = T$. Resonance at integer delay-to-period ratios is a hallmark of beat perception \cite{large1999resonance, large2002perceiving, large2002tracking, nozaradan2011tagging, patel2008music}. Parameter scans show that related locking can occur near low-order integer or rational resonance ratios (Supplementary Information, Extended Parameter Sensitivity), but the cleanest case is $\delta = T$.
+
+\subsection{Delayed self-correlation accumulation}
+
+The system accumulates a running delayed self-correlation trace $C_t$:
+
+\begin{equation}\label{eq:corr}
+C_{t+1} = C_t + \eta_C\big[\tanh(x_t)\tanh(x_{t-\delta}) - C_t\big],
+\end{equation}
+
+with learning rate $\eta_C > 0$. Under periodic driving at resonance, the product $\tanh(x_t)\tanh(x_{t-\delta})$ has a positive mean, driving $C_t$ toward a steady state $C^* > 0$.
+
+\subsection{Threshold-gated autocatalytic consolidation}
+
+The structural consolidation variable $\kappa_t$ evolves through two competing forces:
+
+\begin{align}
+\kappa_{t+1}^{\mathrm{base}} &= \kappa_t + \gamma\big[\tanh(\lambda C_{t+1}) - \kappa_t\big], \label{eq:kappabase}\\
+\kappa_{t+1} &= \Pi_{[0,1]}\Big[\kappa_{t+1}^{\mathrm{base}} + \eta\,\kappa_t(1-\kappa_t)\,\mathbf{1}_{\kappa_t > \theta_\kappa}\Big]. \label{eq:kapfull}
+\end{align}
+
+The update order is $x_t \to C_{t+1} \to \kappa_{t+1}$; the newly computed $C_{t+1}$ enters the $\kappa$-update (Eq.~\eqref{eq:kappabase}). Here $\gamma > 0$ is the relaxation rate, $\lambda > 0$ scales the correlation target, $\eta > 0$ is the autocatalytic consolidation strength, $\theta_\kappa \in (0,1)$ is the autocatalytic activation threshold, and $\Pi_{[0,1]}$ projects onto $[0,1]$.
+
+When $\kappa_t$ is below $\theta_\kappa$, the system is in the driven regime: $\kappa_t$ follows the correlation target $\tanh(\lambda C_t)$, which under resonance reaches a pre-lock ceiling $\kappa_{\mathrm{drive}}^{\max} \approx 0.45$ (empirical; a simple quasi-steady estimate gives $\approx 0.48$). When $\kappa_t$ crosses $\theta_\kappa = 0.35$, the logistic term $\eta\kappa_t(1-\kappa_t)$ activates, providing a self-amplifying push that drives $\kappa_t$ toward a locked operating point $\kappa^*_{\mathrm{train}} \approx 0.963$.
+
+The threshold $\theta_\kappa$ marks activation of autocatalysis, not the structural phase-stability boundary. For the default $\beta=2.2$, the non-zero residue-class fixed points of the scalar delay map $x_t = \kappa\tanh(\beta x_{t-\delta})$ exist only when $\kappa\beta > 1$, i.e.\ $\kappa > 1/\beta \approx 0.455$. Thus consolidation is triggered before autonomous amplification becomes available, and the autocatalytic lift carries the system across the pitchfork bifurcation \cite{strogatz2015nonlinear}.
+
+\subsection{Output}
+
+The system's observable output is the state $x_t$ (Eq.~\eqref{eq:state}). The deterministic response component $y_t = (1-\kappa_t)\tanh(\alpha S_t) + \kappa_t\tanh(\beta x_{t-\delta})$ is used in the theorem definitions; all measurements use $x_t$ unless stated otherwise.
+
+\begin{table}[h]
+\centering
+\caption{Default parameters.}
+\label{tab:params}
+\begin{tabular}{lcl}
+\toprule
+Parameter & Value & Description \\
+\midrule
+$\alpha$ & 1.8 & Stimulus coupling gain \\
+$\beta$ & 2.2 & Self-coupling gain \\
+$\delta$ & 24 (steps) & Internal delay \\
+$\gamma$ & 0.006 & $\kappa$ relaxation rate \\
+$\eta$ & 0.05 & Autocatalytic consolidation strength \\
+$\eta_C$ & 0.01 & Delayed self-correlation accumulation rate \\
+$\lambda$ & 1.5 & Correlation-to-target scaling \\
+$\theta_\kappa$ & 0.35 & Autocatalytic activation threshold \\
+$\sigma$ & 0.015 & Noise amplitude \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+%=============================================================================
+\section{The Cognitive Inertia Theorem}
+%=============================================================================
+
+I now prove three theorems that together constitute the \textbf{cognitive inertia theorem}. The following results are established for the system class defined by Eqs.~\eqref{eq:state}--\eqref{eq:kapfull} under the stated assumptions, rather than for arbitrary adaptive systems.
+
+\subsection{Theorem~1: Locking under periodic forcing}
+
+\begin{theorem}[Locking]\label{thm:locking}
+Consider the system defined by Eqs.~\eqref{eq:state}--\eqref{eq:kapfull} with $\delta = T$ (resonance) and $\sigma = 0$ (deterministic limit). If the asymptotic delayed self-correlation satisfies
+\begin{equation}\label{eq:thm1_condition}
+C^* > C_{\mathrm{crit}} \equiv \frac{1}{\lambda}\tanh^{-1}(\theta_\kappa),
+\end{equation}
+and the training duration is sufficient for $C_t$ to drive $\kappa_t$ across $\theta_\kappa$, then there exists a finite time $t_{\mathrm{lock}}$ such that for all $t > t_{\mathrm{lock}}$, $\kappa_t > \theta_\kappa$. Once $\kappa_t > \theta_\kappa$, the autocatalytic term biases $\kappa_t$ upward toward a stable locked fixed point $\kappa^*_{\mathrm{train}}$ satisfying:
+\begin{equation}\label{eq:kappafp}
+\kappa^*_{\mathrm{train}} = \tanh(\lambda C^*) + \frac{\eta}{\gamma}\kappa^*_{\mathrm{train}}(1-\kappa^*_{\mathrm{train}}),
+\end{equation}
+where $C^*$ is the steady-state delayed self-correlation under periodic forcing. Equation~\eqref{eq:kappafp} may admit multiple roots for $\kappa^*$; we select the locally stable post-threshold root. If, after threshold crossing, the post-threshold fixed-point equation admits a locally stable root $\kappa^*_{\mathrm{train}} \in (\theta_\kappa, 1)$ with inactive projection, then $\kappa_t$ converges locally to this locked operating point.
+\end{theorem}
+
+\begin{proof}[Proof sketch (full proof in Supplementary Information, Locking Theorem Proof)]
+Under periodic forcing at resonance, the product $\tanh(x_t)\tanh(x_{t-\delta})$ has a positive mean. The correlation update Eq.~\eqref{eq:corr} therefore converges to $C^* > 0$ with relaxation time $1/\eta_C$. The $C_{\mathrm{crit}}$ threshold follows from $\tanh(\lambda C_{\mathrm{crit}}) = \theta_\kappa$. In the cycle-averaged approximation $q_t \equiv \tanh(x_t)\tanh(x_{t-\delta}) \approx C^*$, the training time condition becomes $t_{\mathrm{train}} \gtrsim \eta_C^{-1}\log[(C^* - C_0)/(C^* - C_{\mathrm{crit}})]$. When $\kappa_t$ crosses $\theta_\kappa$, the logistic term $\eta\kappa_t(1-\kappa_t)$ adds a positive increment at each step, biasing $\kappa_t$ upward until the relaxation term $\gamma[\tanh(\lambda C^*) - \kappa_t]$ balances it. The fixed-point equation \eqref{eq:kappafp} follows from setting $\Delta\kappa = 0$ in the combined update; among its roots, the stable one in $(\theta_\kappa, 1)$ satisfies $-2 < F'(\kappa^*_{\mathrm{train}}) < 0$, so the discrete multiplier $1 + F'(\kappa^*_{\mathrm{train}})$ lies inside the unit circle.
+\end{proof}
+
+The fixed-point equation yields $\kappa^*_{\mathrm{train}} \approx 0.963$ for the default parameters (Supplementary Information, Extended Stability Analysis). This root lies in $(\theta_\kappa, 1)$, so the projection $\Pi_{[0,1]}$ is inactive at the fixed point. The value is consistent with numerical simulation ($\kappa^*_{\mathrm{train}} = 0.9628 \pm 0.0002$, $N=100$ seeds). This root is stable because $F'(\kappa^*_{\mathrm{train}}) \approx -0.052$, satisfying $-2 < F'(\kappa^*_{\mathrm{train}}) < 0$, so the discrete multiplier $1 + F'(\kappa^*_{\mathrm{train}}) \approx 0.948$ lies inside the unit circle.
+
+\subsection{Theorem~2: Hysteretic persistence}
+
+\begin{theorem}[Hysteretic persistence]\label{thm:hysteresis}
+Suppose $\kappa_t$ has consolidated to $\kappa^*_{\mathrm{train}} > \theta_\kappa$ under Theorem~1, and the trained residue-class fixed-point basin is preserved (the perturbation does not force a basin crossing through excessive noise, parametric shift, or sign inversion). If $\kappa^*_{\mathrm{train}}\beta > 1$ (so the residue-class fixed-point structure is self-sustaining) and the perturbation does not push the system to the trivial fixed-point basin, then after stimulus removal ($S_t = 0$ for $t > t_{\mathrm{sil}}$), $\kappa_t$ does not immediately fall below $\theta_\kappa$. The externally driven contribution to $C_t$ disappears, but the delayed self-coupled dynamics maintain an internal delayed self-correlation $C_{\mathrm{int}} > 0$ (because $x_t$ and $x_{t-\delta}$ belong to the same residue class, so $\tanh(x_t)\tanh(x_{t-\delta}) \approx \tanh(y_\kappa^*)^2 > 0$). Therefore $\kappa_t$ relaxes toward a post-stimulus equilibrium $\kappa^*_{\mathrm{post}}$ determined by $C_{\mathrm{int}}$, which satisfies
+\begin{equation}\label{eq:postfp}
+\kappa^*_{\mathrm{post}} = \tanh(\lambda C_{\mathrm{int}}) + \frac{\eta}{\gamma}\kappa^*_{\mathrm{post}}(1-\kappa^*_{\mathrm{post}})
+\end{equation}
+provided $\kappa^*_{\mathrm{post}} > \theta_\kappa$. Linearising the $\kappa$-update at $\kappa^*_{\mathrm{train}}$ with $C$ held fixed gives the discrete multiplier:
+\begin{equation}\label{eq:taudecay}
+m_\kappa = 1 - \gamma + \eta(1-2\kappa^*_{\mathrm{train}}) \approx 0.948,
+\end{equation}
+yielding a relaxation time constant $\tau_{\mathrm{decay}} = -1/\ln(m_\kappa) \approx 18.7$ steps. During this relaxation, the fast subsystem $x_t = \kappa^*_{\mathrm{train}}\tanh(\beta x_{t-\delta})$ maintains its period-$T$ residue-class fixed-point pattern. The empirical post-stimulus mean $\kappa_{\mathrm{sil}}$ observed over finite windows may differ from $\kappa^*_{\mathrm{post}}$; for the default protocol, $\kappa_{\mathrm{sil}} \approx 0.862$ ($N=100$ seeds).
+\end{theorem}
+
+\begin{proof}[Proof sketch]
+After stimulus removal, the external drive $S_t$ is zero, but within each residue class $r$, $x_t$ and $x_{t-\delta}$ belong to the same chain (since $t \equiv t-\delta \pmod{\delta}$). Hence $\tanh(x_t)\tanh(x_{t-\delta}) \approx \tanh(s_r y_\kappa^*)^2 = \tanh(y_\kappa^*)^2 > 0$, so $C_t$ decays toward a positive $C_{\mathrm{int}}$ rather than zero. The $\kappa$ dynamics then relax toward $\tanh(\lambda C_{\mathrm{int}})$ at rate $\gamma$, opposed by the residual autocatalytic lift. Linearising at the trained fixed point $\kappa^*_{\mathrm{train}}$ gives the discrete multiplier $m_\kappa$ \eqref{eq:taudecay}. The fast subsystem at fixed $\kappa^*_{\mathrm{train}}$ decomposes into $\delta$ independent residue-class maps $y_{n+1} = \kappa^*_{\mathrm{train}}\tanh(\beta y_n)$, each contracting to $\pm y^*_\kappa$ with multiplier $\mu = \kappa^*_{\mathrm{train}}\beta\operatorname{sech}^2(\beta y^*_\kappa) \approx 0.136$. The residue-class sign pattern---the temporal phase of the output---is therefore preserved throughout the slow $\kappa$ relaxation. Under frequency perturbation (rather than complete omission), the same structural gate remains consolidated, but the observable phase may drift relative to the new external reference because the locked internal period coexists with the imposed period; this external-reference phase drift is analysed in Section~4 and distinct from the structural preservation bound of Theorem~3.
+\end{proof}
+
+\subsection{Theorem~3: Lower bound on structural preservation time}
+
+\begin{theorem}[Structural preservation bound]\label{thm:reset}
+Define the \textbf{structural preservation time} $I_{\mathrm{struct}}$ as the first time after perturbation at which either $\kappa_t < \kappa_c$ or the residue-class sign configuration leaves the trained basin. Under bounded perturbations that preserve the basin of the trained residue-class configuration,
+\begin{equation}\label{eq:lowerbound}
+I_{\mathrm{struct}} \geq \frac{\kappa^*_{\mathrm{train}} - \kappa_c}{r_{\max}},
+\end{equation}
+where $\kappa_c$ is the structural phase-stability threshold. For the scalar delay map $x_t = \kappa\tanh(\beta x_{t-\delta})$, the non-zero residue-class fixed points exist only when $\kappa\beta > 1$; therefore
+\begin{equation}\label{eq:kappac}
+\kappa_c = \max(\theta_\kappa, 1/\beta).
+\end{equation}
+For the default parameters, $\kappa_c = 1/\beta \approx 0.455$. The maximum per-step decay rate $r_{\max}$ is:
+\begin{equation}\label{eq:rmax}
+r_{\max} = \sup_{\kappa \in [\kappa_c, \kappa^*_{\mathrm{train}}]} \big[\gamma(\kappa - \tanh(\lambda C_{\mathrm{post}})) - \eta\kappa(1-\kappa)\big]_+,
+\end{equation}
+where $[\cdot]_+$ denotes the positive part. Here $C_{\mathrm{post}}$ denotes a lower bound satisfying $C_t \geq C_{\mathrm{post}}$ for all $t$ in the interval considered; using a lower bound gives a conservative upper bound on the downward decay speed. The $r_{\max}$ formula combines the downward relaxation contribution ($\gamma(\kappa - \tanh(\lambda C_{\mathrm{post}}))$) and subtracts the positive autocatalytic lift ($\eta\kappa(1-\kappa)$), which opposes decay.
+
+This is a bound on \textbf{structural} phase preservation---the persistence of the residue-class sign pattern against deconsolidation---not on phase drift measured relative to a newly imposed external stimulus frequency. If the post-stimulus vector field has a stable equilibrium $\kappa^*_{\mathrm{post}} > \kappa_c$ (as it does for the default parameters, where $\kappa^*_{\mathrm{post}} \approx 0.88$), then structural deconsolidation does not occur through the deterministic $\kappa$-channel, and $I_{\mathrm{struct}}$ is effectively infinite in the deterministic approximation.
+\end{theorem}
+
+\begin{proof}[Proof sketch]
+The residue-class sign configuration---the structural phase---is preserved as long as each residue-class trajectory remains within the basin of its trained fixed point and $\kappa_t > \kappa_c$. Under bounded perturbations that preserve the trained basin, the sign configuration cannot change through a basin crossing; the remaining route to structural phase loss is deconsolidation, which requires $\kappa_t$ to fall below $\kappa_c$, at which point the residue-class fixed-point structure loses stability. The time required for $\kappa_t$ to decay from $\kappa^*_{\mathrm{train}}$ to $\kappa_c$ is bounded below by $(\kappa^*_{\mathrm{train}} - \kappa_c)/r_{\max}$, where $r_{\max}$ is the maximum per-step downward speed (Eq.~\eqref{eq:rmax}) in the consolidated regime. For the edge case $r_{\max} = 0$ or a stable post-stimulus equilibrium $\kappa^*_{\mathrm{post}} > \kappa_c$, see the discussion above. The full proof is given in Supplementary Information, Structural Preservation Bound Proof.
+\end{proof}
+
+\subsection{Corollary: Cognitive inertia as structural hysteresis}
+
+\begin{corollary}\label{cor:ci}
+For the system class defined by Eqs.~\eqref{eq:state}--\eqref{eq:kapfull}, cognitive inertia (the persistence of observable output-phase structure after perturbation) is generated by structural hysteresis of the $\kappa$ gate within this system class. The two terms refer to different levels of description: $\kappa$-gate hysteresis is the dynamical mechanism; cognitive inertia is its observable consequence.
+\end{corollary}
+
+%=============================================================================
+\section{Numerical Verification}
+%=============================================================================
+
+\subsection{Emergence of phase persistence}
+
+Figure~\ref{fig:transition} shows the full dynamics of the system under the standard three-phase protocol: synchronization ($T=24$, $0 \leq t < 400$), frequency perturbation ($T=48$, $400 \leq t < 600$), and silence ($S=0$, $t \geq 600$). The protocol follows conventions from the synchronization literature \cite{pikovsky2001synchronization, strogatz2015nonlinear}. All measurements here and below use the state $x_t$ as the observable.
+
+\begin{figure}[ht]
+\centering
+\includegraphics[width=\textwidth]{fig_transition.pdf}
+\caption{\textbf{Dynamical transition from driven to self-sustained dynamics.}
+(a) The response phase $\phi(t)$ of $x_t$ evolves from positive (lagging) through zero to negative (leading).
+(b) The structural variable $\kappa_t$ rises from zero to $\kappa^*_{\mathrm{train}} \approx 0.963$, locking after the threshold crossing.
+Shaded regions indicate the three dynamical regimes (I--III) as described in the text.
+\label{fig:transition}}
+\end{figure}
+
+The dynamical transition has three stages:
+\begin{enumerate}[itemsep=0pt]
+    \item \textbf{Driven regime} ($t < 200$): $x_t \approx \tanh(\alpha S_t)$, $\kappa_t \approx 0$, phase positive.
+    \item \textbf{Correlation accumulation} ($200 \leq t < 350$): $C_t$ rises above the critical value $C_{\mathrm{crit}} = \tanh^{-1}(\theta_\kappa)/\lambda \approx 0.243$, $\kappa_t$ crosses $\theta_\kappa = 0.35$.
+    \item \textbf{Consolidated regime} ($t \geq 350$): Autocatalytic locking drives $\kappa_t$ to $\kappa^*_{\mathrm{train}} \approx 0.963$.
+\end{enumerate}
+
+After stimulus removal ($t \geq 600$), $x_t$ maintains period $P = 24$ with empirical half peak-to-peak silence amplitude $A_{\mathrm{sil}} \approx 0.97$ (the corresponding deterministic fixed-$\kappa$ residue-class amplitude is $y^*_\kappa \approx 0.93$) and phase offset $\phi^* \approx -0.31\pi$, persisting throughout all simulated windows in the default parameter regime (up to $2\times 10^4$ steps, $N=100$ seeds). This persistence is consistent with consolidation phenomena studied in the memory literature \cite{mcgaugh2000memory, dudai2004memory, mcclelland1995memory, squire1995retrograde, nadel1997memory, frankland2005organization, fusi2005neural}, although the present mechanism operates at a different (dynamical) level of description.
+
+\subsection{Inertial drag under frequency perturbation}
+
+In a separate frequency-perturbation protocol, after consolidation at $T=24$, the stimulus is switched to $T_{\mathrm{new}}=30$ at $t=600$ rather than removed. Figure~\ref{fig:inertia} shows the inertial drag effect.
+
+\begin{figure}[ht]
+\centering
+\includegraphics[width=\textwidth]{fig_inertia.pdf}
+\caption{\textbf{Cognitive inertia under frequency perturbation.}
+After consolidation at $T=24$, the stimulus period is switched to $T=30$ at $t=600$. The internal period (red) remains at $P\approx 24$, producing systematic asynchrony (blue). Inset: instantaneous frequency showing the locked $P=24$ mode coexisting with the $T=30$ driving.
+\label{fig:inertia}}
+\end{figure}
+
+The output exhibits \textbf{frequency coexistence modulation} (Supplementary Information, Beat-Frequency Modulation): because the locked internal period $P=24$ and the driving period $T_{\mathrm{new}}=30$ are distinct but commensurate (least common multiple $\mathrm{LCM}(24,30)=120$), the asynchrony shows a beat-like modulation with recurrence period $T_{\mathrm{mod}} = 1/|1/24 - 1/30| = 120$ steps. This modulation is absent from the minimal adaptive-frequency oscillator baselines tested here, whose internal frequency adapts to $T_{\mathrm{new}}$. The coexistence modulation is conceptually related to frequency tagging in neural entrainment \cite{nozaradan2011tagging} and to the beat-induction phenomenon studied in rhythm cognition \cite{large1999resonance, patel2008music}.
+
+\subsection{Phase-space structure of the locked state}
+
+At fixed $\kappa = \kappa^*_{\mathrm{train}}$ with $S_t = 0$, the delay map $x_t = \kappa^*_{\mathrm{train}}\tanh(\beta x_{t-\delta})$ decomposes into $\delta$ independent residue-class maps $y_{n+1} = \kappa^*_{\mathrm{train}}\tanh(\beta y_n)$. Each converges to $\pm y^*_\kappa$ ($y^*_\kappa \approx 0.93$) with multiplier $\mu \approx 0.136$, giving a $\delta$-dimensional sign configuration. The training history selects which sign pattern is realised: across $N=100$ seeds, the trained pattern reproducibility is $\bar{Q}_{\mathrm{trained}} = 0.91 \pm 0.06$, confirming that the sign configuration is historically determined (Supplementary Information, Extended Control Analysis).
+
+\subsection{Phase drift under frequency perturbation}
+
+Under the frequency-perturbation protocol ($T=24 \to T_{\mathrm{new}}=30$), the observable phase $\phi_t$ measured relative to the trained external reference deviates by $\delta_\phi = \pi/4$ after $30.0 \pm 5.7$ steps ($N=100$ seeds). This quantity reflects external-reference phase drift caused by coexistence of the locked internal period $P=24$ and the new stimulus period $T_{\mathrm{new}}=30$, and should be distinguished from the structural preservation time $I_{\mathrm{struct}}$ bounded in Theorem~3. The structural preservation time---the persistence of the residue-class sign pattern---is effectively infinite in the deterministic approximation because the post-stimulus $\kappa$ settles at $\kappa^*_{\mathrm{post}} \approx 0.88 > \kappa_c$, preventing structural deconsolidation through the $\kappa$-channel.
+
+%=============================================================================
+\section{Ablation Analysis}
+%=============================================================================
+
+To confirm that all three conditions are jointly necessary, I perform ablation experiments removing each component individually, with $N=100$ seeds per condition.
+
+\begin{figure}[ht]
+\centering
+\includegraphics[width=\textwidth]{fig_ablation.pdf}
+\caption{\textbf{Ablation analysis (N=100 seeds per condition).}
+Each row shows $x_t$ (left) and $\kappa_t$ (right) for one condition.
+\textbf{(a)} Full model: $\kappa$ locks at $\kappa^*_{\mathrm{train}} \approx 0.963$, $x_t$ persists at $P=24$ ($100/100$ seeds).
+\textbf{(b)} No delayed recurrence: the $\delta$-step delay coupling is removed, eliminating the delay embedding ($0/100$ seeds).
+\textbf{(c)} No delayed self-correlation ($C \equiv 0$, $\kappa_0 = 0$): $\kappa$ never rises ($0/100$ seeds).
+\textbf{(d)} No autocatalytic consolidation ($\eta = 0$): $\kappa$ reaches pre-lock ceiling $\sim 0.45$ but decays after stimulus removal ($0/100$ seeds).
+Shading: orange = frequency perturbation, light blue = silence.
+\label{fig:ablation}}
+\end{figure}
+
+\begin{table}[h]
+\centering
+\caption{Ablation specifications.}
+\label{tab:ablation}
+\begin{tabular}{ll}
+\toprule
+Ablation & Modification \\
+\midrule
+No delayed recurrence & Replace $\kappa_t\tanh(\beta x_{t-\delta})$ by $0$ \\
+No delayed self-correlation & Set $C_t \equiv 0,\; \kappa_0 = 0$ \\
+No autocatalytic consolidation & Set $\eta = 0$ \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+The results are unambiguous:
+\begin{itemize}
+    \item \textbf{Full model}: $100/100$ seeds maintain $P=24$ output after stimulus removal, with $\kappa_{\mathrm{sil}} \approx 0.862$.
+    \item \textbf{No delayed recurrence}: The system cannot establish delayed self-reinforcement. $0/100$ seeds persist.
+    \item \textbf{No delayed self-correlation accumulation} ($C_t \equiv 0$, $\kappa_0 = 0$): With no correlation trace, $\tanh(\lambda C) \approx 0$ and $\kappa$ relaxes to zero. From $\kappa_0 = 0$, autocatalytic consolidation is never activated. $0/100$ seeds persist.
+    \item \textbf{No autocatalytic consolidation} ($\eta = 0$): $\kappa$ saturates at $\kappa_{\mathrm{drive}}^{\max} \approx 0.45$ but decays after stimulus removal. $0/100$ seeds persist.
+\end{itemize}
+
+\textbf{Conclusion:} All three conditions---delayed self-coupling, delayed self-correlation accumulation, and threshold-gated autocatalytic consolidation---are jointly necessary for cognitive inertia within this system class.
+
+%=============================================================================
+\section{Parameter Regimes}
+%=============================================================================
+
+The cognitive inertia theorem holds only within a bounded region of parameter space for the system class defined by Eqs.~\eqref{eq:state}--\eqref{eq:kapfull}.
+
+\begin{figure}[ht]
+\centering
+\includegraphics[width=\textwidth]{fig_phase_diagram.pdf}
+\caption{\textbf{Parameter regimes of cognitive inertia.}
+High-resolution phase diagram (6830 distinct parameter points, $68\,300$ simulations total, $N=10$ seeds per point) showing the success rate of the transition as a function of the correlation learning rate $\eta_C$ and the consolidation-to-relaxation ratio $\eta/\gamma$. All points assume the primary resonance condition $\delta = T$; off-resonance ($|\delta/T - 1| \gtrsim 0.1$) the correlation $C_t$ does not accumulate to $C_{\mathrm{crit}}$ and locking does not occur regardless of the parameters shown.
+\textbf{(a)} Success rate according to the consolidated-persistence criterion (Supplementary Information, Regime Classification), requiring $\kappa_{\mathrm{sil}} > 0.5$, detectable autonomous period, and sufficient silence amplitude.
+\textbf{(b)} Mean locked $\kappa^*_{\mathrm{train}}$ for successful runs.
+The transition succeeds only when $\eta_C$ is large enough for $C_t$ to reach $C_{\mathrm{crit}}$ during the training window, and $\eta/\gamma$ is sufficient for a stable root $\kappa^*_{\mathrm{train}} > \theta_\kappa$ of $F(\kappa) = \gamma[\tanh(\lambda C^*) - \kappa] + \eta\kappa(1-\kappa) = 0$ to exist and satisfy the stability condition $|1 + F'(\kappa^*_{\mathrm{train}})| < 1$.
+\label{fig:phasediagram}}
+\end{figure}
+
+Key boundaries:
+\begin{itemize}
+    \item \textbf{Resonance requirement}: $\delta/T$ must be within $\sim 0.1$ of an integer or low-order rational ratio. Off-resonance, $C_t$ does not accumulate above $C_{\mathrm{crit}}$.
+    \item \textbf{Threshold condition}: $\theta_\kappa$ must be below the pre-lock correlation ceiling $\kappa_{\mathrm{drive}}^{\max} \approx 0.45$.
+    \item \textbf{Consolidation strength}: The ratio $\eta/\gamma$ must be sufficient for a stable fixed point $\kappa^*_{\mathrm{train}} > \theta_\kappa$ to exist.
+\end{itemize}
+
+The metastable balance at $\kappa^*_{\mathrm{train}}$, together with the local contraction of the residue-class dynamics, explains both its robustness to moderate noise (no escape events at $\sigma \leq 0.40$ over $2\times 10^4$ steps) and its sensitivity to systematic perturbations that reduce $C$.
+
+%=============================================================================
+\section{Testable Predictions}
+\label{sec:predictions}
+%=============================================================================
+
+The cognitive inertia theorem yields three experimentally testable predictions:
+
+\textbf{P1: Phase preservation after stimulus omission.}
+After consolidation, stimulus omission preserves the trained residue-class phase configuration for a duration bounded below by Theorem~3; this should appear as persistence of the observable output temporal pattern, analogous to continuation tapping in the sensorimotor synchronization literature \cite{repp2005sensorimotor, repp2013sensorimotor}. This can be tested in human sensorimotor synchronisation (finger tapping) and in single-neuron recording (hippocampal place cell sequences, auditory cortical entrainment).
+
+\textbf{P2: Inertial drag under frequency perturbation.}
+After consolidation at one tempo, switching to a different tempo produces a non-zero persistent asynchrony, generally with modulation, rather than full entrainment. The asynchrony magnitude increases with $|T_{\mathrm{new}} - T_{\mathrm{train}}|$. Minimal phase-correction models without structural hysteresis predict convergence toward zero steady-state asynchrony after adaptation \cite{mates1994compensation}; the present model predicts a persistent non-zero offset tied to the preserved internal period. This predicted offset is qualitatively consistent with the ``undercorrection'' phenomenon documented in paced finger-tapping studies \cite{repp2005sensorimotor, silva2024, hall2023}, where residual attraction to prior tempi persists despite tempo changes.
+
+\textbf{P3: Frequency coexistence modulation.}
+When the internal period $P \approx T_{\mathrm{train}}$ and the new stimulus period $T_{\mathrm{new}}$ differ, their coexistence produces modulation at $T_{\mathrm{mod}} = 1/|1/P - 1/T_{\mathrm{new}}|$; for commensurate periods this is a beat recurrence period (e.g.\ $\mathrm{LCM}(24,30)=120$ for $P=24, T_{\mathrm{new}}=30$), and for genuinely incommensurate ratios it appears as quasi-periodic modulation. This modulation is absent from the minimal adaptive-frequency oscillator baselines tested here. It provides a clean falsifiable prediction.
+
+A virtual sensorimotor experiment (Supplementary Information, Retrospective Human Comparison) comparing the full model with standard baselines illustrates that only the cognitive inertia model jointly satisfies all three predictions within this system class. Existing sensorimotor synchronization findings appear qualitatively consistent with these predictions, but direct experimental tests are required.
+
+%=============================================================================
+\section{Discussion}
+%=============================================================================
+
+\subsection{Cognitive inertia as structural hysteresis}
+
+I have shown that, within the system class defined by Eqs.~\eqref{eq:state}--\eqref{eq:kapfull}, cognitive inertia---the persistence of acquired temporal structure after perturbation---follows from the joint action of delayed self-coupling, delayed self-correlation accumulation, and threshold-gated autocatalytic consolidation. The cognitive inertia theorem (Section~3) establishes a positive lower bound on structural preservation time, which appears observationally as phase persistence under omission or as inertial drag under frequency perturbation.
+
+The core dynamical object is the structural consolidation variable $\kappa_t$. Its locked state $\kappa^*_{\mathrm{train}}$ is not a passive deadlock but a metastable dynamic equilibrium maintained by the competition between correlation-driven relaxation and autocatalytic consolidation (Supplementary Information, Extended Stability Analysis). The metastable balance, together with the local contraction of the residue-class dynamics, explains both its robustness to moderate noise and its sensitivity to systematic perturbations that shift the correlation level.
+
+It is essential to clarify what the model does---and does not---claim. The cognitive inertia theorem is a constructive existence proof within a specific minimal system class: it establishes that delayed self-coupling, delayed self-correlation accumulation, and threshold-gated autocatalytic consolidation are jointly sufficient (and within the system class, necessary) for structural hysteresis that produces cognitive inertia. This is not an argument that biological systems implement the same equations. Rather, it identifies a minimal dynamical motif that could be realised through diverse physical substrates---ion channels, recurrent neural circuits, or plastic synaptic weights---any of which can instantiate the same three conditions at an appropriate level of description.
+
+\subsection{Historically consolidated structure}
+
+The structural variable $\kappa_t$ can be interpreted as a minimal formalisation of a historically consolidated dynamical constraint. The three conditions of the cognitive inertia theorem correspond to the three conditions of the canxianisation framework, as discussed in more detail elsewhere \cite{cai2024law}. I do not claim that cognitive inertia is sufficient for consciousness.
+
+\subsection{Relation to existing theories}
+
+\textbf{Integrated information theory} \cite{tononi2016integrated} asks how much information a system's causal structure integrates at a given moment. The present framework asks a complementary question: how does such a structure form through history? The cognitive inertia theorem provides the diachronic (historical) complement to IIT's synchronic (momentary) analysis.
+
+\textbf{Predictive processing} \cite{rao1999predictive, friston2010free, clark2013surfing, hohwy2013predictive} treats prediction-error minimisation as the core principle, with a rich tradition in both neuroscience \cite{rao1999predictive} and philosophy \cite{hohwy2013predictive}. More recent formulations within the active inference framework have shown how habits and temporal expectations can be encoded as prior preferences over trajectories \cite{parr2017active}, a form of temporally persistent structure. The present framework complements this by providing a concrete dynamical mechanism---structural hysteresis of a consolidation gate---by which such temporal priors could be acquired and retained without ongoing prediction-error minimisation. The inertia of $\kappa$ provides a dynamical basis for the temporal continuity of the predictive self.
+
+\textbf{Large language models and artificial agents.} The $\kappa$ gate offers a criterion for when an artificial system possesses historically consolidated internal structure, as distinct from behavioural flexibility without internal temporal weight. Modern large language models exhibit sophisticated in-context learning \cite{chan2022data} and their residual streams show complex dynamics analogous to recurrent neural networks, but these reflect architectural inductive biases and data statistics rather than the kind of structural hysteresis studied here: the model's internal parameters remain fixed during inference, and its instantaneous hidden state can be reset without loss of the dynamical structure (it re-emerges from the same weights given appropriate input). Fine-tuning changes parameters, but it does not by itself provide the hysteresis signature of a $\kappa$-like consolidation variable—a measurable inertia in the output phase that persists after input perturbations. A system with a $\kappa$-like consolidation gate would exhibit such phase persistence independently of its frozen parameters, providing a potential indicator of history-bearing internal structure distinct from both stateless inference and parameter-level adaptation.
+
+\subsection{Limitations}
+
+Three limitations point to natural extensions. As with any minimal model, the aim is not completeness but mechanistic insight \cite{box1976science}. First, the single scalar $\kappa$ gate is a minimal abstraction; real biological systems likely have multiple, interacting consolidation variables. Second, the delay $\delta$ is fixed; a plastic delay would create a meta-resonance loop, enabling hierarchical skill acquisition. Third, the theorem is proven for a specific system class; generalisation to continuous time, stochastic driving, and higher-dimensional state spaces is the most urgent theoretical next step.
+
+Future work may examine whether structural hysteresis contributes to minimal forms of agency, and whether the predictions of the theorem can be tested in controlled sensorimotor experiments with individual-subject analysis. We note that among the minimal baselines tested here, only the CIT mechanism jointly satisfies all three predictions through structural hysteresis; the comparison is against minimal AFOs without structural hysteresis \cite{righetti2009adaptive, ijspeert2008central}, not against the entire class of possible oscillator models. An AFO augmented with an explicit hysteretic memory variable could likely reproduce parts of the CIT signature, but such a mechanism would instantiate the kind of structural consolidation introduced here rather than challenge it.
+
+%=============================================================================
+\section{Methods}
+%=============================================================================
+
+\subsection{Model definition}
+The model is defined by Eqs.~\eqref{eq:state}--\eqref{eq:kapfull} with default parameters in Table~1. Following standard practice in computational modelling \cite{burnham2002model}, parameter sensitivity is assessed through systematic scanning (Section~6) and ablation (Section~5). All simulations use $\sigma = 0.015$ unless stated otherwise. Default total length was 3000 steps for quantitative analyses; shorter trajectories were used only for illustrative plots. Simulations were run with $N=100$ independent seeds for main results (ablation, phase-preservation time) and $N=10$ for high-resolution parameter scans. The seed controls the noise realization $\varepsilon_t$ and, where applicable, the initial conditions $\kappa_0$ and $x_0$; no other parameters vary across seeds.
+
+\subsection{Phase and phase-preservation time measurement}
+Unless otherwise noted, the response phase $\phi_t$ of $x_t$ is measured by peak timing relative to the positive-slope stimulus zero crossing; cross-correlation phase estimation was used as a robustness check and gave the same qualitative dynamical transition (Supplementary Information, Floquet Stability Analysis). The external-reference phase drift time is defined as:
+\begin{equation}\label{eq:ciindex}
+I_{\mathrm{pres}} = \inf\big\{T > 0 : |\phi_{t_{\mathrm{pert}}+T} - \phi^*| > \delta_\phi\big\},
+\end{equation}
+with criterion $\delta_\phi = \pi/4$ radians for the default measurement. This quantity reflects phase drift relative to the trained external reference and is distinct from the structural preservation time $I_{\mathrm{struct}}$ (Theorem~3).
+
+\subsection{Simulation protocol}
+The standard protocol has three phases: synchronisation ($t < t_{\mathrm{sync}}$, stimulus at training period $T$), frequency perturbation or silence ($t_{\mathrm{sync}} \leq t < t_{\mathrm{sil}}$), and post-stimulus observation ($t \geq t_{\mathrm{sil}}$). Default timing: $t_{\mathrm{sync}} = 400$, $t_{\mathrm{sil}} = 600$, total $3000$ steps for quantitative analyses. A separate frequency-perturbation protocol (Fig.~\ref{fig:inertia}) uses $T_{\mathrm{new}} = 30$ during the perturbation phase.
+
+\subsection{Code availability}
+Simulation code is available at \url{https://github.com/caihengjin/cognitive-inertia-theorem}. All figures are reproducible from the provided scripts.
+
+%=============================================================================
+\bibliographystyle{plain}
+% \bibliography{cit_refs} — included in wrapper
+%=============================================================================

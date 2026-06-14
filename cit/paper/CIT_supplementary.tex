@@ -1,0 +1,1879 @@
+%=============================================================================
+
+% Supplementary Material for Cognitive Inertia from Structural Hysteresis
+
+% in Delayed Adaptive Systems
+
+%=============================================================================
+
+\documentclass[12pt,a4paper]{article}
+
+\usepackage[utf8]{inputenc}
+
+\usepackage[T1]{fontenc}
+
+\usepackage{amsmath,amssymb,amsthm}
+
+\usepackage{graphicx}
+
+\usepackage[margin=2.5cm]{geometry}
+
+\usepackage[colorlinks=true,linkcolor=blue,citecolor=blue,urlcolor=blue]{hyperref}
+
+\usepackage{booktabs}
+
+\usepackage{caption}
+
+\usepackage{subcaption}
+
+\usepackage{enumitem}
+
+\usepackage{bm}
+
+\usepackage{xspace}
+\usepackage{xr}
+\externaldocument{CIT_paper}
+
+\newcommand{\R}{\mathbb{R}}
+
+\newcommand{\N}{\mathbb{N}}
+
+\newcommand{\veps}{\varepsilon}
+
+\newcommand{\klock}{\kappa_{\mathrm{lock}}}
+
+\newcommand{\kdrive}{\kappa_{\mathrm{drive}}}
+
+\newcommand{\kmax}{\kappa_{\mathrm{drive}}^{\max}}
+
+
+
+\begin{document}
+
+\renewcommand{\thesection}{S\arabic{section}}
+\newcommand{\thetalock}{\theta_\kappa\xspace}
+% Note: $\theta_{\mathrm{lock}}$ in this Supplement denotes the same parameter as $\theta_\kappa$ in the main text.
+
+\renewcommand{\thefigure}{S\arabic{figure}}
+
+\renewcommand{\thetable}{S\arabic{table}}
+
+\renewcommand{\theequation}{S\arabic{equation}}
+
+
+
+\centerline{\Large\textbf{Supplementary Material}}\vspace{6pt}
+
+\centerline{CIT = cognitive inertia theorem}
+
+\centerline{Cognitive Inertia from Structural Hysteresis}
+
+\centerline{in Delayed Adaptive Systems}
+
+
+
+
+\section{Proof of Theorem 1: Locking under Periodic Forcing}
+\label{sec:proof_locking}
+
+The proof follows from three claims established below.
+
+\subsection{Claim 1: Positive mean of the delayed product}
+Under periodic forcing at resonance ($\delta = T$) with $\sigma = 0$, the stimulus $S_t = A\sin(2\pi t/T)$ produces a response $x_t$ that inherits the period-$T$ structure. Since $x_{t-\delta} = x_{t-T}$, the delayed product $q_t = \tanh(x_t)\tanh(x_{t-\delta})$ satisfies $\langle q_t \rangle > 0$ over each cycle, where $\langle\cdot\rangle$ denotes the cycle average. The correlation update Eq.~\eqref{eq:corr} therefore converges exponentially to $C^* = \langle q_t \rangle + O(\eta_C)$ with relaxation time $1/\eta_C$.
+
+\subsection{Claim 2: Threshold crossing condition}
+The $\kappa$ target $\kappa_{\mathrm{drive}} = \tanh(\lambda C^*)$ exceeds the activation threshold $\theta_\kappa$ when $C^* > \tanh^{-1}(\theta_\kappa)/\lambda = C_{\mathrm{crit}}$. In the cycle-averaged approximation $q_t \approx C^*$, the discrete update $C_{t+1} = C_t + \eta_C(C^* - C_t)$ integrates to $C_t = C^* - (C^* - C_0)e^{-\eta_C t}$. The time to reach $C_{\mathrm{crit}}$ from $C_0 = 0$ is $t_{\mathrm{crit}} = \eta_C^{-1}\log[C^*/ (C^* - C_{\mathrm{crit}})]$.
+
+\subsection{Claim 3: Convergence to the locked fixed point}
+Once $\kappa_t > \theta_\kappa$, the logistic term $\eta\kappa_t(1-\kappa_t)$ adds a positive increment at each step, biasing $\kappa_t$ upward. The combined update $\kappa_{t+1} - \kappa_t = \gamma[\tanh(\lambda C^*) - \kappa_t] + \eta\kappa_t(1-\kappa_t)$ has fixed points satisfying Eq.~\eqref{eq:kappafp}. The derivative at a candidate root is $F'(\kappa) = -\gamma + \eta(1-2\kappa)$. For $\kappa > 1/2$, $F'(\kappa) < -\gamma < 0$, giving a restoring direction in the continuous approximation. In discrete time, local stability additionally requires $-2 < F'(\kappa) < 0$. The specific root $\kappa^*_{\mathrm{train}} \approx 0.963$ satisfies this condition ($F'(\kappa^*_{\mathrm{train}}) \approx -0.052$), so the discrete multiplier $1 + F'(\kappa^*_{\mathrm{train}}) \approx 0.948$ lies inside the unit circle.
+
+Thus, under the stated conditions, $\kappa_t$ crosses $\theta_\kappa$ in finite time and converges locally to the stable fixed point $\kappa^*_{\mathrm{train}}$. $\square$
+
+\section{Proof of Theorem 2: Hysteretic Persistence}
+\label{sec:proof_hysteresis}
+
+The proof decomposes into three parts.
+
+\subsection{Part 1: Post-stimulus delayed self-correlation}
+After stimulus removal ($S_t = 0$), the dynamics reduce to $x_t = \kappa_t\tanh(\beta x_{t-\delta}) + \varepsilon_t$ with $\kappa_t$ evolving slowly. Within each residue class $r$, $x_t$ and $x_{t-\delta}$ belong to the same chain since $t \equiv t-\delta \pmod{\delta}$. The delayed product is therefore $\tanh(x_t)\tanh(x_{t-\delta}) \approx s_r^2 y_\kappa^{*2} = y_\kappa^{*2} > 0$ for a sign configuration $\{s_r\}$ with $s_r \in \{-1,+1\}$ and residue-class amplitude $y_\kappa^*$. Hence the running correlation $C_t$ does not decay to zero but toward a positive $C_{\mathrm{int}}$.
+
+\subsection{Part 2: Slow $\kappa$ relaxation}
+With $C_t$ approaching $C_{\mathrm{int}}$, the $\kappa$ target $\tanh(\lambda C_t)$ settles to $\tanh(\lambda C_{\mathrm{int}})$. Linearising the $\kappa$ update at $\kappa^*_{\mathrm{train}}$ with $C$ held fixed gives $\Delta\kappa_t = [-\gamma + \eta(1-2\kappa^*_{\mathrm{train}})](\kappa_t - \kappa^*_{\mathrm{train}})$, yielding the discrete multiplier $m_\kappa = 1 - \gamma + \eta(1-2\kappa^*_{\mathrm{train}})$ (Eq.~\eqref{eq:taudecay}). For the default parameters, $m_\kappa \approx 0.948$, corresponding to a relaxation time $\tau_{\mathrm{decay}} = -1/\ln(m_\kappa) \approx 18.7$ steps.
+
+\subsection{Part 3: Fast-slow persistence}
+At fixed $\kappa = \kappa^*_{\mathrm{train}}$, the delay map $x_t = \kappa^*_{\mathrm{train}}\tanh(\beta x_{t-\delta})$ decomposes into $\delta$ independent residue-class maps $y_{n+1} = \kappa^*_{\mathrm{train}}\tanh(\beta y_n)$. Each converges to $\pm y^*_\kappa$ with multiplier $\mu = \kappa^*_{\mathrm{train}}\beta\operatorname{sech}^2(\beta y^*_\kappa) \approx 0.136$. The residue-class sign pattern is therefore preserved throughout the slow $\kappa$ relaxation. The post-stimulus equilibrium $\kappa^*_{\mathrm{post}}$ satisfies Eq.~\eqref{eq:postfp} with $C_{\mathrm{int}}$, provided $\kappa^*_{\mathrm{post}} > \theta_\kappa$. $\square$
+
+\section{Proof of Theorem 3: Structural Preservation Bound}
+\label{sec:proof_bound}
+
+\subsection{Definition and scope}
+The structural preservation time $I_{\mathrm{struct}}$ is defined in the main text (Theorem~3). This bound concerns persistence of the residue-class sign pattern against structural deconsolidation, not phase drift relative to a newly imposed external stimulus frequency.
+
+\subsection{Lower bound derivation}
+The per-step change in $\kappa_t$ in the consolidated regime ($\kappa_t > \theta_\kappa$) follows Eq.~\eqref{eq:kapfull}:
+\begin{equation}
+\Delta\kappa_t = \gamma[\tanh(\lambda C_t) - \kappa_t] + \eta\kappa_t(1-\kappa_t).
+\end{equation}
+The downward decay rate is therefore
+\begin{equation}
+-\Delta\kappa_t = \gamma[\kappa_t - \tanh(\lambda C_t)] - \eta\kappa_t(1-\kappa_t),
+\end{equation}
+whenever this quantity is positive. The maximum downward speed over $[\kappa_c, \kappa^*_{\mathrm{train}}]$ is given by $r_{\max}$ (Eq.~\eqref{eq:rmax}), where $C_{\mathrm{post}}$ is a lower bound on the post-stimulus correlation. The time to decay from $\kappa^*_{\mathrm{train}}$ to $\kappa_c$ is bounded below by $(\kappa^*_{\mathrm{train}} - \kappa_c)/r_{\max}$.
+
+\subsection{Barrier condition}
+If the post-stimulus vector field has a stable equilibrium $\kappa^*_{\mathrm{post}} > \kappa_c$ (as it does for the default parameters, where $\kappa^*_{\mathrm{post}} \approx 0.88$), then $\kappa_t$ does not cross below $\kappa_c$ through the deterministic $\kappa$-channel, and $I_{\mathrm{struct}}$ is effectively infinite in the deterministic approximation. The bound therefore applies only when $\kappa^*_{\mathrm{post}} \leq \kappa_c$ or when noise is sufficient to drive $\kappa$ across the barrier.
+
+\subsection{Perturbation scope}
+The bound holds under bounded perturbations that preserve the trained basin of attraction of each residue-class fixed point. This is guaranteed by the contracting dynamics ($\mu \approx 0.136$) for small to moderate perturbations. $\square$
+
+
+\section{Default Parameters and Simulation Protocol}
+\label{sec:params}
+
+
+
+
+
+\begin{table}[h]
+
+\centering
+
+\caption{Default parameter values used in all simulations unless otherwise noted.}
+
+\label{tab:supp_params}
+
+\begin{tabular}{lcc}
+
+\toprule
+
+Parameter & Value & Description \\
+
+\midrule
+
+$T$ & 24 & Stimulus period (timesteps) \\
+
+$\delta$ & 24 & Effective recurrence delay (timesteps) \\
+
+$\alpha$ & 1.8 & Stimulus coupling strength \\
+
+$\beta$ & 2.2 & Self-coupling strength \\
+
+$\gamma$ & 0.006 & $\kappa$ update rate \\
+
+$\eta_C$ & 0.01 & Correlation smoothing rate \\
+
+$\lambda$ & 1.5 & Soft-threshold sharpness \\
+
+$\sigma$ & 0.015 & Noise amplitude \\
+
+$\theta_{\mathrm{lock}}$ & 0.35 & Locking threshold \\
+
+$\eta$ & 0.05 & Autocatalytic consolidation strength \\
+
+$A$ & 1.0 & Stimulus amplitude \\
+
+$t_{\mathrm{sync}}$ & 400 & Synchronization phase duration \\
+
+$t_{\mathrm{sil}}$ & 600 & Silence onset \\
+
+\bottomrule
+
+\end{tabular}
+
+\end{table}
+
+
+
+\section{Computational Methods}
+\label{sec:methods_supp}
+
+
+
+
+
+All simulations were performed in Python 3.11 using NumPy and SciPy.
+
+The supplementary $(\beta,\theta_{\mathrm{lock}})$ phase diagram scan ($31 \times 33 \times 10 = 10230$ simulations) required approximately 45 minutes on a single CPU core (Apple M3 Pro). For the main-text phase diagram (Fig.~4, $\eta_C \times \eta/\gamma$ scan, $N=10$ seeds per point, $6830$ simulations), see the main text Methods.
+
+
+
+\subsection{Implementation of the Core Model}
+
+
+
+{\small
+
+\begin{verbatim}
+
+def run_model(params, total_steps=3000, seed=42):
+
+    # Quantitative analyses use total_steps=3000 to ensure the silence
+
+    # window W=[t_sil+200, t_sil+1500] = [800, 2100] has data.
+
+    # Illustrative trajectory figures may use shorter runs.
+
+    T = params["T"]
+
+    DELTA = params["delta"]
+
+    ALPHA = params["alpha"]
+
+    BETA = params["beta"]
+
+    GAMMA = params["gamma"]
+
+    ETA_C = params["eta_C"]
+
+    LAMBDA = params["lambda"]
+
+    SIGMA = params["sigma"]
+
+    THETA_LOCK = params["theta_lock"]
+
+    ETA_H = params["eta"]
+
+    T_SYNC = params.get("t_sync", 400)
+
+    T_SIL = params.get("t_sil", 600)
+
+    A = params.get("A", 1.0)
+
+
+
+    np.random.seed(seed)
+
+    # The initial buffer represents the history x_{-delta},...,x_{-1}.
+
+    # x_hist[-DELTA] therefore implements x_{t-delta} after accounting
+
+    # for the initialized history buffer (first update produces x_0).
+
+    x_buffer = list(np.random.uniform(-0.1, 0.1, DELTA))
+
+    x_hist, kappa, C = list(x_buffer), 0.0, 0.0
+
+    kappa_hist = [kappa]
+
+
+
+    for t in range(total_steps):
+
+        if t < T_SYNC:
+
+            S = A * np.sin(2 * np.pi * t / T)
+
+        elif t < T_SIL:
+
+            S = A * np.sin(2 * np.pi * t / (2 * T))
+
+        else:
+
+            S = 0.0
+
+
+
+        # x_hist[-DELTA] corresponds to x_{t-\delta}
+
+        x_delayed = x_hist[-DELTA]
+
+
+
+        x_t = ((1 - kappa) * np.tanh(ALPHA * S) +
+
+               kappa * np.tanh(BETA * x_delayed) +
+
+               np.random.normal(0, SIGMA))
+
+        x_hist.append(x_t)
+
+
+
+        # Update order: x_t -> C_{t+1} -> kappa_{t+1}
+
+        C += ETA_C * (np.tanh(x_t) * np.tanh(x_delayed) - C)
+
+
+
+        kappa_drive = np.tanh(LAMBDA * C)
+
+        kappa_base = kappa + GAMMA * (kappa_drive - kappa)
+
+        if kappa > THETA_LOCK:
+
+            kappa_raw = kappa_base + ETA_H * kappa * (1 - kappa)
+
+        else:
+
+            kappa_raw = kappa_base
+
+        kappa = np.clip(kappa_raw, 0.0, 1.0)
+
+        kappa_hist.append(kappa)
+
+
+
+    return {'x_hist': np.array(x_hist),
+
+            'kappa_hist': np.array(kappa_hist), 'C': C}
+
+\end{verbatim}
+
+}
+
+
+
+\subsection{Phase Diagram Computation}
+
+
+
+For Phase Diagram I (consolidation threshold), $\beta$ is swept over $[0.5, 3.5]$ in 31 steps ($\Delta\beta = 0.1$) and $\theta_{\mathrm{lock}}$ over $[0.05, 0.85]$ in 33 steps ($\Delta\theta = 0.025$).
+
+For each ($\beta$, $\theta_{\mathrm{lock}}$) point, 10 independent seeds are simulated.
+
+A total of $31 \times 33 \times 10 = 10230$ simulations are run for Phase I.
+
+
+
+For Phase Diagram II (resonance), $\rho = \delta/T$ is swept over integer $\delta$ values only (so that the discrete delay map remains well-defined without interpolation), with $\beta$ over $[0.5, 3.0]$ in 14 steps.
+
+
+
+\subsection{Regime Classification}
+\label{sec:regime_classification}
+
+
+
+The silence amplitude \(A_{\mathrm{sil}}\) is defined as the half peak-to-peak amplitude over a post-transient silence window \(W = [t_{\mathrm{sil}}+200, t_{\mathrm{sil}}+1500]\) (requiring simulation length \(\ge 2400\) steps for quantitative analysis, whereas illustrative trajectories in figures may use shorter runs):
+
+\[
+
+A_{\mathrm{sil}} = \frac12\Bigl(\max_{t\in W} x_t - \min_{t\in W} x_t\Bigr).
+
+\]
+
+The consolidated persistence regime (Stage~III of the CIT mechanism, used as the success criterion in Fig.~4 of the main text) requires:
+
+\begin{itemize}
+
+  \item $\kappa_{\mathrm{sil}} > 0.5$ (structural gate locked above baseline);
+
+  \item $A_{\mathrm{sil}} > 0.1$ (observable autonomous temporal pattern during silence);
+
+  \item detectable autonomous period from zero-crossing analysis of $x_t$ in the silence window (sustained oscillatory activity, not transient).
+
+\end{itemize}
+
+Regimes that fail these criteria are classified as Reactive (transient correlations only) or Locked-but-quiet ($\kappa$ locked but insufficient amplification).
+
+
+
+\subsection{Linear Stability Analysis of the Frozen-$\kappa$ Delay Map}
+
+\label{sec:stability_frozen_kappa}
+
+Floquet theory provides the standard framework for stability analysis of periodic orbits in delay systems \cite{strogatz2015nonlinear, izhikevich2007dynamical}. The discrete-time delayed $\tanh$ map studied here belongs to the class of Ikeda-type delay dynamics \cite{ikeda1979multiple, yanchuk2009delayed}, whose multistable fixed-point structure and bifurcation boundaries are well characterised.
+
+
+
+For the fixed-$\kappa$ delay map with $\kappa \in (0,1)$ and $S_t=0$:
+
+\begin{equation}
+
+x_t = \kappa \tanh(\beta x_{t-\delta}),
+
+\end{equation}
+
+the state is embedded in $\R^{\delta}$ via $\mathbf{X}_t = (x_{t-1}, x_{t-2}, \ldots, x_{t-\delta})$ (reverse ordering, so that $x_t$ uses $x_{t-\delta}$ which becomes element $\delta$ of $\mathbf{X}_t$). The evolution $F_\kappa: \R^{\delta} \to \R^{\delta}$ is:
+
+\begin{align}
+X^{(1)}_{t+1} &= \kappa \tanh\bigl(\beta\, X^{(\delta)}_t\bigr), \\
+X^{(i)}_{t+1} &= X^{(i-1)}_t \quad \text{for } i = 2,\ldots,\delta.
+\end{align}
+
+The Jacobian at step $t$ is:
+
+\begin{equation}
+
+JF_{i,j} = 
+
+\begin{cases}
+
+\kappa \cdot \beta \cdot \operatorname{sech}^2(\beta \, x_{t-\delta}), & i=1,\; j=\delta,\\
+
+1, & i = j+1,\\
+
+0, & \text{otherwise}.
+
+\end{cases}
+
+\label{eq:jacobian_fixed_kappa}
+
+\end{equation}
+
+
+
+For the endpoint pure delay map ($\kappa \equiv 1$), the dynamics reduce to $x_t = \tanh(\beta x_{t-\delta})$ with Jacobian:
+
+\begin{equation}
+
+JF^{\kappa=1}_{i,j} = 
+
+\begin{cases}
+
+\beta \cdot \operatorname{sech}^2(\beta \, x_{t-\delta}), & i=1,\; j=\delta,\\
+
+1, & i = j+1,\\
+
+0, & \text{otherwise}.
+
+\end{cases}
+
+\label{eq:jacobian_pure_delay}
+
+\end{equation}
+
+
+
+In both cases, the monodromy matrix $M = \prod_{t=0}^{P-1} JF_t$ (ordered $JF_{P-1} \cdots JF_0$) has Floquet multipliers $\{\mu_i\}$ as its eigenvalues. The residue-class pattern is linearly stable iff $|\mu_i| < 1$ for all $i$.
+
+
+
+\subsection{Phase Extraction Algorithm}
+
+\label{sec:phase_extraction}
+
+
+
+The signed response phase $\phi_n$ (Main Text Fig.~2) is computed as follows:
+
+
+
+\begin{enumerate}
+
+  \item For each stimulus cycle $n$, the stimulus reference phase $\tau_{\mathrm{stim}}^{(n)}$ is defined as the positive-slope zero crossing of $S_t$ (rising edge). Locate the dominant response peak in the centered window $[\tau_{\mathrm{stim}}^{(n)}-T/2, \tau_{\mathrm{stim}}^{(n)}+T/2)$: $\tau_{\mathrm{peak}}^{(n)} = \arg\max_t |x_t|$. Both positive and negative extrema are used because they both represent maximal response magnitude in the scalar activity variable. As a robustness check, phase extraction using positive peaks only produced the same lag-to-lead transition (Fig.~\ref{fig:s20_phase}). The signed offset $\Delta_n = \tau_{\mathrm{peak}}^{(n)} - \tau_{\mathrm{stim}}^{(n)}$ is computed, where negative $\Delta_n$ corresponds to a peak before the reference phase (lead), not a wrapped late response.
+
+  \item The normalized phase is $\phi_n = 2\pi\,\Delta_n/T \in (-\pi,\pi]$.
+
+\end{enumerate}
+
+
+
+Positive $\phi_n$ indicates lag (peak after stimulus onset); negative $\phi_n$ indicates lead (peak before stimulus onset). For noise robustness, the peak is found after smoothing $x_t$ with a 3-point moving average. The reported phase trajectories are averaged over 10 independent seeds.
+
+
+
+\subsection{Period Detection Algorithm}
+
+\label{sec:period_detection}
+
+
+
+The autonomous period is analyzed via the prediction error:
+
+\[
+
+E(P) = \frac{\sum_{t=t_0}^{t_1-P} |x_{t+P} - x_t|^2}{\sum_{t=t_0}^{t_1} |x_t|^2},\qquad
+
+P^* = \min\{P \in \mathcal{P} : E(P) < \epsilon_P\},
+
+\]
+
+with $\epsilon_P = 0.01$, $t_0 = t_{\mathrm{sil}} + 200$, and $t_1 = t_{\mathrm{sil}} + 1500$. The primary scan used all integer periods $P=4,\ldots,60$. The restricted set $\{6,8,12,16,24,48\}$ was used only for diagnostic reporting (Table~\ref{tab:omission_sim}).
+
+
+
+At the default parameters, $E(24) = 0.0005 \pm 0.0001$, $E(48) = 0.0006 \pm 0.0001$ (both below $\epsilon_P = 0.01$), and $E(12) > 0.5$, confirming $P^* = 24$ as the unique detected autonomous period. The equality $E(24) \approx E(48)$ is expected: for a residue-class fixed-point pattern with fundamental period $\delta = 24$, every multiple of $\delta$ also satisfies $E(P) \approx 0$, and the minimum-period criterion $E(P/2) > \epsilon_P$ selects $P^* = 24$.
+
+
+
+\section{Extended Stability Analysis}
+\label{sec:stability_extended}
+
+
+
+
+\subsection{Spectral Radius vs. $\beta$}
+
+
+
+Fig.~S1 shows the single-step multiplier $\mu = \kappa\beta\,\operatorname{sech}^2(\beta y^*_\kappa)$ as a function of $\beta$ for the fixed-$\kappa$ autonomous subsystem with $\kappa \approx 0.963$, $\delta=24$.
+
+
+
+\begin{figure}[ht]
+
+\centering
+
+\includegraphics[width=0.7\textwidth]{fig_s01_floquet_spectrum.png}
+
+\caption{\textbf{Single-step multiplier $\mu = \kappa\beta\,\operatorname{sech}^2(\beta y^*_\kappa)$ vs. $\beta$ for the fixed-$\kappa$ autonomous subsystem ($\kappa\approx 0.963$, $\delta=24$).}
+The multiplier drops below $1$ at the pitchfork bifurcation $\kappa\beta=1$ ($\beta_c^{\mathrm{origin}} \approx 1/\kappa \approx 1.04$) and decays monotonically thereafter. At the default $\beta=2.2$, $\mu \approx 0.136$, confirming local contraction toward the residue-class fixed-point sign pattern.}\label{fig:s1_floquet}
+
+\end{figure}
+
+
+
+At $\beta=2.2$, the single-step multiplier is $\mu \approx 0.136$, corresponding to a contraction factor of $0.136$ per delay step toward the residue-class fixed-point configuration. The one-step $\delta$-dimensional shift embedding $F_\kappa:\mathbb{R}^\delta\to\mathbb{R}^\delta$ has spectral radius $\rho(F_\kappa) = |\mu|^{1/\delta} \approx 0.920$, whereas the $\delta$-step residue-class return map has multiplier $\mu \approx 0.136$.
+
+
+
+\subsection{Continuation of the Fixed-Point Amplitude}
+
+
+
+For a fixed sign configuration, each non-zero residue-class fixed point satisfies $y = \kappa\tanh(\beta y)$. Because the fixed-point equation is smooth in $\kappa$ away from the pitchfork bifurcation $\kappa\beta = 1$, the amplitude $y^*_\kappa$ varies smoothly with $\kappa$ within the locked regime. This provides a local continuation of the fixed-point amplitude as $\kappa$ evolves through the trained operating point, without implying a unique global limit cycle.
+
+
+
+\subsection{Slow $\kappa$ Contraction and Discrete Multiplier}
+
+\label{sec:kappa_eigenvalue}
+
+
+
+At the locked fixed point $\kappa^* \approx 0.963$, linearization of the slow $\kappa$-dynamics with $C$ held fixed yields the continuous-time approximation:
+
+\[
+
+\lambda_\kappa^{\mathrm{cont}} = \eta(1 - 2\kappa^*) - \gamma \approx -0.052 < 0.
+
+\]
+
+The corresponding discrete-time multiplier is $m_\kappa = 1 + \lambda_\kappa^{\mathrm{cont}} \approx 0.948 < 1$, confirming weak transverse contraction at the trained operating point.
+
+
+
+The return-map multiplier of each residue-class chain at the trained $\kappa^*\approx0.963$ is
+
+\[
+
+\mu_\kappa = \kappa\beta\operatorname{sech}^2(\beta y_\kappa^*) \approx 0.136,
+
+\]
+
+confirming contraction along each residue class within the $\delta$-dimensional delay embedding (Fig.~\ref{fig:bifurcation_2d}).
+
+The single-step $\delta$-dimensional shift embedding $F_\kappa:\mathbb{R}^\delta\to\mathbb{R}^\delta$ has spectral radius approximately $|\mu_\kappa|^{1/\delta}\approx 0.920$ (the $\delta$th root, because the multiplier applies once per $\delta$-step return), but the relevant residue-class return multiplier is $\mu_\kappa\approx 0.136$.
+
+The discrete multiplier $m_\kappa \approx 0.948$ for the slow $\kappa$ subsystem confirms weak transverse contraction at the trained operating point.
+
+These results support a slow-fast stability interpretation, but do not constitute a singular perturbation proof for a smooth invariant slow manifold. The timescale ratio $\gamma/(\eta\kappa(1-\kappa)) \approx O(1)$ near the steady state prevents rigorous geometric singular perturbation theory (GSPT) decomposition. The local contraction ($m_\kappa \approx 0.948$) and Lyapunov exponent ($\Lambda \approx -0.053$) serve as numerical stability evidence, not an analytical slow-manifold proof.
+
+
+
+\subsection{Analytic Approximation of $\kappa^*$ as Metastable Equilibrium}
+
+\label{sec:kappa_equilibrium}
+
+
+
+The locked operating point $\kappa^* \approx 0.963$ is not a passive deadlock but a dynamic equilibrium between two opposing forces:
+
+\[
+
+\gamma[\tanh(\lambda C^*) - \kappa^*] + \eta\kappa^*(1-\kappa^*) = 0,
+
+\]
+
+where the first term (relaxation toward the correlation-driven target) is negative at steady state, and the second term (autocatalytic lift) is positive. Using the observed steady-state $C^* \approx 0.53$:
+
+\begin{align*}
+\tanh(\lambda C^*) &= \tanh(1.5 \times 0.53) \approx 0.68,\\
+\gamma[\tanh(\lambda C^*) - \kappa^*] &\approx 0.006 \times (0.68 - 0.963) = -0.00170,\\
+\eta\kappa^*(1-\kappa^*) &\approx 0.05 \times 0.963 \times 0.037 = +0.00178,\\
+\text{net} &\approx -0.00170 + 0.00178 \approx +8\times10^{-5} \approx 0.
+\end{align*}
+
+The near-exact cancellation confirms that $\kappa^*$ is a maintained metastable equilibrium. This explains why moderate noise ($\sigma \leq 0.40$) does not collapse $\kappa$: small fluctuations in $C$ are smoothed by the correlation trace over a timescale $1/\eta_C = 100$ steps. However, sufficiently large perturbations that reduce $C$ to near zero can cause $\kappa$ to fall below the locking threshold, consistent with the escape events observed at $\sigma > 0.40$.
+
+
+
+\subsection{Full-System Perturbation Test}
+
+
+
+The stability analysis above (Sec.~\ref{sec:stability_frozen_kappa}) is performed on the frozen-$\kappa$ autonomous subsystem $x_t = \kappa\tanh(\beta x_{t-\delta})$ with $\kappa$ held fixed at the trained operating point $\kappa^* \approx 0.963$. This establishes the linear stability of the residue-class fixed-point sign pattern at fixed $\kappa$, not a proof for the full slow-fast system.
+
+
+
+To verify that the full slow-fast system (with $\kappa$ dynamics) also robustly returns to the consolidated pattern after perturbations, we perform direct state-space perturbation tests.
+
+
+
+Starting from a fully trained state ($t=800$), we independently perturb each component:
+
+\begin{itemize}
+
+  \item $x_t \to x_t + \Delta_x$ with $\Delta_x \in \{10^{-3}, 10^{-2}, 10^{-1}\}$;
+
+  \item $\kappa_t \to \kappa_t + \Delta_\kappa$ with $\Delta_\kappa \in \{10^{-3}, 10^{-2}\}$ (clipped to $[0,1]$);
+
+  \item $C_t \to C_t + \Delta_C$ with $\Delta_C \in \{10^{-3}, 10^{-2}\}$.
+
+\end{itemize}
+
+For each perturbation, we run 20 independent seeds and measure the recovery distance:
+
+\[
+
+d(t) = \frac{1}{\sqrt{\delta}}\|\mathbf{X}_t - \mathbf{X}'_t\|_2 + |C_t - C'_t| + |\kappa_t - \kappa'_t|,
+
+\]
+
+where $(\cdot)'$ denotes the perturbed trajectory and $\mathbf{X}_t = (x_{t-1},\ldots,x_{t-\delta})$ is the delay-embedding state vector.
+
+
+
+For all tested perturbation magnitudes, $d(t)$ decays to baseline levels within $<200$ steps ($\sim 8$ cycles). The decay rate of the fast component is consistent with the residue-class multiplier $\mu_\kappa\approx0.136$; the slow component decays at the discrete $\kappa$ multiplier $m_\kappa\approx0.948$.
+
+
+
+\begin{table}[h]
+
+\centering
+
+\caption{Full-system perturbation recovery. Recovery time is measured as the first return of $d(t)$ to baseline tolerance.}
+
+\label{tab:perturb_recovery}
+
+\begin{tabular}{lcc}
+
+\toprule
+
+Perturbation & Magnitude & Recovery time \\
+
+\midrule
+
+$x$ & $10^{-3}$ & $<50$ steps \\
+
+$x$ & $10^{-2}$ & $<100$ steps \\
+
+$x$ & $10^{-1}$ & $<200$ steps \\
+
+$\kappa$ & $10^{-3}$ & $<100$ steps \\
+
+$\kappa$ & $10^{-2}$ & $<200$ steps \\
+
+$C$ & $10^{-3}$ & $<100$ steps \\
+
+$C$ & $10^{-2}$ & $<200$ steps \\
+
+\bottomrule
+
+\end{tabular}
+
+\end{table}
+
+
+
+This confirms that the consolidated pattern is a robust attracting state of the full slow-fast system under the tested perturbation range.
+
+
+
+\subsection{Maximum Lyapunov Exponent of the Full System}
+
+\label{sec:lyapunov}
+
+
+
+To characterize the stability of the trained attractor beyond the frozen-$\kappa$ linearization, we compute the maximum Lyapunov exponent of the full trained system via shadow-trajectory perturbation tracking. The full state vector is 26-dimensional: $[x_{t-23}, \ldots, x_t, C_t, \kappa_t]$. A small perturbation $\bm{\delta}_0 \sim \mathcal{U}(-10^{-6}, 10^{-6})$ is applied to the state of a fully trained system ($t=800$), and both the main and perturbed trajectories evolve under shared noise. After 200 transient steps, the perturbation norm growth factor is accumulated over 2000 steps with periodic renormalization every $\delta$ steps (one delay cycle).
+
+
+
+Across 20 independent seeds, the mean maximum Lyapunov exponent was
+
+\[
+
+\lambda_{\max} = -0.00861 \pm 0.00030.
+
+\]
+
+The exponent was negative for all 20 seeds and tightly clustered around the reported mean, supporting stable contraction of the trained autonomous pattern. In the observed scalar trajectory it appears as a stable period-$\delta$ temporal pattern, while in the delay embedding it corresponds to a residue-class fixed-point configuration stabilized by the slow $\kappa$ gate. The characteristic relaxation time $\tau_{\mathrm{Lya}} = 1/|\lambda_{\max}| \approx 116$ steps ($\sim 5$ pattern periods) is consistent with the $\kappa$ slow timescale $1/\gamma \approx 167$ steps, suggesting that the slow $\kappa$ dynamics dominate the transverse stability.
+
+
+
+\subsection{Noise Escape Times and Kramers-like Escape Trend}
+
+\label{sec:kramers}
+
+
+
+To complement the Lyapunov analysis (which is deterministic), we characterize the stochastic stability of the locked state via mean first passage time (MFPT) measurements \cite{kramers1940brownian, hanggi1990reaction}. Since the system is a discrete-time map rather than a continuous-time diffusion, the continuous Kramers theory provides a descriptive approximation; discrete mapping noise-escape theory \cite{berglund2002metastability} gives a more rigorous foundation for the observed $\log\langle\tau\rangle \propto 1/\sigma^2$ scaling. For each of 10 noise levels $\sigma \in \{0.015, 0.05, 0.10, 0.20, 0.30, 0.40, 0.50, 0.60, 0.80, 1.00\}$, 50 seeds are trained to full consolidation (800 steps) and then run for up to $2 \times 10^4$ steps with continuous noise. An escape event is registered when $\kappa$ drops below $\theta_{\mathrm{lock}} = 0.35$.
+
+
+
+No escape events are observed for $\sigma \leq 0.40$ (27$\times$ baseline noise). Escape onset occurs sharply at $\sigma \approx 0.5$, with mean escape time $\langle\tau\rangle = 17228 \pm 6870$ steps (7/50 seeds escaped). At $\sigma = 0.6$, $\langle\tau\rangle = 7725 \pm 9610$ steps (31/50 escaped). At $\sigma \geq 0.8$, all 50 seeds escape within 200 steps.
+
+
+
+A descriptive Kramers-type fit to the noise levels with observed escape events ($\sigma = 0.5, 0.6, 0.8, 1.0$) gives
+
+\[
+
+\log\langle\tau\rangle = 1.69 \cdot \frac{1}{\sigma^2} + 3.39, \qquad R^2 = 0.91.
+
+\]
+
+This fit should be interpreted phenomenologically rather than as a precise MFPT estimate, because the $\sigma=0.5$ point is strongly right-censored: only 7/50 seeds escaped within the observation window. The locked state is thus strongly metastable: robust under moderate noise ($\sigma \lesssim 0.40$) but dissolvable under extreme perturbation ($\sigma \gtrsim 0.8$).
+
+
+
+\subsection{Two-Parameter Bifurcation Structure}
+
+\label{sec:bifurcation_supp}
+
+
+
+To complete the stability analysis, we map the $(\beta, \kappa)$ phase space of the fixed-$\kappa$ subsystem $y = \kappa \tanh(\beta y)$. Figure~\ref{fig:bifurcation_2d} shows the number of stable non-zero fixed points as a function of both parameters. The pitchfork bifurcation curve $\kappa\beta = 1$ separates the reactive regime (single fixed point at the origin) from the locked regime (two stable non-zero fixed points $\pm y^*_\kappa$). At the trained operating point $(\beta=2.2, \kappa^* \approx 0.963)$, the system lies well within the locked regime ($\kappa\beta \approx 1.89 > 1$), consistent with the existence of a stable residue-class fixed-point sign configuration. The lock threshold $\theta_{\mathrm{lock}}=0.35$ lies below the pitchfork boundary at $\beta=2.2$ ($\kappa_{\mathrm{pitch}}=1/\beta\approx0.455$). Thus autocatalysis is activated before the autonomous non-zero fixed points become available; continued consolidation then carries $\kappa$ across the pitchfork into the amplified autonomous regime.
+
+
+
+\begin{figure}[ht]
+
+\centering
+
+\includegraphics[width=0.7\textwidth]{fig_bifurcation.png}
+
+\caption{\textbf{$(\beta, \kappa)$ two-parameter bifurcation diagram of the frozen-$\kappa$ subsystem.}
+
+Color: number of stable non-zero fixed points from the delay-map iteration $y = \kappa \tanh(\beta y)$. The dashed line marks the pitchfork bifurcation $\kappa\beta = 1$. The red star shows the trained operating point $(\beta=2.2, \kappa^* \approx 0.963)$; the orange square shows the lock threshold $\theta_{\mathrm{lock}} = 0.35$; the green triangle marks the pitchfork boundary at $\beta=2.2$.
+
+\label{fig:bifurcation_2d}}
+
+\end{figure}
+
+\section{Extended Parameter Sensitivity}
+
+Parameter sensitivity is assessed through systematic scans following established protocols \cite{saltelli2008global}.
+\label{sec:sensitivity}
+
+
+
+
+
+\subsection{$\alpha \times \beta$ Joint Scan}
+
+
+
+Fig.~\ref{fig:s2_alpha_beta} shows the joint dependence on stimulus coupling $\alpha$ and self-coupling $\beta$.
+
+The consolidated persistence regime occupies a broad region for $\beta > 1$ and $\alpha > 1$.
+
+The default operating point ($\alpha=1.8$, $\beta=2.2$) lies well inside this region.
+
+
+
+\begin{figure}[ht]
+
+\centering
+
+\includegraphics[width=0.7\textwidth]{fig_s02_alpha_beta_map.png}
+
+\caption{\textbf{$\alpha \times \beta$ regime map.}
+
+Fraction of persistence outcomes (10 seeds per point). The vertical boundary near $\beta \sim 1$ is approximately consistent with the linear stability condition $\kappa\beta > 1$ evaluated at the effective $\kappa$ prevailing during consolidation.
+
+\label{fig:s2_alpha_beta}}
+
+\end{figure}
+
+
+
+\subsection{$\lambda$ Sensitivity (Soft-Threshold Sharpness)}
+
+
+
+\begin{figure}[ht]
+
+\centering
+
+\includegraphics[width=0.7\textwidth]{fig_s03_lambda_sensitivity.png}
+
+\caption{\textbf{$\lambda$ sensitivity.}
+
+The consolidated persistence regime appears for $\lambda \gtrsim 0.7$ and saturates above $\lambda \approx 1.2$.
+
+\label{fig:s3_lambda}}
+
+\end{figure}
+
+
+
+\subsection{$\eta$ Sensitivity (Autocatalytic Consolidation Strength)}
+
+
+
+\begin{figure}[ht]
+
+\centering
+
+\includegraphics[width=0.7\textwidth]{fig_s04_eta_sensitivity.png}
+
+\caption{\textbf{$\eta$ sensitivity.}
+
+The consolidated persistence regime emerges sharply at $\eta \approx 0.005$ (the critical consolidation threshold).
+
+Below this value, $\kappa$ saturates at $\kmax \approx 0.45$ and decays after stimulus removal.
+
+Above $\eta \approx 0.01$, the CIT mechanism occurs robustly with $\kappa_{\mathrm{sil}} \approx 0.96$.
+
+\label{fig:s4_eta}}
+
+\end{figure}
+
+
+
+\subsection{$\eta_C$ Sensitivity (Correlation Smoothing Rate)}
+
+
+
+\begin{figure}[ht]
+
+\centering
+
+\includegraphics[width=0.7\textwidth]{fig_s05_eta_c_sensitivity.png}
+
+\caption{\textbf{$\eta_C$ sensitivity.}
+
+Consolidated persistence is robust across $\eta_C \in [0.003, 0.3]$.
+
+The regime fails only for $\eta_C < 0.003$ (correlation accumulates too slowly) or $\eta_C > 0.3$ (correlation tracks individual peaks rather than accumulating over cycles).
+
+\label{fig:s5_eta_c}}
+
+\end{figure}
+
+
+
+\subsection{$\delta$ Mismatch (Resonance Band)}
+
+
+
+\begin{figure}[ht]
+
+\centering
+
+\includegraphics[width=0.7\textwidth]{fig_s06_delta_mismatch.png}
+
+\caption{\textbf{$\delta$ mismatch scan.}
+
+Fraction of persistence outcomes vs. recurrence delay $\delta$ with fixed $T=24$.
+
+The CIT mechanism is concentrated near $\delta=24$ ($\rho=1$, $93\%$ success).
+
+Secondary peak at $\delta=12$ ($\rho=0.5$, $42\%$ success). HWHM $\approx 2.4$ timesteps ($\Delta\rho \approx 0.1$).
+
+\label{fig:s6_delta}}
+
+\end{figure}
+
+
+
+\section{Extended Noise Analysis}
+\label{sec:noise}
+
+
+
+
+
+\subsection{Multiplicative Noise Phase Diagram}
+
+
+
+\begin{figure}[ht]
+
+\centering
+
+\includegraphics[width=0.7\textwidth]{fig_s07_mult_noise.png}
+
+\caption{\textbf{Multiplicative noise phase diagram ($\sigma \times \theta_{\mathrm{lock}}$).}
+
+Fraction of persistence outcomes under multiplicative noise $\varepsilon_t = \sigma |\tilde{x}_t|\,\xi_t$ with $\xi_t \sim \mathcal{N}(0,1)$, where $\tilde{x}_t$ is the deterministic pre-noise component of the update. Structure is qualitatively similar to the additive noise case: a clear boundary at $\theta_{\mathrm{lock}} \approx 0.45$.
+
+\label{fig:s7_mult}}
+
+\end{figure}
+
+
+
+\subsection{Noise Escape Times}
+
+\label{sec:noise_escape}
+
+
+
+\begin{figure}[ht]
+
+\centering
+
+\includegraphics[width=0.7\textwidth]{fig_s08_escape_time.png}
+
+\caption{\textbf{Noise escape times.}
+
+Mean escape time (steps until $\kappa$ drops below $\theta_{\mathrm{lock}}=0.35$) vs. noise amplitude $\sigma$, averaged over 50 independent seeds.
+
+No escapes occur for $\sigma \le 0.40$ within $2\times10^4$ steps. At $\sigma=0.50$, only 7/50 seeds escaped within the observation window, so the reported escape time is right-censored and should be interpreted cautiously. At $\sigma=0.60$, 31/50 escaped; at $\sigma\ge0.80$, all seeds escaped within 200 steps. The locked state is therefore metastable: robust under moderate noise ($\sigma \lesssim 0.40$), partially escapable near $\sigma=0.50$--$0.60$, and rapidly dissolvable under extreme perturbation ($\sigma \ge 0.80$).
+
+\label{fig:s8_escape}}
+
+\end{figure}
+
+
+
+\subsection{Additive vs. Multiplicative Noise Comparison}
+
+
+
+At default parameters ($\sigma=0.015$, $\theta_{\mathrm{lock}}=0.35$), both noise models produce $S=10/10$ outcomes with $\kappa_{\mathrm{sil}} > 0.85$.
+
+Near the phase boundary ($\theta_{\mathrm{lock}}=0.45$), multiplicative noise reduces the critical $\sigma$ threshold by approximately $30\%$ compared to additive noise.
+
+
+
+\section{Integer-Resonance Structure and Residue-Class Pattern Selection}
+\label{sec:harmonic_extended}
+
+
+
+
+\subsection{Period Selection in the Full Model}
+
+
+
+The full model consistently produces $P=24$ autonomous temporal patterns after training, regardless of initial conditions (tested across eight distinct initial condition types, 10 seeds each; all 80 simulations produced $P=24$ with $\kappa_{\mathrm{sil}} > 0.85$). The period detection via $E(P)$ confirms $P^* = 24$ with $E(24) \approx 0.0005$ (Sec.~\ref{sec:period_detection}).
+
+
+
+\begin{figure}[ht]
+
+\centering
+
+\includegraphics[width=0.8\textwidth]{fig_s09_harmonic_basin.png}
+
+\caption{\textbf{Harmonic selection by the full model.}
+
+When the trained trajectory ($\kappa \approx 0.963$, $P=24$) is used to seed the pure delay map at $\kappa \equiv 1$, each residue class of the delay chain converges to a stable fixed point $\pm y^*$ where $y^* = \tanh(\beta y^*) \approx 0.973$ (Sec.~\ref{sec:stability_frozen_kappa}). The resulting dynamics are a frozen sign pattern with constant amplitude $|x_t| \equiv y^*$ and period $P=24$.
+
+In contrast, the trained system at $\kappa^* \approx 0.963$ expresses a reproducible autonomous $P=24$ temporal pattern at the locked intermediate operating point. The key distinction is not the period itself, but the history-dependent selection and stabilization of the operating regime via the $\kappa$-gate hysteresis.
+
+\label{fig:s9_harmonic}}
+
+\end{figure}
+
+
+
+\subsection{Intrinsic Period Spectrum of the Pure Delay Map}
+
+
+
+The pure delay map $x_t = \tanh(\beta x_{t-\delta})$ with $\beta=2.2$, $\delta=24$ asymptotically converges to a static fixed-point configuration: each residue class of the delay chain is attracted to either $+y^*$ or $-y^*$ ($y^* = \tanh(\beta y^*) \approx 0.973$), producing a $P=24$ sign pattern with constant amplitude. This is the dominant asymptotic behavior at $\beta=2.2$ for the pure delay map, irrespective of initial conditions. The $P=24$ sign pattern coexists with transient sub-harmonics $P=12,8$ during the approach to the fixed-point configuration.
+
+
+
+\section{Additional Control Experiments}
+\label{sec:controls_extended}
+
+
+
+
+
+\subsection{Initial Condition Robustness}
+
+
+
+\begin{figure}[ht]
+
+\centering
+
+\includegraphics[width=0.8\textwidth]{fig_s10_ic_robustness.png}
+
+\caption{\textbf{Initial condition robustness.}
+
+Eight distinct initial condition types, all producing identical $10/10$ persistence outcomes with $\kappa_{\mathrm{sil}} > 0.83$.
+
+\label{fig:s10_ic}}
+
+\end{figure}
+
+
+
+\subsection{Sign-Pattern Reproducibility}
+
+\label{sec:sign_reproducibility}
+
+
+
+To verify that the training history, not initial conditions, selects the sign configuration of the residue-class pattern, we define the sign-pattern similarity index:
+
+\[
+
+Q = \frac{1}{\delta}\sum_{r=1}^{\delta} s_r^{(a)} s_r^{(b)},
+
+\qquad
+
+s_r = \operatorname{sign}(x_{r+n\delta}) \in \{-1,0,+1\},
+
+\]
+
+where $s_r^{(a)}$ and $s_r^{(b)}$ are the sign vectors from two independent runs of the full model with different random seeds (same training protocol). $Q = 1$ indicates identical sign patterns; $Q = 0$ indicates no correlation; $Q = -1$ indicates anti-correlation.
+
+
+
+Across $N=20$ independent training seeds, the mean pairwise similarity is $\bar{Q} = 0.91 \pm 0.06$, confirming that the training protocol reproducibly selects the same residue-class sign configuration.
+
+
+
+In contrast, for the $\kappa=1$ endpoint attractor (no training, different initial conditions but fixed $\kappa$), $N=20$ random seeds yield $\bar{Q} = 0.02 \pm 0.51$, confirming that sign patterns at $\kappa=1$ are determined purely by initial conditions. This contrast directly supports the claim that the training-selected sign configuration is a history-dependent feature of the CIT mechanism, not a generic property of the delay dynamics.
+
+
+
+\subsection{Virtual Sensorimotor Experiment: Recovery Trajectories}
+
+
+
+\begin{figure}[ht]
+
+\centering
+
+\includegraphics[width=\textwidth]{fig_sms_mismatch.png}
+
+\caption{\textbf{Virtual sensorimotor synchronization experiment.}
+
+Recovery trajectories after a phase perturbation for three conditions.
+
+\textbf{Matched} (blue): train $T=24$, test $T=24$, consolidated. Asynchrony returns to zero within $\sim 20$ steps---indistinguishable from standard phase correction.
+
+\textbf{Mismatch} (red, key condition): train $T=24$, test $T=30$, consolidated. Asynchrony converges to a \textbf{non-zero steady-state offset} because the internal period $P\approx24$ is preserved by cognitive inertia.
+
+\textbf{Unconsolidated control} (green): not consolidated, recovery tracks external pacing exactly.
+
+The mismatch condition is the experimental signature of cognitive inertia: it was not reproduced by the phase-correction or adaptive-oscillator baselines tested here.
+
+\label{fig:s11_sms}}
+
+\end{figure}
+
+
+
+\subsection{Quasi-Steady-State Estimate Validation}
+
+\label{sec:kappa_drive_validation}
+
+
+
+The heuristic estimate of $\kappa_{\mathrm{drive}}^{\max}$ (the main text) is validated by 100-seed Monte Carlo simulation with $\eta=0$ (no consolidation):
+
+\begin{itemize}
+
+  \item Heuristic estimate: $\kappa_{\mathrm{drive}}^{\max} \approx 0.48$ ($C^* \approx 0.35$, $\tanh(\lambda C^*) = \tanh(1.5 \times 0.35)$)
+
+  \item Monte Carlo (100 seeds): $\kappa_{\mathrm{drive}}^{\max} = 0.454 \pm 0.001$
+
+  \item Empirical $C^* = 0.350 \pm 0.025$
+
+  \item Heuristic error: $5.4\%$
+
+\end{itemize}
+
+
+
+\subsection{Phase Diagram II: Integer $\delta$ Only}
+
+
+
+\begin{figure}[ht]
+
+\centering
+
+\includegraphics[width=0.7\textwidth]{fig_s12_phase2_int.png}
+
+\caption{\textbf{Phase Diagram II with integer $\delta$ only.}
+
+Fraction of persistence outcomes vs. $\rho = \delta/T$ and $\beta$.
+
+Only integer $\delta$ values are used so that the discrete delay map remains well-defined without interpolation.
+
+Resonance peaks at $\rho = 1$, $2$, and weakly at $\rho = 0.5$, consistent with the prediction that the CIT mechanism occurs when $\delta/T$ is close to integer ratios or low-order rational ratios.
+
+\label{fig:s12_phase2}}
+
+\end{figure}
+
+
+
+\subsection{Escape Time Phase Diagram ($\eta_C \times \sigma$)}
+
+
+
+\begin{figure}[ht]
+
+\centering
+
+\includegraphics[width=0.7\textwidth]{fig_s13_escape_2d.png}
+
+\caption{\textbf{$\eta_C \times \sigma$ escape time phase diagram.}
+
+Mean escape time as a function of correlation smoothing rate $\eta_C$ and noise amplitude $\sigma$.
+
+The locked state is robust across a broad region of parameter space; escape occurs only when both $\eta_C$ is small (slow accumulation) and $\sigma$ is large (strong perturbation).
+
+\label{fig:s13_escape}}
+
+\end{figure}
+
+
+
+\section{Continuous-Time Analogue}
+\label{sec:continuous_time}
+
+
+
+
+To confirm that the CIT mechanism is not a discretization artifact, we formulate a continuous-time analogue via a stochastic delay differential equation (SDDE) and implement it via Euler--Maruyama integration:
+
+
+
+\begin{align}
+
+dx(t) &= \big[ -x(t) + (1-\kappa(t))\tanh(\alpha S(t)) + \kappa(t)\tanh(\beta x(t-\delta)) \big]\,dt + \sigma\,dW_t, \\
+
+dC(t) &= \eta_C\big[ \tanh(x(t))\tanh(x(t-\delta)) - C(t) \big]\,dt, \\
+
+d\kappa(t) &= \gamma\big[ \tanh(\lambda C(t)) - \kappa(t) \big]\,dt + \eta\,\kappa(t)(1-\kappa(t))\,\mathbb{1}_{\kappa > \theta_{\mathrm{lock}}}\,dt,
+
+\end{align}
+
+
+
+This SDDE is not a formal continuous-time limit of the discrete map, because the $-x(t)$ relaxation term changes the update structure; it is a continuous-time analogue used as a robustness check. At the default parameters ($dt=0.5$, $\sigma=0.015$), the continuous-time analogue exhibited a qualitatively similar CIT mechanism-like transition:
+
+
+
+\begin{figure}[ht]
+
+\centering
+
+\includegraphics[width=0.7\textwidth]{fig_s14_ct_beta_scan.png}
+
+\caption{\textbf{Continuous-time Euler--Maruyama validation.}
+
+A continuous-time SDDE analogue exhibits a qualitatively similar CIT mechanism-like transition under Euler--Maruyama integration with $dt=0.5$, suggesting that the mechanism is not an artifact of the exact discrete update rule.
+
+\label{fig:s14_ct}}
+
+\end{figure}
+
+
+
+\section{$\kappa=1$ Endpoint Attractor Landscape}
+
+\label{sec:kappa_endpoint}
+
+
+
+\begin{figure}[ht]
+
+\centering
+
+\includegraphics[width=0.7\textwidth]{fig_s15_bifurcation.png}
+
+\caption{\textbf{$\kappa=1$ pure delay map residue-class fixed-point landscape.}
+
+Bifurcation diagram as a function of $\beta$ for the pure delay map $x_t = \tanh(\beta x_{t-\delta})$ at $\kappa=1$, $\delta=24$ (20 random seeds per $\beta$ value).
+
+The asymptotic behavior at $\beta=2.2$ is a frozen sign pattern: each residue class converges to $\pm y^*$ ($y^* = \tanh(\beta y^*)$), producing period-$24$ patterns with constant amplitude $|x_t| \equiv y^*$.
+
+This confirms that the $P=24$ pattern acquired through training is a \textbf{history-selected configuration}: its sign configuration is selected by the training history rather than initial conditions, and stabilized by the $\kappa$-gate hysteresis at the intermediate operating point $\kappa^*$.
+
+\label{fig:s15_bifurcation}}
+
+\end{figure}
+
+
+
+\section{Integer-Resonance Migration: Simulation Results}
+\label{sec:harmonic_migration}
+
+
+
+
+
+To test integer-resonance migration as an exploratory extension, we simulate the CIT model with two protocols: (A) full 800-step training sufficient for complete $\kappa$ hysteresis lock, and (B) 200-step training leaving $\kappa$ in a plastic regime before lock. In both cases, after training at $T=24$, the stimulus is switched to a test period $T_{\mathrm{test}} \in \{12, 30, 48\}$ for 300 steps followed by 200 steps of silence. For each condition, 20 seeds are run.
+
+
+
+Under Protocol~A (full lock), all test periods produce identical behavior after the test-and-silence protocol ($\kappa_{\mathrm{sil}} = 0.862 \pm 0.000$, $P^* = 24$). Although $\kappa$ relaxes below the default post-training value $\kappa^*\approx0.963$, it remains well above $\theta_{\mathrm{lock}}$, so the trained period is not deconsolidated within the test window.
+
+
+
+Under Protocol~B (plastic regime, $\kappa$ not yet fully locked), the integer-resonance migration effect is cleanly observed:
+
+
+
+\begin{center}
+
+\begin{tabular}{lccc}
+
+\toprule
+
+Condition & $T_{\mathrm{test}}$ & Success & $\kappa_{\mathrm{sil}}$ \\
+
+\midrule
+
+Prior training $\rightarrow$ T=12 (harmonic) & 12 & \textbf{100\%} & \textbf{0.861 $\pm$ 0.001} \\
+
+Prior training $\rightarrow$ T=30 (non-harmonic) & 30 & 0\% & 0.163 $\pm$ 0.000 \\
+
+Prior training $\rightarrow$ T=48 (anti-phase) & 48 & 0\% & 0.000 $\pm$ 0.000 \\
+
+Naive $\rightarrow$ T=12 (control) & 12 & 100\% & 0.750 $\pm$ 0.001 \\
+
+Naive $\rightarrow$ T=30 (control) & 30 & 0\% & 0.096 $\pm$ 0.000 \\
+
+Naive $\rightarrow$ T=48 (control) & 48 & 0\% & 0.000 $\pm$ 0.000 \\
+
+\bottomrule
+
+\end{tabular}
+
+\end{center}
+
+
+
+This reveals a critical distinction between two consolidation regimes. Under Protocol~A (full lock), the $\kappa$ hysteresis is too strong to deconsolidate: the system cannot unlearn its trained period within the test window. Under Protocol~B (plastic regime, $\kappa$ not yet fully locked), the integer-resonance migration effect is cleanly observed. The key finding is that prior T=24 training significantly boosts $\kappa$ for T=12 ($0.861$ vs. $0.750$, a 14.8\% increase) but cannot rescue T=30 or T=48. The relevant condition for integer-resonance migration is $\delta/T_{\mathrm{test}} \in \mathbb{N}$ (integer resonance ratio), not $T_{\mathrm{test}}$ being a harmonic multiple of the trained period per se. T=12 satisfies $\delta/T_{\mathrm{test}} = 2$, giving in-phase delayed correlations; T=48 gives $\delta/T_{\mathrm{test}} = 0.5$ (half-integer), producing anti-phase delayed correlations that suppress the $C$ trace and deconsolidate $\kappa$.
+
+
+
+This refines the integer-resonance migration pattern: in the plastic pre-lock regime, a partially consolidated system preferentially acquires new consolidated temporal responses at periods where $\delta/T_{\mathrm{test}}$ is an integer, because these produce in-phase resonance with the fixed delay $\delta$.
+
+
+
+\section{Alternative Model Comparison}
+\label{sec:comparison}
+
+
+
+
+To examine how the CIT mechanism compares with existing frameworks, we tested its predictions against four standard model classes on three critical tests. The comparison follows model-competition principles \cite{burnham2002model} and is restricted to minimal implementations of each baseline, as detailed below. The comparisons are not intended to exhaust all possible implementations of predictive or oscillator-based timing models; they show that under matched minimal assumptions, models without structural hysteresis jointly fail to reproduce the three-key-signature profile of the CIT mechanism.
+
+
+
+\subsection{Baseline Model Implementations}
+
+
+
+Each baseline is implemented with minimal assumptions matching the CIT model's input channel (same periodic stimulus $S_t$, same training protocol), parameter-tuned within their standard regimes, and tested without additional post-hoc mechanisms.
+
+
+
+\textbf{Simple oscillator entrainment:}
+
+\begin{equation}
+
+\ddot{x} + \gamma_o \dot{x} + \omega_0^2 x = F S_t,
+
+\end{equation}
+
+a damped driven harmonic oscillator with natural frequency $\omega_0 = 2\pi/T$, damping $\gamma_o = 0.5$, forcing amplitude $F = 2.0$. The damping ratio $\zeta = \gamma_o/(2\omega_0) \approx 0.95$ is near-critical; without forcing, the pattern decays (damped, not self-sustained).
+
+
+
+\textbf{Adaptive frequency oscillator (AFO)} \cite{righetti2009adaptive, buchli2006adaptive}:
+
+Implemented as a Hopf oscillator with frequency adaptation:
+
+\begin{align}
+
+\dot{x} &= (\mu - x^2 - y^2)x - \omega y + \varepsilon S_t, 
+
+\nonumber \\
+
+\dot{y} &= (\mu - x^2 - y^2)y + \omega x, 
+
+\nonumber \\
+
+\dot{\omega} &= -K x S_t, \label{eq:afo}
+
+\end{align}
+
+with $\mu=1.0$ (Hopf limit cycle amplitude $\sqrt{\mu}=1$), default adaptation rate $K=0.3$, and forcing strength $\varepsilon=0.5$, following Righetti~et~al.~\cite{righetti2009adaptive}. The AFO maintains self-sustained activity at $\omega$ regardless of stimulus; without structural hysteresis, it gradually adapts to a new stimulus frequency at a rate controlled by $K$.
+
+
+
+A critical distinction between the AFO and CIT mechanism is suggested by a perturbation-recovery protocol: after consolidation at $T=24$, the stimulus is perturbed to $T=30$ for 200 steps, then returned to $T=24$. The CIT mechanism ($\kappa$-gate hysteresis) recovers its original phase within the tested resolution, with residual phase shift below the measurement resolution in the tested windows. The AFO with fast adaptation ($K=0.3$) adapts its frequency to $T=30$ during perturbation, then re-adapts to $T=24$ during recovery---exhibiting large phase excursions ($-105^\circ$ at late-perturbation) with no hysteresis memory. The AFO with slow adaptation ($K=0.001$) barely tracks the frequency change, accumulating a persistent phase shift ($75^\circ$ residual even after recovery). In both cases, the AFO\textquoteright s frequency $\omega$ in subsequent silence freezes at whatever value it had at stimulus offset (because $\dot{\omega} = -KxS = 0$ when $S=0$), while the CIT mechanism\textquoteright s internal period remains $P=24$ (Fig.~\ref{fig:s23_perturbation}). The CIT mechanism\textquoteright s unique signature is thus structural hysteresis---the acquired temporal configuration persists through the perturbation and is not erased by the return to the original stimulus---rather than simply a slow adaptation timescale.
+
+
+
+An AFO augmented with an explicit hysteretic memory variable could likely reproduce parts of the CIT mechanism signature; our claim is that such a mechanism would instantiate the kind of structural consolidation introduced here.
+
+
+
+\textbf{Reservoir computer (echo state network)} \cite{jaeger2004harnessing}:
+
+\begin{equation}
+
+\mathbf{r}_{t+1} = (1-\alpha)\mathbf{r}_t + \alpha\tanh(W_{\mathrm{in}}S_t + W\mathbf{r}_t),
+
+\end{equation}
+
+with $N=100$ units, spectral radius $\rho_{\mathrm{res}} = 0.9$, leak rate $\alpha = 0.3$, trained readout $W_{\mathrm{out}}$ via ridge regression ($\lambda_{\mathrm{ridge}}=10^{-4}$). Training period $T=24$; the readout is trained on 600 timesteps and tested with stimulus removed. Under the tested echo-state setting without autonomous feedback or recurrent readout, the trained response decayed after stimulus removal. We note that reservoir networks with output feedback ($W_{\mathrm{fb}}y_t$ as an additional input) can sustain self-generated dynamics after training, but their persistence is mediated by linear readout weights rather than by a nonlinear structural hysteresis mechanism. The present comparison uses the minimal open-loop reservoir to isolate the effect of structural hysteresis; we do not claim that no reservoir architecture can reproduce CIT mechanism signatures, only that reproducing them requires a mechanism equivalent to hysteretic consolidation. A reservoir with an autonomous feedback loop or structural consolidation mechanism could potentially capture parts of the CIT mechanism signature.
+
+
+
+\textbf{Note on predictive coding:} A full predictive coding model with hierarchical temporal predictions is beyond the scope of a minimal baseline comparison. The comparison in Tables~\ref{tab:omission_sim}--\ref{tab:harmonic_sim} treats one-step predictive coding as a special case of the reservoir computer with $N=1$ and no recurrent connections, which cannot maintain autonomous temporal patterns.
+
+
+
+\subsection{Parameter Tuning}
+
+
+
+Each baseline was manually tuned within its standard literature-recommended parameter ranges to maximize performance on Test~1 (omission persistence) without sacrificing performance on Tests~2--3. The CIT model uses its default parameters (Table~\ref{tab:supp_params}) without re-tuning for these comparisons. A full parameter sweep for each baseline is computationally expensive and beyond the present scope, but the qualitative results are robust to $\pm 30\%$ variation in each baseline's key parameters.
+
+
+
+\subsection{Test 1: Stimulus-Omission Persistence}
+
+
+
+All models are trained on a periodic stimulus ($T=24$) for 600 timesteps, then the stimulus is removed.
+
+We measure whether the system maintains oscillatory behavior after removal (simulation results, 10 seeds per condition).
+
+
+
+\begin{table}[h]
+
+\centering
+
+\caption{Stimulus-omission persistence comparison (numerical simulation, $N=10$ seeds). For CIT mechanism, amplitude denotes empirical noisy-window half peak-to-peak amplitude; the corresponding deterministic fixed-$\kappa$ amplitude is $y_\kappa^*\approx0.93$.}
+
+\begin{tabular}{lcccc}
+
+\toprule
+
+Model & Persistence & Mean amp ($t=650$) & Mean amp ($t=1500$) & Result \\
+
+\midrule
+
+Simple oscillator entrainment & Decays within $<50$ steps & 0.02 & $<0.001$ & $\times$ \\
+
+Adaptive frequency oscillator \cite{righetti2009adaptive} & Self-sustained limit cycle & 1.00 & 1.00 & $\checkmark$ \\
+
+Predictive coding (1-step) & No autonomous dynamics & — & — & $\times$ \\
+
+Reservoir computer (echo state) & Decays within $<10$ steps & $<0.001$ & $<0.001$ & $\times$ \\
+
+\textbf{Our model} & \textbf{Persists throughout} & \textbf{0.97} & \textbf{0.97} & $\checkmark$ \\
+
+\bottomrule
+
+\end{tabular}
+
+\label{tab:omission_sim}
+
+\end{table}
+
+
+
+The AFO (Hopf oscillator, Eq.~\ref{eq:afo}) maintains a self-sustained limit cycle at amplitude $\sqrt{\mu}$ regardless of training. This trivially satisfies Test~1 but reveals no history-dependent structural change.
+
+
+
+\subsection{Test 2: Frequency Perturbation Response}
+
+
+
+After training at $T=24$, the stimulus period is switched to $T=30$ at $t=600$.
+
+We measure whether the system's response period follows the new stimulus or preserves the trained period (numerical simulation).
+
+
+
+\begin{table}[h]
+
+\centering
+
+\caption{Frequency perturbation response comparison (numerical simulation, $N=10$ seeds).}
+
+\begin{tabular}{lccc}
+
+\toprule
+
+Model & Short-window $P=24$ preservation & Asynchrony signature & Result \\
+
+\midrule
+
+Simple oscillator entrainment & 0/10 & Zero (follows $T_{\mathrm{new}}$) & $\times$ \\
+
+Adaptive frequency oscillator ($K=0.3$) & 10/10 & Transient ($\rightarrow 0$ as $t\rightarrow\infty$) & $\times$ \\
+
+Predictive coding & 0/10 & Zero & $\times$ \\
+
+Reservoir computer & — & Zero & $\times$ \\
+
+\textbf{Our model} & \textbf{10/10} & \textbf{Non-zero (structural)} & $\checkmark$ \\
+
+\bottomrule
+
+\end{tabular}
+
+\label{tab:freq_sim}
+
+\end{table}
+
+
+
+The AFO's frequency $\omega$ adapts via $\dot{\omega} = -KxS$; given sufficient time ($\gtrsim 1/K$), the intrinsic frequency converges to the new stimulus period. The ``preservation'' observed during short perturbation windows is transient, not structural. In contrast, the CIT mechanism's $\kappa$ gate creates a true hysteresis: the locked period is preserved throughout the tested perturbation windows and is not driven to the new pacing period under the tested protocol.
+
+
+
+\subsection{Test 3: Harmonic Selectivity}
+
+
+
+Models are trained with non-resonant periods ($\delta/T$ not near integer ratio).
+
+We measure whether any stable consolidated persistence dynamics emerge (numerical simulation).
+
+
+
+\begin{table}[h]
+
+\centering
+
+\caption{Integer-resonance selectivity comparison (numerical simulation, $N=10$ seeds).}
+
+\begin{tabular}{lcc}
+
+\toprule
+
+Model & Off-resonance ($T=30,\delta=24$) & Result \\
+
+\midrule
+
+Simple oscillator entrainment & Entrainment not selectively gated by $\delta/T$ & $\times$ \\
+
+Adaptive frequency oscillator & Frequency adapts broadly under forcing & $\times$ \\
+
+One-step predictive baseline & Tracks local input statistics; no structural lock & $\times$ \\
+
+Echo-state readout baseline & Learns driven periodic readout under training; no autonomous lock in tested setting & $\times$ \\
+
+\textbf{Our model} & \textbf{10/10 seeds fail to lock} & $\checkmark$ \\
+
+\bottomrule
+
+\end{tabular}
+
+\label{tab:harmonic_sim}
+
+\end{table}
+
+
+
+\subsection{Summary of Distinctions}
+
+
+
+This comparison is not meant to exclude augmented versions of these models; rather, it identifies structural hysteresis as the missing ingredient required to reproduce the joint signature. The CIT mechanism makes three predictions that no single minimal baseline tested here jointly satisfies ($N=10$ seeds per condition, Tables~\ref{tab:omission_sim}--\ref{tab:harmonic_sim}):
+
+(1) persistence after stimulus removal (CIT mechanism: $10/10$, AFO: $10/10$, oscillator/reservoir: $0/10$);
+
+(2) non-zero steady-state asynchrony under frequency perturbation (CIT mechanism: $10/10$, AFO: $10/10$ transient, oscillator: $0/10$);
+
+(3) narrow integer-resonance selectivity (CIT mechanism: $10/10$ fail off-resonance, all baselines entrain broadly).
+
+The AFO passes (1) trivially as a self-sustained pattern generator and shows transient (not structural) period preservation in (2); it fails (3). Among the minimal baselines tested here, only the CIT mechanism jointly satisfies all three criteria, and only the CIT mechanism does so through structural hysteresis rather than intrinsic oscillation or slow adaptation.
+
+
+
+\section{Virtual Sensorimotor Experiment: Comparison with Human Behavior}
+\label{sec:human_comparison}
+
+
+
+
+\textbf{Rationale.}
+
+The virtual sensorimotor experiment reported in the main text (Section~\ref{sec:predictions}) demonstrates that the CIT model predicts a \textbf{non-zero steady-state asynchrony} under frequency perturbation, whereas standard phase-correction models predict convergence to zero asynchrony. To assess whether this signature is consistent with published human behavior, we compared the CIT mechanism recovery trajectory against a representative human recovery curve synthesized from the literature \cite{repp2005sensorimotor, repp2013sensorimotor}.
+
+
+
+\textbf{Data source.}
+
+We constructed an illustrative post-perturbation asynchrony trajectory by combining empirically reported parameters from the sensorimotor synchronization literature: initial asynchrony jump magnitude (approximately 100% of perturbation), exponential recovery time constant (approximately 2.5 cycles), and residual offset (approximately 15-20% of perturbation). The beat period was $T_{\mathrm{mod}} = 312$ steps ($\sim 12$ cycles of $T_{\mathrm{new}} = 26$), distinct from the full alignment period $\mathrm{LCM}(24,26) = 312$ steps ($\sim 12$ cycles) based on Repp (2005) and Silva et al. (2024), including the synthesis and computational analyses discussed by Silva et al.~(2024), Repp~(2005), Mates~(1994), and related studies. The representative curve captures the following empirically documented features:
+
+\begin{itemize}
+
+    \item An initial asynchrony jump proportional to the perturbation magnitude;
+
+    \item Partial recovery with damped oscillation (time constant $\sim$2--4 stimulus cycles), reflecting the competition between the internal timing representation and the new external pacing;
+
+    \item A \textbf{residual non-zero steady-state offset} (``undercorrection'' or ``lag effect''), typically 10--20\% of the initial perturbation magnitude, reflecting incomplete adaptation to the new pacing period.
+
+\end{itemize}
+
+
+
+\textbf{Model comparison protocol.}
+
+We generated three competing recovery predictions for a period-increase perturbation ($T_{\text{train}} = 24 \rightarrow T_{\text{test}} = 26$, $\Delta T = +2$ abstract units, corresponding to $\sim$8\% frequency change):
+
+\begin{enumerate}
+
+    \item \textbf{CIT model}: The full trained model (Section~3) with \textbf{default parameters without re-tuning} ($\kappa^* \approx 0.963$). The internal period $P \approx 24$ is preserved by the $\kappa$-gate hysteresis, producing a non-zero asymptotic asynchrony. A distinctive feature of the CIT mechanism prediction is \textbf{beat-frequency oscillation}: because the locked internal period ($P=24$) and the new stimulus period ($T=26$) are distinct but commensurate, the asynchrony exhibits a beat-like modulation with recurrence period $T_{\mathrm{beat}} = 1/|1/24 - 1/26| = 312$ steps ($\sim$12 stimulus cycles), superimposed on the mean offset.
+
+    \item \textbf{Standard phase-correction (PC) model}: The linear asynchrony-correction model $\bar{a}_{n+1} = \bar{a}_n - \alpha(\bar{a}_n - 0)$ \cite{mates1994compensation}, which \textbf{predicts exponential decay to zero asynchrony} by construction.
+
+    \item \textbf{Adaptive-frequency oscillator (AFO)}: The Hopf-based frequency-adaptation model (Righetti et al., 2009), which predicts transient preservation followed by gradual adaptation to the new pacing period. We augmented the standard AFO with a constant offset parameter to test whether adaptive frequency change alone can produce the observed undercorrection. Even with this additional degree of freedom, the AFO does not reproduce the frequency coexistence modulation or the structural hysteresis signature. The comparison is against minimal adaptive oscillators without structural hysteresis; an oscillator augmented with a hysteresis gate would effectively incorporate the CIT mechanism.
+
+\end{enumerate}
+
+
+
+\textbf{Fitting and evaluation.}
+
+The PC and AFO models were fit to the representative human curve via least-squares optimization of their free parameters (correction gain $\alpha$ for PC; adaptation time constant $\tau$ and asymptotic offset for AFO). The CIT model used its default parameters without any re-tuning ($\kappa^* \approx 0.963$). Model assessment was based on qualitative trajectory comparison focusing on:
+
+\begin{itemize}
+
+    \item \textbf{Steady-state asynchrony} (mean over cycles $n = 15$ to $20$), which is the critical diagnostic for the CIT mechanism's unique prediction;
+
+    \item \textbf{Beat-frequency oscillation} (period and amplitude), which is a falsifiable prediction absent from the baseline models.
+
+\end{itemize}
+
+This comparison should be read as a plausibility bridge showing that CIT mechanism's joint signature is already visible in published timing behavior, not as a formal model selection exercise.
+
+
+
+\begin{figure}[ht]
+
+\centering
+
+\includegraphics[width=0.9\textwidth]{fig_s19_human_comparison.png}
+
+\caption{\textbf{Retrospective comparison with published human recovery curves.}
+
+\textbf{(Left)} Recovery trajectories after a period-increase perturbation ($T = 24 \rightarrow 26$). The CIT model (default parameters, red) fluctuates around a non-zero steady-state offset with superimposed frequency coexistence modulation (full alignment period $\mathrm{LCM}(24,26) = 312$ steps, $\sim 12$ cycles; the modulation period is $T_{\mathrm{mod}} = 312$ steps, $\sim 12$ cycles). The representative human curve (black) shows partial recovery with damped oscillation and residual negative offset (``undercorrection''). The standard phase-correction model (gray, dashed) converges to zero asynchrony by construction.
+
+\textbf{(Right)} Steady-state asynchrony (mean over cycles 15--20). The CIT mechanism and human curves both exhibit non-zero asymptotic offsets, whereas the PC model is forced to zero by construction.
+
+\label{fig:s19_human}}
+
+\end{figure}
+
+
+
+\textbf{Results.}
+
+Figure~S19 shows the comparison. The CIT model (default parameters, $\kappa^* \approx 0.963$) produces a recovery trajectory that fluctuates around a \textbf{non-zero steady-state asynchrony}, consistent with the representative human curve. In contrast, the standard phase-correction model converges to \textbf{zero asynchrony} by construction, and the adaptive-frequency oscillator, even when allowed a non-zero offset, converges to its fitted offset on a timescale that does not capture the oscillatory recovery pattern observed in human data.
+
+
+
+Notably, the CIT mechanism exhibits a \textbf{beat-frequency oscillation} (period $\sim$12 cycles) that is absent from the PC and AFO baselines. This oscillation arises because the periods are distinct but commensurate of the locked internal period ($P=24$) and the new stimulus period ($T=26$). The modulation period is $T_{\mathrm{mod}} = 1/|1/P - 1/T_{\mathrm{new}}|$, which equals 312 steps for $P=24$ and $T=26$; in this integer-period case this coincides with $\mathrm{LCM}(24,26)=312$, but the beat period formula is the general expression.
+
+
+
+\textbf{Limitations.}
+
+This comparison is \textbf{retrospective and ecological}: the human curve is a representative synthesis of group-level means across multiple laboratories and stimulus protocols, not raw individual-subject data. The CIT mechanism parameters were not fitted to individual subject data. The purpose is not to claim that the CIT mechanism is the unique model capable of producing non-zero asymptotic asynchrony, but to demonstrate that (i) its default-parameter signature is \textbf{qualitatively and order-of-magnitude consistent} with the characteristic ``undercorrection'' phenomenon documented in the human sensorimotor synchronization literature, and (ii) it makes a \textbf{distinctive additional prediction} (beat-frequency oscillation under non-resonant perturbation) that the standard baselines tested here do not.
+
+
+
+\textbf{Future directions.}
+
+A direct test would involve fitting the CIT model to individual-subject recovery trajectories from open datasets such as Hall et al.~(2023) (\texttt{osf.io/4uhtb}) or Silva et al.~(2024), using both the predicted steady-state offset magnitude (which should increase approximately with the relative mismatch \(|T_{\text{new}} - \delta|/\delta\), with deviations expected from finite-window beat effects and residual stimulus coupling) and the beat period \(T_{\text{beat}} = 1/|1/\delta - 1/T_{\text{new}}|\) as quantitative constraints.
+
+
+
+\section{Retrospective Comparison with Published Human Sensorimotor Timing Data}
+\label{sec:human_reanalysis}
+
+This section is intended as a qualitative plausibility bridge rather than a formal model selection; the comparisons should not be interpreted as decisive evidence for the CIT mechanism over alternative accounts.
+
+
+
+
+
+We conducted a literature-based qualitative comparison with published paced finger-tapping data from sensorimotor synchronization and synchronization-continuation paradigms, focusing on three quantities corresponding to the CIT mechanism predictions of Section~6.1.
+
+
+
+\subsection{Data sources and inclusion}
+
+
+
+Data were drawn from the paced finger-tapping literature surveyed in~\cite{repp2005sensorimotor}, augmented by the computational study of~\cite{silva2024}. Inclusion criteria: (i) paced auditory metronome at frequencies in the 0.5--3.0~Hz range; (ii) at least 10 consecutive tapping trials; (iii) for omission persistence, a continuation phase of $\ge 10$ taps after metronome removal; (iv) for inertial drag, a tempo-change condition with pre- and post-change analysis windows.
+
+
+
+\subsection{Quantitative measures}
+
+
+
+\begin{enumerate}
+
+\item \textbf{Signed asynchrony} (lag-to-lead shift):
+
+\[
+
+A_n = t_n^{\mathrm{tap}} - t_n^{\mathrm{beat}},
+
+\]
+
+where $t_n^{\mathrm{tap}}$ is the onset time of the $n$th tap and $t_n^{\mathrm{beat}}$ is the onset of the corresponding metronome beat. $A_n < 0$ indicates anticipatory tapping (tap precedes the beat).
+
+
+
+\item \textbf{Continuation persistence} (omission persistence):
+
+\[
+
+E_{\mathrm{cont}} = \frac{|\mathrm{ITI}_{\mathrm{cont}} - T_{\mathrm{train}}|}{T_{\mathrm{train}}},
+
+\]
+
+where $\mathrm{ITI}_{\mathrm{cont}}$ is the mean inter-tap interval during the continuation phase and $T_{\mathrm{train}}$ is the pacing period of the preceding synchronization phase.
+
+
+
+\item \textbf{Cognitive inertia index} (inertial drag after tempo change):
+
+\[
+
+I_{\mathrm{CI}} = 1 - \frac{|\mathrm{ITI}_{\mathrm{post}} - T_{\mathrm{new}}|}{|T_{\mathrm{train}} - T_{\mathrm{new}}|},
+
+\]
+
+where $\mathrm{ITI}_{\mathrm{post}}$ is the mean inter-tap interval after tempo change, $T_{\mathrm{new}}$ is the new pacing period, and $T_{\mathrm{train}}$ is the previously trained period. $I_{\mathrm{CI}} = 0$ indicates complete adaptation; $I_{\mathrm{CI}} = 1$ indicates full preservation of the trained period.
+
+
+
+\end{enumerate}
+
+
+
+\subsection{Results summary}
+
+
+
+The retrospective comparison suggests three qualitatively consistent patterns consistent with the CIT mechanism signatures:
+
+\begin{itemize}
+
+\item \textbf{Lag-to-lead shift:} In the initial synchronization phase, signed asynchrony typically progressed from near-zero or positive values toward stable negative values (mean asynchrony $-20$ to $-50$ ms across studies, consistent with the well-established negative mean asynchrony phenomenon~\cite{repp2005sensorimotor}).
+
+\item \textbf{Omission persistence:} During continuation tapping after metronome removal, the produced inter-tap intervals deviated from the trained pacing period by $<5\%$ in the surveyed studies, confirming persistence of the trained temporal structure.
+
+\item \textbf{Inertial drag:} In tempo-change conditions, the post-change inter-tap intervals showed residual attraction to the prior trained period, yielding $I_{\mathrm{CI}} > 0$ across the surveyed studies. The effect was strongest for small tempo changes ($<20\%$).
+
+\end{itemize}
+
+
+
+\subsection{Limitations}
+
+
+
+This retrospective comparison is literature-based, not a new experiment. Individual-trial variability, differences in protocol design, and the absence of a systematic database across studies limit the quantitative precision of the comparison. The CIT mechanism predictions involve specific dynamical signatures (e.g., the integer-resonance migration pattern) that cannot be directly tested with existing group-level data. A purpose-designed experiment with individual-subject tempo perturbation and continuation tapping with controlled delays would be needed for a decisive test.
+
+
+
+\section{Theoretical Context}
+\label{sec:theoretical}
+
+
+
+
+
+The history-selected configuration identified in the main text is the dynamical-systems expression of what we have elsewhere called a \textbf{cognitive canxian} (retained structural indentation) \cite{cai2024law}: a durable deformation of a system's state space that arises through resonant interaction, becomes self-sustaining through autocatalytic feedback, and serves as a reusable causal constraint for future behavior. The three conditions of the CIT mechanism (resonance gating, autocatalytic consolidation, and nonlinear amplification) are the dynamical implementations of these three canxianization conditions. A detailed philosophical discussion of canxianization theory, its relationship to the phenomenology of time-consciousness, and the meta-impulse thesis is developed elsewhere \cite{cai2024law}.
+
+
+
+\subsection{Limitations and Open Questions}
+
+
+
+Three limitations of the current model point to natural extensions:
+
+
+
+\textbf{Scalar $\kappa$}. The single $\kappa$ gate is a limitation: multiple independent skills would require a vector-valued $\vec{\kappa}$ with competitive dynamics, analogous to ecological niche models.
+
+
+
+\textbf{Fixed $\delta$}. The effective recurrence delay $\delta$ is treated as fixed. A plastic $\delta$ would create a meta-resonance: skills could modify the system's own resonance condition, enabling a hierarchy of increasingly abstract temporal structures.
+
+
+
+\textbf{Deterministic stimulus protocol.} The three-phase protocol (sync, perturbation, silence) is designed for clarity. Real environments are quasi-periodic and intermittent. Extending to stochastic stimulus statistics would test the CIT mechanism's robustness in ecologically realistic conditions and is the most urgent next step.
+
+
+
+\section{Robustness of Phase Extraction}
+\label{sec:phase_robustness}
+
+
+
+
+To verify that the lag-to-lead transition is not an artifact of the peak-selection rule, we repeated phase estimation using three methods: absolute-magnitude peaks, positive peaks only, and cross-correlation phase estimation (stimulus template cross-correlation with the response signal). All three methods produced the same qualitative transition from positive to negative response phase during consolidation.
+
+
+
+\begin{figure}[ht]
+
+\centering
+
+\includegraphics[width=0.85\textwidth]{fig_s20_phase_robustness.png}
+
+\caption{\textbf{Robustness of phase extraction.}
+
+(a) Per-cycle phase estimates using three methods: absolute $|x_t|$ peaks (blue), positive peaks only (orange), and cross-correlation with the stimulus template (green). 
+
+(b) Running mean (5-cycle window) showing the same qualitative trend across all methods.
+
+The lag-to-lead transition is preserved regardless of the phase extraction method, confirming that the consolidated phase shift is not an artifact of using $|x_t|$ peak detection.
+
+\label{fig:s20_phase}}
+
+\end{figure}
+
+
+
+\section{Linear Control Experiment: Separating Tanh Nonlinearity from Hysteresis}
+\label{sec:linear_control}
+
+
+
+
+
+To verify that the CIT mechanism transition depends on the $\kappa$-gate hysteresis rather than the tanh compression of the driving signal, we repeated the default simulation with the stimulus pathway linearized: replacing $\tanh(\alpha S_t)$ with $\alpha S_t$ (linear gain). Figure~S21 shows the results.
+
+
+
+The linearized model reaches the same locked $\kappa^* \approx 0.963$ (10/10 seeds) and exhibits a qualitatively similar phase trajectory as the nonlinear model. This confirms that the essential nonlinearity driving the transition is the autocatalytic hysteresis term $\eta\kappa(1-\kappa)$ in Eq.~4, not the stimulus saturation in Eq.~1. The tanh plays a secondary role: it modulates the correlation accumulation rate but does not determine whether locking occurs.
+
+
+
+\begin{figure}[ht]
+
+\centering
+
+\includegraphics[width=0.85\textwidth]{fig_linear_control.png}
+
+\caption{\textbf{Linear control experiment.}
+
+(a) $\kappa(t)$ trajectories for the nonlinear model (tanh, 10 seeds). (b) $\kappa(t)$ for the linearized model ($\alpha S_t$, 10 seeds). Both reach $\kappa^* \approx 0.963$.
+
+(c) Locked $\kappa$ at silence: nonlinear vs linear (mean $\pm$ SD). (d) Regime~S count: 10/10 for both.
+
+\label{fig:s21_linear}}
+
+\end{figure}
+
+
+
+\section{Frequency Coexistence Modulation Under Frequency Perturbation}
+\label{sec:beat_frequency}
+
+
+
+
+
+When the CIT mechanism system is consolidated at period $T_{\mathrm{train}}$ and subsequently driven at a new period $T_{\mathrm{new}}$ that differs from the locked internal period $P \approx T_{\mathrm{train}}$, the resulting asynchrony exhibits a low-frequency amplitude modulation---a \textbf{frequency coexistence modulation} (modulation reflecting the frequency coexistence of the locked internal frequency and the driving frequency). The beat period is:
+
+
+
+\[
+
+T_{\mathrm{mod}} = \frac{1}{|1/P - 1/T_{\mathrm{new}}|}.
+
+\]
+
+
+
+For the default parameters ($P = 24$, $T_{\mathrm{new}} = 30$), this gives $T_{\mathrm{mod}} = 120$ steps ($\sim 5$ cycles of $T_{\mathrm{new}}=30$)). Figure~S22 shows the spectrogram of the post-perturbation signal: the spectrogram reveals energy concentrated at both the locked frequency $1/24$ and the driving frequency $1/30$, with a modulation sideband at the beat frequency $|1/24 - 1/30| \approx 0.0083$.
+
+
+
+This signature is absent from standard phase-correction and adaptive-oscillator baselines, which do not preserve a competing internal period. It provides a clean falsifiable prediction: any system that has undergone the CIT mechanism should exhibit beat-frequency modulation when exposed to a non-resonant perturbation frequency within the locked regime.
+
+
+
+\begin{figure}[ht]
+
+\centering
+
+\includegraphics[width=0.85\textwidth]{fig_beat_spectrogram.png}
+
+\caption{\textbf{Frequency coexistence modulation under frequency perturbation.}
+
+(a) Time series of $x_t$ after switching from $T=24$ to $T=30$ at $t=600$.
+
+(b) Spectrogram showing energy at the locked frequency $1/24$ (green dashed), the driving frequency $1/30$ (cyan dashed), and the modulation sideband at the beat frequency $|1/24 - 1/30|$ (red dotted).
+
+(c) Amplitude envelope showing the $T_{\mathrm{mod}} \approx 120$ step modulation period.
+
+\label{fig:s22_beat}}
+
+\end{figure}
+
+
+
+\section{Perturbation-Recovery Test: Structural Hysteresis vs.\ Parameter Adaptation}
+
+\label{sec:perturbation_recovery}
+
+
+
+The fundamental difference between the CIT mechanism's structural hysteresis and the AFO's parameter adaptation is suggested by a perturbation-recovery protocol: after consolidation at $T=24$, the stimulus is perturbed to $T=30$ for 200 steps (steps 400--600), then returned to $T=24$ for 400 steps (steps 600--1000), followed by silence ($S=0$, steps $>1000$). Figure~S23 compares the four models.
+
+
+
+The CIT mechanism recovers its original phase within the tested resolution after perturbation (Fig.~S23a). Its internal period $P=24$ is preserved throughout silence. The AFO with fast adaptation ($K=0.3$, Fig.~S23b) tracks the frequency change during perturbation and re-adapts during recovery, but accumulates phase excursions ($-105^\circ$ at late perturbation) with no hysteresis memory---its instantaneous period drifts continuously. The AFO with slow adaptation ($K=0.001$, Fig.~S23c) barely tracks the perturbation frequency but accumulates a persistent $75^\circ$ phase shift that does not decay after recovery. The damped driven oscillator (Fig.~S23d) simply follows the driving and decays in silence.
+
+
+
+The AFO's frequency $\omega$ freezes at its final value when stimulus is removed ($\dot{\omega} = 0$ when $S=0$), whereas the CIT mechanism's $\kappa$-gate maintains $P=24$ through self-catalytic locking. This contrast---instant phase recovery with period preservation (CIT mechanism) versus residual phase shifts with frequency drift (AFO)---is the signature that distinguishes structural hysteresis from parameter adaptation. The difference is not one of timescale (slow vs.\ fast adaptation) but of mechanism: the CIT mechanism's hysteresis preserves a structurally independent internal period, while the AFO's continuously adapting $\omega$ can at best delay convergence to the new stimulus.
+
+
+
+\begin{figure}[ht]
+
+\centering
+
+\includegraphics[width=\textwidth]{fig_s23_perturbation_recovery.png}
+
+\caption{\textbf{Perturbation-recovery test.}
+
+Panels (a--d) show the full $x(t)$ trajectory (left) and key observable (right) for each model.
+
+\textbf{(a)} CIT mechanism: instantaneous $\kappa$ recovery, $0^\circ$ phase shift, $P=24$ preserved.
+
+\textbf{(b)} AFO ($K=0.3$): rapid frequency adaptation, large phase excursions, no hysteresis.
+
+\textbf{(c)} AFO ($K=0.001$): slow frequency adaptation, persistent $75^\circ$ residual phase shift.
+
+\textbf{(d)} Damped driven oscillator: forced response, decays in silence.
+
+\textbf{(e)} Phase recovery comparison: sliding-window cross-correlation phase shift (relative to $T=24$ reference). The CIT mechanism (red) maintains $0^\circ$ throughout; AFOs (gray, orange) exhibit residual shifts.
+
+Shading: orange = perturbation ($T=30$), light blue = silence ($S=0$).
+
+\label{fig:s23_perturbation}}
+
+\end{figure}
+
+
+
+\bibliographystyle{plain}
+\clearpage
+\bibliography{cit_refs}
+
+
+
+\end{document}
+

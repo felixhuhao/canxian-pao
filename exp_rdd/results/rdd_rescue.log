@@ -1,0 +1,25 @@
+
+====================================================================================
+  RDD RESCUE — M=8 asym, N=20 seeds 400..419, dev=cuda
+====================================================================================
+  arm          div    cov  test_mse   ood_mse
+  noLI       2.692  0.045    3.5063    4.1129
+  genLI      7.571  0.035    4.4407    5.0317
+  spec10     4.429  0.035    4.2979    4.8807
+  spec50     0.124  0.013    6.4949    6.5236
+  spec100    0.046  0.013    6.4948    6.5239
+  cov10      2.634  0.046    3.4207    4.0273
+  cov50      2.568  0.046    3.4720    4.0843
+
+  vs noLI (test=3.5063):  g<0 & p<.05 => helps; g>0 & p<.05 => hurts
+    genLI    test 4.4407 g=+17.83 p(<)=1.000 -> HURTS | ood g=+17.49 p(<)=1.000
+    spec10   test 4.2979 g=+4.04 p(<)=1.000 -> HURTS | ood g=+3.87 p(<)=1.000
+    spec50   test 6.4949 g=+62.26 p(<)=1.000 -> HURTS | ood g=+47.88 p(<)=1.000
+    spec100  test 6.4948 g=+62.26 p(<)=1.000 -> HURTS | ood g=+47.89 p(<)=1.000
+    cov10    test 3.4207 g=-1.15 p(<)=0.001 -> HELPS | ood g=-1.11 p(<)=0.001
+    cov50    test 3.4720 g=-0.47 p(<)=0.053 -> null  | ood g=-0.41 p(<)=0.062
+
+  KEY: best cov (β=10, 3.4207) vs best spec (β=10, 4.2979): g=-4.42 p(cov<spec)=0.000
+  => if cov HELPS but spec is null/HURTS, the rescuing ingredient is COVERAGE-vs-REPULSION, not task-alignment.
+
+  Saved results/rdd_rescue.pkl

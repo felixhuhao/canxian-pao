@@ -56,6 +56,16 @@ Pre-registration: `../PREREG_RDD_LI.md` (frozen before the N=20 run). Verdict: `
   **diversity helps downstream only when it is functional coverage aligned with the task AND there is
   spare capacity to deploy it.** Generic LI and overlap-penalty do not help; only the coverage form does.
 
+- **Rescue attempt (`rdd_rescue.py`) — LI cannot be salvaged by task-alignment.** Isolates the single
+  ingredient that rescues auxiliary diversity by holding everything fixed but the aux term (M=8 asym,
+  held-out seeds 400–419). `spec` (signal-weighted spectral *repulsion*) and `cov` (signal-weighted
+  *coverage*) are equally task-aligned; they differ only in pairwise-product vs max-union. Result: every
+  repulsion form HURTS — τ-space genLI (g=+17.8), task-aligned spectral spec10 (g=+4.0), and strong spec
+  *collapses* the model (div→0.1, MSE→deadlock). **Only coverage helps** (cov10 g=−1.15, p=0.001) and
+  beats the equally-task-aligned repulsion decisively (cov vs spec g=−4.42, **p<0.001**). The rescuing
+  ingredient is the **objective form (coverage/union), not task-alignment, not repulsion.** This pins the
+  `rdd_taware` win to *coverage*, which is not what LI computes.
+
 - **Capacity law (`rdd_capacity.py`).** The coverage benefit **scales with excess capacity**: sweeping
   M against K=5 frequencies, Δ = MSE(noLI)−MSE(cov) rises monotonically with M/K (Spearman +0.94,
   p=0.005) — hurts when under-complete (M<K), helps increasingly when over-complete (g up to −3.4 at
@@ -89,5 +99,13 @@ Pre-registration: `../PREREG_RDD_LI.md` (frozen before the N=20 run). Verdict: `
   junk → PAO's actionable failure is indiscriminate skill **triggering**, fixed by competence-gated
   admission. **Ladder complete: R0→R1→R1b→R4.** (R3 rich-units rung subsumed — R4 already uses network
   policies as units.)
+
+## RDD path — CLOSED
+Consistent end-to-end verdict on RDD's repulsion-driven differentiation: **(1)** γ-inert without the
+kernel; **(2)** diversity ≠ usefulness (LI worsens MSE); **(3)** LI is inert at the *true* deadlock
+(gradient vanishes at τ_i=τ_j) and harmful where it can act; **(4)** LI cannot be rescued by task-
+alignment — only a *coverage* objective helps, and coverage is not what LI computes. RDD's mechanism is
+neither the deadlock-escape force nor a performance lever. The one durable positive (task-aligned
+coverage in the over-complete regime) was carried into the PAO ladder (R0→R1→R1b→R4, `../exp_pao_coverage/`).
 
 Direction 2 (Busch IM/WMP/OMP manifold-alignment) is deferred pending the Busch preprint.

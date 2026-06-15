@@ -4,6 +4,46 @@ Running lab notebook. Newest first. Each entry: what was done, what was found, e
 
 ---
 
+## 2026-06-15 — RDD rescue: LI cannot be salvaged by task-alignment; the lever is COVERAGE, not repulsion
+
+Pre-registered in `PREREG_RDD_rescue.md` (frozen before run; held-out seeds 400–419, calibration 300–303).
+`exp_rdd/rdd_rescue.py`, log `…/results/rdd_rescue.log`. Constructive rescue attempt for LI, designed to
+isolate the ONE ingredient that makes auxiliary diversity useful. M=8 over-complete, asym; everything
+fixed but the auxiliary term. `spec` and `cov` are equally task-aligned (both signal-weighted spectral);
+they differ ONLY in pairwise-product (repulsion) vs max-union (coverage).
+
+| arm | div | test_mse | vs noLI |
+|---|---|---|---|
+| noLI | 2.69 | 3.506 | — |
+| genLI (τ-space repulsion) | 7.57 | 4.441 | HURTS g=+17.8 |
+| spec10 (task-aligned spectral *repulsion*) | 4.43 | 4.298 | HURTS g=+4.0 |
+| spec50 / spec100 (stronger) | ~0.1 | 6.495 | catastrophic collapse |
+| **cov10 (task-aligned *coverage*)** | 2.63 | **3.421** | **HELPS g=−1.15, p=0.001** |
+| cov50 | 2.57 | 3.472 | null (g=−0.47, p=0.053) |
+
+**KEY contrast:** best cov (β=10, 3.421) vs best spec (β=10, 4.298): g=−4.42, **p=0.000**.
+
+### Verdict: task-alignment does NOT rescue LI — the objective FORM does
+- **Every repulsion form fails.** τ-space repulsion (genLI) and *task-aligned* spectral repulsion (spec)
+  both HURT downstream MSE; strong spectral repulsion even *collapses* the model (div→0.1, MSE→deadlock
+  level). Making repulsion spectral + signal-weighted is not enough.
+- **Only coverage helps**, and it beats the equally-task-aligned repulsion decisively (g=−4.42, p<0.001).
+  The rescuing ingredient is **coverage/union (fill the signal's spectrum)**, not repulsion/push-apart,
+  and not task-alignment per se.
+
+### Implication — closes the RDD path
+This pins the earlier positive result (`rdd_taware`) precisely: the win came from a **coverage** objective,
+not from diverse/repelled channels — and coverage is *not* what lateral inhibition computes. Across the
+RDD path the verdict is now consistent and complete: **(1)** γ-inert without the kernel (`rdd_li`);
+**(2)** diversity ≠ usefulness, LI worsens MSE (`rdd_li`/`rdd_crossover`); **(3)** LI inert at the true
+deadlock and harmful where it acts (`rdd_deadlock`); **(4)** LI cannot be rescued by task-alignment — only
+a different objective (coverage) helps (`rdd_rescue`). RDD's mechanism (repulsion-driven differentiation)
+is neither the deadlock-escape force nor a performance lever. Theme holds: *property (diversity/repulsion)
+≠ usefulness (task-aligned coverage)*. **RDD path closed.** (Direction 2, Busch IM/WMP/OMP, remains
+parked pending the preprint.)
+
+---
+
 ## 2026-06-15 — RDD deadlock: LI is INERT at the true deadlock and is just a (harmful) symmetry-amplifier
 
 Pre-registered in `PREREG_RDD_deadlock.md` (frozen before run; seeds 0–19). `exp_rdd/rdd_deadlock.py`,

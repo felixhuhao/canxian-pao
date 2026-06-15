@@ -4,6 +4,43 @@ Running lab notebook. Newest first. Each entry: what was done, what was found, e
 
 ---
 
+## 2026-06-15 — Ladder R1b: gating's performance payoff ⟺ COMBINER FRAGILITY (contingency locked)
+
+Pre-registered in `PREREG_RDD_ladder_r1b.md` (frozen before run; held-out seeds 400–414).
+`exp_rdd/rdd_ladder_r1b.py`, log `…/results/rdd_ladder_r1b.log`. Isolates the one factor R1 left open:
+the **combiner**. R1 used a robust (ridge) readout and found no performance benefit from coverage-
+gating. R1b changes ONLY the combiner to a **fragile** one — each frozen channel predicts the full
+target standalone, ensemble = **mean** (fixed equal weights, cannot down-weight a bad/redundant unit),
+matching PAO's additive-bias skill-application. Same task, same sequential frozen admission, capacity
+sweep. (Robust contrast = R1.)
+
+| M_max | M/K | gated | ungated | Δ(un−ga) | g | p(<) |
+|---|---|---|---|---|---|---|
+| 2 | 0.4 | 2.495 | 2.784 | +0.289 | −0.46 | 0.009 |
+| 5 | 1.0 | 2.250 | 2.711 | +0.461 | −1.03 | 0.000 |
+| 8 | 1.6 | 2.114 | 2.646 | +0.532 | −1.46 | 0.000 |
+| 12 | 2.4 | 2.017 | 2.658 | +0.641 | −2.70 | 0.000 |
+| 16 | 3.2 | 1.984 | 2.665 | +0.680 | −3.18 | 0.000 |
+
+### Verdict: with a fragile combiner, coverage-gating HELPS and scales with capacity
+- Gated beats ungated at every capacity; **Δ(ungated−gated) grows monotonically with M/K, Spearman =
+  +1.000, p<0.001.** Gated even *improves* with capacity (2.50→1.98, admitting more covering units),
+  while ungated stays stuck (~2.66 — extra averaged units drag the mean).
+- **Contrast R1 (robust ridge combiner): Spearman(M/K, Δ) = −0.06, no benefit.** Same task, same
+  admission, only the combiner differs.
+
+### Implication — the controlled ladder yields a clean causal law
+**Coverage-gating's *performance* payoff ⟺ the unit-combiner is redundancy-fragile.** Robust combiner
+(ridge) → only parsimony (R1); fragile combiner (fixed-weight averaging / additive bias) → real
+performance gain scaling with capacity (R1b); joint co-adaptation → also benefits (R0). Because **PAO's
+skill-application is fragile** (skills added as policy bias; redundant/wrong skills actively hurt — the
+P3 finding), this controlled chain (R0→R1→R1b) now *predicts* coverage-gated skill admission will
+improve PAO's task performance — not merely trim the library. Reached by changing one factor per rung
+(joint→frozen, then robust→fragile combiner) instead of one confounded RDD→gridworld jump. Remaining
+ladder rungs toward PAO: R3 (rich/network units), R4 (RL control, where PAO's fragile combiner lives).
+
+---
+
 ## 2026-06-15 — Ladder R1: coverage PERFORMANCE benefit does NOT survive freeze-and-admit (parsimony does)
 
 Pre-registered in `PREREG_RDD_ladder_r1.md` (frozen before run; held-out seeds 300–314).

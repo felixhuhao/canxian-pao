@@ -58,4 +58,12 @@ Pre-registration: `../PREREG_RDD_LI.md` (frozen before the N=20 run). Verdict: `
   supervised regression. (Controlled RDD→PAO transfer ladder: R1 mechanism; R2 coverage-estimation;
   R3 rich units; R4 RL.)
 
+- **Ladder R1b (`rdd_ladder_r1b.py`) — combiner fragility is the deciding factor.** Same frozen
+  sequential admission, but change the combiner: robust ridge (R1) → no performance benefit; **fragile
+  averaging (R1b) → coverage-gating helps and scales with capacity** (Spearman(M/K, Δ)=+1.00, p<0.001;
+  g up to −3.2). Causal law: **coverage-gating's performance payoff ⟺ the combiner is redundancy-
+  fragile.** PAO's skill-application is fragile (additive bias; P3 harm) → predicts coverage-gated skill
+  admission helps PAO's performance, not just parsimony. Ladder rungs remaining: R3 (network units),
+  R4 (RL).
+
 Direction 2 (Busch IM/WMP/OMP manifold-alignment) is deferred pending the Busch preprint.

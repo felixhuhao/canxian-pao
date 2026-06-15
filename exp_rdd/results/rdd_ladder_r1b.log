@@ -1,0 +1,22 @@
+fragile(avg)   M=2  gated=2.4947(adm 1.5) ungated=2.7836
+fragile(avg)   M=3  gated=2.3302(adm 1.9) ungated=2.7838
+fragile(avg)   M=5  gated=2.2499(adm 2.3) ungated=2.7108
+fragile(avg)   M=8  gated=2.1141(adm 3.1) ungated=2.6457
+fragile(avg)   M=12 gated=2.0169(adm 3.8) ungated=2.6582
+fragile(avg)   M=16 gated=1.9843(adm 4.5) ungated=2.6646
+
+==================================================================================
+  LADDER R1b: does gating's payoff depend on COMBINER fragility? (N=15, K=5)
+==================================================================================
+
+  --- combiner = fragile(avg) ---
+    M   M/K    gated  ungated  Δ(un−ga)       g    p(<)
+    2   0.4   2.4947   2.7836   +0.2890   -0.46   0.009  
+    3   0.6   2.3302   2.7838   +0.4536   -0.79   0.003 *
+    5   1.0   2.2499   2.7108   +0.4609   -1.03   0.000 *
+    8   1.6   2.1141   2.6457   +0.5316   -1.46   0.000 *
+   12   2.4   2.0169   2.6582   +0.6413   -2.70   0.000 *
+   16   3.2   1.9843   2.6646   +0.6803   -3.18   0.000 *
+  TREND Spearman(M/K, Δ) = +1.000 (p=0.000) -> gating HELPS, scales with capacity
+
+  Saved results/rdd_ladder_r1b.pkl

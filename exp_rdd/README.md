@@ -18,6 +18,12 @@ should do nothing without the actual repulsion kernel — RDD Table 2).
   ```bash
   python rdd_crossover.py --seeds 20  # writes results/rdd_crossover.{log,pkl}
   ```
+- `rdd_deadlock.py` — direct test of RDD's central claim: is LI the force that escapes the geometric
+  deadlock, or just one symmetry-breaker? Pure-symmetry vs seeded-asymmetry regimes; LI vs jitter/
+  dropout/input-noise/weight-decay; severity vs M.
+  ```bash
+  python rdd_deadlock.py --seeds 20   # writes results/rdd_deadlock.{log,pkl}
+  ```
 - `results/` — `.log` + `.pkl` evidence.
 
 Pre-registration: `../PREREG_RDD_LI.md` (frozen before the N=20 run). Verdict: `../FINDINGS.md`
@@ -34,6 +40,15 @@ Pre-registration: `../PREREG_RDD_LI.md` (frozen before the N=20 run). Verdict: `
   LI, LI breaks the degeneracy (diversity 0.7 → ~10) but still **worsens** MSE (5.85 → 6.34), in every
   cell. Mechanism: LI's repulsion is **task-blind** — it maximizes channel distance, not coverage of
   the signal's timescales, so it fights the task gradient. Diversity ≠ functional coverage ≠ usefulness.
+- **LI is INERT at the true deadlock (`rdd_deadlock.py`).** Direct test of RDD's central claim. At
+  *perfectly* symmetric init, LI gives diversity 0.000 = no-LB baseline — the repulsion gradient
+  ∝(τ_i−τ_j) vanishes at τ_i=τ_j, so LI cannot *create* asymmetry, only amplify a pre-existing one. The
+  only thing that escapes a true deadlock is a trivial init asymmetry (`jitter`); dropout/input-noise/
+  weight-decay are inert. Given a seed (jitter=0.1) where LI *can* act, it drives diversity 0.7→9.1 but
+  **worsens** MSE (5.86→6.34, g=+13.7); seed-alone and dropout tie at the best MSE. So RDD's "LI escapes
+  geometric deadlock" fails twice: LI is neither the escape force nor a performance regularizer. (Also:
+  no τ-mechanism nears the per-channel-weights ceiling 3.51 — the real bottleneck is shared weights, not
+  τ-collapse.) Deadlock harm large but M-independent (gap≈2.4; Spearman(M,gap)=−0.40, p=0.51).
 - **Coverage reward HELPS (`rdd_taware.py`) — the positive result.** Replacing generic repulsion with a
   *task-aligned* coverage reward (`Σ_f Ŝ(f)·max_m p_m(f)`, signal spectrum estimated from data) lowers
   test + OOD MSE in the **over-complete (M=8)** regime (g −0.78…−1.63, p<0.01; pre-registered, held-out

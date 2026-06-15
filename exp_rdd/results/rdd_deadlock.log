@@ -1,0 +1,40 @@
+
+==============================================================================
+  RDD DEADLOCK at M=8 (N=20, dev=cuda)
+==============================================================================
+  arm            div  test_mse   ood_mse   note
+  asym         2.686    3.5103    4.1077   ceiling (per-channel weights)
+  none         0.000    5.8894    6.3868   deadlock baseline
+  LI           0.000    5.8894    6.3868   RDD repulsion
+  jitter       0.696    5.8557    6.3688   τ-init jitter
+  dropout      0.004    5.8923    6.3745   channel dropout
+  innoise      0.000    5.8891    6.3823   input noise (symmetric)
+  wdecay       0.000    5.9482    6.4151   weight decay (symmetric)
+  seed         0.696    5.8557    6.3688   seed jitter only
+  LI_seed      9.067    6.3418    6.5453   seed + LI
+  drop_seed    0.695    5.8583    6.3558   seed + dropout
+
+  #2 PURE SYMMETRY — can a mechanism escape a TRUE deadlock from nothing?  (none div=0, mse=5.8894)
+    LI         div=  0.00  test=5.8894  -> inert
+    jitter     div=  0.70  test=5.8557  -> weak
+    dropout    div=  0.00  test=5.8923  -> inert
+    innoise    div=  0.00  test=5.8891  -> inert
+    wdecay     div=  0.00  test=5.9482  -> inert
+  => predict: LI INERT at true deadlock (repulsion grad vanishes at τ_i=τ_j); only asymmetry-injectors move.
+
+  #1 GIVEN A SEED, IS LI SPECIAL?  (seeded regime, jitter=0.1)
+    seed       div=  0.70  test=5.8557  vs seed: g=+0.00 p(help)=1.000
+    LI_seed    div=  9.07  test=6.3418  vs seed: g=+13.69 p(help)=1.000
+    drop_seed  div=  0.70  test=5.8583  vs seed: g=+0.06 p(help)=1.000
+  => if LI_seed does NOT beat 'seed' on MSE, LI's amplification adds no value beyond the trivial init seed.
+
+  #2 DEADLOCK SEVERITY vs M  (test MSE: deadlock 'none' vs ceiling 'asym')
+      M  none(div)  none_mse  asym_mse     gap
+      2      0.000    5.8568    3.5054  2.3514
+      3      0.000    5.8674    3.3971  2.4704
+      5      0.000    5.8789    3.4608  2.4180
+      8      0.000    5.8894    3.5103  2.3791
+     12      0.000    5.9012    3.5642  2.3370
+    TREND Spearman(M, gap) = -0.400 (p=0.505)  [>0: deadlock wastes more capacity at larger M]
+
+  Saved results/rdd_deadlock.pkl

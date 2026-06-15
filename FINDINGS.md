@@ -4,6 +4,48 @@ Running lab notebook. Newest first. Each entry: what was done, what was found, e
 
 ---
 
+## 2026-06-15 — RDD deadlock: LI is INERT at the true deadlock and is just a (harmful) symmetry-amplifier
+
+Pre-registered in `PREREG_RDD_deadlock.md` (frozen before run; seeds 0–19). `exp_rdd/rdd_deadlock.py`,
+log `…/results/rdd_deadlock.log`. Tests RDD's central mechanistic claim *directly* — that lateral
+inhibition is the force that escapes the geometric deadlock — rather than via downstream MSE alone.
+Symmetric SSM (shared W_in/W_out; channels differ only by τ), two regimes + a ceiling (`asym`).
+
+| arm | div | test_mse | note |
+|---|---|---|---|
+| asym | 2.69 | 3.510 | ceiling (per-channel weights) |
+| none | 0.00 | 5.889 | deadlock baseline |
+| **LI** | **0.00** | **5.889** | RDD repulsion — identical to none |
+| jitter | 0.70 | 5.856 | τ-init asymmetry (only mover) |
+| dropout/innoise/wdecay | ~0 | ~5.89 | inert |
+| seed (jitter=0.1) | 0.70 | 5.856 | seed only |
+| LI_seed | 9.07 | 6.342 | seed + LI — huge diversity, WORSE MSE (g=+13.7) |
+| drop_seed | 0.70 | 5.858 | ≈ seed |
+
+### Verdict: RDD's "LI escapes geometric deadlock" fails twice over
+- **LI is INERT at the true deadlock.** At perfectly symmetric init, LI gives div=0.000, MSE identical
+  to `none` — because the repulsion gradient ∝ (τ_i−τ_j) vanishes at τ_i=τ_j. LI cannot *create*
+  asymmetry; it only *amplifies* a pre-existing one. (A fixed-point analogue of the γ-inertness finding.)
+  The only thing that moves a true deadlock is a trivial init asymmetry (`jitter`).
+- **Where LI CAN act, it HURTS.** Given a seed (jitter=0.1), LI drives τ-diversity 0.70→9.07 but
+  *worsens* test MSE 5.856→6.342 (g=+13.7, p(help)=1.000); `drop_seed` ≈ `seed`. The trivial init seed
+  does the symmetry-breaking; LI's task-blind amplification adds only harm (consistent with `rdd_li`,
+  `rdd_crossover`).
+- **Deadlock harm is large but M-independent** (gap none−asym ≈ 2.34–2.47; Spearman(M,gap)=−0.40,
+  p=0.51). Note: no τ-differentiation mechanism in the symmetric architecture approaches the `asym`
+  ceiling (3.51) — the binding constraint there is the *shared* W_in/W_out, not τ-collapse, so τ-repulsion
+  targets the wrong bottleneck.
+
+### Implication
+RDD's mechanistic story does not hold up to a direct test: lateral inhibition is neither the escape force
+(inert at the actual deadlock) nor a performance regularizer (it worsens MSE wherever it acts). The
+operative symmetry-breaker is a trivial init asymmetry. This consolidates the RDD-path verdict (γ-inert
+without the kernel; diversity ≠ usefulness; coverage-reward is the only thing that helped) and reinforces
+the project theme *property ≠ usefulness*. RDD path can be closed after the optional task-aligned-LI
+rescue (#3).
+
+---
+
 ## 2026-06-15 — R5: R4's harm is REACHABLE only via mis-triggering, not crystallization volume
 
 Pre-registered in `PREREG_R5.md` (frozen before run; held-out seeds 200–207). `exp_pao_coverage/r5.py`,

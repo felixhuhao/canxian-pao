@@ -15,6 +15,12 @@ a base policy's action-logits, summed over all triggered skills.
   ```bash
   python r4.py --seeds 8 --start 100 --caps 0 1 2 4 8   # writes results/r4.{log,pkl}
   ```
+- `r5.py` — self-critique of R4: is the harm reachable through PAO's *real* channels (no planting)?
+  Condition A = natural over-crystallization volume (immature, own-niche snapshots); B-rate = one wrong
+  skill co-fires with prob ε; B-count = m wrong skills co-fire. Run:
+  ```bash
+  python r5.py --seeds 8 --start 200                    # writes results/r5.{log,pkl}
+  ```
 - `core.py` — the **superseded** 1D-corridor stage-1 (kept for the record). It is task-degenerate: a
   single monotone policy covers two goals, so it has only 2 real niches. `grid.py` replaces it.
 
@@ -32,3 +38,17 @@ Pre-registration: `../PREREG_R4.md` (frozen before the N=8 run, held-out seeds 1
   coverage-gated admission. Sharpens the P3 finding.
 
 The ladder is now complete end-to-end: **R0 → R1 → R1b → R4.**
+
+## R5 — is R4's harm reachable through PAO's own channels? (self-critique, N=8, seeds 200–207)
+R4 used *planted* confidently-wrong junk. R5 tests the two real channels without planting:
+- **Crystallization volume (immature, own-niche): HARMLESS, even mildly helpful** — ungated rises
+  0.94→1.00 as more immature snapshots are added; gating them is slightly counter-productive
+  (Spearman(cap, Δ)=−0.95). *(Pre-registered Δ≈0; held-out mildly contradicts the exact null but
+  reinforces the qualitative claim — recorded as refined.)*
+- **One wrong skill mis-firing (rate ε): MODERATE** — 0.94→0.63 over ε 0→1 (Spearman −1.0).
+- **m wrong skills firing at once: STEEP COLLAPSE** — 0.94→0.04 over m 0→8 (Spearman −1.0; matches R4).
+
+**Takeaway:** R4's catastrophe needs *many wrong skills firing simultaneously* — not crystallization
+volume, nor single mis-fires. PAO's real liability is **indiscriminate fire-all triggering**; the lever
+worth engineering is the **router/applicability**, not the crystallization counter. Deflates R4's
+apparent strength while sharpening the actionable target. See `../FINDINGS.md` (2026-06-15 R5 entry).

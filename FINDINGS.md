@@ -4,6 +4,49 @@ Running lab notebook. Newest first. Each entry: what was done, what was found, e
 
 ---
 
+## 2026-06-15 — R5: R4's harm is REACHABLE only via mis-triggering, not crystallization volume
+
+Pre-registered in `PREREG_R5.md` (frozen before run; held-out seeds 200–207). `exp_pao_coverage/r5.py`,
+log `…/results/r5.log`. A deliberate self-critique of R4: R4's positive result used *planted*
+confidently-wrong junk, so R5 asks whether that harm arises through PAO's two **real** channels without
+planting — (A) crystallization volume (many immature, correctly-tagged snapshots) and (B) mis-triggering
+(a competent skill firing in the wrong niche; rate ε and simultaneous count m).
+
+**A — natural over-crystallization volume (immature, own-niche):**
+| cap | noskill | ungated | gated | Δ(ga−un) |
+|---|---|---|---|---|
+| 0 | 0.594 | 0.938 | 0.938 | 0.000 |
+| 2 | 0.594 | 0.969 | 0.938 | −0.031 |
+| 8 | 0.594 | 1.000 | 0.938 | −0.062 |
+
+Spearman(cap, Δ) = −0.95 (p=0.014). **B-rate (one wrong skill, prob ε):** 0.94→0.90→0.86→0.76→0.63 over
+ε 0→1 (Spearman −1.0). **B-count (m simultaneous wrong skills, ε=1):** 0.94→0.63→0.25→0.08→0.04 over
+m 0→8 (Spearman −1.0; matches R4's cap-8 collapse to ~0.03).
+
+### Verdict
+- **A — crystallization volume is HARMLESS (mildly helpful).** Immature *correctly-tagged* snapshots
+  never corrupt the additive sum; ungated even *rises* (0.94→1.00) as more are added (weak-but-correct
+  bias), so gating them is slightly counter-productive. *Integrity note:* I pre-registered Δ≈0; the
+  held-out result mildly **contradicts the exact null** (Δ goes negative) but in the direction that
+  **reinforces** the qualitative claim — the crystallization channel needs no gate. Recorded as refined,
+  not cleanly confirmed.
+- **B-rate — a single mis-fire is MODERATE** (0.63 at ε=1, not catastrophic).
+- **B-count — harm SCALES STEEPLY with simultaneous wrong count** (collapse by m≥4). This is the lever
+  R4 actually varied (`cap`).
+
+### Implication — deflates R4's strength, sharpens the lesson
+R4's catastrophic collapse is reachable **only when many wrong skills fire at once** (additive sum of
+confident-wrong biases) — not from crystallization *volume* (harmless), nor from occasional *single*
+mis-fires (moderate). So PAO's real liability is **indiscriminate fire-all-admitted triggering of a
+junk-laden library**, and competence-gated admission helps *precisely and only* by bounding the fire-set.
+The lever worth engineering is PAO's **router / applicability** (how many and which skills fire), not its
+crystallization counter — "more skills" is not itself the danger. This both tempers R4's apparent
+strength (the harm needed a pessimal many-wrong-fire setup) and gives a concrete, falsifiable target:
+fix triggering, not crystallization frequency. Sharpens the P3 finding (wrong skill fires) and the
+project theme *property ≠ usefulness*.
+
+---
+
 ## 2026-06-15 — Ladder R4: the law TRANSFERS to PAO's RL regime with PAO's own combiner (capstone)
 
 Pre-registered in `PREREG_R4.md` (frozen before run; held-out seeds 100–107, sanity used seed 0).

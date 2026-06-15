@@ -1,0 +1,37 @@
+seed 200 done
+seed 201 done
+seed 202 done
+seed 203 done
+seed 204 done
+seed 205 done
+seed 206 done
+seed 207 done
+
+== Condition A: natural over-crystallization junk (immature, own-niche) ==
+  cap  noskill  ungated   gated   Δ(ga-un)    g     p(ga>un)
+    0  0.594    0.938    0.938   +0.000   +0.00  1.000
+    1  0.594    0.938    0.938   +0.000   +0.00  1.000
+    2  0.594    0.969    0.938   -0.031   -0.29  1.000
+    4  0.594    0.969    0.938   -0.031   -0.29  0.875
+    8  0.594    1.000    0.938   -0.062   -0.72  1.000
+  TREND Spearman(cap, Δ) = -0.949 (p=0.014)  [predict ~0: volume is harmless]
+
+== Condition B-rate: ONE wrong skill co-fires with prob eps ==
+  eps   mean_succ
+   0.0   0.938
+   0.1   0.902
+  0.25   0.855
+   0.5   0.761
+   1.0   0.634
+  TREND Spearman(eps, succ) = -1.000 (p=0.000)  [single mis-fire: expect mild]
+
+== Condition B-count: m wrong skills co-fire every episode (eps=1.0) ==
+    m   mean_succ
+    0   0.938
+    1   0.634
+    2   0.254
+    4   0.084
+    8   0.040
+  TREND Spearman(m, succ) = -1.000 (p=0.000)  [harm scales with # simultaneous wrong]
+
+  Saved results/r5.pkl

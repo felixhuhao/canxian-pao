@@ -4,6 +4,54 @@ Running lab notebook. Newest first. Each entry: what was done, what was found, e
 
 ---
 
+## 2026-06-15 — Ladder R4: the law TRANSFERS to PAO's RL regime with PAO's own combiner (capstone)
+
+Pre-registered in `PREREG_R4.md` (frozen before run; held-out seeds 100–107, sanity used seed 0).
+`exp_pao_coverage/{grid.py,r4.py}`, log `…/results/r4.log`. Final rung of the RDD→PAO ladder: take
+R1b's law into **multi-task RL** using **PAO's own combiner** — skills applied as ADDITIVE bias to the
+base policy's action-logits, SUMMED over all triggered skills (so junk biases accumulate; this is the
+redundancy-fragile combiner, exactly the R1b condition, now operating in an MDP where errors compound).
+
+Env: 5×5 grid, K=4 cardinal-goal niches (genuinely distinct — validated; the 1D corridor of `core.py`
+was degenerate, a single monotone policy covered 2 goals). Library = mediocre/forgetful base + one
+MASTERED skill per niche + `cap` MIS-ASSOCIATED junk skills per niche (a skill mastered on a *different*
+niche, tagged to k → confidently-wrong bias when it fires for k = PAO's P3 failure: wrong skill fires in
+wrong context). `cap` = capacity. Arms: `noskill` (base), `ungated` (base + 1 good + cap junk per niche),
+`gated` (competence-gated: one niche-covering skill per niche).
+
+| cap | noskill | ungated | gated | Δ(ga−un) | g | p(ga>un) |
+|---|---|---|---|---|---|---|
+| 0 | 0.562 | 0.969 | 0.969 | +0.000 | 0.00 | 1.000 |
+| 1 | 0.562 | 0.562 | 0.969 | +0.406 | +3.73 | 0.004 |
+| 2 | 0.562 | 0.312 | 0.969 | +0.656 | +4.44 | 0.004 |
+| 4 | 0.562 | 0.094 | 0.969 | +0.875 | +7.47 | 0.004 |
+| 8 | 0.562 | 0.031 | 0.969 | +0.938 | +10.03 | 0.004 |
+
+### Verdict: GATING HELPS in the RL regime, and the gap grows with capacity — prediction confirmed
+- Ungated **collapses** as junk accumulates (0.97 → 0.03); gated is **immune** (0.97 at every cap);
+  noskill flat (0.562, the floor). **Δ(gated−ungated) grows monotonically, Spearman(cap, Δ) = +1.000,
+  p=0.000**; paired Wilcoxon p=0.004 (the n=8 floor) at every cap≥1; Hedges g +3.7…+10.
+- Pre-registered decision rule met → **R1b's law transfers to PAO's regime**: with PAO's fragile additive
+  combiner, coverage/competence-gated skill admission improves *task performance*, not just parsimony.
+
+### Added mechanistic insight (on record before the run)
+*Immature/weak* junk does NOT corrupt the additive sum (sanity v1: ungated stayed 1.0) — only
+*confidently-wrong* (mis-triggered) junk does, and it compounds over MDP steps. **PAO's actionable
+failure mode is indiscriminate skill TRIGGERING (a competent-but-wrong skill firing), not premature
+crystallization per se.** The fix is competence-/coverage-gated admission. This sharpens the P3 finding.
+
+### Implication — the controlled ladder is complete
+R0 (joint co-adaptation) → R1 (frozen + robust ridge: only parsimony) → R1b (frozen + fragile averaging:
+performance, scaling with capacity) → **R4 (RL + PAO's additive combiner: performance, scaling with
+capacity).** One factor changed per rung, no confounded RDD→gridworld jump. The clean law
+**"coverage-gating's performance payoff ⟺ the combiner is redundancy-fragile"** now holds end-to-end
+into the regime PAO actually operates in. This is the project's strongest constructive result *for* a
+PAO-style mechanism: a well-defined, falsifiable condition under which coverage-gated skill admission
+demonstrably helps — and a matching diagnosis (fragile additive combiner + indiscriminate triggering)
+of when PAO's library will instead hurt.
+
+---
+
 ## 2026-06-15 — Ladder R1b: gating's performance payoff ⟺ COMBINER FRAGILITY (contingency locked)
 
 Pre-registered in `PREREG_RDD_ladder_r1b.md` (frozen before run; held-out seeds 400–414).

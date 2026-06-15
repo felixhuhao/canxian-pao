@@ -63,7 +63,16 @@ Pre-registration: `../PREREG_RDD_LI.md` (frozen before the N=20 run). Verdict: `
   averaging (R1b) → coverage-gating helps and scales with capacity** (Spearman(M/K, Δ)=+1.00, p<0.001;
   g up to −3.2). Causal law: **coverage-gating's performance payoff ⟺ the combiner is redundancy-
   fragile.** PAO's skill-application is fragile (additive bias; P3 harm) → predicts coverage-gated skill
-  admission helps PAO's performance, not just parsimony. Ladder rungs remaining: R3 (network units),
-  R4 (RL).
+  admission helps PAO's performance, not just parsimony.
+
+- **Ladder R4 (`../exp_pao_coverage/`) — the law TRANSFERS to PAO's RL regime (capstone).** Multi-task
+  grid RL with PAO's own combiner (skills as ADDITIVE policy-bias, summed over triggered skills). Library
+  = base + one mastered skill/niche + `cap` mis-associated (confidently-wrong) junk skills/niche. Result
+  (N=8, held-out seeds 100–107): **gating helps and the gap grows with capacity** — ungated collapses
+  0.97→0.03 as junk accumulates, gated immune at 0.97, **Spearman(cap, Δ)=+1.00, p=0.000**, g up to +10.
+  Added insight: only *confidently-wrong (mis-triggered)* junk corrupts the additive sum, not weak/immature
+  junk → PAO's actionable failure is indiscriminate skill **triggering**, fixed by competence-gated
+  admission. **Ladder complete: R0→R1→R1b→R4.** (R3 rich-units rung subsumed — R4 already uses network
+  policies as units.)
 
 Direction 2 (Busch IM/WMP/OMP manifold-alignment) is deferred pending the Busch preprint.

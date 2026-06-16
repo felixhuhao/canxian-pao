@@ -4,6 +4,58 @@ Running lab notebook. Newest first. Each entry: what was done, what was found, e
 
 ---
 
+## 2026-06-16 — Busch E1: on-/off-manifold BCI learning is readability × CONTROLLABILITY, not geometry
+
+Direction 2 opens. Independent in-silico test of **Busch et al.** (*"Accelerated learning of a noninvasive
+human BCI via manifold geometry"*, bioRxiv 2025.03.29.646109 — a different group from Cai/RDD). They report
+that re-learning a perturbed fMRI-BCI mapping is fast on-manifold (IM = top latent eigenvector, WMP = 2nd)
+and **fails** off-manifold (OMP = 20th/lowest), with learning = raising PEV (% variance explained) along the
+trained component. Pre-registered in `PREREG_BUSCH_E1.md` (frozen 2026-06-16; metric amended same day,
+pre-confirmatory, with rationale). `exp_busch/e1_deconfound.py`, held-out seeds 600–629 (calib 500–503).
+
+**Confound.** OMP *is* the lowest-variance direction; "on-manifold-ness" = PEV (`CᵀΣ_obs C`) silently bundles
+two separable quantities their single-manifold design can't pull apart: **readability** (decoder SNR,
+`CᵀΣ_obs C/σ²`) and **controllability** (cheapness of *volitionally* producing it, `CᵀΣ_act C`; the
+min-plasticity-cost action gives optimal gain `g*=1/(1+λ·cost)`, so low controllability ⇒ under-drive ⇒
+failure). Busch implicitly assume `Σ_obs=Σ_act` (observation manifold = reachable set), collapsing both onto
+PEV. E1 (linear–Gaussian) breaks that assumption. Metric: ΔControl = 100·(acc last third − first third).
+
+| condition | PEV | readSNR | controllability | ΔControl (N=30) |
+|---|---|---|---|---|
+| IM (top eigvec) | 0.251 | 222.9 | 5.016 | 25.2 |
+| WMP (2nd eigvec) | 0.188 | 167.2 | 3.762 | 24.8 |
+| OMP (bottom eigvec) | 0.001 | 0.9 | 0.021 | **1.0** |
+| **D1** on-manifold, *uncontrollable* | **0.251** | 222.9 | 0.021 | **0.6** |
+| **D2** off-manifold, made *usable* | **0.001** | 222.9 | 5.016 | **25.2** |
+
+### Verdict: PEV/manifold-membership is neither necessary nor sufficient — controllability is the lever
+- **P1 (replicate):** on-manifold ≫ off-manifold (IM>OMP g=+3.28, WMP>OMP g=+3.23, both p<1e-4). *Deviation:*
+  IM≈WMP (g=+0.16; both high-variance directions saturate the asymptotic metric) rather than the strict
+  IM>WMP>OMP — Busch's IM>WMP gap is a sequential-interference effect (WMP always ran after IM), outside
+  E1's scope. The load-bearing on/off contrast reproduces.
+- **P2 — high PEV is NOT sufficient:** D1 (high PEV / on-manifold, but uncontrollable) **fails**, statistically
+  indistinguishable from OMP (D1~OMP g=−0.03, p=0.92; IM>D1 g=+2.98, p<1e-4).
+- **P3 — low PEV is NOT the cause:** D2 (low PEV / off-manifold, but readable+controllable) **learns fully**,
+  matching the on-manifold conditions (D2>OMP g=+3.28, p<1e-4).
+- **P4:** in the direction sweep, controllability dominates (std. β=+0.89) over readSNR (+0.16); PEV is
+  positively *correlated* with learning (ρ=0.91 — why Busch observed it) but controllability (ρ=0.99) is the
+  true driver, and PEV is blind to it.
+
+### Implication
+Busch's "manifold geometry constrains BCI learning" is — at the level their own PCA components occupy — a
+**proxy result**: PEV predicts learning only because it bundles readability and volitional controllability,
+two separable quantities. Dissociate them and the geometric story breaks (high-PEV-but-uncontrollable fails;
+low-PEV-but-usable succeeds). This extends the project's **`property ≠ usefulness`** thesis to a *second,
+independent* framework: across Cai/RDD (diversity/repulsion) and Busch (manifold geometry), the operative
+variable is the same — task-aligned, *usable* signal under a capacity/plasticity constraint, not the
+geometric label each paper foregrounds. Maps onto PAO: on-manifold = reassociation within the existing
+repertoire (cheap); off-manifold = generating a new skill (expensive). **Scope:** E1 is linear–Gaussian, so
+it does not test whether *nonlinear* (T-PHATE) geometry adds power beyond readability × controllability —
+that is E2 (next). Revision rule (not triggered): would favour Busch if D1 learned, D2 failed, or PEV
+out-predicted controllability.
+
+---
+
 ## 2026-06-15 — RDD rescue: LI cannot be salvaged by task-alignment; the lever is COVERAGE, not repulsion
 
 Pre-registered in `PREREG_RDD_rescue.md` (frozen before run; held-out seeds 400–419, calibration 300–303).

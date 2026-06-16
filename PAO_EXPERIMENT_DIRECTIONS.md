@@ -24,9 +24,16 @@ So the live PAO hypothesis should be:
 This shifts the end goal away from "prove crystallization timing is special" and toward "build and test a
 router that turns a skill library into deployable coverage."
 
-## Priority 1: Learned Gate
+## Priority 1: Learned Gate — DONE (2026-06-16)
 
-Finish the `PREREG_PAO_GATE.md` direction: replace the oracle/Bayes gate from the trigger experiment with a
+Result (`PREREG_PAO_GATE.md`, `exp_pao_coverage/gate.py`, N=8→N=20, `FINDINGS.md`): the trigger advantage
+**survives without the oracle, at ~half magnitude.** learned ≫ fire-all (g=7.5–15.7); the learned gate
+recovers most of Bayes (shortfall ≤0.08, growing with noise); learned > monolith across σ>0 — significant in
+the mid-high band (g up to +2.6), marginal at σ=0.3, tie at σ=0. So the PAO positive is **not** mostly an
+oracle upper bound. (Arms run: learned, bayes, fire-all, monolith. The `random gate` and `no-skill PPO` arms
+listed below were not run; fold them into the next rung.)
+
+Finish notes for the original spec: replace the oracle/Bayes gate from the trigger experiment with a
 reward-trained gate.
 
 Core arms:
@@ -50,9 +57,53 @@ Useful measurements:
 - regret relative to oracle gate,
 - reward gap against monolith.
 
-## Priority 2: Gate Learning Envelope
+## Priority 2: Baseline Steelman / De-confound (NEW — do before envelope/scale-up)
 
-Map the regime where routing works before scaling the environment.
+The "gated beats monolith" headline has two asymmetries baked into the current harness. Before mapping
+envelopes or scaling environments, test whether the advantage is *real modular-reuse + routing* or a
+**baseline/factorization artifact** — this is the biggest threat to the constructive positive and the cheapest
+to check (same harness). It is the project's own `property ≠ usefulness` test, now aimed at PAO.
+
+The two asymmetries:
+
+- **Factorization.** The gated arm gets classification (noisy cue → niche) split off from control for free;
+  the monolith must learn both jointly, end-to-end. The win might just be "factor context-ID from control,"
+  which any architecture can do — not modular skills specifically.
+- **Clean-skill pretraining.** Skills are trained on a clean cue; the monolith never gets that affordance.
+
+Steelman baselines (add as arms; include the previously-unrun `random gate` and `no-skill PPO`):
+
+- **Factored monolith** — a classifier (noisy cue → niche) + a *jointly-learned* shared multi-task policy.
+  Same factorization as the gated arm, but no separate pre-mastered library. Isolates factorization vs
+  modularity.
+- **Curriculum monolith** — clean-cue pretrain → noisy fine-tune. Gives the monolith the skills' clean-training
+  affordance. Isolates clean-reuse.
+- **Random gate** and **no-skill PPO** — floors from the Priority-1 spec.
+
+Decision rule: if gated beats **both** steelman baselines, the constructive positive is robust and genuinely
+about modular reuse + routing → proceed to the envelope with confidence. If **either** closes the gap, we have
+located the real lever (factorization or clean-curriculum) — the more important finding, and consistent with
+the rest of the project. Pairs naturally with Priority 3 (learned-over-learned skills), which removes the
+clean-skill asymmetry from the other side.
+
+## Priority 3: Online Skills
+
+The current constructive trigger result uses clean pre-mastered skills. This rung learns or crystallizes
+skills inside the experiment, then learns the gate over that library — removing the clean-skill asymmetry that
+Priority 2 attacks from the baseline side.
+
+Important decompositions:
+
+- oracle gate over learned skills: tests skill quality while removing gate-learning failure,
+- learned gate over oracle skills: tests gate learning while removing skill-quality failure,
+- learned gate over learned skills: the full PAO-relevant condition.
+
+This separates "the library is bad" from "the router is bad."
+
+## Priority 4: Gate Learning Envelope
+
+Map the regime where routing works before scaling the environment (do once Priorities 2–3 confirm the effect
+is real).
 
 Sweeps:
 
@@ -67,20 +118,7 @@ Sweeps:
 This should produce a PAO operating envelope: when does a learned router help, when does it tie, and when
 does it collapse?
 
-## Priority 3: Online Skills
-
-The current constructive trigger result uses clean pre-mastered skills. The next rung should learn or
-crystallize skills inside the experiment, then learn the gate over that library.
-
-Important decompositions:
-
-- oracle gate over learned skills: tests skill quality while removing gate-learning failure,
-- learned gate over oracle skills: tests gate learning while removing skill-quality failure,
-- learned gate over learned skills: the full PAO-relevant condition.
-
-This separates "the library is bad" from "the router is bad."
-
-## Priority 4: Replace `H_M` With Deployable Coverage
+## Priority 5: Replace `H_M` With Deployable Coverage
 
 Treat `H_M` as failed for skill admission unless a new ecological test rescues it. The admission criterion
 should instead ask whether a skill adds task-aligned deployable coverage.
@@ -97,7 +135,7 @@ Candidate admission signals:
 The strongest version would admit a skill only when it improves held-out reward or covers states where the
 current library has no reliable action.
 
-## Priority 5: Partial-Observability Scale-Up
+## Priority 6: Partial-Observability Scale-Up
 
 Move from the current noisy-cue grid to richer POMDPs where PAO should have a real niche.
 
@@ -112,7 +150,7 @@ Good next environments:
 The prediction is specific: PAO should help when a monolith struggles to bind noisy context to reusable
 behavior, and the advantage should shrink when the state is fully observable.
 
-## Priority 6: Failure Boundary
+## Priority 7: Failure Boundary
 
 Deliberately map collapse instead of treating it as noise.
 
@@ -130,12 +168,17 @@ coverage minus confidently wrong cofire.
 
 ## Proposed Ladder
 
-1. Learned gate on the existing partial-observability trigger harness.
-2. Gate envelope sweeps to identify the workable regime.
-3. Learned or crystallized skills, with oracle-vs-learned gate decompositions.
-4. Admission based on deployable coverage rather than `H_M`.
-5. MiniGrid/POMDP scale-up with recurring hidden contexts.
-6. Failure-boundary maps for wrong-skill cofire and stale skills.
+1. ~~Learned gate on the existing partial-observability trigger harness.~~ **DONE** (2026-06-16).
+2. **Baseline steelman / de-confound** — factored monolith + curriculum monolith (+ random gate, no-skill
+   PPO). Is the advantage real modular-reuse, or a factorization/clean-curriculum artifact? *Do this next.*
+3. Learned or crystallized skills, with oracle-vs-learned gate decompositions (removes the clean-skill
+   asymmetry from the other side).
+4. Gate envelope sweeps to identify the workable regime.
+5. Admission based on deployable coverage rather than `H_M`.
+6. MiniGrid/POMDP scale-up with recurring hidden contexts.
+7. Failure-boundary maps for wrong-skill cofire and stale skills.
 
 The end goal remains PAO, but the evidence says the load-bearing object is the router: PAO should be judged
-by whether it can learn when and where each skill is deployable.
+by whether it can learn when and where each skill is deployable. The next decisive test is **#2 — whether a
+fair, steelmanned baseline (factored / curriculum monolith) closes the gap**; only if it does not is the
+"library + router" framing established rather than a stand-in for factorization.

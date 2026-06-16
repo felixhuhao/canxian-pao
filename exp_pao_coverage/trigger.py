@@ -170,7 +170,8 @@ def main():
     print("=" * 78)
     print(f"  PAO TRIGGER — partial observability  mode={args.mode}  N={len(seeds)} "
           f"seeds {seeds[0]}..{seeds[-1]}  K={G.K} dev={G.DEVICE}")
-    print(f"  sigmas={SIGMAS}  mono_eps={MONO_EPS}  eval_n={EVAL_N}")
+    print(f"  sigmas={SIGMAS}  mono: updates={MONO_UPDATES} ept={MONO_EPT} hidden={MONO_HIDDEN} "
+          f"restarts={MONO_RESTARTS}  eval_n={EVAL_N}")
     print("=" * 78)
 
     # results[arm][sigma] = list over seeds

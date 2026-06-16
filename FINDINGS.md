@@ -4,6 +4,50 @@ Running lab notebook. Newest first. Each entry: what was done, what was found, e
 
 ---
 
+## 2026-06-16 — PAO learned gate: the trigger advantage survives without the oracle (~half magnitude)
+
+Follow-on to the trigger experiment, Priority 1 of `PAO_EXPERIMENT_DIRECTIONS.md`. The trigger result used a
+**Bayes-optimal** gate (oracle). This replaces it with a gate **learned from reward only** (REINFORCE
+contextual bandit over the K skills; no niche labels; budget = the monolith's 2400 episodes). Pre-registered
+in `PREREG_PAO_GATE.md` (frozen 2026-06-16; gate calibrated on seed 940). `exp_pao_coverage/gate.py`. First
+look N=8 (seeds 950–957) survived → confirmed N=20 (seeds 960–979). Arms: learned, bayes (oracle upper
+bound), fire-all, monolith.
+
+| σ | learned | bayes | fire-all | monolith | Bayes−learned | L−M (g, p) |
+|---|---|---|---|---|---|---|
+| 0.0 | 0.99 | 1.00 | 0.03 | 1.00 | 0.01 | −0.31, tie |
+| 0.3 | 0.95 | 0.98 | 0.03 | 0.93 | 0.03 | +0.65, p=.087 (marginal) |
+| 0.6 | 0.69 | 0.74 | 0.03 | 0.58 | 0.05 | **+1.74, p=.0003** |
+| 1.0 | 0.50 | 0.56 | 0.03 | 0.40 | 0.06 | **+2.61, p=.0001** |
+| 1.5 | 0.37 | 0.45 | 0.03 | 0.34 | 0.08 | **+0.67, p=.033** |
+
+### Verdict: the constructive PAO positive is NOT an oracle artifact — it survives, at ~half magnitude
+- **P1 — value is the trigger (holds hard).** learned ≫ fire-all at every σ (g=7.5–15.7, p<1e-4). A
+  reward-learned trigger, like the oracle, turns the same library from useless to competent.
+- **P2 — the learned gate recovers most of the oracle.** Bayes−learned shortfall is small (≤0.08) and grows
+  monotonically with σ (noisier reward → harder bandit), significant for σ≥0.3. Perfect routing is worth
+  ≤8 success points on top of a learned router.
+- **P3 — the advantage over the monolith survives across the partial-observability range**, robustly in the
+  mid-high band (σ=0.6 g=+1.74, σ=1.0 g=+2.61, σ=1.5 g=+0.67, all p<.05), marginal at σ=0.3 (p=.087, where
+  the monolith is also near-ceiling so the gap is small), tie at full observability (σ=0). Versus the oracle's
+  L−M g=2.2–4.1, the learned gate's is g≈0.65–2.6 — **roughly half the oracle advantage, but still real and
+  significant where it matters.** (N=8 had shown σ=1.5 as a tie; N=20 resolves it to a small significant win —
+  the N=8 high-σ "tie" was underpowered.)
+
+### Implication
+Answers the decisive question of `PAO_EXPERIMENT_DIRECTIONS.md` Priority 1: the trigger advantage is **not**
+mostly an oracle upper bound. A gate learned from reward at the monolith's budget keeps a meaningful fraction
+of the advantage and beats end-to-end learning across the partial-observability band — because the K-way
+skill-selection problem is far easier to learn than the full noisy policy. The constructive PAO claim stands,
+quantified: PAO = reusable skill library + a *learnable* competence-aware state→skill trigger has real value
+under partial observability, ~half the value of perfect routing. Strengthens the unified principle
+(triggerability is the lever) and is robust to removing the oracle. Revision rule (partially noted): the
+prereg flagged revision if learned ≤ monolith where Bayes won — at σ=0.3 the learned win is only marginal
+(p=.087), a mild narrowing at the low-noise end; the mid-high band is unaffected. Open next:
+`PAO_EXPERIMENT_DIRECTIONS.md` Priority 2 (gate envelope sweeps) and Priority 3 (learned/online skills).
+
+---
+
 ## 2026-06-16 — PAO trigger under partial observability: PAO's value IS the trigger (first constructive positive)
 
 The constructive PAO rung defined in `SYNTHESIS.md` §3 — the controllability/triggerability lens applied to

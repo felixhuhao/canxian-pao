@@ -42,7 +42,7 @@ reduced to a *competence-gated trigger over pre-mastered skills*, it has real va
 | E2 | `PREREG_BUSCH_E2.md` | Does *nonlinear* (T-PHATE) geometry add anything? | **No.** On a shared manifold PEV and controllability are *coupled* (data lives where it's reachable) → PEV works (**Busch vindicated in their regime**); coupling breaks under operating-point curvature, and controllability still governs. Nonlinear geometry is not an independent lever. |
 | **PAO trigger (the constructive positive)** |
 | trigger | `PREREG_PAO_TRIGGER.md` | Is PAO's value the trigger (state→skill deployment) under partial obs? | **Yes.** Same skills: gated ≫ fire-all at every σ (g=4.6–11.7). And gated beats even a *fair strong monolith* across all σ>0 (g=2.2–4.1), tying at full observability → PAO's niche = **partial observability**. |
-| gate | `PREREG_PAO_GATE.md` | Does the advantage survive a gate **learned from reward** (no oracle)? | **In progress** (N=8 running). Smoke test: a REINFORCE bandit gate recovers ≈Bayes (shortfall ≤0.04). |
+| gate | `PREREG_PAO_GATE.md` | Does the advantage survive a gate **learned from reward** (no oracle)? | **Yes, ~half magnitude.** learned ≫ fire-all (g=7.5–15.7); recovers most of Bayes (shortfall ≤0.08); beats monolith across σ>0 (mid-high band sig, g up to +2.6), marginal at σ=0.3, tie at σ=0. Not an oracle artifact. |
 
 ## The arc, in four movements
 
@@ -84,6 +84,10 @@ R5 prediction refinement) rather than rewriting frozen rules. Commit results; pu
 ## Status
 - **PAO mechanisms:** falsified (P1–P3, HM). **RDD path:** closed. **Direction 2 / Busch:** closed.
 - **PAO ladder R0→R1→R1b→R4 + R5:** complete. **Trigger:** confirmed (N=8→N=20).
-- **Learned gate:** N=8 in progress (then N=20 if it survives).
+- **Learned gate (Priority 1):** confirmed (N=8→N=20) — trigger advantage survives without the oracle, ~half
+  magnitude. The PAO positive is not an oracle artifact.
+- **Next (see `PAO_EXPERIMENT_DIRECTIONS.md`):** Priority 2 gate-learning envelope (sweeps), Priority 3
+  learned/online skills (oracle-vs-learned decompositions), Priority 4 coverage-based admission (replace H_M),
+  Priority 5 POMDP scale-up, Priority 6 failure-boundary maps.
 - **Parked / external:** Dr. Cai's run6 checkpoints (ecological H_M test); whether the RDD coverage/capacity
   law and the PAO trigger result scale to real sequence models / richer environments.

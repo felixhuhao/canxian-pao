@@ -1,9 +1,18 @@
 # Pre-Registration — PAO de-confound: is the trigger advantage modularity, or just factor-then-route?
 
-> **DRAFT — to be FROZEN before the confirmatory run.** Calibration seeds 980–982; confirmatory **N=8**
+> **FROZEN 2026-06-17, before the confirmatory run.** Calibration seeds 980–982; confirmatory **N=8**
 > held-out seeds 990–997; if it survives, **N=20** on fresh band 1000–1019. Code:
 > `exp_pao_coverage/deconfound.py` (reuses `trigger.py`, `gate.py`). Priority 2 of
 > `PAO_EXPERIMENT_DIRECTIONS.md`. The single biggest threat to the constructive PAO positive.
+>
+> **Calibration note (2026-06-17, seeds 980–982, non-held-out).** All arms non-degenerate (random-gate
+> ≈0.25=chance, fire-all=0.00, monoliths train). Predictions reproduce directionally: gated(Bayes) ≡ factored
+> *byte-identical* (P1, g=0.00); factored > curriculum/vanilla (P2, g=0.6–2.5); curriculum between vanilla and
+> factored (P3). **Scope clarified by calibration:** gated≡factored because the single shared multitask net
+> *reaches ceiling competence on all K=4 niches* — so success is set entirely by the shared gate and the
+> policy representation is irrelevant. Thus P1 ("modularity not the lever") is established **in the regime
+> where one net can master the library**; modularity could still matter under interference (more niches /
+> capacity limits), which is Priority 4's envelope, not this rung. Frozen as-is.
 
 ## 1. Claim under test
 The trigger/gate experiments showed a gated skill library beats an end-to-end monolith under partial

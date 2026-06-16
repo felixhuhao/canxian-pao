@@ -4,6 +4,51 @@ Running lab notebook. Newest first. Each entry: what was done, what was found, e
 
 ---
 
+## 2026-06-17 — PAO de-confound: the lever is FACTOR-THEN-ROUTE, not the modular skill library
+
+Priority 2 of `PAO_EXPERIMENT_DIRECTIONS.md` — the biggest threat to the constructive positive. The "gated
+beats monolith" result baked in two asymmetries (clean-cue skill training; factorization of classify-then-act).
+This decomposes the advantage one ingredient at a time, **gate held at the Bayes oracle**, so only the policy
+representation varies. Pre-registered in `PREREG_PAO_DECONFOUND.md` (frozen 2026-06-17). `exp_pao_coverage/
+deconfound.py`. N=8 (seeds 990–997) survived → confirmed N=20 (seeds 1000–1019). σ ∈ {0.3,0.6,1.0}.
+
+Ladder (each step adds one ingredient): **vanilla → curriculum → factored → gated(Bayes)** =
+[end-to-end] → [+clean pretrain] → [+factorization, one shared multitask net] → [+modular K skills].
+
+| σ | vanilla | curriculum | factored | gated(Bayes) | gated(learn) | random-gate | fire-all |
+|---|---|---|---|---|---|---|---|
+| 0.3 | 0.90 | 0.90 | 0.98 | 0.98 | 0.95 | 0.25 | 0.06 |
+| 0.6 | 0.56 | 0.59 | 0.74 | 0.74 | 0.69 | 0.25 | 0.06 |
+| 1.0 | 0.40 | 0.45 | 0.54 | 0.54 | 0.49 | 0.25 | 0.06 |
+
+### Verdict: the constructive positive is REAL but RELOCATED — factorization, not modularity
+- **P1 — modularity contributes ≈ nothing.** gated(Bayes) ≡ factored **byte-identical on all 20 held-out
+  seeds** (g=0.00). K separate mastered skills do *not* beat one shared clean-trained multitask net under the
+  same gate: when one net masters the library, success is set entirely by the shared gate, so the policy
+  representation is irrelevant. (N=8 had a single seed where the shared net missed a niche, g≈0.4; with
+  retry-to-best it did not recur at N=20.)
+- **P2 — factorization IS the lever.** factored ≫ curriculum and ≫ vanilla at every σ (g=1.95–3.78, p<1e-4).
+  So the earlier "beats monolith" win is **real, not a monolith-training artifact** — a fair, capacity/budget/
+  retry-matched end-to-end net does *not* close the gap. But the gain is the factor-then-route structure.
+- **P3 — clean training is a minor contributor.** curriculum > vanilla is small and grows with noise (σ=1.0
+  g=1.11 p=.0005; σ=0.3 NS) — real but dwarfed by factorization. Decomposition at σ=0.6: vanilla 0.56 →(clean
+  +0.03)→ 0.59 →(**factor +0.15, g=3.2**)→ 0.74 →(modular +0.00)→ 0.74.
+
+### Implication
+PAO's **modular skill library is not the load-bearing object**. The value is **factor-then-route**: infer the
+(noisy) context, then act with a context-appropriate *clean-trained* policy — and whether that policy is K
+modular skills or one shared net is irrelevant. This *refines, not refutes,* the constructive positive: PAO has
+genuine value under partial observability (factored ≫ fair monolith, g up to 3.8), but the lever is the routing
+factorization, exactly the project's `property ≠ usefulness` pattern now applied to PAO's own central design
+choice (modularity). Revision rule outcome: gated≫factored did NOT happen (modularity not load-bearing);
+factored≈vanilla did NOT happen (the positive is real) — the middle outcome, factorization is the lever.
+**Honest scope:** modularity is exactly null *because one net masters K=4 niches here*; it could matter under
+interference (more niches / tighter capacity) — that is Priority 4's envelope, not this rung. Floors confirm
+the frame: random-gate=0.25 (chance), fire-all≈0.06 (the additive-cofire collapse, R5). gated(learn) sits just
+below gated(Bayes), consistent with the learned-gate entry.
+
+---
+
 ## 2026-06-16 — PAO learned gate: the trigger advantage survives without the oracle (~half magnitude)
 
 Follow-on to the trigger experiment, Priority 1 of `PAO_EXPERIMENT_DIRECTIONS.md`. The trigger result used a

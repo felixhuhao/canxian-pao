@@ -57,7 +57,18 @@ Useful measurements:
 - regret relative to oracle gate,
 - reward gap against monolith.
 
-## Priority 2: Baseline Steelman / De-confound (NEW — do before envelope/scale-up)
+## Priority 2: Baseline Steelman / De-confound — DONE (2026-06-17)
+
+Result (`PREREG_PAO_DECONFOUND.md`, `exp_pao_coverage/deconfound.py`, N=8→N=20, `FINDINGS.md`): **the lever
+is factor-then-route, not the modular skill library.** Ladder vanilla→curriculum→factored→gated(Bayes):
+factored ≫ curriculum/vanilla (g=2–3.8, p<1e-4 — the "beats monolith" win is *real*, not a training artifact);
+gated ≡ factored byte-identical on all 20 seeds (modularity adds 0 when one shared net masters the library);
+clean-training a minor, noise-growing contributor. So the constructive positive is real but **relocated to the
+routing factorization** — PAO's modular library is not load-bearing in this regime. Scope: modularity could
+still matter under interference (more niches / tighter capacity) → Priority 4. (`random gate`=chance,
+`no-skill PPO`=vanilla monolith, both run.)
+
+Original spec follows.
 
 The "gated beats monolith" headline has two asymmetries baked into the current harness. Before mapping
 envelopes or scaling environments, test whether the advantage is *real modular-reuse + routing* or a
@@ -169,16 +180,18 @@ coverage minus confidently wrong cofire.
 ## Proposed Ladder
 
 1. ~~Learned gate on the existing partial-observability trigger harness.~~ **DONE** (2026-06-16).
-2. **Baseline steelman / de-confound** — factored monolith + curriculum monolith (+ random gate, no-skill
-   PPO). Is the advantage real modular-reuse, or a factorization/clean-curriculum artifact? *Do this next.*
+2. ~~Baseline steelman / de-confound (factored + curriculum monolith).~~ **DONE** (2026-06-17): the lever is
+   **factor-then-route, not modularity**; the constructive positive is real but relocated to the routing.
 3. Learned or crystallized skills, with oracle-vs-learned gate decompositions (removes the clean-skill
-   asymmetry from the other side).
+   asymmetry from the other side). *Do this next.*
 4. Gate envelope sweeps to identify the workable regime.
 5. Admission based on deployable coverage rather than `H_M`.
 6. MiniGrid/POMDP scale-up with recurring hidden contexts.
 7. Failure-boundary maps for wrong-skill cofire and stale skills.
 
-The end goal remains PAO, but the evidence says the load-bearing object is the router: PAO should be judged
-by whether it can learn when and where each skill is deployable. The next decisive test is **#2 — whether a
-fair, steelmanned baseline (factored / curriculum monolith) closes the gap**; only if it does not is the
-"library + router" framing established rather than a stand-in for factorization.
+The end goal remains PAO, but the evidence (now incl. #2) says the load-bearing object is the **router /
+factorization**, not the modular library: PAO should be judged by whether it can learn when and where to
+deploy a context-appropriate policy. #2 showed a fair steelmanned baseline does *not* close the gap (the win
+is real) but that one shared net matches K modular skills (modularity is not the lever). The next test is
+**#3 — learned/online skills**, to remove the remaining clean-skill asymmetry and check whether routing still
+pays once the policy itself must be learned in-experiment.

@@ -84,3 +84,11 @@ parked the monolith comparison; this is the controllability-lens version of it, 
   distinctive mechanisms (still falsified), but the reduction *PAO = competence-gated trigger over pre-mastered
   skills* has real value, and specifically in the partial-observability regime. Confirms the §2 principle on a
   third independent framework (RDD coverage, Busch controllability, PAO triggerability — same lever).
+- **Learned gate (Priority 1): DONE** — the trigger advantage survives a reward-learned gate (no oracle),
+  ~half magnitude, still beating the monolith across σ>0. Not an oracle artifact.
+- **De-confound (Priority 2): DONE** — sharpens the PAO result one level further: the lever is
+  **factor-then-route, not the modular skill library**. A single shared multitask net under the same gate
+  matches K modular skills *exactly* (factored ≡ gated), while both beat a fair end-to-end monolith
+  (g=2–3.8). So even within PAO, `property ≠ usefulness`: the *modularity* property is inert; the usable lever
+  is the routing factorization (infer context → act with a context-appropriate clean-trained policy). Open:
+  Priority 3 (learned/online skills), then the interference regime where modularity *might* re-enter.

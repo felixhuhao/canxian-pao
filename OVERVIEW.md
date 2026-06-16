@@ -2,7 +2,8 @@
 
 A single-file map of the whole investigation: every pre-registration, its result, and the verdict.
 Companion docs: `SYNTHESIS.md` (the unifying principle), `FINDINGS.md` (full lab notebook, newest-first),
-and the per-area READMEs. This file is the index; the FINDINGS entries are the evidence.
+`PAO_EXPERIMENT_DIRECTIONS.md` (next PAO rungs), and the per-area READMEs. This file is the index; the
+FINDINGS entries are the evidence.
 
 ## TL;DR
 We stress-tested Hengjin Cai's PAO/Canxianization and RDD frameworks (and, independently, Busch et al.'s

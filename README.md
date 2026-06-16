@@ -134,6 +134,10 @@ holistic measure, plain PPO matches or beats the mechanism. Open / not pursued h
 **(2)** a consolidated negative-results / methodology write-up;
 **(3)** whether reuse pays off in an expensive-relearning regime the toy harness cannot exhibit.
 
+Current PAO-forward directions are written in [`PAO_EXPERIMENT_DIRECTIONS.md`](PAO_EXPERIMENT_DIRECTIONS.md):
+the live path is a learned state-to-skill trigger over a reusable skill library, especially under partial
+observability.
+
 ## Credit
 
 The Canxianization/MSE theory, PAO framework, and original Two-Gate Lock experiment are the work of

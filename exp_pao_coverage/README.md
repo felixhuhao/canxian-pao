@@ -52,3 +52,26 @@ R4 used *planted* confidently-wrong junk. R5 tests the two real channels without
 volume, nor single mis-fires. PAO's real liability is **indiscriminate fire-all triggering**; the lever
 worth engineering is the **router/applicability**, not the crystallization counter. Deflates R4's
 apparent strength while sharpening the actionable target. See `../FINDINGS.md` (2026-06-15 R5 entry).
+
+## trigger.py — is PAO's value the trigger? (constructive positive, partial observability)
+The synthesis (`../SYNTHESIS.md`) predicts PAO's value lives entirely in the **trigger** (state→skill
+deployment) — the controllability/triggerability lens from the Busch work. Pre-registered in
+`../PREREG_PAO_TRIGGER.md` (frozen 2026-06-16). The task one-hot in the observation is corrupted by
+per-episode Gaussian noise σ (position clean) → partial observability over *which skill applies*. Arms share
+one mastered skill library: **gated** (deploy `argmax(noisy cue)`, Bayes gate) / **fire-all** (sum all skills'
+logits = R5 liability) / **monolith** (fair end-to-end net: hidden=128, interleaved multi-task, budget-matched,
+retry-to-best → solves σ=0). Run:
+```bash
+python trigger.py --mode confirm   # N=8 first look (910-917)
+python trigger.py --mode long      # N=20 confirmation (920-939)
+```
+
+### Result (N=8 survived → N=20 confirmed, held-out)
+- **P1 — value IS the trigger:** same skills, gated ≫ fire-all at every σ (g=4.6–11.7, p<1e-4); gated
+  1.00→0.45, fire-all ≈0.06 (the 4 skills cancel in the additive sum). Confirms R5's indiscriminate-triggering
+  liability and the triggerability=controllability mapping.
+- **P3 — pro-PAO:** gated beats even the *fair* monolith across all σ>0 (g=2.2–4.1, p≤1e-4), tying only at
+  σ=0 (full obs, g=+0.31). PAO's regime-specific niche is **partial observability**: modular pre-mastered
+  skills + an explicit gate beat end-to-end learning under a noisy cue; the edge vanishes when the trigger is
+  trivial. Caveat: gated gets a Bayes-optimal gate (upper bound) and clean-trained skills — read as "clean
+  skills + optimal gate," not modularity magic. Verdict: `../FINDINGS.md` (2026-06-16 trigger entry).

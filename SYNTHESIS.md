@@ -76,4 +76,11 @@ parked the monolith comparison; this is the controllability-lens version of it, 
 ## 4. Status
 - RDD path: **closed** (`exp_rdd/README.md`). Direction 2 / Busch: **closed** (E1+E2, `exp_busch/README.md`).
 - PAO ladder R0→R1→R1b→R4 + R5: complete (`exp_pao_coverage/`, `FINDINGS.md`).
-- Open: the trigger-under-partial-observability test above (not yet pre-registered) — the constructive PAO rung.
+- **Trigger-under-partial-observability test: DONE** (`exp_pao_coverage/trigger.py`,
+  `PREREG_PAO_TRIGGER.md`; N=8 survived → N=20 confirmed, `FINDINGS.md` 2026-06-16). **The hypothesis held:**
+  PAO's value localizes entirely to the trigger — same skills, gated ≫ fire-all (g=4.6–11.7); and the gated
+  trigger beats even a fair strong monolith across the whole partial-observability range (g=2.2–4.1, p≤1e-4),
+  tying only at full observability. This is the project's first **constructive positive** for PAO: not its
+  distinctive mechanisms (still falsified), but the reduction *PAO = competence-gated trigger over pre-mastered
+  skills* has real value, and specifically in the partial-observability regime. Confirms the §2 principle on a
+  third independent framework (RDD coverage, Busch controllability, PAO triggerability — same lever).

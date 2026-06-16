@@ -4,6 +4,62 @@ Running lab notebook. Newest first. Each entry: what was done, what was found, e
 
 ---
 
+## 2026-06-16 — PAO trigger under partial observability: PAO's value IS the trigger (first constructive positive)
+
+The constructive PAO rung defined in `SYNTHESIS.md` §3 — the controllability/triggerability lens applied to
+PAO. Pre-registered in `PREREG_PAO_TRIGGER.md` (frozen 2026-06-16; monolith baseline calibrated to fairness,
+documented). `exp_pao_coverage/trigger.py`. First look N=8 (seeds 910–917) **survived**, confirmed on a fresh
+N=20 band (seeds 920–939). Multi-niche grid (K=4); the task one-hot in the observation is corrupted by
+per-episode Gaussian noise σ (position clean) — partial observability over *which skill applies*. Arms share
+the same mastered skill library; only the deployment decision differs:
+- **gated** — deploy the single skill `argmax(noisy cue)` (Bayes-optimal gate),
+- **fire-all** — sum ALL skills' policy logits (R5's indiscriminate triggering),
+- **monolith** — one net trained end-to-end on the noisy task (fair: capacity hidden=128, interleaved
+  multi-task, budget-matched, retry-to-best — solves σ=0 at 1.00).
+
+| σ | gated | fire-all | monolith | G−F (g) | G−M (g, p) |
+|---|---|---|---|---|---|
+| 0.0 | 1.00 | 0.06 | 0.99 | +11.7 | +0.31, p=0.32 (**tie**) |
+| 0.3 | 0.98 | 0.06 | 0.91 | +11.3 | +2.23, p=1e-4 |
+| 0.6 | 0.75 | 0.06 | 0.59 | +8.3 | +3.55, p<1e-4 |
+| 1.0 | 0.55 | 0.06 | 0.38 | +5.7 | +4.07, p=1e-4 |
+| 1.5 | 0.45 | 0.06 | 0.33 | +4.6 | +3.41, p=1e-4 |
+
+### Verdict: PAO's value localizes entirely to the trigger, and is real in the partial-observability regime
+- **P1 — value is the trigger (confirmed hard).** Same skill library goes from competent (gated, 1.00→0.45)
+  to useless (fire-all, ≈0.06) by changing *only* the deployment decision: gated ≫ fire-all at every σ
+  (g=4.6–11.7, p<1e-4). Confirms R5's "indiscriminate triggering" as the liability and the synthesis's
+  triggerability=controllability mapping. (Fire-all collapses because the 4 skills push toward 4 different
+  goals and the additive sum cancels.)
+- **P3 — pro-PAO, stronger than predicted.** Prediction was gated ≈ monolith; instead **gated beats even the
+  fair, capacity/budget/retry-matched monolith across the entire partial-observability range** (g=2.2–4.1,
+  p≤1e-4 for all σ>0), tying only at σ=0 (full observability, g=+0.31, p=0.32). The gap peaks at σ=1.0. So
+  PAO's regime-specific niche is **partial observability**: modular pre-mastered skills + an explicit gate
+  beat end-to-end learning when the state is observed noisily; the edge vanishes exactly when the trigger
+  becomes trivial. (Pre-registered as a possibility — P3 named "any σ-band where gated > monolith" — so this
+  is a clean result, not post-hoc.)
+
+### Scope / honesty
+- This does **not** revive PAO's distinctive *mechanisms* (event-triggered crystallization, manifold-health,
+  dormancy gating — all still falsified). It shows that *if* PAO is reduced to a **competence-gated trigger
+  over pre-mastered skills**, that construct has genuine value — and only in the partial-observability regime.
+- The gated arm is credited with a **Bayes-optimal gate** (pre-registered as favorable) — an *upper bound* on
+  the trigger; a learned gate is ≤ this. And the skills are trained on a **clean cue** while the monolith must
+  learn under noise — that asymmetry IS the modularity advantage (train skills clean, bolt on an optimal gate),
+  but it should be read as "clean skill training + optimal gate," not modularity magic in the abstract.
+- High-σ performance of both gated and monolith is bounded by cue informativeness (Bayes limit); both decline,
+  gated stays above.
+
+### Implication (ties the project together)
+Across RDD, Busch, and now PAO, the lever is the same: **task-aligned, deployable signal** — RDD's coverage,
+Busch's controllability, PAO's *triggerability* — under a capacity constraint. The earlier PAO work falsified
+its mechanisms and localized the liability (R5: indiscriminate triggering); this rung supplies the
+constructive complement — the **only** place PAO value lives is the state→skill trigger, and there it is real
+when observation is partial. Revision rule (not triggered): would have revised if fire-all ≈ gated (trigger
+not the lever) or gated ≫ monolith at σ=0 (modularity itself, not the trigger, carrying value).
+
+---
+
 ## 2026-06-16 — Busch E2: nonlinear geometry is not the lever — PEV works only while coupled to controllability
 
 Follow-on to E1. Same agent/metric, but data now from a **genuinely nonlinear** manifold

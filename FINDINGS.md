@@ -4,6 +4,58 @@ Running lab notebook. Newest first. Each entry: what was done, what was found, e
 
 ---
 
+## 2026-06-16 — Busch E2: nonlinear geometry is not the lever — PEV works only while coupled to controllability
+
+Follow-on to E1. Same agent/metric, but data now from a **genuinely nonlinear** manifold
+`x = W₂ tanh(gain·W₁u)`: `Σ_obs = Cov(x)` (global; PEV/readability) vs `Σ_act = JΣ_latJᵀ` (local reachable
+cov at the operating point; controllability). Pre-registered in `PREREG_BUSCH_E2.md` (frozen 2026-06-16;
+**design pivoted during calibration**, documented, no held-out data seen). `exp_busch/e2_nonlinear.py`,
+held-out seeds 700–729 (calib 750–753). gain=2.0, operating-point offset=1.5.
+
+**Pivot (honest).** The draft hypothesis "linear PCA always mislabels under nonlinearity" is **false** for a
+structural reason: on a single shared manifold the data distribution *is* the reachable set, so high variance
+⟺ the manifold extends there ⟺ locally reachable — PEV and controllability are **coupled** and PEV predicts
+learning fine. They decouple only when the operating point sits in a **curved/saturated** region (offset > 0).
+
+| condition | PEV | control | ΔControl (N=30) |
+|---|---|---|---|
+| IM_lin (top PC) | 0.627 | 16.15 | 25.2 |
+| WMP_lin (2nd PC) = **HiPEV_uncontrol** | **0.237** | 0.28 | **3.2** |
+| OMP_lin (bottom PC) | 0.000 | 0.08 | −1.8 |
+| TAN (oracle tangent) | 0.453 | 22.55 | 25.1 |
+| NOR (least reachable) | 0.012 | 0.00 | −1.2 |
+
+### Verdict: controllability is the lever; PEV is a proxy valid only under obs≈act coupling
+- **P1:** TAN > NOR (g=+4.10, p<1e-4) — on/off by controllability.
+- **P2 — high PEV is NOT sufficient under curvature:** a bona-fide high-variance "on-manifold" component
+  (WMP_lin, PEV=0.237) is locally uncontrollable at the curved operating point and **fails** (ΔControl 3.2
+  vs IM 25.2; IM>HiPEV g=+3.60 p<1e-4; HiPEV ≈ OMP, g=+0.55).
+- **P3 — controllability is the lever (nonlinear setting):** sweep regression `ΔControl ~ readSNR +
+  controllability` gives β_control=+0.91 ≫ β_readSNR=+0.13; Spearman(control)=1.00 vs Spearman(PEV)=0.38.
+- **P4 — the coupling sweep (headline):** as offset 0→2, corr(PEV,controllability) **0.92→0.52**, the extra
+  variance controllability explains beyond PEV (ΔR²) **0.37→0.60**, and the high-PEV component's ΔControl
+  **collapses 24.1→2.3** while IM stays ≈25. **At offset 0 (locally-linear operating point) PEV predicts
+  learning — Busch's single-manifold design is sound there.**
+- *Note:* the symmetric `LoPEV_tangent` cell did not materialize (ΔControl = OMP) — on a shared manifold there
+  is **no** low-variance-but-controllable direction either (low variance ⟹ not reachable). This is additional
+  evidence for the coupling thesis, not against it.
+
+### Combined E1+E2 verdict (Direction 2 geometry question — closed)
+Whether the "manifold hypothesis" works reduces to whether observation-variance (PEV) equals volitional
+**controllability**. **E1:** if they can differ, PEV is neither necessary nor sufficient (controllability
+g=+3.3). **E2:** a single shared manifold — even a nonlinear one — *couples* them (data lives where it is
+reachable), so PEV works, **vindicating Busch within their design**; the coupling breaks under operating-point
+curvature, and there controllability still governs. So **nonlinear geometry (T-PHATE) is not an independent
+causal lever** — PEV's validity *is* the obs≈act coupling, and the lever underneath is always controllability.
+This both fairly credits Busch (PEV is a fine proxy in their regime) and pins the mechanism, extending the
+project's `property ≠ usefulness` thesis: usefulness tracks *usable/controllable* signal, not the
+variance/geometry label. **Condition stated honestly:** the decoupling requires the operating point off the
+manifold's locally-linear center (resting brain state ≠ variance centroid). Revision rule (not triggered):
+would favour Busch if HiPEV_uncontrol learned, controllability failed to out-predict PEV, or coupling did not
+weaken with curvature.
+
+---
+
 ## 2026-06-16 — Busch E1: on-/off-manifold BCI learning is readability × CONTROLLABILITY, not geometry
 
 Direction 2 opens. Independent in-silico test of **Busch et al.** (*"Accelerated learning of a noninvasive

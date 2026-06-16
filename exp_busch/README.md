@@ -44,11 +44,10 @@ direction sweep where PEV's *partial* effect should vanish once readability+cont
 **Scope:** linear–Gaussian, so E1 does NOT test nonlinear geometry — it asks the prior question of whether
 the lever is PEV or the two quantities PEV bundles. Cheap (CPU/GPU, seconds–minutes), held-out seeds.
 
-### E2 — Linear sufficiency (does T-PHATE buy anything for *learning*?)
-Same harness, swap a nonlinear (T-PHATE-style diffusion) manifold for plain PCA when defining IM/WMP/OMP.
-If the on/off asymmetry survives under linear PCA, nonlinear manifold geometry is **not load-bearing for the
-learning claim** (only for decoding/visualization). If it changes the result, nonlinearity carries weight —
-and E2 quantifies how much, *beyond* the readability × controllability of E1. Direct follow-on to E1.
+### E2 — Does nonlinear (T-PHATE-style) geometry add anything beyond readability × controllability?  *(DONE)*
+Data from a genuinely nonlinear manifold `x = W₂ tanh(gain·W₁u)`: `Σ_obs = Cov(x)` (global; PEV/readability)
+vs `Σ_act = JΣ_latJᵀ` (local reachable cov; controllability). Pre-registered in `../PREREG_BUSCH_E2.md`
+(frozen 2026-06-16; **design pivoted during calibration**, documented). See Result below.
 
 ### E3 — The "10× harder, not impossible" learnability frontier
 The paper's discussion concedes off-manifold mappings are learnable with ~10× training (citing primate
@@ -74,7 +73,25 @@ it) but controllability (ρ=0.99) is the driver. *Deviation:* IM≈WMP (both sat
 Busch's IM>WMP gap is sequential interference, outside E1's scope. Verdict + table: `../FINDINGS.md`
 (2026-06-16). Run: `python e1_deconfound.py --mode confirm` → `results/e1_confirm.npz`.
 
+## Result — E2 (N=30, held-out seeds 700–729; gain=2.0, offset=1.5)
+**Nonlinear geometry is not an independent lever; PEV is a proxy valid only while coupled to controllability.**
+*Pivot (honest):* on a single shared manifold, data lives where it is reachable, so high variance ⟺ reachable
+— PEV and controllability are coupled and PEV predicts learning fine. They decouple only at a curved
+operating point. Then: a bona-fide high-PEV "on-manifold" component (WMP_lin, PEV=0.237) is locally
+uncontrollable and **fails** (ΔControl 3.2 vs IM 25.2; IM>HiPEV g=+3.60, p<1e-4). Sweep regression
+β_control=+0.91 ≫ β_readSNR=+0.13 (Spearman control 1.00 vs PEV 0.38). **Coupling sweep:** offset 0→2 ⇒
+corr(PEV,ctrl) 0.92→0.52, ΔR²(ctrl beyond PEV) 0.37→0.60, high-PEV component ΔControl 24→2 while IM steady
+≈25 — **at offset 0 PEV works, vindicating Busch in their regime.** Verdict: `../FINDINGS.md` (2026-06-16).
+Run: `python e2_nonlinear.py --mode confirm` → `results/e2_confirm.npz`.
+
+## Combined E1+E2 verdict
+Whether the manifold hypothesis works reduces to whether observation-variance (PEV) equals volitional
+**controllability**. E1: if they differ, PEV is neither necessary nor sufficient (controllability g=+3.3).
+E2: a single shared (even nonlinear) manifold *couples* them, so PEV works — but the lever underneath is
+always controllability, exposed once curvature decouples them. T-PHATE/nonlinear geometry per se is not the
+causal lever. Extends `property ≠ usefulness`: usefulness tracks *usable/controllable* signal, not the label.
+
 ## Status
-- **E1: DONE** — pre-registered (`../PREREG_BUSCH_E1.md`, frozen 2026-06-16), confirmed. `property ≠
-  usefulness` extends to Busch: the lever is readability × controllability, not geometry.
-- E2 (linear vs nonlinear/T-PHATE sufficiency), E3 (learnability frontier): planned, not yet pre-registered.
+- **E1: DONE** — pre-registered (`../PREREG_BUSCH_E1.md`, frozen 2026-06-16), confirmed.
+- **E2: DONE** — pre-registered (`../PREREG_BUSCH_E2.md`, frozen 2026-06-16; pivoted in calibration), confirmed.
+- E3 (learnability frontier): planned, not yet pre-registered.

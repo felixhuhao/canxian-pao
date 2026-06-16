@@ -88,9 +88,9 @@ def discount_adv(rews, vals, gamma=0.98, lam=0.95):
 
 
 class PPO:
-    def __init__(self, lr=3e-3, seed=0):
+    def __init__(self, lr=3e-3, seed=0, hidden=32):
         torch.manual_seed(seed)
-        self.net = ActorCritic().to(DEVICE)
+        self.net = ActorCritic(hidden=hidden).to(DEVICE)
         self.opt = torch.optim.Adam(self.net.parameters(), lr=lr)
         self.buf = []
 

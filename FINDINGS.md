@@ -4,6 +4,57 @@ Running lab notebook. Newest first. Each entry: what was done, what was found, e
 
 ---
 
+## 2026-06-17 — PAO online/learned skills: factor-then-route survives without the clean-skill gift
+
+Priority 3 of `PAO_EXPERIMENT_DIRECTIONS.md`. All prior PAO-positive results handed the agent clean, isolated,
+mastered skills. This removes that gift: skills are **crystallized under the same partial observability** they
+are deployed in (noisy niche attribution, contamination `c(σ)`: 0.3→0.02, 0.6→0.26, 1.0→0.45), and the gate is
+reward-learned over that library. Pre-registered in `PREREG_PAO_ONLINE.md` (frozen 2026-06-17; learned skills
+given retry-to-best to isolate contamination from training variance; P2 direction corrected pre-freeze to the
+established "advantage grows with partial observability" pattern). `exp_pao_coverage/online_skills.py`. N=8
+(seeds 1030–1037) directional but marginal → N=20 (seeds 1040–1059) resolves it.
+
+| σ | oracle/clean | oracle/learned | PAO-full | monolith | fire-all | random | P−M (g, p) |
+|---|---|---|---|---|---|---|---|
+| 0.3 | 0.98 | 0.96 | 0.93 | 0.92 | 0.04 | 0.25 | +0.21, p=.029 |
+| 0.6 | 0.76 | 0.71 | 0.68 | 0.59 | 0.04 | 0.25 | +1.18, p=.0006 |
+| 1.0 | 0.56 | 0.53 | 0.49 | 0.40 | 0.03 | 0.25 | +1.63, p=.0001 |
+
+### Verdict: the constructive positive is NOT gift-dependent — factor-then-route survives a learned library
+- **P2 (crux) — PAO-full > monolith at every σ, significant, growing with noise** (g=0.21/1.18/1.63;
+  p=.029/.0006/.0001). A skill library crystallized under partial observability + a reward-learned gate beats
+  a fair end-to-end monolith, and the edge **grows as the cue gets noisier** — the same partial-observability
+  law as the trigger/gate experiments. So the advantage did **not** depend on being handed clean isolated
+  skills. (N=8 was directional but NS, p~.10–.20; N=20 resolves it — the N=8 was underpowered.)
+- **P1 — learned skills degrade the library** (oracle/learned < oracle/clean), significant at σ=0.6/1.0
+  (g=−0.5…−0.6, p<.05). But the degradation is **small** (loss ≤0.05) — retry-to-best largely defeats the
+  contamination (see caveat).
+- **P3 — the no-gift cost is small and split** between library contamination and gate-learning
+  (library_loss ≈ gate_loss ≈ 0.02–0.04). Neither dominates.
+
+### Magnitude ladder (how much each "gift" was worth), mid band
+clean skills + Bayes gate (g≈2–4) → learned gate (g≈0.7–2.6) → **learned gate + learned skills (g≈0.2–1.6)**.
+Each removed gift roughly halves the edge, but a real, significant advantage survives all the way to the
+fully-learned, no-gift condition — strongest where partial observability bites hardest.
+
+### Caveat (honest, favors PAO)
+Learned skills get retry-to-best selected by *clean niche-k success* — a selection signal a fully-online agent
+might not have. This makes the learned library near-clean even at c=0.45 (σ=1.0 oracle/learned 0.53 vs clean
+0.56), so it is an **upper bound** on no-gift library quality. The result is therefore "even with good
+skill-selection, factorization is what wins, and it survives skills learned under noise"; a weaker selection
+signal would lower the library (P1) but not the qualitative P2 ordering, since the monolith degrades faster.
+
+### Implication — ties the PAO arc together
+Combined with Priority 1 (learned gate survives) and Priority 2 (modularity inert; factorization is the lever),
+the constructive PAO picture is now robust and de-confounded: **PAO's value = infer-context-then-act under
+partial observability**, and it survives a learned gate *and* a learned library, growing with noise, tying when
+the state is clean. It is not the modular library, not crystallization timing, not the oracle — it is the
+routing factorization. Revision rule (not triggered): PAO-full did not lose to the monolith at any σ; the
+contamination model was not too weak (oracle/learned < oracle/clean, significant). Open: Priority 4 envelope
+(incl. the interference regime where modularity might re-enter), then POMDP scale-up.
+
+---
+
 ## 2026-06-17 — PAO de-confound: the lever is FACTOR-THEN-ROUTE, not the modular skill library
 
 Priority 2 of `PAO_EXPERIMENT_DIRECTIONS.md` — the biggest threat to the constructive positive. The "gated

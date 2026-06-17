@@ -90,5 +90,12 @@ parked the monolith comparison; this is the controllability-lens version of it, 
   **factor-then-route, not the modular skill library**. A single shared multitask net under the same gate
   matches K modular skills *exactly* (factored ≡ gated), while both beat a fair end-to-end monolith
   (g=2–3.8). So even within PAO, `property ≠ usefulness`: the *modularity* property is inert; the usable lever
-  is the routing factorization (infer context → act with a context-appropriate clean-trained policy). Open:
-  Priority 3 (learned/online skills), then the interference regime where modularity *might* re-enter.
+  is the routing factorization (infer context → act with a context-appropriate clean-trained policy).
+- **Online/learned skills (Priority 3): DONE** — the factor-then-route advantage is **not gift-dependent**:
+  a library crystallized under the same partial observability + a reward-learned gate still beats the fair
+  monolith at every σ (g=0.21/1.18/1.63, p≤.029), growing with noise. Removing each gift (oracle gate →
+  learned; clean skills → learned) roughly halves the edge, but a real, significant advantage survives the
+  fully-learned, no-gift condition. The PAO positive is now robust and de-confounded: the lever is
+  **infer-context-then-act under partial observability**, surviving learned gate *and* learned library.
+  Open: Priority 4 envelope (incl. the interference regime where modularity might re-enter), then POMDP
+  scale-up.

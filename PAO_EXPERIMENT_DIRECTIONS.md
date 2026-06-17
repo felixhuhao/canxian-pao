@@ -97,11 +97,17 @@ located the real lever (factorization or clean-curriculum) — the more importan
 the rest of the project. Pairs naturally with Priority 3 (learned-over-learned skills), which removes the
 clean-skill asymmetry from the other side.
 
-## Priority 3: Online Skills
+## Priority 3: Online Skills — DONE (2026-06-17)
 
-The current constructive trigger result uses clean pre-mastered skills. This rung learns or crystallizes
-skills inside the experiment, then learns the gate over that library — removing the clean-skill asymmetry that
-Priority 2 attacks from the baseline side.
+Result (`PREREG_PAO_ONLINE.md`, `exp_pao_coverage/online_skills.py`, N=8→N=20, `FINDINGS.md`):
+**factor-then-route survives the no-gift setting.** Skills crystallized under the same partial observability
+(noisy attribution, contamination c(σ)) + a reward-learned gate beat the fair monolith at every σ, significant
+and growing with noise (g=0.21/1.18/1.63, p≤.029). Not gift-dependent. Magnitude ladder across the removed
+gifts: clean+oracle (g~2–4) → learned gate (g~0.7–2.6) → learned gate + learned skills (g~0.2–1.6). Cost split
+small between library contamination and gate-learning. Caveat: learned skills get retry-to-best (upper bound on
+library quality). Combined with Priorities 1–2, the PAO positive is robust and de-confounded.
+
+Original spec follows.
 
 Important decompositions:
 
@@ -182,9 +188,10 @@ coverage minus confidently wrong cofire.
 1. ~~Learned gate on the existing partial-observability trigger harness.~~ **DONE** (2026-06-16).
 2. ~~Baseline steelman / de-confound (factored + curriculum monolith).~~ **DONE** (2026-06-17): the lever is
    **factor-then-route, not modularity**; the constructive positive is real but relocated to the routing.
-3. Learned or crystallized skills, with oracle-vs-learned gate decompositions (removes the clean-skill
-   asymmetry from the other side). *Do this next.*
-4. Gate envelope sweeps to identify the workable regime.
+3. ~~Learned or crystallized skills, with oracle-vs-learned gate decompositions.~~ **DONE** (2026-06-17):
+   factor-then-route survives the no-gift setting (g up to +1.6, growing with noise); not gift-dependent.
+4. Gate envelope sweeps to identify the workable regime (incl. the interference regime where modularity might
+   re-enter). *Do this next.*
 5. Admission based on deployable coverage rather than `H_M`.
 6. MiniGrid/POMDP scale-up with recurring hidden contexts.
 7. Failure-boundary maps for wrong-skill cofire and stale skills.

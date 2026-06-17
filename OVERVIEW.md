@@ -44,6 +44,7 @@ reduced to a *competence-gated trigger over pre-mastered skills*, it has real va
 | trigger | `PREREG_PAO_TRIGGER.md` | Is PAO's value the trigger (state→skill deployment) under partial obs? | **Yes.** Same skills: gated ≫ fire-all at every σ (g=4.6–11.7). And gated beats even a *fair strong monolith* across all σ>0 (g=2.2–4.1), tying at full observability → PAO's niche = **partial observability**. |
 | gate | `PREREG_PAO_GATE.md` | Does the advantage survive a gate **learned from reward** (no oracle)? | **Yes, ~half magnitude.** learned ≫ fire-all (g=7.5–15.7); recovers most of Bayes (shortfall ≤0.08); beats monolith across σ>0 (mid-high band sig, g up to +2.6), marginal at σ=0.3, tie at σ=0. Not an oracle artifact. |
 | deconfound | `PREREG_PAO_DECONFOUND.md` | Is the advantage **modularity**, or just factor-then-route? | **Factorization, not modularity.** Ladder vanilla→curriculum→factored→gated: factored ≫ curriculum/vanilla (g=2–3.8, p<1e-4 — the win is real, not a monolith artifact); gated ≡ factored byte-identical (modularity = 0 when one net masters the library); clean-training a minor contributor. PAO's modular library is *not* the lever. |
+| online | `PREREG_PAO_ONLINE.md` | Does it survive **learned skills** (no clean gift)? | **Yes.** Skills crystallized under the same noise + learned gate beat the fair monolith at every σ, significant, **growing with noise** (g=0.21/1.18/1.63, p≤.029). Not gift-dependent. Removed gift halves the edge but a real advantage survives the fully-learned condition. |
 
 ## The arc, in four movements
 
@@ -90,9 +91,12 @@ R5 prediction refinement) rather than rewriting frozen rules. Commit results; pu
 - **De-confound (Priority 2):** confirmed (N=8→N=20) — the lever is **factor-then-route, not modularity**.
   factored ≫ fair monolith (g=2–3.8), but gated ≡ factored (modular library adds 0 when one net masters the
   library). The constructive positive is real but relocated to the routing factorization.
-- **Next (see `PAO_EXPERIMENT_DIRECTIONS.md`):** Priority 3 learned/online skills (oracle-vs-learned
-  decompositions), Priority 4 gate-learning envelope (incl. the interference regime where modularity *could*
-  matter), Priority 5 coverage-based admission (replace H_M), Priority 6 POMDP scale-up, Priority 7
-  failure-boundary maps.
+- **Online/learned skills (Priority 3):** confirmed (N=8 marginal → N=20) — factor-then-route **survives the
+  no-gift setting**. Skills crystallized under the same noise + learned gate beat the fair monolith at every σ
+  (g=0.21/1.18/1.63, p≤.029), growing with noise. Not gift-dependent. Magnitude ladder: clean+oracle (g~2–4) →
+  learned gate (g~0.7–2.6) → learned gate + learned skills (g~0.2–1.6).
+- **Next (see `PAO_EXPERIMENT_DIRECTIONS.md`):** Priority 4 gate-learning envelope (incl. the interference
+  regime where modularity *could* re-enter), Priority 5 coverage-based admission (replace H_M), Priority 6
+  POMDP scale-up, Priority 7 failure-boundary maps.
 - **Parked / external:** Dr. Cai's run6 checkpoints (ecological H_M test); whether the RDD coverage/capacity
   law and the PAO trigger result scale to real sequence models / richer environments.

@@ -1,9 +1,20 @@
 # Pre-Registration — PAO online/learned skills: does factor-then-route survive without the clean-skill gift?
 
-> **DRAFT — to be FROZEN before the confirmatory run.** Calibration seeds 1020–1022; confirmatory **N=8**
+> **FROZEN 2026-06-17, before the confirmatory run.** Calibration seeds 1020–1022; confirmatory **N=8**
 > held-out seeds 1030–1037; if it survives, **N=20** on fresh band 1040–1059. Code:
 > `exp_pao_coverage/online_skills.py` (reuses `trigger.py`, `gate.py`). Priority 3 of
 > `PAO_EXPERIMENT_DIRECTIONS.md`.
+>
+> **Calibration notes (2026-06-17, seeds 1020–1022, non-held-out; no held-out data seen).**
+> (1) **Retry added to learned skills.** Initial calibration conflated contamination with single-run training
+> variance (at σ=0.3, c=0.02, oracle/learned fell to 0.82 purely from variance). Learned skills now get
+> retry-to-best (×2, selected by clean niche-k success), matching the clean skills' RETRY, so the
+> oracle/clean vs oracle/learned contrast isolates *contamination*. This favors PAO (best-case learned skills),
+> so a PAO loss would be robust. (2) **P2 direction corrected.** The draft predicted PAO wins at low-mid σ and
+> narrows at high; calibration shows the opposite and *correct* pattern — PAO loses at σ=0.3 (monolith
+> suffices) and wins at σ=0.6, 1.0 — matching the established "advantage grows with partial observability" of
+> the trigger/gate experiments. P2 rewritten to that mechanism before freezing. Contamination c(σ): 0.3→0.02,
+> 0.6→0.26, 1.0→0.45; monolith strong (0.94/0.65/0.34). Predictions frozen here.
 
 ## 1. Claim under test
 All prior PAO-positive results handed the agent **clean, isolated skills** (each specialist mastered on a
@@ -39,9 +50,12 @@ over niches, held-out seeds, paired Wilcoxon + Hedges g.
 ## 3. Pre-registered predictions (on record)
 - **P1 — learned skills degrade the library:** oracle/learned < oracle/clean, the gap **growing with σ**
   (more contamination), g<0, p<0.05 at σ≥0.6.
-- **P2 — factor-then-route SURVIVES the no-gift setting (the crux):** PAO-full > monolith at low–mid σ
-  (σ=0.3, 0.6), g>0, p<0.05; the advantage may narrow or vanish at σ=1.0 as contamination bites. If PAO-full
-  ≤ monolith across **all** σ, the constructive positive depended on the clean-skill gift.
+- **P2 — factor-then-route SURVIVES the no-gift setting (the crux):** PAO-full > monolith in the
+  **moderate-to-high noise band (σ ≥ 0.6)**, where the monolith struggles to bind noisy context — consistent
+  with the established trigger/gate pattern that the routing advantage **grows with partial observability**. It
+  may tie or lose at low noise (σ=0.3), where the monolith already suffices end-to-end and learned-skill
+  variance costs a little. The advantage is expected to be **smaller than the clean-gift version** (g≈0.7–1.0
+  vs 2–4). If PAO-full ≤ monolith across **all** σ, the constructive positive depended on the clean-skill gift.
 - **P3 — gate vs library attribution:** the gap oracle/learned − PAO-full quantifies the *gate-learning* cost
   on top of the *library-quality* cost (oracle/clean − oracle/learned); we report both so the loss is
   attributed to skills vs router.

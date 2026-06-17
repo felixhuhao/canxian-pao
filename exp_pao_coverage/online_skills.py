@@ -35,9 +35,10 @@ def misclass_rate(sigma, n=40000, seed=0):
     return float(1.0 - (np.argmax(s, axis=1) == 0).mean())
 
 
-def train_learned_skill(k, sigma, seed, c):
-    """Crystallize skill k under noisy attribution: each episode the true goal is k w.p. (1-c), else a random
-    wrong niche. The skill sees its own identity k (clean one-hot) + position; reward is toward the true goal."""
+LEARNED_RETRIES = 2          # retry-to-best, matching the clean skills' RETRY (isolates contamination)
+
+
+def _train_learned_once(k, sigma, seed, c):
     rng = np.random.RandomState(seed)
     ag = G.PPO(seed=seed)
     env = G.GridTasks(seed)
@@ -53,7 +54,21 @@ def train_learned_skill(k, sigma, seed, c):
                 a = rng.randint(0, G.ACT_DIM)
             _, rw, done, info = env.step(a); ag.store(rw, done)
         ag.finish(ent_coef=r4.ENT)
-    return {"net": ag.net, "task": k}
+    return ag.net
+
+
+def train_learned_skill(k, sigma, seed, c):
+    """Crystallize skill k under noisy attribution: each episode the true goal is k w.p. (1-c), else a random
+    wrong niche. The skill sees its own identity k (clean one-hot) + position; reward is toward the true goal.
+    Retry-to-best (selected by clean niche-k success) matches the clean skills' RETRY, so the only difference
+    from a clean skill is contamination, not training variance. (This favors PAO: best-case learned skills.)"""
+    best, best_acc = None, -1.0
+    for r in range(LEARNED_RETRIES):
+        net = _train_learned_once(k, sigma, seed + r * 1009, c)
+        acc = G.policy_success(net, k)
+        if acc > best_acc:
+            best, best_acc = net, acc
+    return {"net": best, "task": k}
 
 
 def run_seed(seed):

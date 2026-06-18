@@ -10,8 +10,9 @@ __pycache__/
 # Claude local settings (machine-specific)
 .claude/settings.local.json
 
-# Research source documents (live on D:\Documents\Research, not versioned here)
+# Research source documents (not versioned here)
 doc/
+docs/
 
 # Large/regenerable binary experiment artifacts (data .pkl and .log are kept)
 *.png

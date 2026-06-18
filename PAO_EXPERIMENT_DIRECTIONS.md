@@ -122,6 +122,12 @@ This separates "the library is bad" from "the router is bad."
 Map the regime where routing works before scaling the environment (do once Priorities 2–3 confirm the effect
 is real).
 
+First concrete rung: **capacity/interference envelope** (`PREREG_PAO_ENVELOPE.md`,
+`exp_pao_coverage/envelope.py`). Hold the gate at Bayes and sweep the shared factored policy's hidden size
+`H={8,16,32,64,128}` against the modular K-specialist library. This directly tests the one regime where
+modularity might re-enter after Priority 2: when one shared policy cannot carry all niches without
+interference.
+
 Sweeps:
 
 - cue noise,

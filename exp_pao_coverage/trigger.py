@@ -25,6 +25,7 @@ MONO_EPT = 4               # episodes per task per update (bigger batch -> stabl
 MONO_HIDDEN = 128          # capacity-matched: one big net vs the K-network skill library
 MONO_RESTARTS = 2          # retry-to-best, matching the skills' RETRY (fair: skills retry to competence)
 EVAL_N = 40               # eval episodes per (niche, sigma)
+_HIDDEN_OVERRIDE = None    # optional capacity-sweep hook; kept None for preregistered trigger/gate runs
 
 
 # ----------------------------- partial-obs env ------------------------------ #
@@ -56,12 +57,12 @@ def logits_of(net, obs):
 
 
 # ----------------------------- the monolith --------------------------------- #
-def _train_monolith_once(sigma, seed):
+def _train_monolith_once(sigma, seed, hidden=None):
     """Fair multi-task monolith: each PPO update interleaves MONO_EPT episodes from EVERY niche
     (large multi-task batch -> avoids both catastrophic forgetting and high-variance collapse).
     Capacity-matched (hidden=MONO_HIDDEN) to the K-network library; budget-matched to the skills."""
     rng = np.random.RandomState(seed)
-    ag = G.PPO(seed=seed, hidden=MONO_HIDDEN)
+    ag = G.PPO(seed=seed, hidden=hidden or _HIDDEN_OVERRIDE or MONO_HIDDEN)
     env = NoisyGrid(sigma, seed)
     for _ in range(MONO_UPDATES):
         for k in range(G.K):
@@ -77,12 +78,12 @@ def _train_monolith_once(sigma, seed):
     return ag.net
 
 
-def train_monolith(sigma, seed):
+def train_monolith(sigma, seed, hidden=None):
     """Retry-to-best, matching the skills' RETRY discipline (skills retry until competent, so the
     monolith gets the same number of shots and we keep the best by held-out validation success)."""
     best, best_acc = None, -1.0
     for r in range(MONO_RESTARTS):
-        net = _train_monolith_once(sigma, seed * 977 + r * 31 + 1)
+        net = _train_monolith_once(sigma, seed * 977 + r * 31 + 1, hidden=hidden)
         acc = np.mean([roll_monolith(net, k, sigma, seed * 13 + 5, n=12) for k in range(G.K)])
         if acc > best_acc:
             best, best_acc = net, acc

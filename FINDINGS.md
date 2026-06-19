@@ -4,6 +4,127 @@ Running lab notebook. Newest first. Each entry: what was done, what was found, e
 
 ---
 
+## 2026-06-19 — DPA overlap, regime-axis: propagation is governed by collapse saturation (continuous boundary)
+
+Follow-up to the 3-regime robustness check, which found the overlap→collapse-order relationship regime-dependent
+(T6 strong, T5 weak, T7 null) but had only n=3 on the adaptation-regime axis. This experiment samples the regime
+axis densely to characterize *when* overlap predicts.
+
+- prereg: `PREREG_DPA_OVERLAP_REGIME_AXIS.md` (frozen, with a documented calibration deviation: the original
+  16-regime list yielded only 6 degenerate regimes, so the candidate set was expanded to 36 in the degenerate
+  band before the confirmatory seeds; decision rule unchanged)
+- code: `exp_dpa/overlap_regime_axis.py`; result: `exp_dpa/results/overlap_regime_axis_{calib,confirm}.{csv,json}`
+- finer checkpoint grid (16 points, dense near onset) to fix the T7 ceiling/resolution problem
+- reporting unit = adaptation regime (one seed-aggregated rho per regime), removing the single-trajectory
+  non-independence of the original 24-target analysis
+- confirm: 12 held-out seeds (5120–5131), 24 analyzable regimes, 49 probes
+
+Held-out result (calib in parentheses):
+
+| Saturation bin | n | mean rho_in | mean rho_hi |
+|---|---:|---:|---:|
+| low (<0.5) | 5 | −0.77 | −0.79 |
+| mid (0.5–0.9) | 14 | −0.31 | −0.29 |
+| ceiling (≥0.9) | 5 | +0.20 | +0.18 |
+
+- **Boundary characterization (primary, threshold-free):** Spearman(rho_in, saturation) = **+0.80**, p<1e-4
+  (calib +0.91); Spearman(rho_hi, saturation) = **+0.89**, p<1e-4. Overlap predicts collapse order strongly when
+  the adaptation regime does not saturate collapse, and the effect decays to ~0 at the ceiling.
+- **Binary "universal law" (frozen rule: ≥60% of non-saturating regimes with rho<−0.5 in both metrics): FAILS**
+  (0.26). The relationship is continuous in saturation, so a binary cutoff is the wrong description.
+- The `conflict` predictor came out wrong-signed (+0.71) but is confounded with saturation (high-conflict
+  regimes also saturate); not load-bearing.
+
+### Verdict: a characterized conditional boundary, not a universal law
+
+This converts the earlier "regime-dependent diagnostic (hedged)" into a mechanism: propagation strength is
+governed by collapse saturation. It explains the original T5/T6/T7 mix (T7 was a ceiling regime) and replicates
+on held-out seeds in both input and hidden-representation space. The manuscript should claim a **conditional
+propagation boundary** (overlap predicts order in non-saturating regimes; the ceiling erases it), not a
+universal overlap law. Caveat: still the self-contained re-implementation, which does not reproduce the
+original NavEnv2D T5 magnitude.
+
+---
+
+## 2026-06-19 — DPA overlap robustness: one strong replication, one miss
+
+Boundary test for the paper's overlap-law claim. The reviewer worry was right: the original 24-target
+correlation was measured against one T5 adaptation trajectory, so it could be one trajectory's geometry rather
+than a general propagation law. I added a pre-registered self-contained replication:
+
+- prereg: `PREREG_DPA_OVERLAP_ROBUSTNESS.md`
+- code: `exp_dpa/overlap_robustness.py`
+- result: `exp_dpa/results/overlap_robustness_confirm.{csv,json}`
+- N=5 seeds, 24 dense probe targets, adaptation regimes T5/T6/T7
+- primary metric: first step where probe-trajectory S0 default-rate crosses 0.5, excluding probes already
+  default-routed at step 0
+- overlap metrics: input direction cosine and gate hidden-representation cosine
+- sensitivity: recompute after removing the two latest/non-collapsing probes
+
+Aggregate over seeds by median collapse step:
+
+| Adapt | Input overlap rho | Leave-2 | Hidden overlap rho | Leave-2 | Read |
+|---|---:|---:|---:|---:|---|
+| T5 | -0.266, p=.258 | -0.202 | -0.357, p=.122 | -0.296 | weak directional only |
+| T6 | **-0.866, p<1e-6** | **-0.857** | **-0.871, p<1e-6** | **-0.863** | strong replication |
+| T7 | +0.266, p=.258 | +0.364 | +0.207, p=.381 | +0.351 | no replication |
+
+Seed-level check: T5 is negative in all 5 seeds, significant in 2/5 input and 3/5 hidden; T6 is negative and
+significant in all 5 seeds for both metrics; T7 is mixed and nonsignificant.
+
+### Verdict: downgrade "overlap law" to "regime-dependent geometry diagnostic"
+
+The overlap mechanism is real in at least one additional adaptation direction and appears equally or more
+cleanly in hidden-representation space. It also survives the leave-two-noncollapser sensitivity for T6. But it
+does **not** replicate uniformly: T7 fails. So the manuscript should not claim a general law from the original
+T5 result. The safer claim is:
+
+> Collapse propagation is geometry-sensitive, and overlap can predict ordering within some adaptation regimes,
+> but the ordering also depends on regime-specific routing conflict and initial default-routing structure.
+
+This is still useful. It answers the reviewer attack with data and makes the paper less brittle: the original
+T5 rho=-0.83 should be presented as a strong diagnostic example, not as a universal law.
+
+---
+
+## 2026-06-19 — DPA objective control: default collapse is specific to hard outcome pseudo-labels
+
+Boundary test for the DPA paper reviewer objection. The original NavEnv2D source is not in this repo, so I
+added a self-contained NavEnv2D-style control in `exp_dpa/objective_control.py`, pre-registered in
+`PREREG_DPA_OBJECTIVE_CONTROL.md`. The test isolates the objective: same frozen directional skills, same T5
+all-zero sparse skill-evaluation evidence, same initial gate, three adaptation arms:
+
+- **CE-hard**: deterministic argmax maps all-zero returns to label S0; update gate by cross-entropy.
+- **REINFORCE-zero**: sample skills and update by reward-gradient on the same sparse single-skill rewards.
+- **REINFORCE-positive-baseline**: same reward-gradient, fixed positive baseline.
+
+Confirmatory run: N=8 held-out seeds 3120--3127. The adaptation batch is filtered to observations where the
+sparse evaluator gives all skills zero reward; average all-zero availability on the collected T5 trajectories
+was 0.77.
+
+| Arm | Final success T5--T9 (mean ± SD) | Final default-rate | Final mean p(S0) |
+|---|---:|---:|---:|
+| CE-hard | 0.175 ± 0.071 | 1.000 | 1.000 |
+| REINFORCE-zero | 0.625 ± 0.128 | 0.000 | 0.000 |
+| REINFORCE-positive-baseline | 0.750 ± 0.207 | 0.000 | 0.001 |
+
+### Verdict: the reviewer objection is correct, and it sharpens the paper
+
+The default-index attractor appears under **hard outcome-pseudo-label CE** and disappears under reward-gradient
+adaptation on the same all-zero sparse evidence. With zero rewards, REINFORCE-zero leaves the gate unchanged;
+with a positive baseline, the gate may change, but not toward S0. This supports the narrower and stronger
+scope: DPA is a mechanism of **outcome-pseudo-labeling/self-training pipelines that convert non-informative
+sparse evaluations into confident hard labels**, not a generic failure of reward-trained modular gates.
+
+### Manuscript implication
+
+The title/abstract/contributions should lead with hard pseudo-labeling or outcome-pseudo-labeling. The broad
+"gate plasticity in modular AI/MoE" wording should be treated as context, not the main claim. This result
+removes the biggest existential referee attack by making the boundary explicit rather than leaving it as
+future work.
+
+---
+
 ## 2026-06-17 — PAO online/learned skills: factor-then-route survives without the clean-skill gift
 
 Priority 3 of `PAO_EXPERIMENT_DIRECTIONS.md`. All prior PAO-positive results handed the agent clean, isolated,

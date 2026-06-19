@@ -14,6 +14,11 @@ __pycache__/
 doc/
 docs/
 
+# Local paper working drafts / generated conversions
+PAPER_EXPERIMENT_SECTION_DRAFT.*
+*_placeholder.pdf
+*_placeholder.docx
+
 # Large/regenerable binary experiment artifacts (data .pkl and .log are kept)
 *.png
 *.pdf

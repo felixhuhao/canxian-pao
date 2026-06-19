@@ -1,0 +1,70 @@
+{
+  "mode": "smoke",
+  "seeds": [
+    5100
+  ],
+  "regimes": [
+    "A1",
+    "A2",
+    "A3"
+  ],
+  "checkpoints": [
+    0,
+    5,
+    10,
+    15,
+    20,
+    25,
+    30,
+    35
+  ],
+  "thresholds": {
+    "SATURATION": 0.9,
+    "RHO_LAW": -0.5,
+    "LAW_FRACTION": 0.6,
+    "MIN_ATRISK": 6,
+    "MIN_ALLZERO": 5
+  },
+  "summary": [
+    {
+      "regime": "A1",
+      "analyzable": true,
+      "rho_in": -0.34051496654717234,
+      "rho_hi": -0.2856476912929263,
+      "saturation": 0.24324324324324326,
+      "conflict": 1.0,
+      "n_atrisk": 37.0,
+      "allzero": 0.8571428571428571,
+      "n_seeds": 1
+    },
+    {
+      "regime": "A2",
+      "analyzable": true,
+      "rho_in": -0.5120142039161854,
+      "rho_hi": -0.5115284218296632,
+      "saturation": 0.10810810810810811,
+      "conflict": 0.4,
+      "n_atrisk": 37.0,
+      "allzero": 0.7142857142857143,
+      "n_seeds": 1
+    },
+    {
+      "regime": "A3",
+      "analyzable": true,
+      "rho_in": 0.03174947404882942,
+      "rho_hi": 0.011835578806490235,
+      "saturation": 0.24324324324324326,
+      "conflict": 1.0,
+      "n_atrisk": 37.0,
+      "allzero": 1.0,
+      "n_seeds": 1
+    }
+  ],
+  "decision_rule": {
+    "n_analyzable": 3,
+    "n_nonsaturating": 3,
+    "frac_rho_lt_thresh_both": 0.3333333333333333,
+    "law_holds": false
+  },
+  "boundary": {}
+}

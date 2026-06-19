@@ -1,0 +1,62 @@
+{
+  "mode": "smoke",
+  "seeds": [
+    4100
+  ],
+  "regimes": [
+    "T5"
+  ],
+  "checkpoints": [
+    0,
+    10,
+    20,
+    30,
+    40
+  ],
+  "by_seed": [
+    {
+      "adapt_regime": "T5",
+      "seed": 4100,
+      "metric": "input_overlap",
+      "rho": 0.31685293434450207,
+      "p": 0.1314083091841677,
+      "rho_leave2": 0.28124931065116143,
+      "p_leave2": 0.2048140775963253,
+      "n": 24,
+      "noncollapsed": 15
+    },
+    {
+      "adapt_regime": "T5",
+      "seed": 4100,
+      "metric": "hidden_overlap",
+      "rho": 0.2672126160188258,
+      "p": 0.2068441432761719,
+      "rho_leave2": 0.21049696367965118,
+      "p_leave2": 0.3470736874966654,
+      "n": 24,
+      "noncollapsed": 15
+    }
+  ],
+  "by_regime": [
+    {
+      "adapt_regime": "T5",
+      "metric": "input_overlap",
+      "rho": 0.31685293434450207,
+      "p": 0.1314083091841677,
+      "rho_leave2": 0.28124931065116143,
+      "p_leave2": 0.2048140775963253,
+      "n": 24,
+      "noncollapsed": 15
+    },
+    {
+      "adapt_regime": "T5",
+      "metric": "hidden_overlap",
+      "rho": 0.2672126160188258,
+      "p": 0.2068441432761719,
+      "rho_leave2": 0.21049696367965118,
+      "p_leave2": 0.3470736874966654,
+      "n": 24,
+      "noncollapsed": 15
+    }
+  ]
+}
